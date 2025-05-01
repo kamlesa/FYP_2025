@@ -1,7 +1,45 @@
-<html>
-<head>
-</head>
-<body>
-This is a test website.
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vega-Lite Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  </head>
+  <body>
+    <h2>Sentiment Breakdown by YouTube Video</h2>
+    <div id="vis"></div>
+
+    <script>
+      const spec = {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Grouped bar chart of sentiment counts (positive, neutral, negative) by video ID.",
+        "data": {
+          "url": "json_file_spec_example.json",
+          "format": {"type": "json"}
+        },
+        "transform": [
+          {
+            "fold": ["positive", "neutral", "negative"],
+            "as": ["sentiment", "count"]
+          }
+        ],
+        "mark": "bar",
+        "encoding": {
+          "x": {"field": "videoId", "type": "nominal", "title": "Video ID"},
+          "xOffset": {"field": "sentiment"},
+          "y": {"field": "count", "type": "quantitative", "title": "Comment Count"},
+          "color": {"field": "sentiment", "type": "nominal", "title": "Sentiment"},
+          "tooltip": [
+            {"field": "videoId", "type": "nominal"},
+            {"field": "sentiment", "type": "nominal"},
+            {"field": "count", "type": "quantitative"}
+          ]
+        }
+      };
+
+      vegaEmbed("#vis", spec);
+    </script>
+  </body>
 </html>
