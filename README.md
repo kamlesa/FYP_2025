@@ -29,11 +29,13 @@ git subtree pull --prefix=chrome-extension-files ycs main --squash
 
 cd ..
 
-#### Create the virtual environment, activate it and install selenium which is a required dependency
+#### Create the virtual environment, activate it and install requests and selenium which are required dependencies for the project to work.
 
 python -m venv .venv
 
 .venv\Scripts\activate
+
+pip install requests
 
 pip install selenium
 

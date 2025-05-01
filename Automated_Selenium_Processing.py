@@ -26,7 +26,7 @@ from selenium.webdriver import ActionChains
 # Absolute Configuration Paths
 BASE_DIR            = os.path.dirname(__file__)
 CHROMEDRIVER_PATH   = os.path.join(BASE_DIR, "chromedriver-win64", "chromedriver.exe")
-YCS_EXTENSION_PATH  = os.path.join(BASE_DIR, "chrome-extension-files", "YCS-cont")
+YCS_EXTENSION_PATH  = os.path.join(BASE_DIR, "chrome-extension-files")
 OUTPUT_DIR          = os.path.join(BASE_DIR, "processed-json-comment-files")
 
 # Generic helper functions to process comment data 
