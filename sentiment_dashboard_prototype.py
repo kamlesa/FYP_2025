@@ -16,6 +16,10 @@ from typing import Optional
 from urllib.parse import urlparse, parse_qs
 from typing import Literal, NamedTuple
 
+# Username data scraping toggle
+# Set to False by default
+usernameToggle: bool = False
+
 # Path Configuration
 
 BASE_DIR            = Path(__file__).resolve().parent
@@ -79,7 +83,7 @@ def make_driver() -> webdriver.Chrome:
 def _parse_head(arr: list[str], idx: int) -> tuple[dict, int]:
     """Parse the raw data before processing them into parent comments and replies."""
     d = {
-        "username":    arr[idx + 1],
+        "username":    arr[idx + 1] if usernameToggle else "",
         "profile_url": arr[idx + 2],
         "comment_url": arr[idx + 3],   # unique comment ID for every comment
         "posted":      "",
@@ -217,7 +221,7 @@ def score_comments(video_id: str, video_title: str, comments: list[dict]) -> lis
             comment_id    = c["comment_url"],
             parent_id     = c.get("parent_id"),
             is_reply      = bool(c.get("parent_id")),
-            username      = c["username"],
+            username      = c["username"] if usernameToggle else "",
             comment       = c["comment"],
             likes         = c["likes"],
             replies       = c["replies"],
@@ -299,7 +303,7 @@ def make_dashboard(rows: list[Row], out_html: Path) -> None:
                                 "legend": None
                             },
                             "tooltip": [
-                                {"field": "username", "type": "nominal"},
+                                *([{"field":"username","type":"nominal"}] if usernameToggle else []),
                                 {"field": "replies",   "type": "quantitative", "title": "Replies"},
                                 {"field": "parent_id", "type": "nominal",      "title": "Reply to"},
                                 {"field": "polarity", "type": "quantitative"},
