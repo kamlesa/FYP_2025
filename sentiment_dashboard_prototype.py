@@ -1,7 +1,7 @@
 """
 YouTube data processor
 
-Requires: selenium, textblob, requests, tqdm  (pip install selenium textblob requests tqdm)
+Requires: selenium, vaderSentiment, requests, tqdm (pip install selenium vaderSentiment requests tqdm)
 
 Requires: ChromeDriver + YCS extension paths to be configured
 
@@ -12,6 +12,7 @@ If no arguments are given, a small demo set inside the script is used.
 from __future__ import annotations
 import os, re, json, sys, concurrent.futures, requests, textwrap
 from pathlib import Path
+from typing import Optional
 from urllib.parse import urlparse, parse_qs
 from typing import Literal, NamedTuple
 
@@ -73,37 +74,69 @@ def make_driver() -> webdriver.Chrome:
     return webdriver.Chrome(service=Service(str(CHROMEDRIVER_PATH)), options=opt)
 
 
-def parse_comment_block(block: str) -> dict | None:
-    lines = [l.strip() for l in block.splitlines() if l.strip()]
-    if not lines or "[COMMENT]" not in lines[0]:
-        return None
+# Parse and categorize extension text data into top-level comment and their replies
+
+def _parse_head(arr: list[str], idx: int) -> tuple[dict, int]:
+    """Parse the raw data before processing them into parent comments and replies."""
     d = {
-        "username":    lines[1], # filtering
-        "profile_url": lines[2], # comment
-        "comment_url": lines[3], # bug
+        "username":    arr[idx + 1],
+        "profile_url": arr[idx + 2],
+        "comment_url": arr[idx + 3],   # unique comment ID for every comment
         "posted":      "",
         "edited":      False,
         "likes":       0,
-        "replies":     0,
-        "comment":     ""
+        "replies":     0,              # filled for top-level comments only
     }
-    meta = lines[4]
+    meta = arr[idx + 4]
     if "(edited)" in meta:
         d["edited"] = True
         meta = meta.replace("(edited)", "").strip()
-    parts = [p.strip() for p in meta.split("|")]
-    d["posted"] = parts[0]
-    for p in parts[1:]:
-        if p.startswith("like:"):
-            d["likes"] = int(p.split(":", 1)[1])
-        elif p.startswith("reply:"):
-            d["replies"] = int(p.split(":", 1)[1])
-    d["comment"] = "\n".join(lines[5:])
-    return d
+    for part in (p.strip() for p in meta.split("|")):
+        if part.startswith("like:"):
+            d["likes"] = int(part.split(":", 1)[1])
+        elif part.startswith("reply:"):
+            d["replies"] = int(part.split(":", 1)[1])
+        else:              # first token gives us the relative date
+            d["posted"] = part
+    return d, idx + 5          # iterates to the next unread line
+
+
+def parse_comment_block(block: str) -> Optional[tuple[dict, list[dict]]]:
+    """Return (parent_dict, [reply_dict, ...]) or None if not a comment block."""
+    lines = [ln.rstrip() for ln in block.splitlines() if ln.strip()]
+    if not lines or "[COMMENT]" not in lines[0]:
+        return None
+
+    # Parent comment categorization
+    parent, i = _parse_head(lines, 0)
+
+    body: list[str] = []
+    while i < len(lines) and lines[i] != "Replies:":
+        body.append(lines[i]);  i += 1
+    parent["comment"] = "\n".join(body)
+
+    # Reply (child) comment categorization
+    replies: list[dict] = []
+    if i < len(lines) and lines[i] == "Replies:":
+        i += 1                        # skip literal marker
+        while i < len(lines):
+            if lines[i] != "[REPLY]": # ignore [REPLY] text
+                i += 1;  continue
+
+            rep, j = _parse_head(lines, i)
+            text: list[str] = []
+            while j < len(lines) and lines[j] != "[REPLY]":
+                text.append(lines[j]);  j += 1
+            rep["comment"]  = "\n".join(text)
+            rep["parent_id"] = parent["comment_url"]
+            replies.append(rep)
+            i = j
+
+    return parent, replies
 
 
 def get_comments(driver: webdriver.Chrome, url: str, timeout: int = 90) -> tuple[str, str, list[dict]]:
-    """Return video_id, video_title, list[comment‑dict] (raw, no sentiment yet)."""
+    """Returns video_id, video_title, list[comment-dict] (raw, no sentiment yet)."""
     wait = WebDriverWait(driver, timeout)
     driver.get(url)
 
@@ -132,39 +165,65 @@ def get_comments(driver: webdriver.Chrome, url: str, timeout: int = 90) -> tuple
     wait.until(lambda d: d.execute_script("return window.__ycs.length > 0"))
     raw_dump = driver.execute_script("return window.__ycs.pop()")
 
-    blocks = re.findall(r'#####(.*?)#####', raw_dump, re.DOTALL)
-    parsed = [c for b in blocks if (c := parse_comment_block(b))]
+    # Every block in the extension JSON file starts with "#####" on its own newline
+    blocks = [b.strip() for b in raw_dump.split("#####") if b.strip()]
+    tops, children = [], []
+    for blk in blocks:
+        res = parse_comment_block(blk)
+        if res:
+            p, rs = res
+            tops.append(p);  children.extend(rs)
+    parsed = tops + children
 
     vid = parse_qs(urlparse(url).query).get("v", [""])[0]
     return vid, full_title, parsed
 
 
-# Sentiment analysis using TextBlob
+# Sentiment analysis using VADER
 
-from textblob import TextBlob
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+
+# Create Global VADER object for repeated Sentiment Analysis
+_VADER = SentimentIntensityAnalyzer()
 
 class Row(NamedTuple):
-    video_id : str
-    video    : str   # title
-    username : str
-    comment  : str
-    likes    : int
-    polarity : float
-    label    : Literal["positive", "negative", "neutral"]
+    video_id   : str
+    video      : str
+    comment_id : str
+    parent_id  : Optional[str] # No parent id required for parent comments
+    is_reply   : bool
+    username   : str
+    comment    : str
+    likes      : int
+    replies    : int
+    polarity   : float
+    label      : Literal["positive", "negative", "neutral"]
 
 def _score(txt: str) -> float:
-    return TextBlob(txt).sentiment.polarity
+    """Return VADER 'compound' score within the range of -1 to +1."""
+    return _VADER.polarity_scores(txt)["compound"]
 
 def score_comments(video_id: str, video_title: str, comments: list[dict]) -> list[Row]:
     texts = [c["comment"] for c in comments]
-    with concurrent.futures.ProcessPoolExecutor(max_workers=POOL_WORKERS) as pool:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=POOL_WORKERS) as pool:
         polarities = list(pool.map(_score, texts))
 
     rows: list[Row] = []
     for c, p in zip(comments, polarities):
-        label = "positive" if p > 0.05 else "negative" if p < -0.05 else "neutral"
-        rows.append(Row(video_id, video_title, c["username"], c["comment"],
-                        c["likes"], round(p, 4), label))
+        label = "positive" if p >= 0.05 else "negative" if p <= -0.05 else "neutral"
+        rows.append(Row(
+            video_id      = video_id,
+            video         = video_title,
+            comment_id    = c["comment_url"],
+            parent_id     = c.get("parent_id"),
+            is_reply      = bool(c.get("parent_id")),
+            username      = c["username"],
+            comment       = c["comment"],
+            likes         = c["likes"],
+            replies       = c["replies"],
+            polarity      = round(p, 4),
+            label         = label
+        ))
     return rows
 
 # Creating a Vega-Lite Dashboard from scratch based on the data scrapped
@@ -230,7 +289,7 @@ def make_dashboard(rows: list[Row], out_html: Path) -> None:
                         "selection": {
                             "labelfilter": {"type": "multi", "fields": ["label"]}
                         },
-                        "mark": {"type": "circle", "opacity": 0.8, "size": 80},
+                        "mark": {"type": "point",  "filled": True, "opacity": 0.8, "size": 80},
                         "encoding": {
                             "x": {"field": "polarity", "type": "quantitative"},
                             "y": {"field": "likes", "type": "quantitative"},
@@ -241,6 +300,8 @@ def make_dashboard(rows: list[Row], out_html: Path) -> None:
                             },
                             "tooltip": [
                                 {"field": "username", "type": "nominal"},
+                                {"field": "replies",   "type": "quantitative", "title": "Replies"},
+                                {"field": "parent_id", "type": "nominal",      "title": "Reply to"},
                                 {"field": "polarity", "type": "quantitative"},
                                 {"field": "likes", "type": "quantitative"},
                                 {"field": "comment", "type": "nominal"}
@@ -248,6 +309,15 @@ def make_dashboard(rows: list[Row], out_html: Path) -> None:
                             "opacity": {
                                 "condition": {"selection": "labelfilter", "value": 1},
                                 "value": 0.1
+                            },
+                            "shape": {
+                                "field": "is_reply",
+                                "type" : "nominal",
+                                "legend": {"title": "Reply?"},
+                                "scale": {
+                                    "domain": [False, True], # for top‑level comments and their replies
+                                    "range" : ["circle", "triangle-up"]
+                                }
                             }
                         }
                     },
