@@ -32,13 +32,13 @@ AI-Driven Sentiment Analysis for Public Perception of Emerging Technologies
 
 `cd ..`
 
-#### Create the virtual environment, activate it and install requests, selenium, textblob and tqdm which are required dependencies for the project to work.
+#### Create the virtual environment, activate it and install requests, selenium, vaderSentiment and tqdm which are required dependencies for the project to work.
 
 `python -m venv .venv`
 
 `.venv\Scripts\activate`
 
-`pip install selenium textblob requests tqdm`
+`pip install selenium vaderSentiment requests tqdm`
 
 #### Then, run the Automated Selenium Processing script in order to process YouTube videos and output processed JSON files accordingly.
 
