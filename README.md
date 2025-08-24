@@ -1,5 +1,11 @@
-# ENG4701/FIT4701 FYP 2025
-AI-Driven Sentiment Analysis for Public Perception of Emerging Technologies
+# ENG4702/FIT4702 FYP 2025
+Public Sentiment & Ethics in AI for Law Enforcement
+This Project is an extension of a separate project: AI-Driven Sentiment Analysis for Public Perception of Emerging Technologies
+The previous project was discontinued, resulting in an altered scope.
+
+TO-DO: Update
+
+# Previous README
 
 ## Automated YouTube comment scraping using Selenium
 
