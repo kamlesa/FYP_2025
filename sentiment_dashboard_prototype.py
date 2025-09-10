@@ -59,7 +59,7 @@ def is_url_reachable(url: str) -> bool:
         return False
 
 
-# Using Selenium to scrape and parse data accordingly 
+# Using Selenium to scrape and parse data accordingly
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service

@@ -1,0 +1,9 @@
+pandas
+scikit-learn
+nltk
+keybert
+sentence-transformers
+tqdm
+requests
+python-dotenv
+torch     # needed by sentence-transformers (CPU version)
