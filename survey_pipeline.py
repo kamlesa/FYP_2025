@@ -10,7 +10,7 @@
 #
 # Requires:
 #   requirements.txt (pandas, scikit-learn, nltk, keybert, sentence-transformers,
-#                     tqdm, requests, python-dotenv, torch)
+#                     tqdm, requests, python-dotenv, torch, numpy)
 #   .env with:
 #       DEEPSEEK_API_KEY=REDACTED
 #       DEEPSEEK_ENDPOINT=https://api.deepseek.com/chat/completions
@@ -22,6 +22,7 @@ import re
 import time
 import json
 import requests
+import numpy as np
 import pandas as pd
 
 from tqdm import tqdm
@@ -59,13 +60,10 @@ INPUT_CSV = "survey_export.csv"         # <- change to your filename if needed
 OUTPUT_PREFIX = "out"                   # files will be out_*.csv
 
 # List ALL open-ended (written) question columns EXACTLY as they appear in the CSV
-# For the minimal mock CSV we built earlier:
 OPEN_ENDED_COLS = ["Q9_Open", "Q10_Open", "Q11_Open"]
 
 # Optional: keep these structured fields (if they exist) for dashboards/analysis
-# You can leave this list empty; the script will only keep columns that actually exist.
 PRESERVE_COLS = [
-    # Examples (uncomment or add if present in your CSV):
     # "Age_Band", "Gender", "Platform_Main",
     # "Overall_Sentiment_Scale", "Trust_Scale", "Seen_Discussion_Freq",
     # "Timestamp"
@@ -101,7 +99,8 @@ TOP_K_KEYBERT = 6
 # ---------------------------
 # TEXT UTILS
 # ---------------------------
-EN_STOP = set(stopwords.words("english")) | sk_text.ENGLISH_STOP_WORDS
+# IMPORTANT: scikit-learn needs stop_words to be 'english', a list, or None (not a set)
+EN_STOP = list(sorted(set(stopwords.words("english")) | set(sk_text.ENGLISH_STOP_WORDS)))
 
 def clean_text(s: str) -> str:
     """Basic normalization for short survey answers."""
@@ -162,14 +161,24 @@ def deepseek_sentiment(text: str):
 # TF-IDF
 # ---------------------------
 def tfidf_top(texts, k=20):
-    if not texts:
+    # handle edge cases
+    if not texts or all((not (t or "").strip()) for t in texts):
         return []
-    vect = TfidfVectorizer(stop_words=EN_STOP, max_features=5000, ngram_range=(1,2))
-    X = vect.fit_transform(texts)
+    vect = TfidfVectorizer(stop_words=EN_STOP, max_features=5000, ngram_range=(1, 2))
+    try:
+        X = vect.fit_transform(texts).tocsr()
+    except ValueError:
+        # e.g., "empty vocabulary" if everything is stopwords/blank
+        return []
     terms = vect.get_feature_names_out()
-    scores = X.max(axis=0).A1
-    top_idx = scores.argsort()[::-1][:k]
-    return [(terms[i], float(scores[i])) for i in top_idx]
+
+    # convert sparse to dense row vector before sorting
+    max_vec = X.max(axis=0).toarray().ravel()
+
+    if max_vec.size == 0:
+        return []
+    top_idx = np.argsort(max_vec)[::-1][:k]
+    return [(terms[i], float(max_vec[i])) for i in top_idx]
 
 
 # ---------------------------
@@ -236,7 +245,9 @@ def main():
     # 3) Clean open-ended text, create combined 'text_all'
     for c in OPEN_ENDED_COLS:
         df[c + "_clean"] = df[c].fillna("").astype(str).apply(clean_text)
+
     df["text_all"] = df[[c + "_clean" for c in OPEN_ENDED_COLS]].agg(" ".join, axis=1).str.strip()
+    df["text_all_clean"] = df["text_all"]   # ensures loops can use c + "_clean" when c == "text_all"
 
     # 4) Preserve chosen structured fields if present
     keep_cols = [c for c in PRESERVE_COLS if c in df.columns]
@@ -300,8 +311,7 @@ def main():
                [col for col in df.columns if col.endswith("_clean") or col.endswith("_sentiment") or
                 col.endswith("_sent_conf") or col.endswith("_keybert") or col.endswith("_concerns")] + \
                ["text_all"]
-    # de-dupe while preserving order
-    out_cols = list(dict.fromkeys(out_cols))
+    out_cols = list(dict.fromkeys(out_cols))  # de-dupe preserve order
     df[out_cols].to_csv(f"{OUTPUT_PREFIX}_annotated_rows.csv", index=False)
 
     print(f"\nSaved files:"
