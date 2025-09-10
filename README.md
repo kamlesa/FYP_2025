@@ -1,53 +1,47 @@
 # ENG4702/FIT4702 FYP 2025
+
 Public Sentiment & Ethics in AI for Law Enforcement
 
-This Project is an extension of a separate project: AI-Driven Sentiment Analysis for Public Perception of Emerging Technologies
+This Project is an extension of a separate project: AI-Driven Sentiment Analysis for Public Perception of Emerging Technologies. The previous project was discontinued, resulting in an altered scope.
 
-The previous project was discontinued, resulting in an altered scope.
+We are conducting research to better understand how Australians feel about the use of Artificial Intelligence (AI) in law enforcement and national security. We have conducted an online survey, and this repository is used to showcase the results, presenting both scaled-response data and an analysis of open-ended responses.
 
-TO-DO: Update
+This project is in progress, currently the Ethics Application is not approved within our university, so we do not have real data, as our survey has not been distributed yet, you are witnessing results on fake data as we prepare for real entries!
 
-# Previous README
+## Team Members
 
-## Automated YouTube comment scraping using Selenium
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%">
+        <a href="https://github.com/kamlesa">
+        <img src="https://avatars.githubusercontent.com/u/117716223?v=4" width="100px;" alt="Anika Kamleshwaran"/><br />
+        <sub><b style="font-size:18px;">Anika Kamleshwaran</b></sub></a><p><strong>Project Coordinator</strong><br>Front-End Developer</p>
+<br />
+      </td>
+    <td align="center" valign="top" width="14.28%">
+        <a href="https://github.com/mwei0018">
+        <img src="https://avatars.githubusercontent.com/u/163804023?v=4" width="100px;" alt="Marcus Wei"/><br />
+        <sub><b style="font-size:18px;">Marcus Wei</b></sub></a><p><strong>Ethics & Fairness Lead</strong><br>Back-End Developer</p>
 
-### Steps to reproduce
+<br />
+      </td>
+    </tr>
 
-#### Ensure that your chrome version and the chrome driver version is updated to the latest version as mentioned here.
+  </tbody>
 
-`https://googlechromelabs.github.io/chrome-for-testing/#stable`
+</table>
 
-#### For the context of this project, we are assuming a 64-bit Windows version for the execution platform. You are required to download the zip then extract the folder as-is from the zip file in order to replace the current version in the event that this version is out-of-date.
+## Live Site
 
-`cd .\chrome-extension-files\`
+You can access the deployed website here: https://kamlesa.github.io/FYP_2025/
 
-#### Similarly git pull the YCS continued extension within the chrome-extension-files folder for extension accessibility
+## Project Structure
 
-#### retrieve the chrome extension from their GitHub repository
+[insert project structure???]
+[insert how the project works e.g. pipelines]
 
-`git remote add ycs https://github.com/pc035860/YCS-cont.git`
-`git fetch ycs`
+## Want to Help?
 
-#### Then pull the 'main' branch as a subtree as "chrome-extension-files"
-
-`git subtree add --prefix=chrome-extension-files ycs main --squash`
-
-#### Then pull the current 'main' branch as a subtree under the existing project root folder
-
-`git subtree pull --prefix=chrome-extension-files ycs main --squash`
-
-#### Then return to current project directory
-
-`cd ..`
-
-#### Create the virtual environment, activate it and install requests, selenium, vaderSentiment and tqdm which are required dependencies for the project to work.
-
-`python -m venv .venv`
-
-`.venv\Scripts\activate`
-
-`pip install selenium vaderSentiment requests tqdm`
-
-#### Then, run the Automated Selenium Processing script in order to process YouTube videos and output processed JSON files accordingly.
-
-`python sentiment_dashboard_prototype.py <URL 1> [<URL 2> ... etc]`
+If you're an Australian over 18, feel free to fill in our online survey!
+[insert link]
