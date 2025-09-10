@@ -13,12 +13,12 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-    <link rel="stylesheet" href="site/tailwind.css" />
+    <!-- <link rel="stylesheet" href="site/tailwind.css" /> -->
   </head>
 
   <body>
-    <header class="hdr">
-      <div class="hdr-div">
+    <header class="bg-blue-800 text-white shadow-md">
+      <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
         <!-- Logo + Title -->
         <div class="flex items-center space-x-3">
           <!-- <img src="your-logo.png" alt="Logo" class="w-10 h-10 rounded-full" /> -->
@@ -27,52 +27,13 @@
 
         <!-- Navigation -->
         <nav class="space-x-6 hidden sm:block">
-          <a href="" class="hdr-nav">Dashboard</a>
-          <a href="about.html" class="hdr-nav">About</a>
-          <a href="contact.html" class="hdr-nav">Contact</a>
+          <a href="index.html" class="hover:text-blue-200">Dashboard</a>
+          <a href="sem1.html" class="hover:text-blue-200">FIT4701</a>
+          <a href="about.html" class="hover:text-blue-200">About</a>
+          <a href="contact.html" class="hover:text-blue-200">Contact</a>
         </nav>
       </div>
     </header>
-    <h2>
-      AI-Driven Sentiment Analysis for Public Perception of Emerging
-      Technologies
-    </h2>
-    <div id="vis"></div>
-
-    <script>
-      const spec = {
-        $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-        description:
-          "Grouped bar chart of sentiment counts (positive, neutral, negative) by video ID.",
-        data: {
-          url: "json_file_spec_example.json",
-          format: { type: "json" },
-        },
-        transform: [
-          {
-            fold: ["positive", "neutral", "negative"],
-            as: ["sentiment", "count"],
-          },
-        ],
-        mark: {
-          type: "text",
-          dy: -5, // vertical offset above bar
-          color: "black",
-        },
-        encoding: {
-          x: { field: "videoId", type: "nominal", title: "Video ID" },
-          xOffset: { field: "sentiment" },
-          y: { field: "count", type: "quantitative", title: "Comment Count" },
-          color: { field: "sentiment", type: "nominal", title: "Sentiment" },
-          tooltip: [
-            { field: "videoId", type: "nominal" },
-            { field: "sentiment", type: "nominal" },
-            { field: "count", type: "quantitative" },
-          ],
-        },
-      };
-
-      vegaEmbed("#vis", spec);
-    </script>
+    <script></script>
   </body>
 </html>

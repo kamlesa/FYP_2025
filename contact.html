@@ -7,12 +7,11 @@
       href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="site/tailwind.css" />
   </head>
 
   <body>
-    <header class="hdr">
-      <div class="hdr-div">
+    <header class="bg-blue-800 text-white shadow-md">
+      <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
         <!-- Logo + Title -->
         <div class="flex items-center space-x-3">
           <!-- <img src="your-logo.png" alt="Logo" class="w-10 h-10 rounded-full" /> -->
@@ -21,17 +20,23 @@
 
         <!-- Navigation -->
         <nav class="space-x-6 hidden sm:block">
-          <a href="index.html" class="hdr-nav">Dashboard</a>
-          <a href="about.html" class="hdr-nav">About</a>
-          <a href="contact.html" class="hdr-nav">Contact</a>
+          <a href="index.html" class="hover:text-blue-200">Dashboard</a>
+          <a href="sem1.html" class="hover:text-blue-200">FIT4701</a>
+          <a href="about.html" class="hover:text-blue-200">About</a>
+          <a href="contact.html" class="hover:text-blue-200">Contact</a>
         </nav>
       </div>
     </header>
 
-    <h2>Contact</h2>
+    <div class="p-10 flex-row">
+      <h2 class="text-4xl font-bold">Contact Page</h2>
+      <p>
+        Anika Kamleshwaran and Marcus Wei are both Software Engineering students
+        at Monash University. This study is part of their final year project.
+      </p>
+      <p>akam0020@student.monash.edu mwei0018@student.monash.edu</p>
+    </div>
 
-    <a class="bg-blue-200" href="index.html">About</a>
-    <a href="index.html">Contact</a>
     <script></script>
   </body>
 </html>

@@ -7,12 +7,12 @@
       href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="site/tailwind.css" />
+    <!-- <link href="tailwind.css" rel="stylesheet" /> -->
   </head>
 
   <body>
-    <header class="hdr">
-      <div class="hdr-div">
+    <header class="bg-blue-800 text-white shadow-md">
+      <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
         <!-- Logo + Title -->
         <div class="flex items-center space-x-3">
           <!-- <img src="your-logo.png" alt="Logo" class="w-10 h-10 rounded-full" /> -->
@@ -21,17 +21,36 @@
 
         <!-- Navigation -->
         <nav class="space-x-6 hidden sm:block">
-          <a href="index.html" class="hdr-nav">Dashboard</a>
-          <a href="about.html" class="hdr-nav">About</a>
-          <a href="contact.html" class="hdr-nav">Contact</a>
+          <a href="index.html" class="hover:text-blue-200">Dashboard</a>
+          <a href="sem1.html" class="hover:text-blue-200">FIT4701</a>
+          <a href="about.html" class="hover:text-blue-200">About</a>
+          <a href="contact.html" class="hover:text-blue-200">Contact</a>
         </nav>
       </div>
     </header>
+    <div class="p-10 flex-row">
+      <h2 class="text-4xl font-bold">About Page</h2>
+      <p>
+        This project is in progress, currently the Ethics Application is not
+        approved within our university, so we do not have real data, as our
+        survey has not been distributed yet, you are witnessing results on fake
+        data as we prepare for real entries!
+      </p>
+      <p>
+        This Project is an extension of a separate project: AI-Driven Sentiment
+        Analysis for Public Perception of Emerging Technologies. The previous
+        project was discontinued, resulting in an altered scope. We are
+        conducting research to better understand how Australians feel about the
+        use of Artificial Intelligence (AI) in law enforcement and national
+        security. We have conducted an online survey, and this repository is
+        used to showcase the results, presenting both scaled-response data and
+        an analysis of open-ended responses.
+      </p>
 
-    <h2>About</h2>
+      <h2 class="text-2xl font-bold">Our Recommendations</h2>
+      <p>TBD</p>
+    </div>
 
-    <a class="bg-blue-200" href="index.html">About</a>
-    <a href="index.html">Contact</a>
     <script></script>
   </body>
 </html>
