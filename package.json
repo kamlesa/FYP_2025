@@ -1,0 +1,23 @@
+{
+  "name": "fyp_2025",
+  "version": "1.0.0",
+  "description": "Public Sentiment & Ethics in AI for Law Enforcement",
+  "homepage": "https://github.com/kamlesa/FYP_2025#readme",
+  "bugs": {
+    "url": "https://github.com/kamlesa/FYP_2025/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamlesa/FYP_2025.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "tailwindcss": "^4.1.13"
+  }
+}
