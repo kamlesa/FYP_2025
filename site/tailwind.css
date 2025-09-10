@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply bg-happyblue text-cadetblue font-semibold px-4 py-2 rounded-lg hover:bg-calmblue active:bg-happygreen;
+  }
+
+  .hdr {
+    @apply bg-purple-600 text-white shadow-md;
+  }
+
+  .hdr-div {
+    @apply max-w-7xl mx-auto flex items-center justify-between p-4;
+  }
+
+  .hdr-nav {
+    @apply hover:text-purple-200;
+  }
+}
+
+body {
+  background: yellow;
+}

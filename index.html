@@ -13,9 +13,26 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <link rel="stylesheet" href="site/tailwind.css" />
   </head>
 
   <body>
+    <header class="hdr">
+      <div class="hdr-div">
+        <!-- Logo + Title -->
+        <div class="flex items-center space-x-3">
+          <!-- <img src="your-logo.png" alt="Logo" class="w-10 h-10 rounded-full" /> -->
+          <h1 class="text-xl font-bold">FIT4701/4702 FYP Project Monash</h1>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="space-x-6 hidden sm:block">
+          <a href="" class="hdr-nav">Dashboard</a>
+          <a href="about.html" class="hdr-nav">About</a>
+          <a href="contact.html" class="hdr-nav">Contact</a>
+        </nav>
+      </div>
+    </header>
     <h2>
       AI-Driven Sentiment Analysis for Public Perception of Emerging
       Technologies
