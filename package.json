@@ -1,8 +1,9 @@
 {
-  "name": "fyp_2025",
-  "version": "1.0.0",
+  "name": "fyp-2025",
+  "version": "0.0.0",
   "description": "Public Sentiment & Ethics in AI for Law Enforcement",
-  "homepage": "https://github.com/kamlesa/FYP_2025#readme",
+  "private": true,
+  "type": "module",
   "bugs": {
     "url": "https://github.com/kamlesa/FYP_2025/issues"
   },
@@ -10,15 +11,28 @@
     "type": "git",
     "url": "git+https://github.com/kamlesa/FYP_2025.git"
   },
-  "license": "ISC",
-  "author": "",
-  "type": "commonjs",
-  "main": "index.js",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "format": "prettier --write src/",
+    "build:tailwind": "tailwindcss -i ./src/tailwind.css -o ./dist/output.css --watch"
+  },
+  "dependencies": {
+    "vega-embed": "^7.0.2",
+    "vue": "^3.5.18",
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
     "prettier": "3.6.2",
-    "tailwindcss": "^4.1.13"
+    "tailwindcss": "^3.4.17",
+    "vite": "^7.0.6",
+    "vite-plugin-vue-devtools": "^8.0.0"
   }
 }
