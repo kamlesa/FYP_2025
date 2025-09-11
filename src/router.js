@@ -5,10 +5,10 @@ import Semester1 from './pages/Semester1.vue'
 import Dashboard from './pages/Dashboard.vue'
 
 const routes = [
-  { path: '/', component: Dashboard },
-  { path: '/about', component: AboutPage },
-  { path: '/contact', component: ContactPage },
-  { path: '/fit4701', component: Semester1 },
+  { path: '/FYP_2025/', component: Dashboard },
+  { path: '/FYP_2025/about', component: AboutPage },
+  { path: '/FYP_2025/contact', component: ContactPage },
+  { path: '/FYP_2025/fit4701', component: Semester1 },
 ]
 
 const router = createRouter({
