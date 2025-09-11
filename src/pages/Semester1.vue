@@ -1,17 +1,17 @@
 <template>
-  <div class="p-10 flex-row">
-    <h2 class="text-4xl font-bold">Semester 1 Work</h2>
+  <div class="sectionpage">
+    <h2 class="sectionheading">Semester 1 Work</h2>
     <p>
       Due to unfortunate circumstances, the project was altered midway, on this page we are
       displaying progress from the previous half of the project
     </p>
     <p>This is temporarily here.. for testing</p>
 
-    <h2 class="text-4xl font-bold">
+    <h2 class="sectionheading">
       AI-Driven Sentiment Analysis for Public Perception of Emerging Technologies
     </h2>
-    <div id="vis"></div>
   </div>
+  <div id="vis"></div>
 </template>
 
 <script setup>
@@ -24,7 +24,7 @@ const spec = {
   width: 800,
   height: 400,
   data: {
-    url: 'json_file_spec_example.json',
+    url: 'data/testing_saketh.json',
     format: { type: 'json' },
   },
   transform: [

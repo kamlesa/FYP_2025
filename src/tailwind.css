@@ -5,7 +5,7 @@
 
 @layer components {
   .btn {
-    @apply bg-happyblue text-cadetblue font-semibold px-4 py-2 rounded-lg hover:bg-calmblue active:bg-happygreen;
+    @apply bg-deepaqua text-offwhite font-semibold px-4 py-2 rounded-lg hover:bg-midblue active:bg-aqua;
   }
 
   .hdr {
@@ -19,8 +19,24 @@
   .hdr-nav {
     @apply hover:text-purple-200;
   }
-}
 
-body {
-  background: yellow;
+  .h3 {
+    @apply text-2xl font-bold;
+  }
+
+  .numbering {
+    @apply bg-lightaqua text-deepaqua rounded-full px-3 py-1 text-sm font-semibold mr-3 font-bold;
+  }
+
+  .sectionhover {
+    @apply bg-white border border-dimgray rounded-2xl p-8 shadow-sm;
+  }
+
+  .sectionpage {
+    @apply max-w-5xl mx-auto px-6 py-12 space-y-16;
+  }
+
+  .sectionheading {
+    @apply text-4xl font-extrabold text-deepaqua mb-4;
+  }
 }
