@@ -1,0 +1,32 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "data": {
+    "url": "data/testing_likert.json",
+    "format": {
+      "type": "json"
+    }
+  },
+  "width": 800,
+  "height": 400,
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "Response",
+      "type": "ordinal",
+      "axis": { "title": "Response" }
+    },
+    "y": {
+      "aggregate": "count",
+      "type": "quantitative",
+      "axis": { "title": "Number of Responses" }
+    },
+    "color": {
+      "field": "Statement",
+      "type": "nominal",
+      "title": "Statement"
+    },
+    "xOffset": {
+      "field": "Statement"
+    }
+  }
+}
