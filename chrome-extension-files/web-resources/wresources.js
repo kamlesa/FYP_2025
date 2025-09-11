@@ -14,7 +14,7 @@
   if (window.trustedTypes && trustedTypes.createPolicy) {
     if (!trustedTypes.defaultPolicy) {
       // provide a default policy for trusted types
-      trustedTypes.createPolicy('default', {
+      trustedTypes.createPolicy("default", {
         // createHTML() gets called when assigning .innerHTML
         createHTML: (string) => string,
       });
@@ -25,29 +25,29 @@
     k: 1000,
     rb: 1000,
     mil: 1000,
-    'hilj.': 1000,
-    'tis.': 1000,
+    "hilj.": 1000,
+    "tis.": 1000,
     elfu: 1000,
-    'þ.': 1000,
-    'tūkst.': 1000,
+    "þ.": 1000,
+    "tūkst.": 1000,
     E: 1000,
     ming: 1000,
     mijë: 1000,
     N: 1000,
     B: 1000,
-    'хил.': 1000,
+    "хил.": 1000,
     миң: 1000,
     мянга: 1000,
-    'тыс.': 1000,
-    'хиљ.': 1000,
-    'тис.': 1000,
-    'χιλ.': 1000,
+    "тыс.": 1000,
+    "хиљ.": 1000,
+    "тис.": 1000,
+    "χιλ.": 1000,
     հզր: 1000,
     ද: 1000,
     พัน: 1000,
     ພັນ: 1000,
     ထောင်: 1000,
-    'ათ.': 1000,
+    "ათ.": 1000,
     ሺ: 1000,
     ពាន់: 1000,
     천: 1000,
@@ -70,16 +70,16 @@
     for (const [key, value] of configEntries) {
       if (buf.includes(key)) {
         multiply = value;
-        buf = buf.replace(key, '');
+        buf = buf.replace(key, "");
         break;
       }
     }
 
     let num;
     if (multiply === 1) {
-      num = parseInt(buf.replace(/[,.]/g, ''));
+      num = parseInt(buf.replace(/[,.]/g, ""));
     } else {
-      num = parseFloat(buf.replace(/,/g, '')) * multiply;
+      num = parseFloat(buf.replace(/,/g, "")) * multiply;
     }
     return {
       number: num,
@@ -105,22 +105,22 @@
    */
   function getSearchOptions(pool) {
     const map = {
-      elPTimeStamps: 'timestamp',
-      elPAuthor: 'author',
-      elPHeart: 'heart',
-      elPVerified: 'verified',
-      elPLinks: 'links',
-      elPLikes: 'likes',
-      elPReplied: 'replied',
-      elPMembers: 'members',
-      elPDonated: 'donated',
-      elPRandom: 'random',
-      elFirstComments: 'sortFirst',
+      elPTimeStamps: "timestamp",
+      elPAuthor: "author",
+      elPHeart: "heart",
+      elPVerified: "verified",
+      elPLinks: "links",
+      elPLikes: "likes",
+      elPReplied: "replied",
+      elPMembers: "members",
+      elPDonated: "donated",
+      elPRandom: "random",
+      elFirstComments: "sortFirst",
     };
     const options = {};
     let hit = false;
     for (const key in pool) {
-      if (pool[key].classList.contains('ycs_btn_active')) {
+      if (pool[key].classList.contains("ycs_btn_active")) {
         options[map[key]] = true;
         hit = true;
       }
@@ -132,21 +132,21 @@
   }
 
   var t =
-      'undefined' != typeof globalThis
+      "undefined" != typeof globalThis
         ? globalThis
-        : 'undefined' != typeof self
-        ? self
-        : 'undefined' != typeof window
-        ? window
-        : 'undefined' != typeof global
-        ? global
-        : {},
+        : "undefined" != typeof self
+          ? self
+          : "undefined" != typeof window
+            ? window
+            : "undefined" != typeof global
+              ? global
+              : {},
     n = {};
-  Object.defineProperty(n, '__esModule', {
+  Object.defineProperty(n, "__esModule", {
     value: !0,
   });
   var o = {};
-  Object.defineProperty(o, '__esModule', {
+  Object.defineProperty(o, "__esModule", {
     value: !0,
   });
   const r = new WeakMap(),
@@ -158,11 +158,11 @@
     null == e.passiveListener
       ? e.event.cancelable &&
         ((e.canceled = !0),
-        'function' == typeof e.event.preventDefault && e.event.preventDefault())
-      : 'undefined' != typeof console && console.error;
+        "function" == typeof e.event.preventDefault && e.event.preventDefault())
+      : "undefined" != typeof console && console.error;
   }
   function c(e, t) {
-    r.set(this, {
+    (r.set(this, {
       eventTarget: e,
       event: t,
       eventPhase: 2,
@@ -173,10 +173,10 @@
       passiveListener: null,
       timeStamp: t.timeStamp || Date.now(),
     }),
-      Object.defineProperty(this, 'isTrusted', {
+      Object.defineProperty(this, "isTrusted", {
         value: !1,
         enumerable: !0,
-      });
+      }));
     const n = Object.keys(t);
     for (let e = 0; e < n.length; ++e) {
       const t = n[e];
@@ -227,7 +227,7 @@
             const i = n[r];
             if (!(i in e.prototype)) {
               const e =
-                'function' ==
+                "function" ==
                 typeof Object.getOwnPropertyDescriptor(t, i).value;
               Object.defineProperty(o.prototype, i, e ? d(i) : l(i));
             }
@@ -244,7 +244,7 @@
   function m(e, t) {
     a(e).passiveListener = t;
   }
-  (c.prototype = {
+  ((c.prototype = {
     get type() {
       return a(this).event.type;
     },
@@ -275,16 +275,16 @@
     },
     stopPropagation() {
       const e = a(this);
-      (e.stopped = !0),
-        'function' == typeof e.event.stopPropagation &&
-          e.event.stopPropagation();
+      ((e.stopped = !0),
+        "function" == typeof e.event.stopPropagation &&
+          e.event.stopPropagation());
     },
     stopImmediatePropagation() {
       const e = a(this);
-      (e.stopped = !0),
+      ((e.stopped = !0),
         (e.immediateStopped = !0),
-        'function' == typeof e.event.stopImmediatePropagation &&
-          e.event.stopImmediatePropagation();
+        "function" == typeof e.event.stopImmediatePropagation &&
+          e.event.stopImmediatePropagation());
     },
     get bubbles() {
       return Boolean(a(this).event.bubbles);
@@ -313,8 +313,9 @@
     set cancelBubble(e) {
       if (!e) return;
       const t = a(this);
-      (t.stopped = !0),
-        'boolean' == typeof t.event.cancelBubble && (t.event.cancelBubble = !0);
+      ((t.stopped = !0),
+        "boolean" == typeof t.event.cancelBubble &&
+          (t.event.cancelBubble = !0));
     },
     get returnValue() {
       return !a(this).canceled;
@@ -324,24 +325,24 @@
     },
     initEvent() {},
   }),
-    Object.defineProperty(c.prototype, 'constructor', {
+    Object.defineProperty(c.prototype, "constructor", {
       value: c,
       configurable: !0,
       writable: !0,
     }),
-    'undefined' != typeof window &&
+    "undefined" != typeof window &&
       void 0 !== window.Event &&
       (Object.setPrototypeOf(c.prototype, window.Event.prototype),
-      i.set(window.Event.prototype, c));
+      i.set(window.Event.prototype, c)));
   const p = new WeakMap();
   function f(e) {
-    return null !== e && 'object' == typeof e;
+    return null !== e && "object" == typeof e;
   }
   function v(e) {
     const t = p.get(e);
     if (null == t)
       throw new TypeError(
-        "'this' is expected an EventTarget object, but got another value."
+        "'this' is expected an EventTarget object, but got another value.",
       );
     return t;
   }
@@ -360,19 +361,19 @@
             return null;
           },
           set(t) {
-            'function' == typeof t || f(t) || (t = null);
+            "function" == typeof t || f(t) || (t = null);
             const n = v(this);
             let o = null,
               r = n.get(e);
             for (; null != r; )
-              3 === r.listenerType
+              (3 === r.listenerType
                 ? null !== o
                   ? (o.next = r.next)
                   : null !== r.next
-                  ? n.set(e, r.next)
-                  : n.delete(e)
+                    ? n.set(e, r.next)
+                    : n.delete(e)
                 : (o = r),
-                (r = r.next);
+                (r = r.next));
             if (null !== t) {
               const r = {
                 listener: t,
@@ -387,7 +388,7 @@
           configurable: !0,
           enumerable: !0,
         };
-      })(t)
+      })(t),
     );
   }
   function g(e) {
@@ -413,14 +414,14 @@
         for (let t = 0; t < arguments.length; ++t) e[t] = arguments[t];
         return g(e);
       }
-      throw new TypeError('Cannot call a class as a function');
+      throw new TypeError("Cannot call a class as a function");
     }
     p.set(this, new Map());
   }
-  (w.prototype = {
+  ((w.prototype = {
     addEventListener(e, t, n) {
       if (null == t) return;
-      if ('function' != typeof t && !f(t))
+      if ("function" != typeof t && !f(t))
         throw new TypeError("'listener' should be a function or an object.");
       const o = v(this),
         r = f(n),
@@ -437,7 +438,7 @@
       let c = null;
       for (; null != s; ) {
         if (s.listener === t && s.listenerType === i) return;
-        (c = s), (s = s.next);
+        ((c = s), (s = s.next));
       }
       c.next = a;
     },
@@ -452,13 +453,13 @@
           return void (null !== i
             ? (i.next = a.next)
             : null !== a.next
-            ? o.set(e, a.next)
-            : o.delete(e));
-        (i = a), (a = a.next);
+              ? o.set(e, a.next)
+              : o.delete(e));
+        ((i = a), (a = a.next));
       }
     },
     dispatchEvent(e) {
-      if (null == e || 'string' != typeof e.type)
+      if (null == e || "string" != typeof e.type)
         throw new TypeError('"event.type" should be a string.');
       const t = v(this),
         n = e.type;
@@ -474,20 +475,20 @@
             ? null !== i
               ? (i.next = o.next)
               : null !== o.next
-              ? t.set(n, o.next)
-              : t.delete(n)
+                ? t.set(n, o.next)
+                : t.delete(n)
             : (i = o),
           m(r, o.passive ? o.listener : null),
-          'function' == typeof o.listener)
+          "function" == typeof o.listener)
         )
           try {
             o.listener.call(this, r);
           } catch (e) {
-            'undefined' != typeof console && console.error;
+            "undefined" != typeof console && console.error;
           }
         else
           3 !== o.listenerType &&
-            'function' == typeof o.listener.handleEvent &&
+            "function" == typeof o.listener.handleEvent &&
             o.listener.handleEvent(r);
         if (h(r)) break;
         o = o.next;
@@ -504,56 +505,57 @@
       );
     },
   }),
-    Object.defineProperty(w.prototype, 'constructor', {
+    Object.defineProperty(w.prototype, "constructor", {
       value: w,
       configurable: !0,
       writable: !0,
     }),
-    'undefined' != typeof window &&
+    "undefined" != typeof window &&
       void 0 !== window.EventTarget &&
       Object.setPrototypeOf(w.prototype, window.EventTarget.prototype),
     (o.defineEventAttribute = y),
     (o.EventTarget = w),
     (o.default = w),
     ((o = w).EventTarget = o.default = w),
-    (o.defineEventAttribute = y);
+    (o.defineEventAttribute = y));
   class b extends o.EventTarget {
     constructor() {
       throw (
-        (super(), new TypeError('AbortSignal cannot be constructed directly'))
+        super(),
+        new TypeError("AbortSignal cannot be constructed directly")
       );
     }
     get aborted() {
       const e = x.get(this);
-      if ('boolean' != typeof e)
+      if ("boolean" != typeof e)
         throw new TypeError(
           "Expected 'this' to be an 'AbortSignal' object, but got " +
-            (null === this ? 'null' : typeof this)
+            (null === this ? "null" : typeof this),
         );
       return e;
     }
   }
-  o.defineEventAttribute(b.prototype, 'abort');
+  o.defineEventAttribute(b.prototype, "abort");
   const x = new WeakMap();
-  Object.defineProperties(b.prototype, {
+  (Object.defineProperties(b.prototype, {
     aborted: {
       enumerable: !0,
     },
   }),
-    'function' == typeof Symbol &&
-      'symbol' == typeof Symbol.toStringTag &&
+    "function" == typeof Symbol &&
+      "symbol" == typeof Symbol.toStringTag &&
       Object.defineProperty(b.prototype, Symbol.toStringTag, {
         configurable: !0,
-        value: 'AbortSignal',
-      });
+        value: "AbortSignal",
+      }));
   class _ {
     constructor() {
       C.set(
         this,
         (function () {
           const e = Object.create(b.prototype);
-          return o.EventTarget.call(e), x.set(e, !1), e;
-        })()
+          return (o.EventTarget.call(e), x.set(e, !1), e);
+        })(),
       );
     }
     get signal() {
@@ -561,12 +563,12 @@
     }
     abort() {
       var e;
-      (e = E(this)),
+      ((e = E(this)),
         !1 === x.get(e) &&
           (x.set(e, !0),
           e.dispatchEvent({
-            type: 'abort',
-          }));
+            type: "abort",
+          })));
     }
   }
   const C = new WeakMap();
@@ -575,11 +577,11 @@
     if (null == t)
       throw new TypeError(
         "Expected 'this' to be an 'AbortController' object, but got " +
-          (null === e ? 'null' : typeof e)
+          (null === e ? "null" : typeof e),
       );
     return t;
   }
-  Object.defineProperties(_.prototype, {
+  (Object.defineProperties(_.prototype, {
     signal: {
       enumerable: !0,
     },
@@ -587,47 +589,48 @@
       enumerable: !0,
     },
   }),
-    'function' == typeof Symbol &&
-      'symbol' == typeof Symbol.toStringTag &&
+    "function" == typeof Symbol &&
+      "symbol" == typeof Symbol.toStringTag &&
       Object.defineProperty(_.prototype, Symbol.toStringTag, {
         configurable: !0,
-        value: 'AbortController',
+        value: "AbortController",
       }),
     (n.AbortController = _),
     (n.AbortSignal = b),
     (n.default = _),
     ((n = _).AbortController = n.default = _),
-    (n.AbortSignal = b);
+    (n.AbortSignal = b));
   const T =
-    'undefined' != typeof self
+    "undefined" != typeof self
       ? self
-      : 'undefined' != typeof window
-      ? window
-      : void 0 !== t
-      ? t
-      : void 0;
+      : "undefined" != typeof window
+        ? window
+        : void 0 !== t
+          ? t
+          : void 0;
   T &&
     (void 0 === T.AbortController && (T.AbortController = n.AbortController),
     void 0 === T.AbortSignal && (T.AbortSignal = n.AbortSignal));
   var I = {};
   !(function (e, t) {
-    'object' == typeof I
+    "object" == typeof I
       ? (I = t())
-      : 'function' == typeof define && define.amd
-      ? define(t)
-      : ((e = 'undefined' != typeof globalThis ? globalThis : e || self).Fuse =
-          t());
+      : "function" == typeof define && define.amd
+        ? define(t)
+        : ((e =
+            "undefined" != typeof globalThis ? globalThis : e || self).Fuse =
+            t());
   })(I, function () {
-    'use strict';
+    "use strict";
     function e(e, t) {
       var n = Object.keys(e);
       if (Object.getOwnPropertySymbols) {
         var o = Object.getOwnPropertySymbols(e);
-        t &&
+        (t &&
           (o = o.filter(function (t) {
             return Object.getOwnPropertyDescriptor(e, t).enumerable;
           })),
-          n.push.apply(n, o);
+          n.push.apply(n, o));
       }
       return n;
     }
@@ -639,50 +642,50 @@
               a(t, e, o[e]);
             })
           : Object.getOwnPropertyDescriptors
-          ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(o))
-          : e(Object(o)).forEach(function (e) {
-              Object.defineProperty(
-                t,
-                e,
-                Object.getOwnPropertyDescriptor(o, e)
-              );
-            });
+            ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(o))
+            : e(Object(o)).forEach(function (e) {
+                Object.defineProperty(
+                  t,
+                  e,
+                  Object.getOwnPropertyDescriptor(o, e),
+                );
+              });
       }
       return t;
     }
     function n(e) {
       return (n =
-        'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
+        "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
           ? function (e) {
               return typeof e;
             }
           : function (e) {
               return e &&
-                'function' == typeof Symbol &&
+                "function" == typeof Symbol &&
                 e.constructor === Symbol &&
                 e !== Symbol.prototype
-                ? 'symbol'
+                ? "symbol"
                 : typeof e;
             })(e);
     }
     function o(e, t) {
       if (!(e instanceof t))
-        throw new TypeError('Cannot call a class as a function');
+        throw new TypeError("Cannot call a class as a function");
     }
     function r(e, t) {
       for (var n = 0; n < t.length; n++) {
         var o = t[n];
-        (o.enumerable = o.enumerable || !1),
+        ((o.enumerable = o.enumerable || !1),
           (o.configurable = !0),
-          'value' in o && (o.writable = !0),
-          Object.defineProperty(e, o.key, o);
+          "value" in o && (o.writable = !0),
+          Object.defineProperty(e, o.key, o));
       }
     }
     function i(e, t, n) {
       return (
         t && r(e.prototype, t),
         n && r(e, n),
-        Object.defineProperty(e, 'prototype', {
+        Object.defineProperty(e, "prototype", {
           writable: !1,
         }),
         e
@@ -702,11 +705,11 @@
       );
     }
     function s(e, t) {
-      if ('function' != typeof t && null !== t)
+      if ("function" != typeof t && null !== t)
         throw new TypeError(
-          'Super expression must either be null or a function'
+          "Super expression must either be null or a function",
         );
-      Object.defineProperty(e, 'prototype', {
+      (Object.defineProperty(e, "prototype", {
         value: Object.create(t && t.prototype, {
           constructor: {
             value: e,
@@ -716,7 +719,7 @@
         }),
         writable: !1,
       }),
-        t && l(e, t);
+        t && l(e, t));
     }
     function c(e) {
       return (c = Object.setPrototypeOf
@@ -729,32 +732,32 @@
       return (l =
         Object.setPrototypeOf ||
         function (e, t) {
-          return (e.__proto__ = t), e;
+          return ((e.__proto__ = t), e);
         })(e, t);
     }
     function d(e, t) {
-      if (t && ('object' == typeof t || 'function' == typeof t)) return t;
+      if (t && ("object" == typeof t || "function" == typeof t)) return t;
       if (void 0 !== t)
         throw new TypeError(
-          'Derived constructors may only return object or undefined'
+          "Derived constructors may only return object or undefined",
         );
       return (function (e) {
         if (void 0 === e)
           throw new ReferenceError(
-            "this hasn't been initialised - super() hasn't been called"
+            "this hasn't been initialised - super() hasn't been called",
           );
         return e;
       })(e);
     }
     function u(e) {
       var t = (function () {
-        if ('undefined' == typeof Reflect || !Reflect.construct) return !1;
+        if ("undefined" == typeof Reflect || !Reflect.construct) return !1;
         if (Reflect.construct.sham) return !1;
-        if ('function' == typeof Proxy) return !0;
+        if ("function" == typeof Proxy) return !0;
         try {
           return (
             Boolean.prototype.valueOf.call(
-              Reflect.construct(Boolean, [], function () {})
+              Reflect.construct(Boolean, [], function () {}),
             ),
             !0
           );
@@ -779,26 +782,26 @@
         })(e) ||
         (function (e) {
           if (
-            ('undefined' != typeof Symbol && null != e[Symbol.iterator]) ||
-            null != e['@@iterator']
+            ("undefined" != typeof Symbol && null != e[Symbol.iterator]) ||
+            null != e["@@iterator"]
           )
             return Array.from(e);
         })(e) ||
         (function (e, t) {
           if (!e) return;
-          if ('string' == typeof e) return m(e, t);
+          if ("string" == typeof e) return m(e, t);
           var n = Object.prototype.toString.call(e).slice(8, -1);
-          'Object' === n && e.constructor && (n = e.constructor.name);
-          if ('Map' === n || 'Set' === n) return Array.from(e);
+          "Object" === n && e.constructor && (n = e.constructor.name);
+          if ("Map" === n || "Set" === n) return Array.from(e);
           if (
-            'Arguments' === n ||
+            "Arguments" === n ||
             /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
           )
             return m(e, t);
         })(e) ||
         (function () {
           throw new TypeError(
-            'Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.'
+            "Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.",
           );
         })()
       );
@@ -809,13 +812,13 @@
       return o;
     }
     function p(e) {
-      return Array.isArray ? Array.isArray(e) : '[object Array]' === x(e);
+      return Array.isArray ? Array.isArray(e) : "[object Array]" === x(e);
     }
     function f(e) {
-      return 'string' == typeof e;
+      return "string" == typeof e;
     }
     function v(e) {
-      return 'number' == typeof e;
+      return "number" == typeof e;
     }
     function y(e) {
       return (
@@ -824,11 +827,11 @@
         ((function (e) {
           return g(e) && null !== e;
         })(e) &&
-          '[object Boolean]' == x(e))
+          "[object Boolean]" == x(e))
       );
     }
     function g(e) {
-      return 'object' === n(e);
+      return "object" === n(e);
     }
     function w(e) {
       return null != e;
@@ -839,49 +842,49 @@
     function x(e) {
       return null == e
         ? void 0 === e
-          ? '[object Undefined]'
-          : '[object Null]'
+          ? "[object Undefined]"
+          : "[object Null]"
         : Object.prototype.toString.call(e);
     }
     var _ = function (e) {
-        return 'Invalid value for key '.concat(e);
+        return "Invalid value for key ".concat(e);
       },
       C = function (e) {
-        return 'Pattern length exceeds max of '.concat(e, '.');
+        return "Pattern length exceeds max of ".concat(e, ".");
       },
       E = Object.prototype.hasOwnProperty,
       T = (function () {
         function e(t) {
           var n = this;
-          o(this, e), (this._keys = []), (this._keyMap = {});
+          (o(this, e), (this._keys = []), (this._keyMap = {}));
           var r = 0;
-          t.forEach(function (e) {
+          (t.forEach(function (e) {
             var t = I(e);
-            (r += t.weight),
+            ((r += t.weight),
               n._keys.push(t),
               (n._keyMap[t.id] = t),
-              (r += t.weight);
+              (r += t.weight));
           }),
             this._keys.forEach(function (e) {
               e.weight /= r;
-            });
+            }));
         }
         return (
           i(e, [
             {
-              key: 'get',
+              key: "get",
               value: function (e) {
                 return this._keyMap[e];
               },
             },
             {
-              key: 'keys',
+              key: "keys",
               value: function () {
                 return this._keys;
               },
             },
             {
-              key: 'toJSON',
+              key: "toJSON",
               value: function () {
                 return JSON.stringify(this._keys);
               },
@@ -896,25 +899,25 @@
         o = null,
         r = 1,
         i = null;
-      if (f(e) || p(e)) (o = e), (t = k(e)), (n = R(e));
+      if (f(e) || p(e)) ((o = e), (t = k(e)), (n = R(e)));
       else {
-        if (!E.call(e, 'name'))
+        if (!E.call(e, "name"))
           throw new Error(
             (function (e) {
-              return 'Missing '.concat(e, ' property in key');
-            })('name')
+              return "Missing ".concat(e, " property in key");
+            })("name"),
           );
         var a = e.name;
-        if (((o = a), E.call(e, 'weight') && (r = e.weight) <= 0))
+        if (((o = a), E.call(e, "weight") && (r = e.weight) <= 0))
           throw new Error(
             (function (e) {
               return "Property 'weight' in key '".concat(
                 e,
-                "' must be a positive integer"
+                "' must be a positive integer",
               );
-            })(a)
+            })(a),
           );
-        (t = k(a)), (n = R(a)), (i = e.getFn);
+        ((t = k(a)), (n = R(a)), (i = e.getFn));
       }
       return {
         path: t,
@@ -925,10 +928,10 @@
       };
     }
     function k(e) {
-      return p(e) ? e : e.split('.');
+      return p(e) ? e : e.split(".");
     }
     function R(e) {
-      return p(e) ? e.join('.') : e;
+      return p(e) ? e.join(".") : e;
     }
     var M = {
         useExtendedSearch: !1,
@@ -945,13 +948,13 @@
                     n.push(
                       (function (e) {
                         return null == e
-                          ? ''
+                          ? ""
                           : (function (e) {
-                              if ('string' == typeof e) return e;
-                              var t = e + '';
-                              return '0' == t && 1 / e == -1 / 0 ? '-0' : t;
+                              if ("string" == typeof e) return e;
+                              var t = e + "";
+                              return "0" == t && 1 / e == -1 / 0 ? "-0" : t;
                             })(e);
-                      })(a)
+                      })(a),
                     );
                   else if (p(a)) {
                     o = !0;
@@ -959,7 +962,7 @@
                       e(a[s], r, i + 1);
                   } else r.length && e(a, r, i + 1);
                 } else n.push(t);
-            })(e, f(t) ? t.split('.') : t, 0),
+            })(e, f(t) ? t.split(".") : t, 0),
             o ? n : n[0]
           );
         },
@@ -983,24 +986,24 @@
                       ? -1
                       : 1
                     : e.score < t.score
-                    ? -1
-                    : 1;
+                      ? -1
+                      : 1;
                 },
-              }
+              },
             ),
             {
               includeMatches: !1,
               findAllMatches: !1,
               minMatchCharLength: 1,
-            }
+            },
           ),
           {
             location: 0,
             threshold: 0.6,
             distance: 100,
-          }
+          },
         ),
-        M
+        M,
       ),
       S = /[^ ]+/g;
     function L() {
@@ -1015,7 +1018,7 @@
           if (n.has(r)) return n.get(r);
           var i = 1 / Math.pow(r, 0.5 * e),
             a = parseFloat(Math.round(i * o) / o);
-          return n.set(r, a), a;
+          return (n.set(r, a), a);
         },
         clear: function () {
           n.clear();
@@ -1030,16 +1033,16 @@
           r = void 0 === n ? A.getFn : n,
           i = t.fieldNormWeight,
           a = void 0 === i ? A.fieldNormWeight : i;
-        o(this, e),
+        (o(this, e),
           (this.norm = L(a, 3)),
           (this.getFn = r),
           (this.isCreated = !1),
-          this.setIndexRecords();
+          this.setIndexRecords());
       }
       return (
         i(e, [
           {
-            key: 'setSources',
+            key: "setSources",
             value: function () {
               var e =
                 arguments.length > 0 && void 0 !== arguments[0]
@@ -1049,7 +1052,7 @@
             },
           },
           {
-            key: 'setIndexRecords',
+            key: "setIndexRecords",
             value: function () {
               var e =
                 arguments.length > 0 && void 0 !== arguments[0]
@@ -1059,22 +1062,22 @@
             },
           },
           {
-            key: 'setKeys',
+            key: "setKeys",
             value: function () {
               var e = this,
                 t =
                   arguments.length > 0 && void 0 !== arguments[0]
                     ? arguments[0]
                     : [];
-              (this.keys = t),
+              ((this.keys = t),
                 (this._keysMap = {}),
                 t.forEach(function (t, n) {
                   e._keysMap[t.id] = n;
-                });
+                }));
             },
           },
           {
-            key: 'create',
+            key: "create",
             value: function () {
               var e = this;
               !this.isCreated &&
@@ -1091,14 +1094,14 @@
             },
           },
           {
-            key: 'add',
+            key: "add",
             value: function (e) {
               var t = this.size();
               f(e) ? this._addString(e, t) : this._addObject(e, t);
             },
           },
           {
-            key: 'removeAt',
+            key: "removeAt",
             value: function (e) {
               this.records.splice(e, 1);
               for (var t = e, n = this.size(); t < n; t += 1)
@@ -1106,19 +1109,19 @@
             },
           },
           {
-            key: 'getValueForItemAtKeyId',
+            key: "getValueForItemAtKeyId",
             value: function (e, t) {
               return e[this._keysMap[t]];
             },
           },
           {
-            key: 'size',
+            key: "size",
             value: function () {
               return this.records.length;
             },
           },
           {
-            key: '_addString',
+            key: "_addString",
             value: function (e, t) {
               if (w(e) && !b(e)) {
                 var n = {
@@ -1131,14 +1134,14 @@
             },
           },
           {
-            key: '_addObject',
+            key: "_addObject",
             value: function (e, t) {
               var n = this,
                 o = {
                   i: t,
                   $: {},
                 };
-              this.keys.forEach(function (t, r) {
+              (this.keys.forEach(function (t, r) {
                 var i = t.getFn ? t.getFn(e) : n.getFn(e, t.path);
                 if (w(i))
                   if (p(i))
@@ -1184,11 +1187,11 @@
                     o.$[r] = a;
                   }
               }),
-                this.records.push(o);
+                this.records.push(o));
             },
           },
           {
-            key: 'toJSON',
+            key: "toJSON",
             value: function () {
               return {
                 keys: this.keys,
@@ -1211,7 +1214,7 @@
           getFn: r,
           fieldNormWeight: a,
         });
-      return s.setKeys(e.map(I)), s.setSources(t), s.create(), s;
+      return (s.setKeys(e.map(I)), s.setSources(t), s.create(), s);
     }
     function z(e) {
       var t =
@@ -1254,7 +1257,7 @@
             -1 === o ||
             ((r = i - 1) - o + 1 >= t && n.push([o, r]), (o = -1));
       }
-      return e[i - 1] && i - o >= t && n.push([o, i - 1]), n;
+      return (e[i - 1] && i - o >= t && n.push([o, i - 1]), n);
     }
     var $ = 32;
     function P(e) {
@@ -1313,7 +1316,7 @@
               _ = this.pattern.length;
             if (_ > $) {
               for (var C = 0, E = _ % $, T = _ - E; C < T; )
-                x(this.pattern.substr(C, $), C), (C += $);
+                (x(this.pattern.substr(C, $), C), (C += $));
               if (E) {
                 var I = _ - $;
                 x(this.pattern.substr(I), I);
@@ -1324,7 +1327,7 @@
         return (
           i(e, [
             {
-              key: 'searchIn',
+              key: "searchIn",
               value: function (e) {
                 var t = this.options,
                   n = t.isCaseSensitive,
@@ -1334,7 +1337,7 @@
                     isMatch: !0,
                     score: 0,
                   };
-                  return o && (r.indices = [[0, e.length - 1]]), r;
+                  return (o && (r.indices = [[0, e.length - 1]]), r);
                 }
                 var i = this.options,
                   a = i.location,
@@ -1389,7 +1392,7 @@
                           ignoreLocation: y,
                         });
                         if (((_ = Math.min(k, _)), (E = g + w), T))
-                          for (var R = 0; R < w; ) (I[g + R] = 1), (R += 1);
+                          for (var R = 0; R < w; ) ((I[g + R] = 1), (R += 1));
                       }
                       E = -1;
                       for (
@@ -1398,7 +1401,7 @@
                         O += 1
                       ) {
                         for (var P = 0, j = L; P < j; ) {
-                          z(t, {
+                          (z(t, {
                             errors: O,
                             currentLocation: x + j,
                             expectedLocation: x,
@@ -1407,7 +1410,7 @@
                           }) <= _
                             ? (P = j)
                             : (L = j),
-                            (j = Math.floor((L - P) / 2 + P));
+                            (j = Math.floor((L - P) / 2 + P)));
                         }
                         L = j;
                         var F = Math.max(1, x - j + 1),
@@ -1468,15 +1471,15 @@
                     y = v.isMatch,
                     g = v.score,
                     w = v.indices;
-                  y && (f = !0),
+                  (y && (f = !0),
                     (p += g),
-                    y && w && (m = [].concat(h(m), h(w)));
+                    y && w && (m = [].concat(h(m), h(w))));
                 });
                 var v = {
                   isMatch: f,
                   score: f ? p / this.chunks.length : 1,
                 };
-                return f && o && (v.indices = m), v;
+                return (f && o && (v.indices = m), v);
               },
             },
           ]),
@@ -1485,31 +1488,31 @@
       })(),
       F = (function () {
         function e(t) {
-          o(this, e), (this.pattern = t);
+          (o(this, e), (this.pattern = t));
         }
         return (
           i(
             e,
             [
               {
-                key: 'search',
+                key: "search",
                 value: function () {},
               },
             ],
             [
               {
-                key: 'isMultiMatch',
+                key: "isMultiMatch",
                 value: function (e) {
                   return U(e, this.multiRegex);
                 },
               },
               {
-                key: 'isSingleMatch',
+                key: "isSingleMatch",
                 value: function (e) {
                   return U(e, this.singleRegex);
                 },
               },
-            ]
+            ],
           ),
           e
         );
@@ -1522,14 +1525,14 @@
         s(n, e);
         var t = u(n);
         function n(e) {
-          return o(this, n), t.call(this, e);
+          return (o(this, n), t.call(this, e));
         }
         return (
           i(
             n,
             [
               {
-                key: 'search',
+                key: "search",
                 value: function (e) {
                   var t = e === this.pattern;
                   return {
@@ -1542,24 +1545,24 @@
             ],
             [
               {
-                key: 'type',
+                key: "type",
                 get: function () {
-                  return 'exact';
+                  return "exact";
                 },
               },
               {
-                key: 'multiRegex',
+                key: "multiRegex",
                 get: function () {
                   return /^="(.*)"$/;
                 },
               },
               {
-                key: 'singleRegex',
+                key: "singleRegex",
                 get: function () {
                   return /^=(.*)$/;
                 },
               },
-            ]
+            ],
           ),
           n
         );
@@ -1568,14 +1571,14 @@
         s(n, e);
         var t = u(n);
         function n(e) {
-          return o(this, n), t.call(this, e);
+          return (o(this, n), t.call(this, e));
         }
         return (
           i(
             n,
             [
               {
-                key: 'search',
+                key: "search",
                 value: function (e) {
                   var t = -1 === e.indexOf(this.pattern);
                   return {
@@ -1588,24 +1591,24 @@
             ],
             [
               {
-                key: 'type',
+                key: "type",
                 get: function () {
-                  return 'inverse-exact';
+                  return "inverse-exact";
                 },
               },
               {
-                key: 'multiRegex',
+                key: "multiRegex",
                 get: function () {
                   return /^!"(.*)"$/;
                 },
               },
               {
-                key: 'singleRegex',
+                key: "singleRegex",
                 get: function () {
                   return /^!(.*)$/;
                 },
               },
-            ]
+            ],
           ),
           n
         );
@@ -1614,14 +1617,14 @@
         s(n, e);
         var t = u(n);
         function n(e) {
-          return o(this, n), t.call(this, e);
+          return (o(this, n), t.call(this, e));
         }
         return (
           i(
             n,
             [
               {
-                key: 'search',
+                key: "search",
                 value: function (e) {
                   var t = e.startsWith(this.pattern);
                   return {
@@ -1634,24 +1637,24 @@
             ],
             [
               {
-                key: 'type',
+                key: "type",
                 get: function () {
-                  return 'prefix-exact';
+                  return "prefix-exact";
                 },
               },
               {
-                key: 'multiRegex',
+                key: "multiRegex",
                 get: function () {
                   return /^\^"(.*)"$/;
                 },
               },
               {
-                key: 'singleRegex',
+                key: "singleRegex",
                 get: function () {
                   return /^\^(.*)$/;
                 },
               },
-            ]
+            ],
           ),
           n
         );
@@ -1660,14 +1663,14 @@
         s(n, e);
         var t = u(n);
         function n(e) {
-          return o(this, n), t.call(this, e);
+          return (o(this, n), t.call(this, e));
         }
         return (
           i(
             n,
             [
               {
-                key: 'search',
+                key: "search",
                 value: function (e) {
                   var t = !e.startsWith(this.pattern);
                   return {
@@ -1680,24 +1683,24 @@
             ],
             [
               {
-                key: 'type',
+                key: "type",
                 get: function () {
-                  return 'inverse-prefix-exact';
+                  return "inverse-prefix-exact";
                 },
               },
               {
-                key: 'multiRegex',
+                key: "multiRegex",
                 get: function () {
                   return /^!\^"(.*)"$/;
                 },
               },
               {
-                key: 'singleRegex',
+                key: "singleRegex",
                 get: function () {
                   return /^!\^(.*)$/;
                 },
               },
-            ]
+            ],
           ),
           n
         );
@@ -1706,14 +1709,14 @@
         s(n, e);
         var t = u(n);
         function n(e) {
-          return o(this, n), t.call(this, e);
+          return (o(this, n), t.call(this, e));
         }
         return (
           i(
             n,
             [
               {
-                key: 'search',
+                key: "search",
                 value: function (e) {
                   var t = e.endsWith(this.pattern);
                   return {
@@ -1726,24 +1729,24 @@
             ],
             [
               {
-                key: 'type',
+                key: "type",
                 get: function () {
-                  return 'suffix-exact';
+                  return "suffix-exact";
                 },
               },
               {
-                key: 'multiRegex',
+                key: "multiRegex",
                 get: function () {
                   return /^"(.*)"\$$/;
                 },
               },
               {
-                key: 'singleRegex',
+                key: "singleRegex",
                 get: function () {
                   return /^(.*)\$$/;
                 },
               },
-            ]
+            ],
           ),
           n
         );
@@ -1752,14 +1755,14 @@
         s(n, e);
         var t = u(n);
         function n(e) {
-          return o(this, n), t.call(this, e);
+          return (o(this, n), t.call(this, e));
         }
         return (
           i(
             n,
             [
               {
-                key: 'search',
+                key: "search",
                 value: function (e) {
                   var t = !e.endsWith(this.pattern);
                   return {
@@ -1772,24 +1775,24 @@
             ],
             [
               {
-                key: 'type',
+                key: "type",
                 get: function () {
-                  return 'inverse-suffix-exact';
+                  return "inverse-suffix-exact";
                 },
               },
               {
-                key: 'multiRegex',
+                key: "multiRegex",
                 get: function () {
                   return /^!"(.*)"\$$/;
                 },
               },
               {
-                key: 'singleRegex',
+                key: "singleRegex",
                 get: function () {
                   return /^!(.*)\$$/;
                 },
               },
-            ]
+            ],
           ),
           n
         );
@@ -1839,7 +1842,7 @@
             n,
             [
               {
-                key: 'search',
+                key: "search",
                 value: function (e) {
                   return this._bitapSearch.searchIn(e);
                 },
@@ -1847,24 +1850,24 @@
             ],
             [
               {
-                key: 'type',
+                key: "type",
                 get: function () {
-                  return 'fuzzy';
+                  return "fuzzy";
                 },
               },
               {
-                key: 'multiRegex',
+                key: "multiRegex",
                 get: function () {
                   return /^"(.*)"$/;
                 },
               },
               {
-                key: 'singleRegex',
+                key: "singleRegex",
                 get: function () {
                   return /^(.*)$/;
                 },
               },
-            ]
+            ],
           ),
           n
         );
@@ -1873,21 +1876,21 @@
         s(n, e);
         var t = u(n);
         function n(e) {
-          return o(this, n), t.call(this, e);
+          return (o(this, n), t.call(this, e));
         }
         return (
           i(
             n,
             [
               {
-                key: 'search',
+                key: "search",
                 value: function (e) {
                   for (
                     var t, n = 0, o = [], r = this.pattern.length;
                     (t = e.indexOf(this.pattern, n)) > -1;
 
                   )
-                    (n = t + r), o.push([t, n - 1]);
+                    ((n = t + r), o.push([t, n - 1]));
                   var i = !!o.length;
                   return {
                     isMatch: i,
@@ -1899,24 +1902,24 @@
             ],
             [
               {
-                key: 'type',
+                key: "type",
                 get: function () {
-                  return 'include';
+                  return "include";
                 },
               },
               {
-                key: 'multiRegex',
+                key: "multiRegex",
                 get: function () {
                   return /^'"(.*)"$/;
                 },
               },
               {
-                key: 'singleRegex',
+                key: "singleRegex",
                 get: function () {
                   return /^'(.*)$/;
                 },
               },
-            ]
+            ],
           ),
           n
         );
@@ -1927,7 +1930,7 @@
     function Z(e) {
       var t =
         arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
-      return e.split('|').map(function (e) {
+      return e.split("|").map(function (e) {
         for (
           var n = e
               .trim()
@@ -1982,7 +1985,7 @@
             y = void 0 === v ? A.threshold : v,
             g = n.distance,
             w = void 0 === g ? A.distance : g;
-          o(this, e),
+          (o(this, e),
             (this.query = null),
             (this.options = {
               isCaseSensitive: i,
@@ -1995,14 +1998,14 @@
               distance: w,
             }),
             (this.pattern = i ? t : t.toLowerCase()),
-            (this.query = Z(this.pattern, this.options));
+            (this.query = Z(this.pattern, this.options)));
         }
         return (
           i(
             e,
             [
               {
-                key: 'searchIn',
+                key: "searchIn",
                 value: function (e) {
                   var t = this.query;
                   if (!t)
@@ -2019,7 +2022,7 @@
                     s += 1
                   ) {
                     var l = t[s];
-                    (i.length = 0), (r = 0);
+                    ((i.length = 0), (r = 0));
                     for (var d = 0, u = l.length; d < u; d += 1) {
                       var m = l[d],
                         p = m.search(e),
@@ -2027,7 +2030,7 @@
                         v = p.indices,
                         y = p.score;
                       if (!f) {
-                        (a = 0), (r = 0), (i.length = 0);
+                        ((a = 0), (r = 0), (i.length = 0));
                         break;
                       }
                       if (((r += 1), (a += y), o)) {
@@ -2040,7 +2043,7 @@
                         isMatch: !0,
                         score: a / r,
                       };
-                      return o && (w.indices = i), w;
+                      return (o && (w.indices = i), w);
                     }
                   }
                   return {
@@ -2052,12 +2055,12 @@
             ],
             [
               {
-                key: 'condition',
+                key: "condition",
                 value: function (e, t) {
                   return t.useExtendedSearch;
                 },
               },
-            ]
+            ],
           ),
           e
         );
@@ -2070,10 +2073,10 @@
       }
       return new j(e, t);
     }
-    var re = '$and',
-      ie = '$or',
-      ae = '$path',
-      se = '$val',
+    var re = "$and",
+      ie = "$or",
+      ae = "$path",
+      se = "$val",
       ce = function (e) {
         return !(!e[re] && !e[ie]);
       },
@@ -2089,7 +2092,7 @@
           re,
           Object.keys(e).map(function (t) {
             return a({}, t, e[t]);
-          })
+          }),
         );
       };
     function he(e, t) {
@@ -2109,7 +2112,7 @@
               keyId: R(a),
               pattern: s,
             };
-            return r && (c.searcher = oe(s, t)), c;
+            return (r && (c.searcher = oe(s, t)), c);
           }
           var l = {
             children: [],
@@ -2126,29 +2129,29 @@
             l
           );
         };
-      return ce(e) || (e = ue(e)), i(e);
+      return (ce(e) || (e = ue(e)), i(e));
     }
     function me(e, t) {
       var n = t.ignoreFieldNorm,
         o = void 0 === n ? A.ignoreFieldNorm : n;
       e.forEach(function (e) {
         var t = 1;
-        e.matches.forEach(function (e) {
+        (e.matches.forEach(function (e) {
           var n = e.key,
             r = e.norm,
             i = e.score,
             a = n ? n.weight : null;
           t *= Math.pow(
             0 === i && a ? Number.EPSILON : i,
-            (a || 1) * (o ? 1 : r)
+            (a || 1) * (o ? 1 : r),
           );
         }),
-          (e.score = t);
+          (e.score = t));
       });
     }
     function pe(e, t) {
       var n = e.matches;
-      (t.matches = []),
+      ((t.matches = []),
         w(n) &&
           n.forEach(function (e) {
             if (w(e.indices) && e.indices.length) {
@@ -2156,11 +2159,11 @@
                 indices: e.indices,
                 value: e.value,
               };
-              e.key && (n.key = e.key.src),
+              (e.key && (n.key = e.key.src),
                 e.idx > -1 && (n.refIndex = e.idx),
-                t.matches.push(n);
+                t.matches.push(n));
             }
-          });
+          }));
     }
     function fe(e, t) {
       t.score = e.score;
@@ -2197,16 +2200,16 @@
         var r =
             arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
           i = arguments.length > 2 ? arguments[2] : void 0;
-        o(this, e),
+        (o(this, e),
           (this.options = t(t({}, A), r)),
           this.options.useExtendedSearch,
           (this._keyStore = new T(this.options.keys)),
-          this.setCollection(n, i);
+          this.setCollection(n, i));
       }
       return (
         i(e, [
           {
-            key: 'setCollection',
+            key: "setCollection",
             value: function (e, t) {
               if (((this._docs = e), t && !(t instanceof B)))
                 throw new Error("Incorrect 'index' type");
@@ -2219,13 +2222,13 @@
             },
           },
           {
-            key: 'add',
+            key: "add",
             value: function (e) {
               w(e) && (this._docs.push(e), this._myIndex.add(e));
             },
           },
           {
-            key: 'remove',
+            key: "remove",
             value: function () {
               for (
                 var e =
@@ -2247,19 +2250,19 @@
             },
           },
           {
-            key: 'removeAt',
+            key: "removeAt",
             value: function (e) {
-              this._docs.splice(e, 1), this._myIndex.removeAt(e);
+              (this._docs.splice(e, 1), this._myIndex.removeAt(e));
             },
           },
           {
-            key: 'getIndex',
+            key: "getIndex",
             value: function () {
               return this._myIndex;
             },
           },
           {
-            key: 'search',
+            key: "search",
             value: function (e) {
               var t =
                   arguments.length > 1 && void 0 !== arguments[1]
@@ -2292,7 +2295,7 @@
             },
           },
           {
-            key: '_searchStringList',
+            key: "_searchStringList",
             value: function (e) {
               var t = oe(e, this.options),
                 n = this._myIndex.records,
@@ -2327,7 +2330,7 @@
             },
           },
           {
-            key: '_searchLogical',
+            key: "_searchLogical",
             value: function (e) {
               var t = this,
                 n = he(e, this.options),
@@ -2390,7 +2393,7 @@
             },
           },
           {
-            key: '_searchObjectList',
+            key: "_searchObjectList",
             value: function (e) {
               var t = this,
                 n = oe(e, this.options),
@@ -2404,7 +2407,7 @@
                     i = e.i;
                   if (w(o)) {
                     var s = [];
-                    r.forEach(function (e, r) {
+                    (r.forEach(function (e, r) {
                       s.push.apply(
                         s,
                         h(
@@ -2412,8 +2415,8 @@
                             key: e,
                             value: o[r],
                             searcher: n,
-                          })
-                        )
+                          }),
+                        ),
                       );
                     }),
                       s.length &&
@@ -2421,7 +2424,7 @@
                           idx: i,
                           item: o,
                           matches: s,
-                        });
+                        }));
                   }
                 }),
                 a
@@ -2429,7 +2432,7 @@
             },
           },
           {
-            key: '_findMatches',
+            key: "_findMatches",
             value: function (e) {
               var t = e.key,
                 n = e.value,
@@ -2481,7 +2484,7 @@
       );
     })();
     return (
-      (ye.version = '6.6.2'),
+      (ye.version = "6.6.2"),
       (ye.createIndex = O),
       (ye.parseIndex = function (e) {
         var t =
@@ -2496,7 +2499,7 @@
             getFn: o,
             fieldNormWeight: i,
           });
-        return c.setKeys(a), c.setIndexRecords(s), c;
+        return (c.setKeys(a), c.setIndexRecords(s), c);
       }),
       (ye.config = A),
       (ye.parseQuery = he),
@@ -2508,42 +2511,42 @@
   });
   var k = {};
   !(function (e, t) {
-    'object' == typeof k
+    "object" == typeof k
       ? (k = t())
-      : 'function' == typeof define && define.amd
-      ? define(t)
-      : (e.Mark = t());
+      : "function" == typeof define && define.amd
+        ? define(t)
+        : (e.Mark = t());
   })(k, function () {
-    'use strict';
+    "use strict";
     var e =
-        'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
+        "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
           ? function (e) {
               return typeof e;
             }
           : function (e) {
               return e &&
-                'function' == typeof Symbol &&
+                "function" == typeof Symbol &&
                 e.constructor === Symbol &&
                 e !== Symbol.prototype
-                ? 'symbol'
+                ? "symbol"
                 : typeof e;
             },
       t = function (e, t) {
         if (!(e instanceof t))
-          throw new TypeError('Cannot call a class as a function');
+          throw new TypeError("Cannot call a class as a function");
       },
       n = (function () {
         function e(e, t) {
           for (var n = 0; n < t.length; n++) {
             var o = t[n];
-            (o.enumerable = o.enumerable || !1),
+            ((o.enumerable = o.enumerable || !1),
               (o.configurable = !0),
-              'value' in o && (o.writable = !0),
-              Object.defineProperty(e, o.key, o);
+              "value" in o && (o.writable = !0),
+              Object.defineProperty(e, o.key, o));
           }
         }
         return function (t, n, o) {
-          return n && e(t.prototype, n), o && e(t, o), t;
+          return (n && e(t.prototype, n), o && e(t, o), t);
         };
       })(),
       o =
@@ -2569,18 +2572,18 @@
               arguments.length > 3 && void 0 !== arguments[3]
                 ? arguments[3]
                 : 5e3;
-          t(this, e),
+          (t(this, e),
             (this.ctx = n),
             (this.iframes = o),
             (this.exclude = r),
-            (this.iframesTimeout = i);
+            (this.iframesTimeout = i));
         }
         return (
           n(
             e,
             [
               {
-                key: 'getContexts',
+                key: "getContexts",
                 value: function () {
                   var e = [];
                   return (
@@ -2588,12 +2591,12 @@
                       ? NodeList.prototype.isPrototypeOf(this.ctx)
                         ? Array.prototype.slice.call(this.ctx)
                         : Array.isArray(this.ctx)
-                        ? this.ctx
-                        : 'string' == typeof this.ctx
-                        ? Array.prototype.slice.call(
-                            document.querySelectorAll(this.ctx)
-                          )
-                        : [this.ctx]
+                          ? this.ctx
+                          : "string" == typeof this.ctx
+                            ? Array.prototype.slice.call(
+                                document.querySelectorAll(this.ctx),
+                              )
+                            : [this.ctx]
                       : []
                     ).forEach(function (t) {
                       var n =
@@ -2607,7 +2610,7 @@
                 },
               },
               {
-                key: 'getIframeContents',
+                key: "getIframeContents",
                 value: function (e, t) {
                   var n =
                       arguments.length > 2 && void 0 !== arguments[2]
@@ -2617,7 +2620,7 @@
                   try {
                     var r = e.contentWindow;
                     if (((o = r.document), !r || !o))
-                      throw new Error('iframe inaccessible');
+                      throw new Error("iframe inaccessible");
                   } catch (e) {
                     n();
                   }
@@ -2625,40 +2628,40 @@
                 },
               },
               {
-                key: 'isIframeBlank',
+                key: "isIframeBlank",
                 value: function (e) {
-                  var t = 'about:blank',
-                    n = e.getAttribute('src').trim();
+                  var t = "about:blank",
+                    n = e.getAttribute("src").trim();
                   return e.contentWindow.location.href === t && n !== t && n;
                 },
               },
               {
-                key: 'observeIframeLoad',
+                key: "observeIframeLoad",
                 value: function (e, t, n) {
                   var o = this,
                     r = !1,
                     i = null,
                     a = function a() {
                       if (!r) {
-                        (r = !0), clearTimeout(i);
+                        ((r = !0), clearTimeout(i));
                         try {
                           o.isIframeBlank(e) ||
-                            (e.removeEventListener('load', a),
+                            (e.removeEventListener("load", a),
                             o.getIframeContents(e, t, n));
                         } catch (e) {
                           n();
                         }
                       }
                     };
-                  e.addEventListener('load', a),
-                    (i = setTimeout(a, this.iframesTimeout));
+                  (e.addEventListener("load", a),
+                    (i = setTimeout(a, this.iframesTimeout)));
                 },
               },
               {
-                key: 'onIframeReady',
+                key: "onIframeReady",
                 value: function (e, t, n) {
                   try {
-                    'complete' === e.contentWindow.document.readyState
+                    "complete" === e.contentWindow.document.readyState
                       ? this.isIframeBlank(e)
                         ? this.observeIframeLoad(e, t, n)
                         : this.getIframeContents(e, t, n)
@@ -2669,7 +2672,7 @@
                 },
               },
               {
-                key: 'waitForIframes',
+                key: "waitForIframes",
                 value: function (e, t) {
                   var n = this,
                     o = 0;
@@ -2679,60 +2682,60 @@
                       return !0;
                     },
                     function (e) {
-                      o++,
-                        n.waitForIframes(e.querySelector('html'), function () {
+                      (o++,
+                        n.waitForIframes(e.querySelector("html"), function () {
                           --o || t();
-                        });
+                        }));
                     },
                     function (e) {
                       e || t();
-                    }
+                    },
                   );
                 },
               },
               {
-                key: 'forEachIframe',
+                key: "forEachIframe",
                 value: function (t, n, o) {
                   var r = this,
                     i =
                       arguments.length > 3 && void 0 !== arguments[3]
                         ? arguments[3]
                         : function () {},
-                    a = t.querySelectorAll('iframe'),
+                    a = t.querySelectorAll("iframe"),
                     s = a.length,
                     c = 0;
                   a = Array.prototype.slice.call(a);
                   var l = function () {
                     --s <= 0 && i(c);
                   };
-                  s || l(),
+                  (s || l(),
                     a.forEach(function (t) {
                       e.matches(t, r.exclude)
                         ? l()
                         : r.onIframeReady(
                             t,
                             function (e) {
-                              n(t) && (c++, o(e)), l();
+                              (n(t) && (c++, o(e)), l());
                             },
-                            l
+                            l,
                           );
-                    });
+                    }));
                 },
               },
               {
-                key: 'createIterator',
+                key: "createIterator",
                 value: function (e, t, n) {
                   return document.createNodeIterator(e, t, n, !1);
                 },
               },
               {
-                key: 'createInstanceOnIframe',
+                key: "createInstanceOnIframe",
                 value: function (t) {
-                  return new e(t.querySelector('html'), this.iframes);
+                  return new e(t.querySelector("html"), this.iframes);
                 },
               },
               {
-                key: 'compareNodeIframe',
+                key: "compareNodeIframe",
                 value: function (e, t, n) {
                   if (
                     e.compareDocumentPosition(n) &
@@ -2749,7 +2752,7 @@
                 },
               },
               {
-                key: 'getIteratorNode',
+                key: "getIteratorNode",
                 value: function (e) {
                   var t = e.previousNode();
                   return {
@@ -2759,7 +2762,7 @@
                 },
               },
               {
-                key: 'checkIframeFilter',
+                key: "checkIframeFilter",
                 value: function (e, t, n, o) {
                   var r = !1,
                     i = !1;
@@ -2785,7 +2788,7 @@
                 },
               },
               {
-                key: 'handleOpenIframes',
+                key: "handleOpenIframes",
                 value: function (e, t, n, o) {
                   var r = this;
                   e.forEach(function (e) {
@@ -2797,7 +2800,7 @@
                 },
               },
               {
-                key: 'iterateThroughNodes',
+                key: "iterateThroughNodes",
                 value: function (e, t, n, o, r) {
                   for (
                     var i,
@@ -2813,7 +2816,7 @@
                       (d = i.node);
 
                   )
-                    this.iframes &&
+                    (this.iframes &&
                       this.forEachIframe(
                         t,
                         function (e) {
@@ -2825,20 +2828,20 @@
                             function (e) {
                               return l.push(e);
                             },
-                            o
+                            o,
                           );
-                        }
+                        },
                       ),
-                      l.push(d);
-                  l.forEach(function (e) {
+                      l.push(d));
+                  (l.forEach(function (e) {
                     n(e);
                   }),
                     this.iframes && this.handleOpenIframes(c, e, n, o),
-                    r();
+                    r());
                 },
               },
               {
-                key: 'forEachNode',
+                key: "forEachNode",
                 value: function (e, t, n) {
                   var o = this,
                     r =
@@ -2847,7 +2850,7 @@
                         : function () {},
                     i = this.getContexts(),
                     a = i.length;
-                  a || r(),
+                  (a || r(),
                     i.forEach(function (i) {
                       var s = function () {
                         o.iterateThroughNodes(e, i, t, n, function () {
@@ -2855,15 +2858,15 @@
                         });
                       };
                       o.iframes ? o.waitForIframes(i, s) : s();
-                    });
+                    }));
                 },
               },
             ],
             [
               {
-                key: 'matches',
+                key: "matches",
                 value: function (e, t) {
-                  var n = 'string' == typeof t ? [t] : t,
+                  var n = "string" == typeof t ? [t] : t,
                     o =
                       e.matches ||
                       e.matchesSelector ||
@@ -2883,45 +2886,45 @@
                   return !1;
                 },
               },
-            ]
+            ],
           ),
           e
         );
       })(),
       i = (function () {
         function i(e) {
-          t(this, i), (this.ctx = e), (this.ie = !1);
+          (t(this, i), (this.ctx = e), (this.ie = !1));
           var n = window.navigator.userAgent;
-          (n.indexOf('MSIE') > -1 || n.indexOf('Trident') > -1) &&
+          (n.indexOf("MSIE") > -1 || n.indexOf("Trident") > -1) &&
             (this.ie = !0);
         }
         return (
           n(i, [
             {
-              key: 'log',
+              key: "log",
               value: function (t) {
                 var n =
                     arguments.length > 1 && void 0 !== arguments[1]
                       ? arguments[1]
-                      : 'debug',
+                      : "debug",
                   o = this.opt.log;
                 this.opt.debug &&
-                  'object' === (void 0 === o ? 'undefined' : e(o)) &&
-                  'function' == typeof o[n] &&
-                  o[n]('mark.js: ' + t);
+                  "object" === (void 0 === o ? "undefined" : e(o)) &&
+                  "function" == typeof o[n] &&
+                  o[n]("mark.js: " + t);
               },
             },
             {
-              key: 'escapeStr',
+              key: "escapeStr",
               value: function (e) {
-                return e.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
+                return e.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
               },
             },
             {
-              key: 'createRegExp',
+              key: "createRegExp",
               value: function (e) {
                 return (
-                  'disabled' !== this.opt.wildcards &&
+                  "disabled" !== this.opt.wildcards &&
                     (e = this.setupWildcardsRegExp(e)),
                   (e = this.escapeStr(e)),
                   Object.keys(this.opt.synonyms).length &&
@@ -2934,57 +2937,57 @@
                   (this.opt.ignoreJoiners ||
                     this.opt.ignorePunctuation.length) &&
                     (e = this.createJoinersRegExp(e)),
-                  'disabled' !== this.opt.wildcards &&
+                  "disabled" !== this.opt.wildcards &&
                     (e = this.createWildcardsRegExp(e)),
                   (e = this.createAccuracyRegExp(e))
                 );
               },
             },
             {
-              key: 'createSynonymsRegExp',
+              key: "createSynonymsRegExp",
               value: function (e) {
                 var t = this.opt.synonyms,
-                  n = this.opt.caseSensitive ? '' : 'i',
+                  n = this.opt.caseSensitive ? "" : "i",
                   o =
                     this.opt.ignoreJoiners || this.opt.ignorePunctuation.length
-                      ? '\0'
-                      : '';
+                      ? "\0"
+                      : "";
                 for (var r in t)
                   if (t.hasOwnProperty(r)) {
                     var i = t[r],
                       a =
-                        'disabled' !== this.opt.wildcards
+                        "disabled" !== this.opt.wildcards
                           ? this.setupWildcardsRegExp(r)
                           : this.escapeStr(r),
                       s =
-                        'disabled' !== this.opt.wildcards
+                        "disabled" !== this.opt.wildcards
                           ? this.setupWildcardsRegExp(i)
                           : this.escapeStr(i);
-                    '' !== a &&
-                      '' !== s &&
+                    "" !== a &&
+                      "" !== s &&
                       (e = e.replace(
                         new RegExp(
-                          '(' +
+                          "(" +
                             this.escapeStr(a) +
-                            '|' +
+                            "|" +
                             this.escapeStr(s) +
-                            ')',
-                          'gm' + n
+                            ")",
+                          "gm" + n,
                         ),
                         o +
-                          '(' +
+                          "(" +
                           this.processSynomyms(a) +
-                          '|' +
+                          "|" +
                           this.processSynomyms(s) +
-                          ')' +
-                          o
+                          ")" +
+                          o,
                       ));
                   }
                 return e;
               },
             },
             {
-              key: 'processSynomyms',
+              key: "processSynomyms",
               value: function (e) {
                 return (
                   (this.opt.ignoreJoiners ||
@@ -2995,112 +2998,112 @@
               },
             },
             {
-              key: 'setupWildcardsRegExp',
+              key: "setupWildcardsRegExp",
               value: function (e) {
                 return (e = e.replace(/(?:\\)*\?/g, function (e) {
-                  return '\\' === e.charAt(0) ? '?' : '';
+                  return "\\" === e.charAt(0) ? "?" : "";
                 })).replace(/(?:\\)*\*/g, function (e) {
-                  return '\\' === e.charAt(0) ? '*' : '';
+                  return "\\" === e.charAt(0) ? "*" : "";
                 });
               },
             },
             {
-              key: 'createWildcardsRegExp',
+              key: "createWildcardsRegExp",
               value: function (e) {
-                var t = 'withSpaces' === this.opt.wildcards;
+                var t = "withSpaces" === this.opt.wildcards;
                 return e
-                  .replace(/\u0001/g, t ? '[\\S\\s]?' : '\\S?')
-                  .replace(/\u0002/g, t ? '[\\S\\s]*?' : '\\S*');
+                  .replace(/\u0001/g, t ? "[\\S\\s]?" : "\\S?")
+                  .replace(/\u0002/g, t ? "[\\S\\s]*?" : "\\S*");
               },
             },
             {
-              key: 'setupIgnoreJoinersRegExp',
+              key: "setupIgnoreJoinersRegExp",
               value: function (e) {
                 return e.replace(/[^(|)\\]/g, function (e, t, n) {
                   var o = n.charAt(t + 1);
-                  return /[(|)\\]/.test(o) || '' === o ? e : e + '\0';
+                  return /[(|)\\]/.test(o) || "" === o ? e : e + "\0";
                 });
               },
             },
             {
-              key: 'createJoinersRegExp',
+              key: "createJoinersRegExp",
               value: function (e) {
                 var t = [],
                   n = this.opt.ignorePunctuation;
                 return (
                   Array.isArray(n) &&
                     n.length &&
-                    t.push(this.escapeStr(n.join(''))),
+                    t.push(this.escapeStr(n.join(""))),
                   this.opt.ignoreJoiners &&
-                    t.push('\\u00ad\\u200b\\u200c\\u200d'),
+                    t.push("\\u00ad\\u200b\\u200c\\u200d"),
                   t.length
-                    ? e.split(/\u0000+/).join('[' + t.join('') + ']*')
+                    ? e.split(/\u0000+/).join("[" + t.join("") + "]*")
                     : e
                 );
               },
             },
             {
-              key: 'createDiacriticsRegExp',
+              key: "createDiacriticsRegExp",
               value: function (e) {
-                var t = this.opt.caseSensitive ? '' : 'i',
+                var t = this.opt.caseSensitive ? "" : "i",
                   n = this.opt.caseSensitive
                     ? [
-                        'aàáảãạăằắẳẵặâầấẩẫậäåāą',
-                        'AÀÁẢÃẠĂẰẮẲẴẶÂẦẤẨẪẬÄÅĀĄ',
-                        'cçćč',
-                        'CÇĆČ',
-                        'dđď',
-                        'DĐĎ',
-                        'eèéẻẽẹêềếểễệëěēę',
-                        'EÈÉẺẼẸÊỀẾỂỄỆËĚĒĘ',
-                        'iìíỉĩịîïī',
-                        'IÌÍỈĨỊÎÏĪ',
-                        'lł',
-                        'LŁ',
-                        'nñňń',
-                        'NÑŇŃ',
-                        'oòóỏõọôồốổỗộơởỡớờợöøō',
-                        'OÒÓỎÕỌÔỒỐỔỖỘƠỞỠỚỜỢÖØŌ',
-                        'rř',
-                        'RŘ',
-                        'sšśșş',
-                        'SŠŚȘŞ',
-                        'tťțţ',
-                        'TŤȚŢ',
-                        'uùúủũụưừứửữựûüůū',
-                        'UÙÚỦŨỤƯỪỨỬỮỰÛÜŮŪ',
-                        'yýỳỷỹỵÿ',
-                        'YÝỲỶỸỴŸ',
-                        'zžżź',
-                        'ZŽŻŹ',
+                        "aàáảãạăằắẳẵặâầấẩẫậäåāą",
+                        "AÀÁẢÃẠĂẰẮẲẴẶÂẦẤẨẪẬÄÅĀĄ",
+                        "cçćč",
+                        "CÇĆČ",
+                        "dđď",
+                        "DĐĎ",
+                        "eèéẻẽẹêềếểễệëěēę",
+                        "EÈÉẺẼẸÊỀẾỂỄỆËĚĒĘ",
+                        "iìíỉĩịîïī",
+                        "IÌÍỈĨỊÎÏĪ",
+                        "lł",
+                        "LŁ",
+                        "nñňń",
+                        "NÑŇŃ",
+                        "oòóỏõọôồốổỗộơởỡớờợöøō",
+                        "OÒÓỎÕỌÔỒỐỔỖỘƠỞỠỚỜỢÖØŌ",
+                        "rř",
+                        "RŘ",
+                        "sšśșş",
+                        "SŠŚȘŞ",
+                        "tťțţ",
+                        "TŤȚŢ",
+                        "uùúủũụưừứửữựûüůū",
+                        "UÙÚỦŨỤƯỪỨỬỮỰÛÜŮŪ",
+                        "yýỳỷỹỵÿ",
+                        "YÝỲỶỸỴŸ",
+                        "zžżź",
+                        "ZŽŻŹ",
                       ]
                     : [
-                        'aàáảãạăằắẳẵặâầấẩẫậäåāąAÀÁẢÃẠĂẰẮẲẴẶÂẦẤẨẪẬÄÅĀĄ',
-                        'cçćčCÇĆČ',
-                        'dđďDĐĎ',
-                        'eèéẻẽẹêềếểễệëěēęEÈÉẺẼẸÊỀẾỂỄỆËĚĒĘ',
-                        'iìíỉĩịîïīIÌÍỈĨỊÎÏĪ',
-                        'lłLŁ',
-                        'nñňńNÑŇŃ',
-                        'oòóỏõọôồốổỗộơởỡớờợöøōOÒÓỎÕỌÔỒỐỔỖỘƠỞỠỚỜỢÖØŌ',
-                        'rřRŘ',
-                        'sšśșşSŠŚȘŞ',
-                        'tťțţTŤȚŢ',
-                        'uùúủũụưừứửữựûüůūUÙÚỦŨỤƯỪỨỬỮỰÛÜŮŪ',
-                        'yýỳỷỹỵÿYÝỲỶỸỴŸ',
-                        'zžżźZŽŻŹ',
+                        "aàáảãạăằắẳẵặâầấẩẫậäåāąAÀÁẢÃẠĂẰẮẲẴẶÂẦẤẨẪẬÄÅĀĄ",
+                        "cçćčCÇĆČ",
+                        "dđďDĐĎ",
+                        "eèéẻẽẹêềếểễệëěēęEÈÉẺẼẸÊỀẾỂỄỆËĚĒĘ",
+                        "iìíỉĩịîïīIÌÍỈĨỊÎÏĪ",
+                        "lłLŁ",
+                        "nñňńNÑŇŃ",
+                        "oòóỏõọôồốổỗộơởỡớờợöøōOÒÓỎÕỌÔỒỐỔỖỘƠỞỠỚỜỢÖØŌ",
+                        "rřRŘ",
+                        "sšśșşSŠŚȘŞ",
+                        "tťțţTŤȚŢ",
+                        "uùúủũụưừứửữựûüůūUÙÚỦŨỤƯỪỨỬỮỰÛÜŮŪ",
+                        "yýỳỷỹỵÿYÝỲỶỸỴŸ",
+                        "zžżźZŽŻŹ",
                       ],
                   o = [];
                 return (
-                  e.split('').forEach(function (r) {
+                  e.split("").forEach(function (r) {
                     n.every(function (n) {
                       if (-1 !== n.indexOf(r)) {
                         if (o.indexOf(n) > -1) return !1;
-                        (e = e.replace(
-                          new RegExp('[' + n + ']', 'gm' + t),
-                          '[' + n + ']'
+                        ((e = e.replace(
+                          new RegExp("[" + n + "]", "gm" + t),
+                          "[" + n + "]",
                         )),
-                          o.push(n);
+                          o.push(n));
                       }
                       return !0;
                     });
@@ -3110,57 +3113,57 @@
               },
             },
             {
-              key: 'createMergedBlanksRegExp',
+              key: "createMergedBlanksRegExp",
               value: function (e) {
-                return e.replace(/[\s]+/gim, '[\\s]+');
+                return e.replace(/[\s]+/gim, "[\\s]+");
               },
             },
             {
-              key: 'createAccuracyRegExp',
+              key: "createAccuracyRegExp",
               value: function (e) {
                 var t = this,
                   n = this.opt.accuracy,
-                  o = 'string' == typeof n ? n : n.value,
-                  r = 'string' == typeof n ? [] : n.limiters,
-                  i = '';
+                  o = "string" == typeof n ? n : n.value,
+                  r = "string" == typeof n ? [] : n.limiters,
+                  i = "";
                 switch (
                   (r.forEach(function (e) {
-                    i += '|' + t.escapeStr(e);
+                    i += "|" + t.escapeStr(e);
                   }),
                   o)
                 ) {
-                  case 'partially':
+                  case "partially":
                   default:
-                    return '()(' + e + ')';
-                  case 'complementary':
+                    return "()(" + e + ")";
+                  case "complementary":
                     return (
-                      '()([^' +
+                      "()([^" +
                       (i =
-                        '\\s' +
+                        "\\s" +
                         (i ||
                           this.escapeStr(
-                            '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~¡¿'
+                            "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~¡¿",
                           ))) +
-                      ']*' +
+                      "]*" +
                       e +
-                      '[^' +
+                      "[^" +
                       i +
-                      ']*)'
+                      "]*)"
                     );
-                  case 'exactly':
-                    return '(^|\\s' + i + ')(' + e + ')(?=$|\\s' + i + ')';
+                  case "exactly":
+                    return "(^|\\s" + i + ")(" + e + ")(?=$|\\s" + i + ")";
                 }
               },
             },
             {
-              key: 'getSeparatedKeywords',
+              key: "getSeparatedKeywords",
               value: function (e) {
                 var t = this,
                   n = [];
                 return (
                   e.forEach(function (e) {
                     t.opt.separateWordSearch
-                      ? e.split(' ').forEach(function (e) {
+                      ? e.split(" ").forEach(function (e) {
                           e.trim() && -1 === n.indexOf(e) && n.push(e);
                         })
                       : e.trim() && -1 === n.indexOf(e) && n.push(e);
@@ -3175,22 +3178,22 @@
               },
             },
             {
-              key: 'isNumeric',
+              key: "isNumeric",
               value: function (e) {
                 return Number(parseFloat(e)) == e;
               },
             },
             {
-              key: 'checkRanges',
+              key: "checkRanges",
               value: function (e) {
                 var t = this;
                 if (
                   !Array.isArray(e) ||
-                  '[object Object]' !== Object.prototype.toString.call(e[0])
+                  "[object Object]" !== Object.prototype.toString.call(e[0])
                 )
                   return (
                     this.log(
-                      'markRanges() will only accept an array of objects'
+                      "markRanges() will only accept an array of objects",
                     ),
                     this.opt.noMatch(e),
                     []
@@ -3214,7 +3217,7 @@
               },
             },
             {
-              key: 'callNoMatchOnInvalidRanges',
+              key: "callNoMatchOnInvalidRanges",
               value: function (e, t) {
                 var n = void 0,
                   o = void 0,
@@ -3229,11 +3232,11 @@
                       o - n > 0
                         ? (r = !0)
                         : (this.log(
-                            'Ignoring invalid or overlapping range: ' +
-                              JSON.stringify(e)
+                            "Ignoring invalid or overlapping range: " +
+                              JSON.stringify(e),
                           ),
                           this.opt.noMatch(e)))
-                    : (this.log('Ignoring invalid range: ' + JSON.stringify(e)),
+                    : (this.log("Ignoring invalid range: " + JSON.stringify(e)),
                       this.opt.noMatch(e)),
                   {
                     start: n,
@@ -3244,7 +3247,7 @@
               },
             },
             {
-              key: 'checkWhitespaceRanges',
+              key: "checkWhitespaceRanges",
               value: function (e, t, n) {
                 var o = void 0,
                   r = !0,
@@ -3255,16 +3258,16 @@
                   (o = (s = s > i ? i : s) + parseInt(e.length, 10)) > i &&
                     ((o = i),
                     this.log(
-                      'End range automatically set to the max value of ' + i
+                      "End range automatically set to the max value of " + i,
                     )),
                   s < 0 || o - s < 0 || s > i || o > i
                     ? ((r = !1),
-                      this.log('Invalid range: ' + JSON.stringify(e)),
+                      this.log("Invalid range: " + JSON.stringify(e)),
                       this.opt.noMatch(e))
-                    : '' === n.substring(s, o).replace(/\s+/g, '') &&
+                    : "" === n.substring(s, o).replace(/\s+/g, "") &&
                       ((r = !1),
                       this.log(
-                        'Skipping whitespace only range: ' + JSON.stringify(e)
+                        "Skipping whitespace only range: " + JSON.stringify(e),
                       ),
                       this.opt.noMatch(e)),
                   {
@@ -3276,10 +3279,10 @@
               },
             },
             {
-              key: 'getTextNodes',
+              key: "getTextNodes",
               value: function (e) {
                 var t = this,
-                  n = '',
+                  n = "",
                   o = [];
                 this.iterator.forEachNode(
                   NodeFilter.SHOW_TEXT,
@@ -3300,36 +3303,36 @@
                       value: n,
                       nodes: o,
                     });
-                  }
+                  },
                 );
               },
             },
             {
-              key: 'matchesExclude',
+              key: "matchesExclude",
               value: function (e) {
                 return r.matches(
                   e,
                   this.opt.exclude.concat([
-                    'script',
-                    'style',
-                    'title',
-                    'head',
-                    'html',
-                  ])
+                    "script",
+                    "style",
+                    "title",
+                    "head",
+                    "html",
+                  ]),
                 );
               },
             },
             {
-              key: 'wrapRangeInTextNode',
+              key: "wrapRangeInTextNode",
               value: function (e, t, n) {
-                var o = this.opt.element ? this.opt.element : 'mark',
+                var o = this.opt.element ? this.opt.element : "mark",
                   r = e.splitText(t),
                   i = r.splitText(n - t),
                   a = document.createElement(o);
                 return (
-                  a.setAttribute('data-markjs', 'true'),
+                  a.setAttribute("data-markjs", "true"),
                   this.opt.className &&
-                    a.setAttribute('class', this.opt.className),
+                    a.setAttribute("class", this.opt.className),
                   (a.textContent = r.textContent),
                   r.parentNode.replaceChild(a, r),
                   i
@@ -3337,7 +3340,7 @@
               },
             },
             {
-              key: 'wrapRangeInMappedTextNode',
+              key: "wrapRangeInMappedTextNode",
               value: function (e, t, n, o, r) {
                 var i = this;
                 e.nodes.every(function (a, s) {
@@ -3370,40 +3373,40 @@
               },
             },
             {
-              key: 'wrapMatches',
+              key: "wrapMatches",
               value: function (e, t, n, o, r) {
                 var i = this,
                   a = 0 === t ? 0 : t + 1;
                 this.getTextNodes(function (t) {
-                  t.nodes.forEach(function (t) {
+                  (t.nodes.forEach(function (t) {
                     t = t.node;
                     for (
                       var r = void 0;
-                      null !== (r = e.exec(t.textContent)) && '' !== r[a];
+                      null !== (r = e.exec(t.textContent)) && "" !== r[a];
 
                     )
                       if (n(r[a], t)) {
                         var s = r.index;
                         if (0 !== a)
                           for (var c = 1; c < a; c++) s += r[c].length;
-                        (t = i.wrapRangeInTextNode(t, s, s + r[a].length)),
+                        ((t = i.wrapRangeInTextNode(t, s, s + r[a].length)),
                           o(t.previousSibling),
-                          (e.lastIndex = 0);
+                          (e.lastIndex = 0));
                       }
                   }),
-                    r();
+                    r());
                 });
               },
             },
             {
-              key: 'wrapMatchesAcrossElements',
+              key: "wrapMatchesAcrossElements",
               value: function (e, t, n, o, r) {
                 var i = this,
                   a = 0 === t ? 0 : t + 1;
                 this.getTextNodes(function (t) {
                   for (
                     var s = void 0;
-                    null !== (s = e.exec(t.value)) && '' !== s[a];
+                    null !== (s = e.exec(t.value)) && "" !== s[a];
 
                   ) {
                     var c = s.index;
@@ -3417,8 +3420,8 @@
                         return n(s[a], e);
                       },
                       function (t, n) {
-                        (e.lastIndex = n), o(t);
-                      }
+                        ((e.lastIndex = n), o(t));
+                      },
                     );
                   }
                   r();
@@ -3426,12 +3429,12 @@
               },
             },
             {
-              key: 'wrapRangeFromIndex',
+              key: "wrapRangeFromIndex",
               value: function (e, t, n, o) {
                 var r = this;
                 this.getTextNodes(function (i) {
                   var a = i.value.length;
-                  e.forEach(function (e, o) {
+                  (e.forEach(function (e, o) {
                     var s = r.checkWhitespaceRanges(e, a, i.value),
                       c = s.start,
                       l = s.end;
@@ -3445,15 +3448,15 @@
                         },
                         function (t) {
                           n(t, e);
-                        }
+                        },
                       );
                   }),
-                    o();
+                    o());
                 });
               },
             },
             {
-              key: 'unwrapMatches',
+              key: "unwrapMatches",
               value: function (e) {
                 for (
                   var t = e.parentNode, n = document.createDocumentFragment();
@@ -3461,32 +3464,32 @@
 
                 )
                   n.appendChild(e.removeChild(e.firstChild));
-                t.replaceChild(n, e),
-                  this.ie ? this.normalizeTextNode(t) : t.normalize();
+                (t.replaceChild(n, e),
+                  this.ie ? this.normalizeTextNode(t) : t.normalize());
               },
             },
             {
-              key: 'normalizeTextNode',
+              key: "normalizeTextNode",
               value: function (e) {
                 if (e) {
                   if (3 === e.nodeType)
                     for (; e.nextSibling && 3 === e.nextSibling.nodeType; )
-                      (e.nodeValue += e.nextSibling.nodeValue),
-                        e.parentNode.removeChild(e.nextSibling);
+                      ((e.nodeValue += e.nextSibling.nodeValue),
+                        e.parentNode.removeChild(e.nextSibling));
                   else this.normalizeTextNode(e.firstChild);
                   this.normalizeTextNode(e.nextSibling);
                 }
               },
             },
             {
-              key: 'markRegExp',
+              key: "markRegExp",
               value: function (e, t) {
                 var n = this;
-                (this.opt = t),
-                  this.log('Searching with expression "' + e + '"');
+                ((this.opt = t),
+                  this.log('Searching with expression "' + e + '"'));
                 var o = 0,
-                  r = 'wrapMatches';
-                this.opt.acrossElements && (r = 'wrapMatchesAcrossElements'),
+                  r = "wrapMatches";
+                (this.opt.acrossElements && (r = "wrapMatchesAcrossElements"),
                   this[r](
                     e,
                     this.opt.ignoreGroups,
@@ -3494,32 +3497,32 @@
                       return n.opt.filter(t, e, o);
                     },
                     function (e) {
-                      o++, n.opt.each(e);
+                      (o++, n.opt.each(e));
                     },
                     function () {
-                      0 === o && n.opt.noMatch(e), n.opt.done(o);
-                    }
-                  );
+                      (0 === o && n.opt.noMatch(e), n.opt.done(o));
+                    },
+                  ));
               },
             },
             {
-              key: 'mark',
+              key: "mark",
               value: function (e, t) {
                 var n = this;
                 this.opt = t;
                 var o = 0,
-                  r = 'wrapMatches',
-                  i = this.getSeparatedKeywords('string' == typeof e ? [e] : e),
+                  r = "wrapMatches",
+                  i = this.getSeparatedKeywords("string" == typeof e ? [e] : e),
                   a = i.keywords,
                   s = i.length,
-                  c = this.opt.caseSensitive ? '' : 'i';
-                this.opt.acrossElements && (r = 'wrapMatchesAcrossElements'),
+                  c = this.opt.caseSensitive ? "" : "i";
+                (this.opt.acrossElements && (r = "wrapMatchesAcrossElements"),
                   0 === s
                     ? this.opt.done(o)
                     : (function e(t) {
-                        var i = new RegExp(n.createRegExp(t), 'gm' + c),
+                        var i = new RegExp(n.createRegExp(t), "gm" + c),
                           l = 0;
-                        n.log('Searching with expression "' + i + '"'),
+                        (n.log('Searching with expression "' + i + '"'),
                           n[r](
                             i,
                             1,
@@ -3527,20 +3530,20 @@
                               return n.opt.filter(r, t, o, l);
                             },
                             function (e) {
-                              l++, o++, n.opt.each(e);
+                              (l++, o++, n.opt.each(e));
                             },
                             function () {
-                              0 === l && n.opt.noMatch(t),
+                              (0 === l && n.opt.noMatch(t),
                                 a[s - 1] === t
                                   ? n.opt.done(o)
-                                  : e(a[a.indexOf(t) + 1]);
-                            }
-                          );
-                      })(a[0]);
+                                  : e(a[a.indexOf(t) + 1]));
+                            },
+                          ));
+                      })(a[0]));
               },
             },
             {
-              key: 'markRanges',
+              key: "markRanges",
               value: function (e, t) {
                 var n = this;
                 this.opt = t;
@@ -3548,8 +3551,8 @@
                   r = this.checkRanges(e);
                 r && r.length
                   ? (this.log(
-                      'Starting to mark with the following ranges: ' +
-                        JSON.stringify(r)
+                      "Starting to mark with the following ranges: " +
+                        JSON.stringify(r),
                     ),
                     this.wrapRangeFromIndex(
                       r,
@@ -3557,23 +3560,23 @@
                         return n.opt.filter(e, t, o, r);
                       },
                       function (e, t) {
-                        o++, n.opt.each(e, t);
+                        (o++, n.opt.each(e, t));
                       },
                       function () {
                         n.opt.done(o);
-                      }
+                      },
                     ))
                   : this.opt.done(o);
               },
             },
             {
-              key: 'unmark',
+              key: "unmark",
               value: function (e) {
                 var t = this;
                 this.opt = e;
-                var n = this.opt.element ? this.opt.element : '*';
-                (n += '[data-markjs]'),
-                  this.opt.className && (n += '.' + this.opt.className),
+                var n = this.opt.element ? this.opt.element : "*";
+                ((n += "[data-markjs]"),
+                  this.opt.className && (n += "." + this.opt.className),
                   this.log('Removal selector "' + n + '"'),
                   this.iterator.forEachNode(
                     NodeFilter.SHOW_ELEMENT,
@@ -3587,31 +3590,31 @@
                         ? NodeFilter.FILTER_REJECT
                         : NodeFilter.FILTER_ACCEPT;
                     },
-                    this.opt.done
-                  );
+                    this.opt.done,
+                  ));
               },
             },
             {
-              key: 'opt',
+              key: "opt",
               set: function (e) {
                 this._opt = o(
                   {},
                   {
-                    element: '',
-                    className: '',
+                    element: "",
+                    className: "",
                     exclude: [],
                     iframes: !1,
                     iframesTimeout: 5e3,
                     separateWordSearch: !0,
                     diacritics: !0,
                     synonyms: {},
-                    accuracy: 'partially',
+                    accuracy: "partially",
                     acrossElements: !1,
                     caseSensitive: !1,
                     ignoreJoiners: !1,
                     ignoreGroups: 0,
                     ignorePunctuation: [],
-                    wildcards: 'disabled',
+                    wildcards: "disabled",
                     each: function () {},
                     noMatch: function () {},
                     filter: function () {
@@ -3621,7 +3624,7 @@
                     debug: !1,
                     log: window.console,
                   },
-                  e
+                  e,
                 );
               },
               get: function () {
@@ -3629,13 +3632,13 @@
               },
             },
             {
-              key: 'iterator',
+              key: "iterator",
               get: function () {
                 return new r(
                   this.ctx,
                   this.opt.iframes,
                   this.opt.exclude,
-                  this.opt.iframesTimeout
+                  this.opt.iframesTimeout,
                 );
               },
             },
@@ -3648,63 +3651,66 @@
         n = new i(e);
       return (
         (this.mark = function (e, o) {
-          return n.mark(e, o), t;
+          return (n.mark(e, o), t);
         }),
         (this.markRegExp = function (e, o) {
-          return n.markRegExp(e, o), t;
+          return (n.markRegExp(e, o), t);
         }),
         (this.markRanges = function (e, o) {
-          return n.markRanges(e, o), t;
+          return (n.markRanges(e, o), t);
         }),
         (this.unmark = function (e) {
-          return n.unmark(e), t;
+          return (n.unmark(e), t);
         }),
         this
       );
     };
   });
-  var R = (e, t = 'Internal Logic Error') => {
-    if (!e) throw new Error('function' == typeof t ? t() : t);
+  var R = (e, t = "Internal Logic Error") => {
+    if (!e) throw new Error("function" == typeof t ? t() : t);
   };
   class M {
     constructor(e, t) {
-      (this.value = e),
+      ((this.value = e),
         (this.excluded = t),
-        (this.isSimpleStarRec = '**' === e),
-        (this.isRegexStarRec = e.startsWith('**(') && e.endsWith(')')),
-        (this.isStarRec = this.isSimpleStarRec || this.isRegexStarRec);
+        (this.isSimpleStarRec = "**" === e),
+        (this.isRegexStarRec = e.startsWith("**(") && e.endsWith(")")),
+        (this.isStarRec = this.isSimpleStarRec || this.isRegexStarRec));
     }
   }
   class A {
     constructor(e, t = null) {
-      (this.left = null === t),
+      ((this.left = null === t),
         (this.link = null === t ? new A(e, this) : t),
         (this.type = e),
-        (this.isStarRec = '**' === this.type),
+        (this.isStarRec = "**" === this.type),
         (this.node = null),
-        (this.pointer = null);
+        (this.pointer = null));
     }
     setPointer(e) {
-      (this.pointer = e), (this.link.pointer = e);
+      ((this.pointer = e), (this.link.pointer = e));
     }
     setNode(e) {
-      (this.node = e), (this.link.node = e);
+      ((this.node = e), (this.link.node = e));
     }
   }
   const S = (e, t, n = {}) => {
       throw new Error(
-        Object.entries(n).reduce((e, [t, n]) => `${e}, ${t} ${n}`, `${e}: ${t}`)
+        Object.entries(n).reduce(
+          (e, [t, n]) => `${e}, ${t} ${n}`,
+          `${e}: ${t}`,
+        ),
       );
     },
     L = (e) => (1 === e.length ? e[0] : e),
     B = /^[?*+\d]+$/;
   const O = (e, t, n = {}) => {
     throw new Error(
-      Object.entries(n).reduce((e, [t, n]) => `${e}, ${t} ${n}`, `${e}: ${t}`)
+      Object.entries(n).reduce((e, [t, n]) => `${e}, ${t} ${n}`, `${e}: ${t}`),
     );
   };
   var z = (e, t) => {
-      if ('' === e) return new M('', !1);
+      if ("" === e) return new M("", !1);
       const n = ((e) => {
           let t = [];
           t.or = !0;
@@ -3713,89 +3719,89 @@
             r = 0;
           const i = [],
             a = (e) => {
-              !0 === t.excluded && (R(!1 === o), (o = !0)),
+              (!0 === t.excluded && (R(!1 === o), (o = !0)),
                 i.push(t),
                 (t = []),
-                (t.or = e);
+                (t.or = e));
             },
             s = () => {
               const e = i.pop(),
                 n = L(t);
-              !0 === e.or && !0 === n.or ? e.push(...n) : e.push(n), (t = e);
+              (!0 === e.or && !0 === n.or ? e.push(...n) : e.push(n), (t = e));
             };
           return (
             a(!1),
             {
               setInArray: (t, o) => {
-                n === t &&
-                  S(n ? 'Bad Array Start' : 'Bad Array Terminator', e, {
+                (n === t &&
+                  S(n ? "Bad Array Start" : "Bad Array Terminator", e, {
                     char: o,
                   }),
-                  (n = t);
+                  (n = t));
               },
               finishElement: (
                 i,
                 a,
                 s,
-                { finReq: c = !1, group: l = !1 } = {}
+                { finReq: c = !1, group: l = !1 } = {},
               ) => {
                 if (r === i)
-                  s.includes(e[i - 1] || null) ||
+                  (s.includes(e[i - 1] || null) ||
                     S(a, e, {
                       char: i,
                     }),
-                    (r += 1);
+                    (r += 1));
                 else {
                   c &&
                     S(a, e, {
                       char: i,
                     });
                   const s = e.slice(r, i);
-                  l &&
-                    !['**', '++'].includes(s) &&
-                    S('Bad Group Start', e, {
+                  (l &&
+                    !["**", "++"].includes(s) &&
+                    S("Bad Group Start", e, {
                       char: i,
                     }),
                     n &&
-                      !(B.test(s) || (s.startsWith('(') && s.endsWith(')'))) &&
-                      S('Bad Array Selector', e, {
+                      !(B.test(s) || (s.startsWith("(") && s.endsWith(")"))) &&
+                      S("Bad Array Selector", e, {
                         selector: s,
                       }),
                     l
                       ? t.push(new A(s))
                       : (t.push(new M(n ? `[${s}]` : s, o)), (o = !1)),
-                    (r = i + 1);
+                    (r = i + 1));
                 }
               },
               startExclusion: (t) => {
-                !1 !== o &&
-                  S('Redundant Exclusion', e, {
+                (!1 !== o &&
+                  S("Redundant Exclusion", e, {
                     char: t,
                   }),
-                  (o = !0);
+                  (o = !0));
               },
               startGroup: () => {
-                a(!0), o && ((t.excluded = !0), (o = !1)), a(!1);
+                (a(!0), o && ((t.excluded = !0), (o = !1)), a(!1));
               },
               newGroupElement: () => {
-                s(), a(!1);
+                (s(), a(!1));
               },
               finishGroup: (n) => {
-                i.length < 2 &&
-                  S('Unexpected Group Terminator', e, {
+                (i.length < 2 &&
+                  S("Unexpected Group Terminator", e, {
                     char: n,
                   }),
                   s(),
                   s(),
-                  R(Array.isArray(t));
+                  R(Array.isArray(t)));
                 const o = t[t.length - 2];
                 o instanceof A && !0 === o.left && t.push(o.link);
               },
               finalizeResult: () => (
                 s(),
                 R(!1 === o),
-                0 !== i.length && S('Non Terminated Group', e),
-                n && S('Non Terminated Array', e),
+                0 !== i.length && S("Non Terminated Group", e),
+                n && S("Non Terminated Array", e),
                 L(t)
               ),
             }
@@ -3809,79 +3815,79 @@
         if (!1 === r) {
           if (0 === i)
             switch (o) {
-              case '.':
-                n.finishElement(a, 'Bad Path Separator', [']', '}']);
+              case ".":
+                n.finishElement(a, "Bad Path Separator", ["]", "}"]);
                 break;
-              case '[':
-                t.useArraySelector ||
-                  O('Forbidden Array Selector', e, {
+              case "[":
+                (t.useArraySelector ||
+                  O("Forbidden Array Selector", e, {
                     char: a,
                   }),
-                  n.finishElement(a, 'Bad Array Start', [
+                  n.finishElement(a, "Bad Array Start", [
                     null,
-                    '!',
-                    '{',
-                    ',',
-                    '}',
-                    ']',
+                    "!",
+                    "{",
+                    ",",
+                    "}",
+                    "]",
                   ]),
-                  n.setInArray(!0, a);
+                  n.setInArray(!0, a));
                 break;
-              case ']':
-                n.finishElement(a, 'Bad Array Terminator', ['}']),
-                  n.setInArray(!1, a);
+              case "]":
+                (n.finishElement(a, "Bad Array Terminator", ["}"]),
+                  n.setInArray(!1, a));
                 break;
-              case '{':
-                n.finishElement(
+              case "{":
+                (n.finishElement(
                   a,
-                  'Bad Group Start',
-                  [null, '!', '.', '[', '{', ','],
+                  "Bad Group Start",
+                  [null, "!", ".", "[", "{", ","],
                   {
                     group: !0,
-                  }
+                  },
                 ),
-                  n.startGroup();
+                  n.startGroup());
                 break;
-              case ',':
-                n.finishElement(a, 'Bad Group Separator', [']', '}']),
-                  n.newGroupElement();
+              case ",":
+                (n.finishElement(a, "Bad Group Separator", ["]", "}"]),
+                  n.newGroupElement());
                 break;
-              case '}':
-                n.finishElement(a, 'Bad Group Terminator', [']', '}']),
-                  n.finishGroup(a);
+              case "}":
+                (n.finishElement(a, "Bad Group Terminator", ["]", "}"]),
+                  n.finishGroup(a));
                 break;
-              case '!':
-                n.finishElement(
+              case "!":
+                (n.finishElement(
                   a,
-                  'Bad Exclusion',
-                  [null, '.', ',', '{', '['],
+                  "Bad Exclusion",
+                  [null, ".", ",", "{", "["],
                   {
                     finReq: !0,
-                  }
+                  },
                 ),
-                  n.startExclusion(a);
+                  n.startExclusion(a));
             }
           switch (o) {
-            case '(':
+            case "(":
               i += 1;
               break;
-            case ')':
-              0 === i &&
-                O('Unexpected Parentheses', e, {
+            case ")":
+              (0 === i &&
+                O("Unexpected Parentheses", e, {
                   char: a,
                 }),
-                (i -= 1);
+                (i -= 1));
           }
         }
-        r = '\\' === o && !r;
+        r = "\\" === o && !r;
       }
       return (
         !1 !== r &&
-          O('Dangling Escape', e, {
+          O("Dangling Escape", e, {
             char: o - 1,
           }),
-        0 !== i && O('Unterminated Parentheses', e),
-        n.finishElement(o, 'Bad Terminator', [']', '}']),
+        0 !== i && O("Unterminated Parentheses", e),
+        n.finishElement(o, "Bad Terminator", ["]", "}"]),
         n.finalizeResult()
       );
     },
@@ -3915,23 +3921,23 @@
                     (a += 1))
                   : ((r[a] = 0), (a -= 1)))
             : !0 === s
-            ? (t('ADD', e),
-              a === n.length - 1 ? (t('FIN', e), (s = !1)) : (a += 1))
-            : (t('RM', e), (a -= 1));
+              ? (t("ADD", e),
+                a === n.length - 1 ? (t("FIN", e), (s = !1)) : (a += 1))
+              : (t("RM", e), (a -= 1));
         }
       })(n, (n, s) => {
-        if ('RM' === n) !0 === s.excluded && (a = !1), (i.length -= 2);
-        else if ('ADD' === n) {
+        if ("RM" === n) (!0 === s.excluded && (a = !1), (i.length -= 2));
+        else if ("ADD" === n) {
           if (!0 === s.excluded) {
             if (a) throw new Error(`Redundant Exclusion: "${t}"`);
             a = !0;
           }
           const e = [],
             n = i[i.length - 2];
-          i[i.length - 1].forEach(([t, r]) =>
-            o(t, r, s, n, (n) => e.push([n, t]))
+          (i[i.length - 1].forEach(([t, r]) =>
+            o(t, r, s, n, (n) => e.push([n, t])),
           ),
-            i.push(s, e);
+            i.push(s, e));
         } else
           i[i.length - 1]
             .filter(([t]) => t !== e)
@@ -3942,8 +3948,8 @@
     P = /^\^?[^-/\\^$*+?.()|[\]{}]*\$?$/g,
     j = (e) => {
       if (P.test(e)) {
-        const t = e.startsWith('^'),
-          n = e.endsWith('$');
+        const t = e.startsWith("^"),
+          n = e.endsWith("$");
         if (t && n) {
           const t = e.slice(1, -1);
           return {
@@ -3976,55 +3982,55 @@
       e.reduce(
         (e, t) =>
           `${e}${
-            'number' == typeof t
+            "number" == typeof t
               ? `[${t}]`
-              : `${e ? '.' : ''}${((e) => e.replace($, '\\$&'))(t)}`
+              : `${e ? "." : ""}${((e) => e.replace($, "\\$&"))(t)}`
           }`,
-        ''
+        "",
       ),
     U = [
-      '-',
-      '/',
-      '\\',
-      '^',
-      '$',
-      '*',
-      '+',
-      '?',
-      '.',
-      '(',
-      ')',
-      '|',
-      '[',
-      ']',
-      '{',
-      '}',
+      "-",
+      "/",
+      "\\",
+      "^",
+      "$",
+      "*",
+      "+",
+      "?",
+      ".",
+      "(",
+      ")",
+      "|",
+      "[",
+      "]",
+      "{",
+      "}",
     ],
     D = (e) => {
-      let t = '',
+      let t = "",
         n = !1,
         o = !0;
       for (let r = 0; r < e.length; r += 1) {
         const i = e[r];
-        n || '\\' !== i
-          ? n || '*' !== i
-            ? n || '+' !== i
-              ? n || '?' !== i
-                ? (U.includes(i) && ((o = !1), (t += '\\')), (t += i), (n = !1))
-                : ((o = !1), (t += '.'))
-              : ((o = !1), (t += '.+'))
-            : ((o = !1), (t += '.*'))
+        n || "\\" !== i
+          ? n || "*" !== i
+            ? n || "+" !== i
+              ? n || "?" !== i
+                ? (U.includes(i) && ((o = !1), (t += "\\")), (t += i), (n = !1))
+                : ((o = !1), (t += "."))
+              : ((o = !1), (t += ".+"))
+            : ((o = !1), (t += ".*"))
           : (n = !0);
       }
       return o
         ? {
             test: (e) => e === t,
           }
-        : '.+' === t
-        ? {
-            test: (e) => '' !== e,
-          }
-        : new RegExp(`^${t}$`);
+        : ".+" === t
+          ? {
+              test: (e) => "" !== e,
+            }
+          : new RegExp(`^${t}$`);
     };
   class V {
     constructor(e, t) {
@@ -4040,34 +4046,34 @@
         (this.leafNeedles = []),
         (this.leafNeedlesExclude = []),
         (this.leafNeedlesMatch = []),
-        (this.isArrayTarget = e.startsWith('[') && e.endsWith(']')),
-        (this.isSimpleStarRec = '**' === e),
-        (this.isSimplePlusRec = '++' === e),
+        (this.isArrayTarget = e.startsWith("[") && e.endsWith("]")),
+        (this.isSimpleStarRec = "**" === e),
+        (this.isSimplePlusRec = "++" === e),
         (this.isSimpleRec = this.isSimpleStarRec || this.isSimplePlusRec),
-        (this.isRegexStarRec = e.startsWith('**(') && e.endsWith(')')),
-        (this.isRegexPlusRec = e.startsWith('++(') && e.endsWith(')')),
+        (this.isRegexStarRec = e.startsWith("**(") && e.endsWith(")")),
+        (this.isRegexPlusRec = e.startsWith("++(") && e.endsWith(")")),
         (this.isStarRec = this.isSimpleStarRec || this.isRegexStarRec),
         (this.isPlusRec = this.isSimplePlusRec || this.isRegexPlusRec),
         (this.isRec = this.isStarRec || this.isPlusRec),
-        (this.isAnyArrayTarget = '[*]' === e),
-        (this.isAnyObjTarget = '*' === e),
+        (this.isAnyArrayTarget = "[*]" === e),
+        (this.isAnyObjTarget = "*" === e),
         this.isSimpleRec || this.isAnyObjTarget || this.isAnyArrayTarget)
       )
         this.regex = null;
       else {
         const { regex: n } = t;
-        e in n ||
+        (e in n ||
           (n[e] = ((e) =>
-            (e.startsWith('**(') || e.startsWith('++(')) && e.endsWith(')')
+            (e.startsWith("**(") || e.startsWith("++(")) && e.endsWith(")")
               ? j(e.slice(3, -1))
-              : e.startsWith('[(') && e.endsWith(')]')
-              ? j(e.slice(2, -2))
-              : e.startsWith('(') && e.endsWith(')')
-              ? j(e.slice(1, -1))
-              : e.startsWith('[') && e.endsWith(']')
-              ? D(e.slice(1, -1))
-              : D(e))(e)),
-          (this.regex = n[e]);
+              : e.startsWith("[(") && e.endsWith(")]")
+                ? j(e.slice(2, -2))
+                : e.startsWith("(") && e.endsWith(")")
+                  ? j(e.slice(1, -1))
+                  : e.startsWith("[") && e.endsWith("]")
+                    ? D(e.slice(1, -1))
+                    : D(e))(e)),
+          (this.regex = n[e]));
       }
     }
     recMatch(e) {
@@ -4079,8 +4085,8 @@
         (this.isAnyArrayTarget
           ? t
           : this.isAnyObjTarget
-          ? !t
-          : !(t !== this.isArrayTarget && !this.isRec) && this.regex.test(e))
+            ? !t
+            : !(t !== this.isArrayTarget && !this.isRec) && this.regex.test(e))
       );
     }
     add(e) {
@@ -4099,13 +4105,13 @@
       this.roots = e;
     }
     finish(e, t, n) {
-      this.addNeedle(e),
-        this.leafNeedles.includes(e) || this.leafNeedles.push(e);
+      (this.addNeedle(e),
+        this.leafNeedles.includes(e) || this.leafNeedles.push(e));
       const o = t ? this.leafNeedlesExclude : this.leafNeedlesMatch;
-      o.includes(e) || o.push(e),
+      (o.includes(e) || o.push(e),
         (this.match = !t),
         (this.matches = this.match),
-        (this.index = n);
+        (this.index = n));
     }
   }
   const H = (e, t, n, o) => {
@@ -4114,10 +4120,10 @@
           if ((e.addNeedle(t), r instanceof A))
             return void (!0 === r.left
               ? (r.isStarRec && r.setPointer(e),
-                r.setNode(new V('*', o)),
+                r.setNode(new V("*", o)),
                 o.links.push(e, r.node),
                 a(r.node))
-              : ((r.target = 'target' in i ? i.target : n.get(i.value)),
+              : ((r.target = "target" in i ? i.target : n.get(i.value)),
                 o.links.push(r.target, r.node),
                 null !== r.pointer && (a(r.pointer), r.setPointer(null)),
                 a(e)));
@@ -4126,25 +4132,25 @@
           if (s) r.target = e;
           else {
             let t = e.get(r.value);
-            void 0 === t && ((t = new V(r.value, o)), e.add(t)), a(t);
+            (void 0 === t && ((t = new V(r.value, o)), e.add(t)), a(t));
           }
           r.isStarRec && a(e);
         },
         onFin: (e, n, r, i) => {
           if (o.strict && r.isSimpleStarRec) {
             const e = n.children.filter(
-              ({ value: e }) => !['', '**'].includes(e)
+              ({ value: e }) => !["", "**"].includes(e),
             );
             if (0 !== e.length)
               throw new Error(
-                `Needle Target Invalidated: "${e[0].needles[0]}" by "${t}"`
+                `Needle Target Invalidated: "${e[0].needles[0]}" by "${t}"`,
               );
           }
           if (o.strict && 0 !== e.leafNeedles.length)
             throw new Error(
-              `Redundant Needle Target: "${e.leafNeedles[0]}" vs "${t}"`
+              `Redundant Needle Target: "${e.leafNeedles[0]}" vs "${t}"`,
             );
-          e.finish(t, i, o.counter), (o.counter += 1);
+          (e.finish(t, i, o.counter), (o.counter += 1));
         },
       });
     },
@@ -4171,7 +4177,7 @@
     },
     W = (e, t) => (t.joined ? F(e) : [...e]);
   var J, Y, K;
-  (Y = function (e) {
+  ((Y = function (e) {
     var t,
       n,
       o = ie(e),
@@ -4180,19 +4186,19 @@
       a = new te(
         (function (e, t, n) {
           return (3 * (t + n)) / 4 - n;
-        })(0, r, i)
+        })(0, r, i),
       ),
       s = 0,
       c = i > 0 ? r - 4 : r;
     for (n = 0; n < c; n += 4)
-      (t =
+      ((t =
         (ee[e.charCodeAt(n)] << 18) |
         (ee[e.charCodeAt(n + 1)] << 12) |
         (ee[e.charCodeAt(n + 2)] << 6) |
         ee[e.charCodeAt(n + 3)]),
         (a[s++] = (t >> 16) & 255),
         (a[s++] = (t >> 8) & 255),
-        (a[s++] = 255 & t);
+        (a[s++] = 255 & t));
     2 === i &&
       ((t = (ee[e.charCodeAt(n)] << 2) | (ee[e.charCodeAt(n + 1)] >> 4)),
       (a[s++] = 255 & t));
@@ -4213,35 +4219,35 @@
       )
         r.push(ae(e, a, a + i > s ? s : a + i));
       1 === o
-        ? ((t = e[n - 1]), r.push(Z[t >> 2] + Z[(t << 4) & 63] + '=='))
+        ? ((t = e[n - 1]), r.push(Z[t >> 2] + Z[(t << 4) & 63] + "=="))
         : 2 === o &&
           ((t = (e[n - 2] << 8) + e[n - 1]),
-          r.push(Z[t >> 10] + Z[(t >> 4) & 63] + Z[(t << 2) & 63] + '='));
-      return r.join('');
-    });
+          r.push(Z[t >> 10] + Z[(t >> 4) & 63] + Z[(t << 2) & 63] + "="));
+      return r.join("");
+    }));
   for (
     var X,
       Q,
       Z = [],
       ee = [],
-      te = 'undefined' != typeof Uint8Array ? Uint8Array : Array,
-      ne = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/',
+      te = "undefined" != typeof Uint8Array ? Uint8Array : Array,
+      ne = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",
       oe = 0,
       re = ne.length;
     oe < re;
     ++oe
   )
-    (Z[oe] = ne[oe]), (ee[ne.charCodeAt(oe)] = oe);
+    ((Z[oe] = ne[oe]), (ee[ne.charCodeAt(oe)] = oe));
   function ie(e) {
     var t = e.length;
     if (t % 4 > 0)
-      throw new Error('Invalid string. Length must be a multiple of 4');
-    var n = e.indexOf('=');
-    return -1 === n && (n = t), [n, n === t ? 0 : 4 - (n % 4)];
+      throw new Error("Invalid string. Length must be a multiple of 4");
+    var n = e.indexOf("=");
+    return (-1 === n && (n = t), [n, n === t ? 0 : 4 - (n % 4)]);
   }
   function ae(e, t, n) {
     for (var o, r, i = [], a = t; a < n; a += 3)
-      (o =
+      ((o =
         ((e[a] << 16) & 16711680) +
         ((e[a + 1] << 8) & 65280) +
         (255 & e[a + 2])),
@@ -4249,12 +4255,12 @@
           Z[((r = o) >> 18) & 63] +
             Z[(r >> 12) & 63] +
             Z[(r >> 6) & 63] +
-            Z[63 & r]
-        );
-    return i.join('');
+            Z[63 & r],
+        ));
+    return i.join("");
   }
-  (ee['-'.charCodeAt(0)] = 62),
-    (ee['_'.charCodeAt(0)] = 63),
+  ((ee["-".charCodeAt(0)] = 62),
+    (ee["_".charCodeAt(0)] = 63),
     (X = function (e, t, n, o, r) {
       var i,
         a,
@@ -4278,7 +4284,7 @@
       if (0 === i) i = 1 - l;
       else {
         if (i === c) return a ? NaN : (1 / 0) * (m ? -1 : 1);
-        (a += Math.pow(2, o)), (i -= l);
+        ((a += Math.pow(2, o)), (i -= l));
       }
       return (m ? -1 : 1) * a * Math.pow(2, i - o);
     }),
@@ -4304,8 +4310,8 @@
               a + u >= d
                 ? ((s = 0), (a = d))
                 : a + u >= 1
-                ? ((s = (t * c - 1) * Math.pow(2, r)), (a += u))
-                : ((s = t * Math.pow(2, u - 1) * Math.pow(2, r)), (a = 0)));
+                  ? ((s = (t * c - 1) * Math.pow(2, r)), (a += u))
+                  : ((s = t * Math.pow(2, u - 1) * Math.pow(2, r)), (a = 0)));
         r >= 8;
         e[n + m] = 255 & s, m += p, s /= 256, r -= 8
       );
@@ -4315,36 +4321,36 @@
         e[n + m] = 255 & a, m += p, a /= 256, l -= 8
       );
       e[n + m - p] |= 128 * f;
-    });
+    }));
   var se =
-    'function' == typeof Symbol && 'function' == typeof Symbol.for
-      ? Symbol.for('nodejs.util.inspect.custom')
+    "function" == typeof Symbol && "function" == typeof Symbol.for
+      ? Symbol.for("nodejs.util.inspect.custom")
       : null;
   J = de;
   var ce = 2147483647;
   function le(e) {
     if (e > ce)
       throw new RangeError(
-        'The value "' + e + '" is invalid for option "size"'
+        'The value "' + e + '" is invalid for option "size"',
       );
     var t = new Uint8Array(e);
-    return Object.setPrototypeOf(t, de.prototype), t;
+    return (Object.setPrototypeOf(t, de.prototype), t);
   }
   function de(e, t, n) {
-    if ('number' == typeof e) {
-      if ('string' == typeof t)
+    if ("number" == typeof e) {
+      if ("string" == typeof t)
         throw new TypeError(
-          'The "string" argument must be of type string. Received type number'
+          'The "string" argument must be of type string. Received type number',
         );
       return me(e);
     }
     return ue(e, t, n);
   }
   function ue(e, t, n) {
-    if ('string' == typeof e)
+    if ("string" == typeof e)
       return (function (e, t) {
-        ('string' == typeof t && '' !== t) || (t = 'utf8');
-        if (!de.isEncoding(t)) throw new TypeError('Unknown encoding: ' + t);
+        ("string" == typeof t && "" !== t) || (t = "utf8");
+        if (!de.isEncoding(t)) throw new TypeError("Unknown encoding: " + t);
         var n = 0 | ye(e, t),
           o = le(n),
           r = o.write(e, t);
@@ -4361,19 +4367,19 @@
       })(e);
     if (null == e)
       throw new TypeError(
-        'The first argument must be one of type string, Buffer, ArrayBuffer, Array, or Array-like Object. Received type ' +
-          typeof e
+        "The first argument must be one of type string, Buffer, ArrayBuffer, Array, or Array-like Object. Received type " +
+          typeof e,
       );
     if (Ve(e, ArrayBuffer) || (e && Ve(e.buffer, ArrayBuffer)))
       return fe(e, t, n);
     if (
-      'undefined' != typeof SharedArrayBuffer &&
+      "undefined" != typeof SharedArrayBuffer &&
       (Ve(e, SharedArrayBuffer) || (e && Ve(e.buffer, SharedArrayBuffer)))
     )
       return fe(e, t, n);
-    if ('number' == typeof e)
+    if ("number" == typeof e)
       throw new TypeError(
-        'The "value" argument must not be of type number. Received type number'
+        'The "value" argument must not be of type number. Received type number',
       );
     var o = e.valueOf && e.valueOf();
     if (null != o && o !== e) return de.from(o, t, n);
@@ -4381,34 +4387,34 @@
       if (de.isBuffer(e)) {
         var t = 0 | ve(e.length),
           n = le(t);
-        return 0 === n.length || e.copy(n, 0, 0, t), n;
+        return (0 === n.length || e.copy(n, 0, 0, t), n);
       }
       if (void 0 !== e.length)
-        return 'number' != typeof e.length || He(e.length) ? le(0) : pe(e);
-      if ('Buffer' === e.type && Array.isArray(e.data)) return pe(e.data);
+        return "number" != typeof e.length || He(e.length) ? le(0) : pe(e);
+      if ("Buffer" === e.type && Array.isArray(e.data)) return pe(e.data);
     })(e);
     if (r) return r;
     if (
-      'undefined' != typeof Symbol &&
+      "undefined" != typeof Symbol &&
       null != Symbol.toPrimitive &&
-      'function' == typeof e[Symbol.toPrimitive]
+      "function" == typeof e[Symbol.toPrimitive]
     )
-      return de.from(e[Symbol.toPrimitive]('string'), t, n);
+      return de.from(e[Symbol.toPrimitive]("string"), t, n);
     throw new TypeError(
-      'The first argument must be one of type string, Buffer, ArrayBuffer, Array, or Array-like Object. Received type ' +
-        typeof e
+      "The first argument must be one of type string, Buffer, ArrayBuffer, Array, or Array-like Object. Received type " +
+        typeof e,
     );
   }
   function he(e) {
-    if ('number' != typeof e)
+    if ("number" != typeof e)
       throw new TypeError('"size" argument must be of type number');
     if (e < 0)
       throw new RangeError(
-        'The value "' + e + '" is invalid for option "size"'
+        'The value "' + e + '" is invalid for option "size"',
       );
   }
   function me(e) {
-    return he(e), le(e < 0 ? 0 : 0 | ve(e));
+    return (he(e), le(e < 0 ? 0 : 0 | ve(e)));
   }
   function pe(e) {
     for (
@@ -4430,8 +4436,8 @@
         void 0 === t && void 0 === n
           ? new Uint8Array(e)
           : void 0 === n
-          ? new Uint8Array(e, t)
-          : new Uint8Array(e, t, n)),
+            ? new Uint8Array(e, t)
+            : new Uint8Array(e, t, n)),
       Object.setPrototypeOf(o, de.prototype),
       o
     );
@@ -4439,88 +4445,88 @@
   function ve(e) {
     if (e >= ce)
       throw new RangeError(
-        'Attempt to allocate Buffer larger than maximum size: 0x' +
+        "Attempt to allocate Buffer larger than maximum size: 0x" +
           ce.toString(16) +
-          ' bytes'
+          " bytes",
       );
     return 0 | e;
   }
   function ye(e, t) {
     if (de.isBuffer(e)) return e.length;
     if (ArrayBuffer.isView(e) || Ve(e, ArrayBuffer)) return e.byteLength;
-    if ('string' != typeof e)
+    if ("string" != typeof e)
       throw new TypeError(
         'The "string" argument must be one of type string, Buffer, or ArrayBuffer. Received type ' +
-          typeof e
+          typeof e,
       );
     var n = e.length,
       o = arguments.length > 2 && !0 === arguments[2];
     if (!o && 0 === n) return 0;
     for (var r = !1; ; )
       switch (t) {
-        case 'ascii':
-        case 'latin1':
-        case 'binary':
+        case "ascii":
+        case "latin1":
+        case "binary":
           return n;
-        case 'utf8':
-        case 'utf-8':
+        case "utf8":
+        case "utf-8":
           return Fe(e).length;
-        case 'ucs2':
-        case 'ucs-2':
-        case 'utf16le':
-        case 'utf-16le':
+        case "ucs2":
+        case "ucs-2":
+        case "utf16le":
+        case "utf-16le":
           return 2 * n;
-        case 'hex':
+        case "hex":
           return n >>> 1;
-        case 'base64':
+        case "base64":
           return Ue(e).length;
         default:
           if (r) return o ? -1 : Fe(e).length;
-          (t = ('' + t).toLowerCase()), (r = !0);
+          ((t = ("" + t).toLowerCase()), (r = !0));
       }
   }
   function ge(e, t, n) {
     var o = !1;
-    if (((void 0 === t || t < 0) && (t = 0), t > this.length)) return '';
+    if (((void 0 === t || t < 0) && (t = 0), t > this.length)) return "";
     if (((void 0 === n || n > this.length) && (n = this.length), n <= 0))
-      return '';
-    if ((n >>>= 0) <= (t >>>= 0)) return '';
-    for (e || (e = 'utf8'); ; )
+      return "";
+    if ((n >>>= 0) <= (t >>>= 0)) return "";
+    for (e || (e = "utf8"); ; )
       switch (e) {
-        case 'hex':
+        case "hex":
           return Le(this, t, n);
-        case 'utf8':
-        case 'utf-8':
+        case "utf8":
+        case "utf-8":
           return Re(this, t, n);
-        case 'ascii':
+        case "ascii":
           return Ae(this, t, n);
-        case 'latin1':
-        case 'binary':
+        case "latin1":
+        case "binary":
           return Se(this, t, n);
-        case 'base64':
+        case "base64":
           return ke(this, t, n);
-        case 'ucs2':
-        case 'ucs-2':
-        case 'utf16le':
-        case 'utf-16le':
+        case "ucs2":
+        case "ucs-2":
+        case "utf16le":
+        case "utf-16le":
           return Be(this, t, n);
         default:
-          if (o) throw new TypeError('Unknown encoding: ' + e);
-          (e = (e + '').toLowerCase()), (o = !0);
+          if (o) throw new TypeError("Unknown encoding: " + e);
+          ((e = (e + "").toLowerCase()), (o = !0));
       }
   }
   function we(e, t, n) {
     var o = e[t];
-    (e[t] = e[n]), (e[n] = o);
+    ((e[t] = e[n]), (e[n] = o));
   }
   function be(e, t, n, o, r) {
     if (0 === e.length) return -1;
     if (
-      ('string' == typeof n
+      ("string" == typeof n
         ? ((o = n), (n = 0))
         : n > 2147483647
-        ? (n = 2147483647)
-        : n < -2147483648 && (n = -2147483648),
+          ? (n = 2147483647)
+          : n < -2147483648 && (n = -2147483648),
       He((n = +n)) && (n = r ? 0 : e.length - 1),
       n < 0 && (n = e.length + n),
       n >= e.length)
@@ -4531,18 +4537,18 @@
       if (!r) return -1;
       n = 0;
     }
-    if (('string' == typeof t && (t = de.from(t, o)), de.isBuffer(t)))
+    if (("string" == typeof t && (t = de.from(t, o)), de.isBuffer(t)))
       return 0 === t.length ? -1 : xe(e, t, n, o, r);
-    if ('number' == typeof t)
+    if ("number" == typeof t)
       return (
         (t &= 255),
-        'function' == typeof Uint8Array.prototype.indexOf
+        "function" == typeof Uint8Array.prototype.indexOf
           ? r
             ? Uint8Array.prototype.indexOf.call(e, t, n)
             : Uint8Array.prototype.lastIndexOf.call(e, t, n)
           : xe(e, [t], n, o, r)
       );
-    throw new TypeError('val must be string, number or Buffer');
+    throw new TypeError("val must be string, number or Buffer");
   }
   function xe(e, t, n, o, r) {
     var i,
@@ -4551,13 +4557,13 @@
       c = t.length;
     if (
       void 0 !== o &&
-      ('ucs2' === (o = String(o).toLowerCase()) ||
-        'ucs-2' === o ||
-        'utf16le' === o ||
-        'utf-16le' === o)
+      ("ucs2" === (o = String(o).toLowerCase()) ||
+        "ucs-2" === o ||
+        "utf16le" === o ||
+        "utf-16le" === o)
     ) {
       if (e.length < 2 || t.length < 2) return -1;
-      (a = 2), (s /= 2), (c /= 2), (n /= 2);
+      ((a = 2), (s /= 2), (c /= 2), (n /= 2));
     }
     function l(e, t) {
       return 1 === a ? e[t] : e.readUInt16BE(t * a);
@@ -4567,7 +4573,7 @@
       for (i = n; i < s; i++)
         if (l(e, i) === l(t, -1 === d ? 0 : i - d)) {
           if ((-1 === d && (d = i), i - d + 1 === c)) return d * a;
-        } else -1 !== d && (i -= i - d), (d = -1);
+        } else (-1 !== d && (i -= i - d), (d = -1));
     } else
       for (n + c > s && (n = s - c), i = n; i >= 0; i--) {
         for (var u = !0, h = 0; h < c; h++)
@@ -4604,7 +4610,7 @@
       })(t),
       e,
       n,
-      o
+      o,
     );
   }
   function Te(e, t, n, o) {
@@ -4614,12 +4620,15 @@
     return De(
       (function (e, t) {
         for (var n, o, r, i = [], a = 0; a < e.length && !((t -= 2) < 0); ++a)
-          (o = (n = e.charCodeAt(a)) >> 8), (r = n % 256), i.push(r), i.push(o);
+          ((o = (n = e.charCodeAt(a)) >> 8),
+            (r = n % 256),
+            i.push(r),
+            i.push(o));
         return i;
       })(t, e.length - n),
       e,
       n,
-      o
+      o,
     );
   }
   function ke(e, t, n) {
@@ -4646,16 +4655,16 @@
               (d = c);
             break;
           case 3:
-            (i = e[r + 1]),
+            ((i = e[r + 1]),
               (a = e[r + 2]),
               128 == (192 & i) &&
                 128 == (192 & a) &&
                 (c = ((15 & l) << 12) | ((63 & i) << 6) | (63 & a)) > 2047 &&
                 (c < 55296 || c > 57343) &&
-                (d = c);
+                (d = c));
             break;
           case 4:
-            (i = e[r + 1]),
+            ((i = e[r + 1]),
               (a = e[r + 2]),
               (s = e[r + 3]),
               128 == (192 & i) &&
@@ -4667,28 +4676,28 @@
                   ((63 & a) << 6) |
                   (63 & s)) > 65535 &&
                 c < 1114112 &&
-                (d = c);
+                (d = c));
         }
-      null === d
+      (null === d
         ? ((d = 65533), (u = 1))
         : d > 65535 &&
           ((d -= 65536),
           o.push(((d >>> 10) & 1023) | 55296),
           (d = 56320 | (1023 & d))),
         o.push(d),
-        (r += u);
+        (r += u));
     }
     return (function (e) {
       var t = e.length;
       if (t <= Me) return String.fromCharCode.apply(String, e);
-      var n = '',
+      var n = "",
         o = 0;
       for (; o < t; )
         n += String.fromCharCode.apply(String, e.slice(o, (o += Me)));
       return n;
     })(o);
   }
-  (de.TYPED_ARRAY_SUPPORT = (function () {
+  ((de.TYPED_ARRAY_SUPPORT = (function () {
     try {
       var e = new Uint8Array(1),
         t = {
@@ -4705,14 +4714,14 @@
       return !1;
     }
   })()),
-    !de.TYPED_ARRAY_SUPPORT && 'undefined' != typeof console && console.error,
-    Object.defineProperty(de.prototype, 'parent', {
+    !de.TYPED_ARRAY_SUPPORT && "undefined" != typeof console && console.error,
+    Object.defineProperty(de.prototype, "parent", {
       enumerable: !0,
       get: function () {
         if (de.isBuffer(this)) return this.buffer;
       },
     }),
-    Object.defineProperty(de.prototype, 'offset', {
+    Object.defineProperty(de.prototype, "offset", {
       enumerable: !0,
       get: function () {
         if (de.isBuffer(this)) return this.byteOffset;
@@ -4731,10 +4740,10 @@
           e <= 0
             ? le(e)
             : void 0 !== t
-            ? 'string' == typeof n
-              ? le(e).fill(t, n)
-              : le(e).fill(t)
-            : le(e)
+              ? "string" == typeof n
+                ? le(e).fill(t, n)
+                : le(e).fill(t)
+              : le(e)
         );
       })(e, t, n);
     }),
@@ -4754,7 +4763,7 @@
         !de.isBuffer(e) || !de.isBuffer(t))
       )
         throw new TypeError(
-          'The "buf1", "buf2" arguments must be one of type Buffer or Uint8Array'
+          'The "buf1", "buf2" arguments must be one of type Buffer or Uint8Array',
         );
       if (e === t) return 0;
       for (
@@ -4763,24 +4772,24 @@
         ++r
       )
         if (e[r] !== t[r]) {
-          (n = e[r]), (o = t[r]);
+          ((n = e[r]), (o = t[r]));
           break;
         }
       return n < o ? -1 : o < n ? 1 : 0;
     }),
     (de.isEncoding = function (e) {
       switch (String(e).toLowerCase()) {
-        case 'hex':
-        case 'utf8':
-        case 'utf-8':
-        case 'ascii':
-        case 'latin1':
-        case 'binary':
-        case 'base64':
-        case 'ucs2':
-        case 'ucs-2':
-        case 'utf16le':
-        case 'utf-16le':
+        case "hex":
+        case "utf8":
+        case "utf-8":
+        case "ascii":
+        case "latin1":
+        case "binary":
+        case "base64":
+        case "ucs2":
+        case "ucs-2":
+        case "utf16le":
+        case "utf-16le":
           return !0;
         default:
           return !1;
@@ -4814,49 +4823,50 @@
     (de.prototype.swap16 = function () {
       var e = this.length;
       if (e % 2 != 0)
-        throw new RangeError('Buffer size must be a multiple of 16-bits');
+        throw new RangeError("Buffer size must be a multiple of 16-bits");
       for (var t = 0; t < e; t += 2) we(this, t, t + 1);
       return this;
     }),
     (de.prototype.swap32 = function () {
       var e = this.length;
       if (e % 4 != 0)
-        throw new RangeError('Buffer size must be a multiple of 32-bits');
-      for (var t = 0; t < e; t += 4) we(this, t, t + 3), we(this, t + 1, t + 2);
+        throw new RangeError("Buffer size must be a multiple of 32-bits");
+      for (var t = 0; t < e; t += 4)
+        (we(this, t, t + 3), we(this, t + 1, t + 2));
       return this;
     }),
     (de.prototype.swap64 = function () {
       var e = this.length;
       if (e % 8 != 0)
-        throw new RangeError('Buffer size must be a multiple of 64-bits');
+        throw new RangeError("Buffer size must be a multiple of 64-bits");
       for (var t = 0; t < e; t += 8)
-        we(this, t, t + 7),
+        (we(this, t, t + 7),
           we(this, t + 1, t + 6),
           we(this, t + 2, t + 5),
-          we(this, t + 3, t + 4);
+          we(this, t + 3, t + 4));
       return this;
     }),
     (de.prototype.toString = function () {
       var e = this.length;
       return 0 === e
-        ? ''
+        ? ""
         : 0 === arguments.length
-        ? Re(this, 0, e)
-        : ge.apply(this, arguments);
+          ? Re(this, 0, e)
+          : ge.apply(this, arguments);
     }),
     (de.prototype.toLocaleString = de.prototype.toString),
     (de.prototype.equals = function (e) {
-      if (!de.isBuffer(e)) throw new TypeError('Argument must be a Buffer');
+      if (!de.isBuffer(e)) throw new TypeError("Argument must be a Buffer");
       return this === e || 0 === de.compare(this, e);
     }),
     (de.prototype.inspect = function () {
-      var e = '';
+      var e = "";
       return (
-        (e = this.toString('hex', 0, 50)
-          .replace(/(.{2})/g, '$1 ')
+        (e = this.toString("hex", 0, 50)
+          .replace(/(.{2})/g, "$1 ")
           .trim()),
-        this.length > 50 && (e += ' ... '),
-        '<Buffer ' + e + '>'
+        this.length > 50 && (e += " ... "),
+        "<Buffer " + e + ">"
       );
     }),
     se && (de.prototype[se] = de.prototype.inspect),
@@ -4867,7 +4877,7 @@
       )
         throw new TypeError(
           'The "target" argument must be one of type Buffer or Uint8Array. Received type ' +
-            typeof e
+            typeof e,
         );
       if (
         (void 0 === t && (t = 0),
@@ -4876,7 +4886,7 @@
         void 0 === r && (r = this.length),
         t < 0 || n > e.length || o < 0 || r > this.length)
       )
-        throw new RangeError('out of range index');
+        throw new RangeError("out of range index");
       if (o >= r && t >= n) return 0;
       if (o >= r) return -1;
       if (t >= n) return 1;
@@ -4892,7 +4902,7 @@
         ++d
       )
         if (c[d] !== l[d]) {
-          (i = c[d]), (a = l[d]);
+          ((i = c[d]), (a = l[d]));
           break;
         }
       return i < a ? -1 : a < i ? 1 : 0;
@@ -4907,143 +4917,155 @@
       return be(this, e, t, n, !1);
     }),
     (de.prototype.write = function (e, t, n, o) {
-      if (void 0 === t) (o = 'utf8'), (n = this.length), (t = 0);
-      else if (void 0 === n && 'string' == typeof t)
-        (o = t), (n = this.length), (t = 0);
+      if (void 0 === t) ((o = "utf8"), (n = this.length), (t = 0));
+      else if (void 0 === n && "string" == typeof t)
+        ((o = t), (n = this.length), (t = 0));
       else {
         if (!isFinite(t))
           throw new Error(
-            'Buffer.write(string, encoding, offset[, length]) is no longer supported'
+            "Buffer.write(string, encoding, offset[, length]) is no longer supported",
           );
-        (t >>>= 0),
+        ((t >>>= 0),
           isFinite(n)
-            ? ((n >>>= 0), void 0 === o && (o = 'utf8'))
-            : ((o = n), (n = void 0));
+            ? ((n >>>= 0), void 0 === o && (o = "utf8"))
+            : ((o = n), (n = void 0)));
       }
       var r = this.length - t;
       if (
         ((void 0 === n || n > r) && (n = r),
         (e.length > 0 && (n < 0 || t < 0)) || t > this.length)
       )
-        throw new RangeError('Attempt to write outside buffer bounds');
-      o || (o = 'utf8');
+        throw new RangeError("Attempt to write outside buffer bounds");
+      o || (o = "utf8");
       for (var i = !1; ; )
         switch (o) {
-          case 'hex':
+          case "hex":
             return _e(this, e, t, n);
-          case 'utf8':
-          case 'utf-8':
+          case "utf8":
+          case "utf-8":
             return Ce(this, e, t, n);
-          case 'ascii':
-          case 'latin1':
-          case 'binary':
+          case "ascii":
+          case "latin1":
+          case "binary":
             return Ee(this, e, t, n);
-          case 'base64':
+          case "base64":
             return Te(this, e, t, n);
-          case 'ucs2':
-          case 'ucs-2':
-          case 'utf16le':
-          case 'utf-16le':
+          case "ucs2":
+          case "ucs-2":
+          case "utf16le":
+          case "utf-16le":
             return Ie(this, e, t, n);
           default:
-            if (i) throw new TypeError('Unknown encoding: ' + o);
-            (o = ('' + o).toLowerCase()), (i = !0);
+            if (i) throw new TypeError("Unknown encoding: " + o);
+            ((o = ("" + o).toLowerCase()), (i = !0));
         }
     }),
     (de.prototype.toJSON = function () {
       return {
-        type: 'Buffer',
+        type: "Buffer",
         data: Array.prototype.slice.call(this._arr || this, 0),
       };
-    });
+    }));
   var Me = 4096;
   function Ae(e, t, n) {
-    var o = '';
+    var o = "";
     n = Math.min(e.length, n);
     for (var r = t; r < n; ++r) o += String.fromCharCode(127 & e[r]);
     return o;
   }
   function Se(e, t, n) {
-    var o = '';
+    var o = "";
     n = Math.min(e.length, n);
     for (var r = t; r < n; ++r) o += String.fromCharCode(e[r]);
     return o;
   }
   function Le(e, t, n) {
     var o = e.length;
-    (!t || t < 0) && (t = 0), (!n || n < 0 || n > o) && (n = o);
-    for (var r = '', i = t; i < n; ++i) r += Ge[e[i]];
+    ((!t || t < 0) && (t = 0), (!n || n < 0 || n > o) && (n = o));
+    for (var r = "", i = t; i < n; ++i) r += Ge[e[i]];
     return r;
   }
   function Be(e, t, n) {
-    for (var o = e.slice(t, n), r = '', i = 0; i < o.length - 1; i += 2)
+    for (var o = e.slice(t, n), r = "", i = 0; i < o.length - 1; i += 2)
       r += String.fromCharCode(o[i] + 256 * o[i + 1]);
     return r;
   }
   function Oe(e, t, n) {
-    if (e % 1 != 0 || e < 0) throw new RangeError('offset is not uint');
+    if (e % 1 != 0 || e < 0) throw new RangeError("offset is not uint");
     if (e + t > n)
-      throw new RangeError('Trying to access beyond buffer length');
+      throw new RangeError("Trying to access beyond buffer length");
   }
   function ze(e, t, n, o, r, i) {
     if (!de.isBuffer(e))
       throw new TypeError('"buffer" argument must be a Buffer instance');
     if (t > r || t < i)
       throw new RangeError('"value" argument is out of bounds');
-    if (n + o > e.length) throw new RangeError('Index out of range');
+    if (n + o > e.length) throw new RangeError("Index out of range");
   }
   function Ne(e, t, n, o, r, i) {
-    if (n + o > e.length) throw new RangeError('Index out of range');
-    if (n < 0) throw new RangeError('Index out of range');
+    if (n + o > e.length) throw new RangeError("Index out of range");
+    if (n < 0) throw new RangeError("Index out of range");
   }
   function $e(e, t, n, o, r) {
     return (
-      (t = +t), (n >>>= 0), r || Ne(e, 0, n, 4), Q(e, t, n, o, 23, 4), n + 4
+      (t = +t),
+      (n >>>= 0),
+      r || Ne(e, 0, n, 4),
+      Q(e, t, n, o, 23, 4),
+      n + 4
     );
   }
   function Pe(e, t, n, o, r) {
     return (
-      (t = +t), (n >>>= 0), r || Ne(e, 0, n, 8), Q(e, t, n, o, 52, 8), n + 8
+      (t = +t),
+      (n >>>= 0),
+      r || Ne(e, 0, n, 8),
+      Q(e, t, n, o, 52, 8),
+      n + 8
     );
   }
-  (de.prototype.slice = function (e, t) {
+  ((de.prototype.slice = function (e, t) {
     var n = this.length;
-    (e = ~~e) < 0 ? (e += n) < 0 && (e = 0) : e > n && (e = n),
+    ((e = ~~e) < 0 ? (e += n) < 0 && (e = 0) : e > n && (e = n),
       (t = void 0 === t ? n : ~~t) < 0
         ? (t += n) < 0 && (t = 0)
         : t > n && (t = n),
-      t < e && (t = e);
+      t < e && (t = e));
     var o = this.subarray(e, t);
-    return Object.setPrototypeOf(o, de.prototype), o;
+    return (Object.setPrototypeOf(o, de.prototype), o);
   }),
     (de.prototype.readUintLE = de.prototype.readUIntLE =
       function (e, t, n) {
-        (e >>>= 0), (t >>>= 0), n || Oe(e, t, this.length);
+        ((e >>>= 0), (t >>>= 0), n || Oe(e, t, this.length));
         for (var o = this[e], r = 1, i = 0; ++i < t && (r *= 256); )
           o += this[e + i] * r;
         return o;
       }),
     (de.prototype.readUintBE = de.prototype.readUIntBE =
       function (e, t, n) {
-        (e >>>= 0), (t >>>= 0), n || Oe(e, t, this.length);
+        ((e >>>= 0), (t >>>= 0), n || Oe(e, t, this.length));
         for (var o = this[e + --t], r = 1; t > 0 && (r *= 256); )
           o += this[e + --t] * r;
         return o;
       }),
     (de.prototype.readUint8 = de.prototype.readUInt8 =
       function (e, t) {
-        return (e >>>= 0), t || Oe(e, 1, this.length), this[e];
+        return ((e >>>= 0), t || Oe(e, 1, this.length), this[e]);
       }),
     (de.prototype.readUint16LE = de.prototype.readUInt16LE =
       function (e, t) {
         return (
-          (e >>>= 0), t || Oe(e, 2, this.length), this[e] | (this[e + 1] << 8)
+          (e >>>= 0),
+          t || Oe(e, 2, this.length),
+          this[e] | (this[e + 1] << 8)
         );
       }),
     (de.prototype.readUint16BE = de.prototype.readUInt16BE =
       function (e, t) {
         return (
-          (e >>>= 0), t || Oe(e, 2, this.length), (this[e] << 8) | this[e + 1]
+          (e >>>= 0),
+          t || Oe(e, 2, this.length),
+          (this[e] << 8) | this[e + 1]
         );
       }),
     (de.prototype.readUint32LE = de.prototype.readUInt32LE =
@@ -5065,16 +5087,16 @@
         );
       }),
     (de.prototype.readIntLE = function (e, t, n) {
-      (e >>>= 0), (t >>>= 0), n || Oe(e, t, this.length);
+      ((e >>>= 0), (t >>>= 0), n || Oe(e, t, this.length));
       for (var o = this[e], r = 1, i = 0; ++i < t && (r *= 256); )
         o += this[e + i] * r;
-      return o >= (r *= 128) && (o -= Math.pow(2, 8 * t)), o;
+      return (o >= (r *= 128) && (o -= Math.pow(2, 8 * t)), o);
     }),
     (de.prototype.readIntBE = function (e, t, n) {
-      (e >>>= 0), (t >>>= 0), n || Oe(e, t, this.length);
+      ((e >>>= 0), (t >>>= 0), n || Oe(e, t, this.length));
       for (var o = t, r = 1, i = this[e + --o]; o > 0 && (r *= 256); )
         i += this[e + --o] * r;
-      return i >= (r *= 128) && (i -= Math.pow(2, 8 * t)), i;
+      return (i >= (r *= 128) && (i -= Math.pow(2, 8 * t)), i);
     }),
     (de.prototype.readInt8 = function (e, t) {
       return (
@@ -5084,12 +5106,12 @@
       );
     }),
     (de.prototype.readInt16LE = function (e, t) {
-      (e >>>= 0), t || Oe(e, 2, this.length);
+      ((e >>>= 0), t || Oe(e, 2, this.length));
       var n = this[e] | (this[e + 1] << 8);
       return 32768 & n ? 4294901760 | n : n;
     }),
     (de.prototype.readInt16BE = function (e, t) {
-      (e >>>= 0), t || Oe(e, 2, this.length);
+      ((e >>>= 0), t || Oe(e, 2, this.length));
       var n = this[e + 1] | (this[e] << 8);
       return 32768 & n ? 4294901760 | n : n;
     }),
@@ -5108,16 +5130,16 @@
       );
     }),
     (de.prototype.readFloatLE = function (e, t) {
-      return (e >>>= 0), t || Oe(e, 4, this.length), X(this, e, !0, 23, 4);
+      return ((e >>>= 0), t || Oe(e, 4, this.length), X(this, e, !0, 23, 4));
     }),
     (de.prototype.readFloatBE = function (e, t) {
-      return (e >>>= 0), t || Oe(e, 4, this.length), X(this, e, !1, 23, 4);
+      return ((e >>>= 0), t || Oe(e, 4, this.length), X(this, e, !1, 23, 4));
     }),
     (de.prototype.readDoubleLE = function (e, t) {
-      return (e >>>= 0), t || Oe(e, 8, this.length), X(this, e, !0, 52, 8);
+      return ((e >>>= 0), t || Oe(e, 8, this.length), X(this, e, !0, 52, 8));
     }),
     (de.prototype.readDoubleBE = function (e, t) {
-      return (e >>>= 0), t || Oe(e, 8, this.length), X(this, e, !1, 52, 8);
+      return ((e >>>= 0), t || Oe(e, 8, this.length), X(this, e, !1, 52, 8));
     }),
     (de.prototype.writeUintLE = de.prototype.writeUIntLE =
       function (e, t, n, o) {
@@ -5206,8 +5228,8 @@
         a = 1,
         s = 0;
       for (this[t] = 255 & e; ++i < n && (a *= 256); )
-        e < 0 && 0 === s && 0 !== this[t + i - 1] && (s = 1),
-          (this[t + i] = (((e / a) >> 0) - s) & 255);
+        (e < 0 && 0 === s && 0 !== this[t + i - 1] && (s = 1),
+          (this[t + i] = (((e / a) >> 0) - s) & 255));
       return t + n;
     }),
     (de.prototype.writeIntBE = function (e, t, n, o) {
@@ -5219,8 +5241,8 @@
         a = 1,
         s = 0;
       for (this[t + i] = 255 & e; --i >= 0 && (a *= 256); )
-        e < 0 && 0 === s && 0 !== this[t + i + 1] && (s = 1),
-          (this[t + i] = (((e / a) >> 0) - s) & 255);
+        (e < 0 && 0 === s && 0 !== this[t + i + 1] && (s = 1),
+          (this[t + i] = (((e / a) >> 0) - s) & 255));
       return t + n;
     }),
     (de.prototype.writeInt8 = function (e, t, n) {
@@ -5291,7 +5313,7 @@
       return Pe(this, e, t, !1, n);
     }),
     (de.prototype.copy = function (e, t, n, o) {
-      if (!de.isBuffer(e)) throw new TypeError('argument should be a Buffer');
+      if (!de.isBuffer(e)) throw new TypeError("argument should be a Buffer");
       if (
         (n || (n = 0),
         o || 0 === o || (o = this.length),
@@ -5302,47 +5324,47 @@
       )
         return 0;
       if (0 === e.length || 0 === this.length) return 0;
-      if (t < 0) throw new RangeError('targetStart out of bounds');
-      if (n < 0 || n >= this.length) throw new RangeError('Index out of range');
-      if (o < 0) throw new RangeError('sourceEnd out of bounds');
-      o > this.length && (o = this.length),
-        e.length - t < o - n && (o = e.length - t + n);
+      if (t < 0) throw new RangeError("targetStart out of bounds");
+      if (n < 0 || n >= this.length) throw new RangeError("Index out of range");
+      if (o < 0) throw new RangeError("sourceEnd out of bounds");
+      (o > this.length && (o = this.length),
+        e.length - t < o - n && (o = e.length - t + n));
       var r = o - n;
       return (
-        this === e && 'function' == typeof Uint8Array.prototype.copyWithin
+        this === e && "function" == typeof Uint8Array.prototype.copyWithin
           ? this.copyWithin(t, n, o)
           : Uint8Array.prototype.set.call(e, this.subarray(n, o), t),
         r
       );
     }),
     (de.prototype.fill = function (e, t, n, o) {
-      if ('string' == typeof e) {
+      if ("string" == typeof e) {
         if (
-          ('string' == typeof t
+          ("string" == typeof t
             ? ((o = t), (t = 0), (n = this.length))
-            : 'string' == typeof n && ((o = n), (n = this.length)),
-          void 0 !== o && 'string' != typeof o)
+            : "string" == typeof n && ((o = n), (n = this.length)),
+          void 0 !== o && "string" != typeof o)
         )
-          throw new TypeError('encoding must be a string');
-        if ('string' == typeof o && !de.isEncoding(o))
-          throw new TypeError('Unknown encoding: ' + o);
+          throw new TypeError("encoding must be a string");
+        if ("string" == typeof o && !de.isEncoding(o))
+          throw new TypeError("Unknown encoding: " + o);
         if (1 === e.length) {
           var r = e.charCodeAt(0);
-          (('utf8' === o && r < 128) || 'latin1' === o) && (e = r);
+          (("utf8" === o && r < 128) || "latin1" === o) && (e = r);
         }
       } else
-        'number' == typeof e
+        "number" == typeof e
           ? (e &= 255)
-          : 'boolean' == typeof e && (e = Number(e));
+          : "boolean" == typeof e && (e = Number(e));
       if (t < 0 || this.length < t || this.length < n)
-        throw new RangeError('Out of range index');
+        throw new RangeError("Out of range index");
       if (n <= t) return this;
       var i;
       if (
         ((t >>>= 0),
         (n = void 0 === n ? this.length : n >>> 0),
         e || (e = 0),
-        'number' == typeof e)
+        "number" == typeof e)
       )
         for (i = t; i < n; ++i) this[i] = e;
       else {
@@ -5350,12 +5372,12 @@
           s = a.length;
         if (0 === s)
           throw new TypeError(
-            'The value "' + e + '" is invalid for argument "value"'
+            'The value "' + e + '" is invalid for argument "value"',
           );
         for (i = 0; i < n - t; ++i) this[i + t] = a[i % s];
       }
       return this;
-    });
+    }));
   var je = /[^+/0-9A-Za-z-_]/g;
   function Fe(e, t) {
     var n;
@@ -5375,7 +5397,7 @@
           continue;
         }
         if (n < 56320) {
-          (t -= 3) > -1 && i.push(239, 191, 189), (r = n);
+          ((t -= 3) > -1 && i.push(239, 191, 189), (r = n));
           continue;
         }
         n = 65536 + (((r - 55296) << 10) | (n - 56320));
@@ -5390,13 +5412,13 @@
         if ((t -= 3) < 0) break;
         i.push((n >> 12) | 224, ((n >> 6) & 63) | 128, (63 & n) | 128);
       } else {
-        if (!(n < 1114112)) throw new Error('Invalid code point');
+        if (!(n < 1114112)) throw new Error("Invalid code point");
         if ((t -= 4) < 0) break;
         i.push(
           (n >> 18) | 240,
           ((n >> 12) & 63) | 128,
           ((n >> 6) & 63) | 128,
-          (63 & n) | 128
+          (63 & n) | 128,
         );
       }
     }
@@ -5405,11 +5427,11 @@
   function Ue(e) {
     return Y(
       (function (e) {
-        if ((e = (e = e.split('=')[0]).trim().replace(je, '')).length < 2)
-          return '';
-        for (; e.length % 4 != 0; ) e += '=';
+        if ((e = (e = e.split("=")[0]).trim().replace(je, "")).length < 2)
+          return "";
+        for (; e.length % 4 != 0; ) e += "=";
         return e;
-      })(e)
+      })(e),
     );
   }
   function De(e, t, n, o) {
@@ -5430,7 +5452,7 @@
     return e != e;
   }
   var Ge = (function () {
-      for (var e = '0123456789abcdef', t = new Array(256), n = 0; n < 16; ++n)
+      for (var e = "0123456789abcdef", t = new Array(256), n = 0; n < 16; ++n)
         for (var o = 16 * n, r = 0; r < 16; ++r) t[o + r] = e[n] + e[r];
       return t;
     })(),
@@ -5469,15 +5491,15 @@
           get isMatch() {
             return h.getIsMatch();
           },
-          getMatchedBy: () => ((e) => G(e, 'leafNeedlesMatch'))(l),
+          getMatchedBy: () => ((e) => G(e, "leafNeedlesMatch"))(l),
           get matchedBy() {
             return h.getMatchedBy();
           },
-          getExcludedBy: () => ((e) => G(e, 'leafNeedlesExclude'))(l),
+          getExcludedBy: () => ((e) => G(e, "leafNeedlesExclude"))(l),
           get excludedBy() {
             return h.getExcludedBy();
           },
-          getTraversedBy: () => ((e) => G(e, 'needles'))(l),
+          getTraversedBy: () => ((e) => G(e, "needles"))(l),
           get traversedBy() {
             return h.getTraversedBy();
           },
@@ -5519,12 +5541,12 @@
           context: o.context,
         },
         m = ((e, t) => {
-          if ('context' === t.rtn)
+          if ("context" === t.rtn)
             return {
               onMatch: () => {},
               get: () => e.context,
             };
-          if ('bool' === t.rtn) {
+          if ("bool" === t.rtn) {
             let e = !1;
             return {
               onMatch: () => {
@@ -5533,7 +5555,7 @@
               get: () => e,
             };
           }
-          if ('count' === t.rtn) {
+          if ("count" === t.rtn) {
             let e = 0;
             return {
               onMatch: () => {
@@ -5542,7 +5564,7 @@
               get: () => e,
             };
           }
-          if ('sum' === t.rtn) {
+          if ("sum" === t.rtn) {
             let e = 0;
             return {
               onMatch: ({ value: t }) => {
@@ -5554,11 +5576,11 @@
           const n = [];
           return {
             onMatch:
-              'function' == typeof t.rtn
+              "function" == typeof t.rtn
                 ? () => n.push(t.rtn(e))
                 : Array.isArray(t.rtn)
-                ? () => n.push(t.rtn.map((t) => e[t]))
-                : () => n.push(e[t.rtn]),
+                  ? () => n.push(t.rtn.map((t) => e[t]))
+                  : () => n.push(e[t.rtn]),
             get: () => (t.abort ? n[0] : n),
           };
         })(h, n);
@@ -5566,19 +5588,19 @@
         ((h.getResult = () => m.get()),
         n.useArraySelector || !Array.isArray(o.haystack))
       ) {
-        const e = t.get('');
+        const e = t.get("");
         void 0 !== e && r[1].push(e);
       }
       do {
-        (s = r.pop()), (c = r.pop()), (l = r.pop()), (d = r.pop());
+        ((s = r.pop()), (c = r.pop()), (l = r.pop()), (d = r.pop()));
         const e = i.length - s;
-        for (let t = 0; t < e; t += 1) a.pop(), i.pop();
+        for (let t = 0; t < e; t += 1) (a.pop(), i.pop());
         if (
           (-1 === e
             ? (a.push(u), i.push(c), (u = u[c]))
             : null !== c
-            ? ((i[i.length - 1] = c), (u = a[a.length - 1][c]))
-            : (u = o.haystack),
+              ? ((i[i.length - 1] = c), (u = a[a.length - 1][c]))
+              : (u = o.haystack),
           d)
         ) {
           (void 0 !== n.filterFn && !1 === n.filterFn(h)) ||
@@ -5593,11 +5615,12 @@
         ) {
           const e = Array.isArray(u),
             o = Object.keys(u);
-          !e && n.compareFn && o.sort(n.compareFn(h)), n.reverse || o.reverse();
+          (!e && n.compareFn && o.sort(n.compareFn(h)),
+            n.reverse || o.reverse());
           for (let i = 0, a = o.length; i < a; i += 1) {
             const a = o[i],
               c = [];
-            if (p) c.push(...l), 0 === s && c.push(...t.roots);
+            if (p) (c.push(...l), 0 === s && c.push(...t.roots));
             else
               for (let t = 0, n = l.length; t !== n; t += 1) {
                 const n = l[t];
@@ -5628,7 +5651,7 @@
   const Je = (e, t, n) => {
     R(
       n.includes(typeof e[t]),
-      () => `Option "${t}" not one of [${n.join(', ')}]`
+      () => `Option "${t}" not one of [${n.join(", ")}]`,
     );
   };
   // https://github.com/blackflux/object-scan
@@ -5637,7 +5660,7 @@
         (R(Array.isArray(e), 'Argument "needles" expected to be Array'),
         R(
           t instanceof Object && !Array.isArray(t),
-          'Argument "opts" expected to be Object'
+          'Argument "opts" expected to be Object',
         ),
         0 === e.length)
       )
@@ -5659,73 +5682,73 @@
             ...e,
           };
           return (
-            R(12 === Object.keys(t).length, 'Unexpected Option provided'),
-            Je(t, 'filterFn', ['function', 'undefined']),
-            Je(t, 'breakFn', ['function', 'undefined']),
-            Je(t, 'beforeFn', ['function', 'undefined']),
-            Je(t, 'afterFn', ['function', 'undefined']),
-            Je(t, 'compareFn', ['function', 'undefined']),
-            Je(t, 'reverse', ['boolean']),
-            Je(t, 'orderByNeedles', ['boolean']),
-            Je(t, 'abort', ['boolean']),
+            R(12 === Object.keys(t).length, "Unexpected Option provided"),
+            Je(t, "filterFn", ["function", "undefined"]),
+            Je(t, "breakFn", ["function", "undefined"]),
+            Je(t, "beforeFn", ["function", "undefined"]),
+            Je(t, "afterFn", ["function", "undefined"]),
+            Je(t, "compareFn", ["function", "undefined"]),
+            Je(t, "reverse", ["boolean"]),
+            Je(t, "orderByNeedles", ["boolean"]),
+            Je(t, "abort", ["boolean"]),
             R(
-              ('function' == typeof t.rtn && 1 === t.rtn.length) ||
+              ("function" == typeof t.rtn && 1 === t.rtn.length) ||
                 [
                   void 0,
-                  'context',
-                  'key',
-                  'value',
-                  'entry',
-                  'property',
-                  'gproperty',
-                  'parent',
-                  'gparent',
-                  'parents',
-                  'isMatch',
-                  'matchedBy',
-                  'excludedBy',
-                  'traversedBy',
-                  'isCircular',
-                  'isLeaf',
-                  'depth',
-                  'bool',
-                  'count',
-                  'sum',
+                  "context",
+                  "key",
+                  "value",
+                  "entry",
+                  "property",
+                  "gproperty",
+                  "parent",
+                  "gparent",
+                  "parents",
+                  "isMatch",
+                  "matchedBy",
+                  "excludedBy",
+                  "traversedBy",
+                  "isCircular",
+                  "isLeaf",
+                  "depth",
+                  "bool",
+                  "count",
+                  "sum",
                 ].includes(t.rtn) ||
                 (Array.isArray(t.rtn) &&
                   t.rtn.every((e) =>
                     [
-                      'key',
-                      'value',
-                      'entry',
-                      'property',
-                      'gproperty',
-                      'parent',
-                      'gparent',
-                      'parents',
-                      'isMatch',
-                      'matchedBy',
-                      'excludedBy',
-                      'traversedBy',
-                      'isCircular',
-                      'isLeaf',
-                      'depth',
-                    ].includes(e)
+                      "key",
+                      "value",
+                      "entry",
+                      "property",
+                      "gproperty",
+                      "parent",
+                      "gparent",
+                      "parents",
+                      "isMatch",
+                      "matchedBy",
+                      "excludedBy",
+                      "traversedBy",
+                      "isCircular",
+                      "isLeaf",
+                      "depth",
+                    ].includes(e),
                   )),
-              'Option "rtn" is malformed'
+              'Option "rtn" is malformed',
             ),
-            Je(t, 'joined', ['boolean']),
-            Je(t, 'useArraySelector', ['boolean']),
-            Je(t, 'strict', ['boolean']),
+            Je(t, "joined", ["boolean"]),
+            Je(t, "useArraySelector", ["boolean"]),
+            Je(t, "strict", ["boolean"]),
             t
           );
         })(t),
         o = ((e, t) => {
-          (t.counter = 0),
+          ((t.counter = 0),
             (t.links = []),
             (t.nodes = []),
-            (t.regex = Object.create(null));
-          const n = new V('*', t);
+            (t.regex = Object.create(null)));
+          const n = new V("*", t);
           for (let o = 0; o < e.length; o += 1) {
             const r = e[o],
               i = [z(r, t)];
@@ -5746,14 +5769,14 @@
               !1 === t.useArraySelector &&
                 e.setRoots(
                   e.children.filter(
-                    ({ isStarRec: e, value: t }) => e || '' === t
-                  )
+                    ({ isStarRec: e, value: t }) => e || "" === t,
+                  ),
                 );
               const { nodes: o } = t;
               for (; 0 !== o.length; ) {
                 const e = o.pop(),
                   { children: t } = e;
-                t.reverse(), t.some(({ matches: e }) => e) && e.markMatches();
+                (t.reverse(), t.some(({ matches: e }) => e) && e.markMatches());
               }
             })(n, t),
             n
@@ -5763,23 +5786,23 @@
         We(e, o, {
           context: t,
           ...n,
-          rtn: n.rtn || (void 0 === t ? 'key' : 'context'),
+          rtn: n.rtn || (void 0 === t ? "key" : "context"),
         });
     },
     Ke = {};
-  Object.defineProperty(Ke, '__esModule', {
+  Object.defineProperty(Ke, "__esModule", {
     value: !0,
   });
   var Xe = {},
     Qe = Object.prototype.hasOwnProperty,
-    Ze = '~';
+    Ze = "~";
   function et() {}
   function tt(e, t, n) {
-    (this.fn = e), (this.context = t), (this.once = n || !1);
+    ((this.fn = e), (this.context = t), (this.once = n || !1));
   }
   function nt(e, t, n, o, r) {
-    if ('function' != typeof n)
-      throw new TypeError('The listener must be a function');
+    if ("function" != typeof n)
+      throw new TypeError("The listener must be a function");
     var i = new tt(n, o || e, r),
       a = Ze ? Ze + t : t;
     return (
@@ -5795,9 +5818,9 @@
     0 == --e._eventsCount ? (e._events = new et()) : delete e._events[t];
   }
   function rt() {
-    (this._events = new et()), (this._eventsCount = 0);
+    ((this._events = new et()), (this._eventsCount = 0));
   }
-  Object.create &&
+  (Object.create &&
     ((et.prototype = Object.create(null)), new et().__proto__ || (Ze = !1)),
     (rt.prototype.eventNames = function () {
       var e,
@@ -5834,17 +5857,17 @@
       if (l.fn) {
         switch ((l.once && this.removeListener(e, l.fn, void 0, !0), d)) {
           case 1:
-            return l.fn.call(l.context), !0;
+            return (l.fn.call(l.context), !0);
           case 2:
-            return l.fn.call(l.context, t), !0;
+            return (l.fn.call(l.context, t), !0);
           case 3:
-            return l.fn.call(l.context, t, n), !0;
+            return (l.fn.call(l.context, t, n), !0);
           case 4:
-            return l.fn.call(l.context, t, n, o), !0;
+            return (l.fn.call(l.context, t, n, o), !0);
           case 5:
-            return l.fn.call(l.context, t, n, o, r), !0;
+            return (l.fn.call(l.context, t, n, o, r), !0);
           case 6:
-            return l.fn.call(l.context, t, n, o, r, i), !0;
+            return (l.fn.call(l.context, t, n, o, r, i), !0);
         }
         for (c = 1, s = new Array(d - 1); c < d; c++) s[c - 1] = arguments[c];
         l.fn.apply(l.context, s);
@@ -5885,7 +5908,7 @@
     (rt.prototype.removeListener = function (e, t, n, o) {
       var r = Ze ? Ze + e : e;
       if (!this._events[r]) return this;
-      if (!t) return ot(this, r), this;
+      if (!t) return (ot(this, r), this);
       var i = this._events[r];
       if (i.fn)
         i.fn !== t || (o && !i.once) || (n && i.context !== n) || ot(this, r);
@@ -5910,7 +5933,7 @@
     (rt.prototype.addListener = rt.prototype.on),
     (rt.prefixed = Ze),
     (rt.EventEmitter = rt),
-    (Xe = rt);
+    (Xe = rt));
   var it,
     at = {};
   it = (e, t) => (
@@ -5925,21 +5948,21 @@
           e(t());
         }).then(() => {
           throw e;
-        })
+        }),
     )
   );
   class st extends Error {
     constructor(e) {
-      super(e), (this.name = 'TimeoutError');
+      (super(e), (this.name = "TimeoutError"));
     }
   }
   const ct = (e, t, n) =>
     new Promise((o, r) => {
-      if ('number' != typeof t || t < 0)
-        throw new TypeError('Expected `milliseconds` to be a positive number');
+      if ("number" != typeof t || t < 0)
+        throw new TypeError("Expected `milliseconds` to be a positive number");
       if (t === 1 / 0) return void o(e);
       const i = setTimeout(() => {
-        if ('function' == typeof n) {
+        if ("function" == typeof n) {
           try {
             o(n());
           } catch (e) {
@@ -5951,23 +5974,23 @@
           n instanceof Error
             ? n
             : new st(
-                'string' == typeof n
+                "string" == typeof n
                   ? n
-                  : `Promise timed out after ${t} milliseconds`
+                  : `Promise timed out after ${t} milliseconds`,
               );
-        'function' == typeof e.cancel && e.cancel(), r(i);
+        ("function" == typeof e.cancel && e.cancel(), r(i));
       }, t);
       it(e.then(o, r), () => {
         clearTimeout(i);
       });
     });
-  ((at = ct).default = ct), (at.TimeoutError = st);
+  (((at = ct).default = ct), (at.TimeoutError = st));
   var lt = {};
-  Object.defineProperty(lt, '__esModule', {
+  Object.defineProperty(lt, "__esModule", {
     value: !0,
   });
   var dt = {};
-  Object.defineProperty(dt, '__esModule', {
+  (Object.defineProperty(dt, "__esModule", {
     value: !0,
   }),
     (dt.default = function (e, t, n) {
@@ -5979,7 +6002,7 @@
         n(e[a], t) <= 0 ? ((o = ++a), (r -= i + 1)) : (r = i);
       }
       return o;
-    });
+    }));
   lt.default = class {
     constructor() {
       this._queue = [];
@@ -5990,7 +6013,7 @@
           {
             priority: 0,
           },
-          t
+          t,
         )).priority,
         run: e,
       };
@@ -6025,7 +6048,7 @@
         (this._resolveEmpty = ut),
         (this._resolveIdle = ut),
         !(
-          'number' ==
+          "number" ==
             typeof (e = Object.assign(
               {
                 carryoverConcurrencyCount: !1,
@@ -6035,7 +6058,7 @@
                 autoStart: !0,
                 queueClass: lt.default,
               },
-              e
+              e,
             )).intervalCap && e.intervalCap >= 1
         ))
       )
@@ -6047,8 +6070,8 @@
                   ? void 0
                   : t.toString()) && void 0 !== n
               ? n
-              : ''
-          }\` (${typeof e.intervalCap})`
+              : ""
+          }\` (${typeof e.intervalCap})`,
         );
       if (
         void 0 === e.interval ||
@@ -6062,10 +6085,10 @@
                   ? void 0
                   : o.toString()) && void 0 !== r
               ? r
-              : ''
-          }\` (${typeof e.interval})`
+              : ""
+          }\` (${typeof e.interval})`,
         );
-      (this._carryoverConcurrencyCount = e.carryoverConcurrencyCount),
+      ((this._carryoverConcurrencyCount = e.carryoverConcurrencyCount),
         (this._isIntervalIgnored = e.intervalCap === 1 / 0 || 0 === e.interval),
         (this._intervalCap = e.intervalCap),
         (this._interval = e.interval),
@@ -6074,7 +6097,7 @@
         (this.concurrency = e.concurrency),
         (this._timeout = e.timeout),
         (this._throwOnTimeout = !0 === e.throwOnTimeout),
-        (this._isPaused = !1 === e.autoStart);
+        (this._isPaused = !1 === e.autoStart));
     }
     get _doesIntervalAllowAnother() {
       return this._isIntervalIgnored || this._intervalCount < this._intervalCap;
@@ -6083,18 +6106,18 @@
       return this._pendingCount < this._concurrency;
     }
     _next() {
-      this._pendingCount--, this._tryToStartAnother(), this.emit('next');
+      (this._pendingCount--, this._tryToStartAnother(), this.emit("next"));
     }
     _resolvePromises() {
-      this._resolveEmpty(),
+      (this._resolveEmpty(),
         (this._resolveEmpty = ut),
         0 === this._pendingCount &&
-          (this._resolveIdle(), (this._resolveIdle = ut), this.emit('idle'));
+          (this._resolveIdle(), (this._resolveIdle = ut), this.emit("idle")));
     }
     _onResumeInterval() {
-      this._onInterval(),
+      (this._onInterval(),
         this._initializeIntervalIfNeeded(),
-        (this._timeoutId = void 0);
+        (this._timeoutId = void 0));
     }
     _isIntervalPaused() {
       const e = Date.now();
@@ -6131,7 +6154,7 @@
           const t = this._queue.dequeue();
           return (
             !!t &&
-            (this.emit('active'),
+            (this.emit("active"),
             t(),
             e && this._initializeIntervalIfNeeded(),
             !0)
@@ -6149,14 +6172,14 @@
         (this._intervalEnd = Date.now() + this._interval));
     }
     _onInterval() {
-      0 === this._intervalCount &&
+      (0 === this._intervalCount &&
         0 === this._pendingCount &&
         this._intervalId &&
         (clearInterval(this._intervalId), (this._intervalId = void 0)),
         (this._intervalCount = this._carryoverConcurrencyCount
           ? this._pendingCount
           : 0),
-        this._processQueue();
+        this._processQueue());
     }
     _processQueue() {
       for (; this._tryToStartAnother(); );
@@ -6165,16 +6188,16 @@
       return this._concurrency;
     }
     set concurrency(e) {
-      if (!('number' == typeof e && e >= 1))
+      if (!("number" == typeof e && e >= 1))
         throw new TypeError(
-          `Expected \`concurrency\` to be a number from 1 and up, got \`${e}\` (${typeof e})`
+          `Expected \`concurrency\` to be a number from 1 and up, got \`${e}\` (${typeof e})`,
         );
-      (this._concurrency = e), this._processQueue();
+      ((this._concurrency = e), this._processQueue());
     }
     async add(e, t = {}) {
       return new Promise((n, o) => {
-        this._queue.enqueue(async () => {
-          this._pendingCount++, this._intervalCount++;
+        (this._queue.enqueue(async () => {
+          (this._pendingCount++, this._intervalCount++);
           try {
             const r =
               void 0 === this._timeout && void 0 === t.timeout
@@ -6186,7 +6209,7 @@
                       (void 0 === t.throwOnTimeout
                         ? this._throwOnTimeout
                         : t.throwOnTimeout) && o(ht);
-                    }
+                    },
                   );
             n(await r);
           } catch (e) {
@@ -6195,7 +6218,7 @@
           this._next();
         }, t),
           this._tryToStartAnother(),
-          this.emit('add');
+          this.emit("add"));
       });
     }
     async addAll(e, t) {
@@ -6217,7 +6240,7 @@
         return new Promise((e) => {
           const t = this._resolveEmpty;
           this._resolveEmpty = () => {
-            t(), e();
+            (t(), e());
           };
         });
     }
@@ -6226,7 +6249,7 @@
         return new Promise((e) => {
           const t = this._resolveIdle;
           this._resolveIdle = () => {
-            t(), e();
+            (t(), e());
           };
         });
     }
@@ -6253,14 +6276,14 @@
     pt = {};
   const ft = (e) =>
       e && e.includeBoundaries
-        ? '(?:(?<=\\s|^)(?=[a-fA-F\\d:])|(?<=[a-fA-F\\d:])(?=\\s|$))'
-        : '',
+        ? "(?:(?<=\\s|^)(?=[a-fA-F\\d:])|(?<=[a-fA-F\\d:])(?=\\s|$))"
+        : "",
     vt =
-      '(?:25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]\\d|\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]\\d|\\d)){3}',
+      "(?:25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]\\d|\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]\\d|\\d)){3}",
     yt =
       `\n(?:\n(?:[a-fA-F\\d]{1,4}:){7}(?:[a-fA-F\\d]{1,4}|:)|                                    // 1:2:3:4:5:6:7::  1:2:3:4:5:6:7:8\n(?:[a-fA-F\\d]{1,4}:){6}(?:${vt}|:[a-fA-F\\d]{1,4}|:)|                             // 1:2:3:4:5:6::    1:2:3:4:5:6::8   1:2:3:4:5:6::8  1:2:3:4:5:6::1.2.3.4\n(?:[a-fA-F\\d]{1,4}:){5}(?::${vt}|(?::[a-fA-F\\d]{1,4}){1,2}|:)|                   // 1:2:3:4:5::      1:2:3:4:5::7:8   1:2:3:4:5::8    1:2:3:4:5::7:1.2.3.4\n(?:[a-fA-F\\d]{1,4}:){4}(?:(?::[a-fA-F\\d]{1,4}){0,1}:${vt}|(?::[a-fA-F\\d]{1,4}){1,3}|:)| // 1:2:3:4::        1:2:3:4::6:7:8   1:2:3:4::8      1:2:3:4::6:7:1.2.3.4\n(?:[a-fA-F\\d]{1,4}:){3}(?:(?::[a-fA-F\\d]{1,4}){0,2}:${vt}|(?::[a-fA-F\\d]{1,4}){1,4}|:)| // 1:2:3::          1:2:3::5:6:7:8   1:2:3::8        1:2:3::5:6:7:1.2.3.4\n(?:[a-fA-F\\d]{1,4}:){2}(?:(?::[a-fA-F\\d]{1,4}){0,3}:${vt}|(?::[a-fA-F\\d]{1,4}){1,5}|:)| // 1:2::            1:2::4:5:6:7:8   1:2::8          1:2::4:5:6:7:1.2.3.4\n(?:[a-fA-F\\d]{1,4}:){1}(?:(?::[a-fA-F\\d]{1,4}){0,4}:${vt}|(?::[a-fA-F\\d]{1,4}){1,6}|:)| // 1::              1::3:4:5:6:7:8   1::8            1::3:4:5:6:7:1.2.3.4\n(?::(?:(?::[a-fA-F\\d]{1,4}){0,5}:${vt}|(?::[a-fA-F\\d]{1,4}){1,7}|:))             // ::2:3:4:5:6:7:8  ::2:3:4:5:6:7:8  ::8             ::1.2.3.4\n)(?:%[0-9a-zA-Z]{1,})?                                             // %eth0            %1\n`
-        .replace(/\s*\/\/.*$/gm, '')
-        .replace(/\n/g, '')
+        .replace(/\s*\/\/.*$/gm, "")
+        .replace(/\n/g, "")
         .trim(),
     gt = new RegExp(`(?:^${vt}$)|(?:^${yt}$)`),
     wt = new RegExp(`^${vt}$`),
@@ -6270,73 +6293,73 @@
         ? gt
         : new RegExp(
             `(?:${ft(e)}${vt}${ft(e)})|(?:${ft(e)}${yt}${ft(e)})`,
-            'g'
+            "g",
           );
-  (xt.v4 = (e) =>
-    e && e.exact ? wt : new RegExp(`${ft(e)}${vt}${ft(e)}`, 'g')),
+  ((xt.v4 = (e) =>
+    e && e.exact ? wt : new RegExp(`${ft(e)}${vt}${ft(e)}`, "g")),
     (xt.v6 = (e) =>
-      e && e.exact ? bt : new RegExp(`${ft(e)}${yt}${ft(e)}`, 'g')),
-    (pt = xt);
+      e && e.exact ? bt : new RegExp(`${ft(e)}${yt}${ft(e)}`, "g")),
+    (pt = xt));
   var _t = {};
-  (_t = JSON.parse(
-    '["aaa","aarp","abarth","abb","abbott","abbvie","abc","able","abogado","abudhabi","ac","academy","accenture","accountant","accountants","aco","actor","ad","adac","ads","adult","ae","aeg","aero","aetna","af","afl","africa","ag","agakhan","agency","ai","aig","airbus","airforce","airtel","akdn","al","alfaromeo","alibaba","alipay","allfinanz","allstate","ally","alsace","alstom","am","amazon","americanexpress","americanfamily","amex","amfam","amica","amsterdam","analytics","android","anquan","anz","ao","aol","apartments","app","apple","aq","aquarelle","ar","arab","aramco","archi","army","arpa","art","arte","as","asda","asia","associates","at","athleta","attorney","au","auction","audi","audible","audio","auspost","author","auto","autos","avianca","aw","aws","ax","axa","az","azure","ba","baby","baidu","banamex","bananarepublic","band","bank","bar","barcelona","barclaycard","barclays","barefoot","bargains","baseball","basketball","bauhaus","bayern","bb","bbc","bbt","bbva","bcg","bcn","bd","be","beats","beauty","beer","bentley","berlin","best","bestbuy","bet","bf","bg","bh","bharti","bi","bible","bid","bike","bing","bingo","bio","biz","bj","black","blackfriday","blockbuster","blog","bloomberg","blue","bm","bms","bmw","bn","bnpparibas","bo","boats","boehringer","bofa","bom","bond","boo","book","booking","bosch","bostik","boston","bot","boutique","box","br","bradesco","bridgestone","broadway","broker","brother","brussels","bs","bt","bugatti","build","builders","business","buy","buzz","bv","bw","by","bz","bzh","ca","cab","cafe","cal","call","calvinklein","cam","camera","camp","cancerresearch","canon","capetown","capital","capitalone","car","caravan","cards","care","career","careers","cars","casa","case","cash","casino","cat","catering","catholic","cba","cbn","cbre","cbs","cc","cd","center","ceo","cern","cf","cfa","cfd","cg","ch","chanel","channel","charity","chase","chat","cheap","chintai","christmas","chrome","church","ci","cipriani","circle","cisco","citadel","citi","citic","city","cityeats","ck","cl","claims","cleaning","click","clinic","clinique","clothing","cloud","club","clubmed","cm","cn","co","coach","codes","coffee","college","cologne","com","comcast","commbank","community","company","compare","computer","comsec","condos","construction","consulting","contact","contractors","cooking","cookingchannel","cool","coop","corsica","country","coupon","coupons","courses","cpa","cr","credit","creditcard","creditunion","cricket","crown","crs","cruise","cruises","cu","cuisinella","cv","cw","cx","cy","cymru","cyou","cz","dabur","dad","dance","data","date","dating","datsun","day","dclk","dds","de","deal","dealer","deals","degree","delivery","dell","deloitte","delta","democrat","dental","dentist","desi","design","dev","dhl","diamonds","diet","digital","direct","directory","discount","discover","dish","diy","dj","dk","dm","dnp","do","docs","doctor","dog","domains","dot","download","drive","dtv","dubai","dunlop","dupont","durban","dvag","dvr","dz","earth","eat","ec","eco","edeka","edu","education","ee","eg","email","emerck","energy","engineer","engineering","enterprises","epson","equipment","er","ericsson","erni","es","esq","estate","et","etisalat","eu","eurovision","eus","events","exchange","expert","exposed","express","extraspace","fage","fail","fairwinds","faith","family","fan","fans","farm","farmers","fashion","fast","fedex","feedback","ferrari","ferrero","fi","fiat","fidelity","fido","film","final","finance","financial","fire","firestone","firmdale","fish","fishing","fit","fitness","fj","fk","flickr","flights","flir","florist","flowers","fly","fm","fo","foo","food","foodnetwork","football","ford","forex","forsale","forum","foundation","fox","fr","free","fresenius","frl","frogans","frontdoor","frontier","ftr","fujitsu","fun","fund","furniture","futbol","fyi","ga","gal","gallery","gallo","gallup","game","games","gap","garden","gay","gb","gbiz","gd","gdn","ge","gea","gent","genting","george","gf","gg","ggee","gh","gi","gift","gifts","gives","giving","gl","glass","gle","global","globo","gm","gmail","gmbh","gmo","gmx","gn","godaddy","gold","goldpoint","golf","goo","goodyear","goog","google","gop","got","gov","gp","gq","gr","grainger","graphics","gratis","green","gripe","grocery","group","gs","gt","gu","guardian","gucci","guge","guide","guitars","guru","gw","gy","hair","hamburg","hangout","haus","hbo","hdfc","hdfcbank","health","healthcare","help","helsinki","here","hermes","hgtv","hiphop","hisamitsu","hitachi","hiv","hk","hkt","hm","hn","hockey","holdings","holiday","homedepot","homegoods","homes","homesense","honda","horse","hospital","host","hosting","hot","hoteles","hotels","hotmail","house","how","hr","hsbc","ht","hu","hughes","hyatt","hyundai","ibm","icbc","ice","icu","id","ie","ieee","ifm","ikano","il","im","imamat","imdb","immo","immobilien","in","inc","industries","infiniti","info","ing","ink","institute","insurance","insure","int","international","intuit","investments","io","ipiranga","iq","ir","irish","is","ismaili","ist","istanbul","it","itau","itv","jaguar","java","jcb","je","jeep","jetzt","jewelry","jio","jll","jm","jmp","jnj","jo","jobs","joburg","jot","joy","jp","jpmorgan","jprs","juegos","juniper","kaufen","kddi","ke","kerryhotels","kerrylogistics","kerryproperties","kfh","kg","kh","ki","kia","kids","kim","kinder","kindle","kitchen","kiwi","km","kn","koeln","komatsu","kosher","kp","kpmg","kpn","kr","krd","kred","kuokgroup","kw","ky","kyoto","kz","la","lacaixa","lamborghini","lamer","lancaster","lancia","land","landrover","lanxess","lasalle","lat","latino","latrobe","law","lawyer","lb","lc","lds","lease","leclerc","lefrak","legal","lego","lexus","lgbt","li","lidl","life","lifeinsurance","lifestyle","lighting","like","lilly","limited","limo","lincoln","linde","link","lipsy","live","living","lk","llc","llp","loan","loans","locker","locus","loft","lol","london","lotte","lotto","love","lpl","lplfinancial","lr","ls","lt","ltd","ltda","lu","lundbeck","luxe","luxury","lv","ly","ma","macys","madrid","maif","maison","makeup","man","management","mango","map","market","marketing","markets","marriott","marshalls","maserati","mattel","mba","mc","mckinsey","md","me","med","media","meet","melbourne","meme","memorial","men","menu","merckmsd","mg","mh","miami","microsoft","mil","mini","mint","mit","mitsubishi","mk","ml","mlb","mls","mm","mma","mn","mo","mobi","mobile","moda","moe","moi","mom","monash","money","monster","mormon","mortgage","moscow","moto","motorcycles","mov","movie","mp","mq","mr","ms","msd","mt","mtn","mtr","mu","museum","music","mutual","mv","mw","mx","my","mz","na","nab","nagoya","name","natura","navy","nba","nc","ne","nec","net","netbank","netflix","network","neustar","new","news","next","nextdirect","nexus","nf","nfl","ng","ngo","nhk","ni","nico","nike","nikon","ninja","nissan","nissay","nl","no","nokia","northwesternmutual","norton","now","nowruz","nowtv","np","nr","nra","nrw","ntt","nu","nyc","nz","obi","observer","office","okinawa","olayan","olayangroup","oldnavy","ollo","om","omega","one","ong","onl","online","ooo","open","oracle","orange","org","organic","origins","osaka","otsuka","ott","ovh","pa","page","panasonic","paris","pars","partners","parts","party","passagens","pay","pccw","pe","pet","pf","pfizer","pg","ph","pharmacy","phd","philips","phone","photo","photography","photos","physio","pics","pictet","pictures","pid","pin","ping","pink","pioneer","pizza","pk","pl","place","play","playstation","plumbing","plus","pm","pn","pnc","pohl","poker","politie","porn","post","pr","pramerica","praxi","press","prime","pro","prod","productions","prof","progressive","promo","properties","property","protection","pru","prudential","ps","pt","pub","pw","pwc","py","qa","qpon","quebec","quest","racing","radio","re","read","realestate","realtor","realty","recipes","red","redstone","redumbrella","rehab","reise","reisen","reit","reliance","ren","rent","rentals","repair","report","republican","rest","restaurant","review","reviews","rexroth","rich","richardli","ricoh","ril","rio","rip","ro","rocher","rocks","rodeo","rogers","room","rs","rsvp","ru","rugby","ruhr","run","rw","rwe","ryukyu","sa","saarland","safe","safety","sakura","sale","salon","samsclub","samsung","sandvik","sandvikcoromant","sanofi","sap","sarl","sas","save","saxo","sb","sbi","sbs","sc","sca","scb","schaeffler","schmidt","scholarships","school","schule","schwarz","science","scot","sd","se","search","seat","secure","security","seek","select","sener","services","ses","seven","sew","sex","sexy","sfr","sg","sh","shangrila","sharp","shaw","shell","shia","shiksha","shoes","shop","shopping","shouji","show","showtime","si","silk","sina","singles","site","sj","sk","ski","skin","sky","skype","sl","sling","sm","smart","smile","sn","sncf","so","soccer","social","softbank","software","sohu","solar","solutions","song","sony","soy","spa","space","sport","spot","sr","srl","ss","st","stada","staples","star","statebank","statefarm","stc","stcgroup","stockholm","storage","store","stream","studio","study","style","su","sucks","supplies","supply","support","surf","surgery","suzuki","sv","swatch","swiss","sx","sy","sydney","systems","sz","tab","taipei","talk","taobao","target","tatamotors","tatar","tattoo","tax","taxi","tc","tci","td","tdk","team","tech","technology","tel","temasek","tennis","teva","tf","tg","th","thd","theater","theatre","tiaa","tickets","tienda","tiffany","tips","tires","tirol","tj","tjmaxx","tjx","tk","tkmaxx","tl","tm","tmall","tn","to","today","tokyo","tools","top","toray","toshiba","total","tours","town","toyota","toys","tr","trade","trading","training","travel","travelchannel","travelers","travelersinsurance","trust","trv","tt","tube","tui","tunes","tushu","tv","tvs","tw","tz","ua","ubank","ubs","ug","uk","unicom","university","uno","uol","ups","us","uy","uz","va","vacations","vana","vanguard","vc","ve","vegas","ventures","verisign","vermögensberater","vermögensberatung","versicherung","vet","vg","vi","viajes","video","vig","viking","villas","vin","vip","virgin","visa","vision","viva","vivo","vlaanderen","vn","vodka","volkswagen","volvo","vote","voting","voto","voyage","vu","vuelos","wales","walmart","walter","wang","wanggou","watch","watches","weather","weatherchannel","webcam","weber","website","wed","wedding","weibo","weir","wf","whoswho","wien","wiki","williamhill","win","windows","wine","winners","wme","wolterskluwer","woodside","work","works","world","wow","ws","wtc","wtf","xbox","xerox","xfinity","xihuan","xin","xxx","xyz","yachts","yahoo","yamaxun","yandex","ye","yodobashi","yoga","yokohama","you","youtube","yt","yun","za","zappos","zara","zero","zip","zm","zone","zuerich","zw","ελ","ευ","бг","бел","дети","ею","католик","ком","мкд","мон","москва","онлайн","орг","рус","рф","сайт","срб","укр","қаз","հայ","ישראל","קום","ابوظبي","اتصالات","ارامكو","الاردن","البحرين","الجزائر","السعودية","العليان","المغرب","امارات","ایران","بارت","بازار","بيتك","بھارت","تونس","سودان","سورية","شبكة","عراق","عرب","عمان","فلسطين","قطر","كاثوليك","كوم","مصر","مليسيا","موريتانيا","موقع","همراه","پاکستان","ڀارت","कॉम","नेट","भारत","भारतम्","भारोत","संगठन","বাংলা","ভারত","ভাৰত","ਭਾਰਤ","ભારત","ଭାରତ","இந்தியா","இலங்கை","சிங்கப்பூர்","భారత్","ಭಾರತ","ഭാരതം","ලංකා","คอม","ไทย","ລາວ","გე","みんな","アマゾン","クラウド","グーグル","コム","ストア","セール","ファッション","ポイント","世界","中信","中国","中國","中文网","亚马逊","企业","佛山","信息","健康","八卦","公司","公益","台湾","台灣","商城","商店","商标","嘉里","嘉里大酒店","在线","大拿","天主教","娱乐","家電","广东","微博","慈善","我爱你","手机","招聘","政务","政府","新加坡","新闻","时尚","書籍","机构","淡马锡","游戏","澳門","点看","移动","组织机构","网址","网店","网站","网络","联通","诺基亚","谷歌","购物","通販","集团","電訊盈科","飞利浦","食品","餐厅","香格里拉","香港","닷넷","닷컴","삼성","한국"]'
+  ((_t = JSON.parse(
+    '["aaa","aarp","abarth","abb","abbott","abbvie","abc","able","abogado","abudhabi","ac","academy","accenture","accountant","accountants","aco","actor","ad","adac","ads","adult","ae","aeg","aero","aetna","af","afl","africa","ag","agakhan","agency","ai","aig","airbus","airforce","airtel","akdn","al","alfaromeo","alibaba","alipay","allfinanz","allstate","ally","alsace","alstom","am","amazon","americanexpress","americanfamily","amex","amfam","amica","amsterdam","analytics","android","anquan","anz","ao","aol","apartments","app","apple","aq","aquarelle","ar","arab","aramco","archi","army","arpa","art","arte","as","asda","asia","associates","at","athleta","attorney","au","auction","audi","audible","audio","auspost","author","auto","autos","avianca","aw","aws","ax","axa","az","azure","ba","baby","baidu","banamex","bananarepublic","band","bank","bar","barcelona","barclaycard","barclays","barefoot","bargains","baseball","basketball","bauhaus","bayern","bb","bbc","bbt","bbva","bcg","bcn","bd","be","beats","beauty","beer","bentley","berlin","best","bestbuy","bet","bf","bg","bh","bharti","bi","bible","bid","bike","bing","bingo","bio","biz","bj","black","blackfriday","blockbuster","blog","bloomberg","blue","bm","bms","bmw","bn","bnpparibas","bo","boats","boehringer","bofa","bom","bond","boo","book","booking","bosch","bostik","boston","bot","boutique","box","br","bradesco","bridgestone","broadway","broker","brother","brussels","bs","bt","bugatti","build","builders","business","buy","buzz","bv","bw","by","bz","bzh","ca","cab","cafe","cal","call","calvinklein","cam","camera","camp","cancerresearch","canon","capetown","capital","capitalone","car","caravan","cards","care","career","careers","cars","casa","case","cash","casino","cat","catering","catholic","cba","cbn","cbre","cbs","cc","cd","center","ceo","cern","cf","cfa","cfd","cg","ch","chanel","channel","charity","chase","chat","cheap","chintai","christmas","chrome","church","ci","cipriani","circle","cisco","citadel","citi","citic","city","cityeats","ck","cl","claims","cleaning","click","clinic","clinique","clothing","cloud","club","clubmed","cm","cn","co","coach","codes","coffee","college","cologne","com","comcast","commbank","community","company","compare","computer","comsec","condos","construction","consulting","contact","contractors","cooking","cookingchannel","cool","coop","corsica","country","coupon","coupons","courses","cpa","cr","credit","creditcard","creditunion","cricket","crown","crs","cruise","cruises","cu","cuisinella","cv","cw","cx","cy","cymru","cyou","cz","dabur","dad","dance","data","date","dating","datsun","day","dclk","dds","de","deal","dealer","deals","degree","delivery","dell","deloitte","delta","democrat","dental","dentist","desi","design","dev","dhl","diamonds","diet","digital","direct","directory","discount","discover","dish","diy","dj","dk","dm","dnp","do","docs","doctor","dog","domains","dot","download","drive","dtv","dubai","dunlop","dupont","durban","dvag","dvr","dz","earth","eat","ec","eco","edeka","edu","education","ee","eg","email","emerck","energy","engineer","engineering","enterprises","epson","equipment","er","ericsson","erni","es","esq","estate","et","etisalat","eu","eurovision","eus","events","exchange","expert","exposed","express","extraspace","fage","fail","fairwinds","faith","family","fan","fans","farm","farmers","fashion","fast","fedex","feedback","ferrari","ferrero","fi","fiat","fidelity","fido","film","final","finance","financial","fire","firestone","firmdale","fish","fishing","fit","fitness","fj","fk","flickr","flights","flir","florist","flowers","fly","fm","fo","foo","food","foodnetwork","football","ford","forex","forsale","forum","foundation","fox","fr","free","fresenius","frl","frogans","frontdoor","frontier","ftr","fujitsu","fun","fund","furniture","futbol","fyi","ga","gal","gallery","gallo","gallup","game","games","gap","garden","gay","gb","gbiz","gd","gdn","ge","gea","gent","genting","george","gf","gg","ggee","gh","gi","gift","gifts","gives","giving","gl","glass","gle","global","globo","gm","gmail","gmbh","gmo","gmx","gn","godaddy","gold","goldpoint","golf","goo","goodyear","goog","google","gop","got","gov","gp","gq","gr","grainger","graphics","gratis","green","gripe","grocery","group","gs","gt","gu","guardian","gucci","guge","guide","guitars","guru","gw","gy","hair","hamburg","hangout","haus","hbo","hdfc","hdfcbank","health","healthcare","help","helsinki","here","hermes","hgtv","hiphop","hisamitsu","hitachi","hiv","hk","hkt","hm","hn","hockey","holdings","holiday","homedepot","homegoods","homes","homesense","honda","horse","hospital","host","hosting","hot","hoteles","hotels","hotmail","house","how","hr","hsbc","ht","hu","hughes","hyatt","hyundai","ibm","icbc","ice","icu","id","ie","ieee","ifm","ikano","il","im","imamat","imdb","immo","immobilien","in","inc","industries","infiniti","info","ing","ink","institute","insurance","insure","int","international","intuit","investments","io","ipiranga","iq","ir","irish","is","ismaili","ist","istanbul","it","itau","itv","jaguar","java","jcb","je","jeep","jetzt","jewelry","jio","jll","jm","jmp","jnj","jo","jobs","joburg","jot","joy","jp","jpmorgan","jprs","juegos","juniper","kaufen","kddi","ke","kerryhotels","kerrylogistics","kerryproperties","kfh","kg","kh","ki","kia","kids","kim","kinder","kindle","kitchen","kiwi","km","kn","koeln","komatsu","kosher","kp","kpmg","kpn","kr","krd","kred","kuokgroup","kw","ky","kyoto","kz","la","lacaixa","lamborghini","lamer","lancaster","lancia","land","landrover","lanxess","lasalle","lat","latino","latrobe","law","lawyer","lb","lc","lds","lease","leclerc","lefrak","legal","lego","lexus","lgbt","li","lidl","life","lifeinsurance","lifestyle","lighting","like","lilly","limited","limo","lincoln","linde","link","lipsy","live","living","lk","llc","llp","loan","loans","locker","locus","loft","lol","london","lotte","lotto","love","lpl","lplfinancial","lr","ls","lt","ltd","ltda","lu","lundbeck","luxe","luxury","lv","ly","ma","macys","madrid","maif","maison","makeup","man","management","mango","map","market","marketing","markets","marriott","marshalls","maserati","mattel","mba","mc","mckinsey","md","me","med","media","meet","melbourne","meme","memorial","men","menu","merckmsd","mg","mh","miami","microsoft","mil","mini","mint","mit","mitsubishi","mk","ml","mlb","mls","mm","mma","mn","mo","mobi","mobile","moda","moe","moi","mom","monash","money","monster","mormon","mortgage","moscow","moto","motorcycles","mov","movie","mp","mq","mr","ms","msd","mt","mtn","mtr","mu","museum","music","mutual","mv","mw","mx","my","mz","na","nab","nagoya","name","natura","navy","nba","nc","ne","nec","net","netbank","netflix","network","neustar","new","news","next","nextdirect","nexus","nf","nfl","ng","ngo","nhk","ni","nico","nike","nikon","ninja","nissan","nissay","nl","no","nokia","northwesternmutual","norton","now","nowruz","nowtv","np","nr","nra","nrw","ntt","nu","nyc","nz","obi","observer","office","okinawa","olayan","olayangroup","oldnavy","ollo","om","omega","one","ong","onl","online","ooo","open","oracle","orange","org","organic","origins","osaka","otsuka","ott","ovh","pa","page","panasonic","paris","pars","partners","parts","party","passagens","pay","pccw","pe","pet","pf","pfizer","pg","ph","pharmacy","phd","philips","phone","photo","photography","photos","physio","pics","pictet","pictures","pid","pin","ping","pink","pioneer","pizza","pk","pl","place","play","playstation","plumbing","plus","pm","pn","pnc","pohl","poker","politie","porn","post","pr","pramerica","praxi","press","prime","pro","prod","productions","prof","progressive","promo","properties","property","protection","pru","prudential","ps","pt","pub","pw","pwc","py","qa","qpon","quebec","quest","racing","radio","re","read","realestate","realtor","realty","recipes","red","redstone","redumbrella","rehab","reise","reisen","reit","reliance","ren","rent","rentals","repair","report","republican","rest","restaurant","review","reviews","rexroth","rich","richardli","ricoh","ril","rio","rip","ro","rocher","rocks","rodeo","rogers","room","rs","rsvp","ru","rugby","ruhr","run","rw","rwe","ryukyu","sa","saarland","safe","safety","sakura","sale","salon","samsclub","samsung","sandvik","sandvikcoromant","sanofi","sap","sarl","sas","save","saxo","sb","sbi","sbs","sc","sca","scb","schaeffler","schmidt","scholarships","school","schule","schwarz","science","scot","sd","se","search","seat","secure","security","seek","select","sener","services","ses","seven","sew","sex","sexy","sfr","sg","sh","shangrila","sharp","shaw","shell","shia","shiksha","shoes","shop","shopping","shouji","show","showtime","si","silk","sina","singles","site","sj","sk","ski","skin","sky","skype","sl","sling","sm","smart","smile","sn","sncf","so","soccer","social","softbank","software","sohu","solar","solutions","song","sony","soy","spa","space","sport","spot","sr","srl","ss","st","stada","staples","star","statebank","statefarm","stc","stcgroup","stockholm","storage","store","stream","studio","study","style","su","sucks","supplies","supply","support","surf","surgery","suzuki","sv","swatch","swiss","sx","sy","sydney","systems","sz","tab","taipei","talk","taobao","target","tatamotors","tatar","tattoo","tax","taxi","tc","tci","td","tdk","team","tech","technology","tel","temasek","tennis","teva","tf","tg","th","thd","theater","theatre","tiaa","tickets","tienda","tiffany","tips","tires","tirol","tj","tjmaxx","tjx","tk","tkmaxx","tl","tm","tmall","tn","to","today","tokyo","tools","top","toray","toshiba","total","tours","town","toyota","toys","tr","trade","trading","training","travel","travelchannel","travelers","travelersinsurance","trust","trv","tt","tube","tui","tunes","tushu","tv","tvs","tw","tz","ua","ubank","ubs","ug","uk","unicom","university","uno","uol","ups","us","uy","uz","va","vacations","vana","vanguard","vc","ve","vegas","ventures","verisign","vermögensberater","vermögensberatung","versicherung","vet","vg","vi","viajes","video","vig","viking","villas","vin","vip","virgin","visa","vision","viva","vivo","vlaanderen","vn","vodka","volkswagen","volvo","vote","voting","voto","voyage","vu","vuelos","wales","walmart","walter","wang","wanggou","watch","watches","weather","weatherchannel","webcam","weber","website","wed","wedding","weibo","weir","wf","whoswho","wien","wiki","williamhill","win","windows","wine","winners","wme","wolterskluwer","woodside","work","works","world","wow","ws","wtc","wtf","xbox","xerox","xfinity","xihuan","xin","xxx","xyz","yachts","yahoo","yamaxun","yandex","ye","yodobashi","yoga","yokohama","you","youtube","yt","yun","za","zappos","zara","zero","zip","zm","zone","zuerich","zw","ελ","ευ","бг","бел","дети","ею","католик","ком","мкд","мон","москва","онлайн","орг","рус","рф","сайт","срб","укр","қаз","հայ","ישראל","קום","ابوظبي","اتصالات","ارامكو","الاردن","البحرين","الجزائر","السعودية","العليان","المغرب","امارات","ایران","بارت","بازار","بيتك","بھارت","تونس","سودان","سورية","شبكة","عراق","عرب","عمان","فلسطين","قطر","كاثوليك","كوم","مصر","مليسيا","موريتانيا","موقع","همراه","پاکستان","ڀارت","कॉम","नेट","भारत","भारतम्","भारोत","संगठन","বাংলা","ভারত","ভাৰত","ਭਾਰਤ","ભારત","ଭାରତ","இந்தியா","இலங்கை","சிங்கப்பூர்","భారత్","ಭಾರತ","ഭാരതം","ලංකා","คอม","ไทย","ລາວ","გე","みんな","アマゾン","クラウド","グーグル","コム","ストア","セール","ファッション","ポイント","世界","中信","中国","中國","中文网","亚马逊","企业","佛山","信息","健康","八卦","公司","公益","台湾","台灣","商城","商店","商标","嘉里","嘉里大酒店","在线","大拿","天主教","娱乐","家電","广东","微博","慈善","我爱你","手机","招聘","政务","政府","新加坡","新闻","时尚","書籍","机构","淡马锡","游戏","澳門","点看","移动","组织机构","网址","网店","网站","网络","联通","诺基亚","谷歌","购物","通販","集团","電訊盈科","飞利浦","食品","餐厅","香格里拉","香港","닷넷","닷컴","삼성","한국"]',
   )),
     (mt = (e) => {
       const t = `(?:${
-        '(?:(?:[a-z]+:)?//)' +
+        "(?:(?:[a-z]+:)?//)" +
         ((e = {
           strict: !0,
           ...e,
         }).strict
-          ? ''
-          : '?')
+          ? ""
+          : "?")
       }|www\\.)(?:\\S+(?::\\S*)?@)?(?:localhost|${
         pt.v4().source
       }|(?:(?:[a-z\\u00a1-\\uffff0-9][-_]*)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]-*)*[a-z\\u00a1-\\uffff0-9]+)*${`(?:\\.${
         e.strict
-          ? '(?:[a-z\\u00a1-\\uffff]{2,})'
-          : `(?:${_t.sort((e, t) => t.length - e.length).join('|')})`
+          ? "(?:[a-z\\u00a1-\\uffff]{2,})"
+          : `(?:${_t.sort((e, t) => t.length - e.length).join("|")})`
       })\\.?`})(?::\\d{2,5})?(?:[/?#][^\\s"]*)?`;
-      return e.exact ? new RegExp(`(?:^${t}$)`, 'i') : new RegExp(t, 'ig');
-    });
+      return e.exact ? new RegExp(`(?:^${t}$)`, "i") : new RegExp(t, "ig");
+    }));
   var Ct = {};
   !(function (e, t) {
-    'object' == typeof Ct
+    "object" == typeof Ct
       ? (Ct = t())
-      : 'function' == typeof define && define.amd
-      ? define(t)
-      : ((e =
-          'undefined' != typeof globalThis
-            ? globalThis
-            : e || self).fetchRetry = t());
+      : "function" == typeof define && define.amd
+        ? define(t)
+        : ((e =
+            "undefined" != typeof globalThis
+              ? globalThis
+              : e || self).fetchRetry = t());
   })(Ct, function () {
-    'use strict';
+    "use strict";
     function e(e) {
       return Number.isInteger(e) && e >= 0;
     }
     function t(e) {
-      (this.name = 'ArgumentError'), (this.message = e);
+      ((this.name = "ArgumentError"), (this.message = e));
     }
     return function (n, o) {
-      if (((o = o || {}), 'function' != typeof n))
-        throw new t('fetch must be a function');
-      if ('object' != typeof o) throw new t('defaults must be an object');
+      if (((o = o || {}), "function" != typeof n))
+        throw new t("fetch must be a function");
+      if ("object" != typeof o) throw new t("defaults must be an object");
       if (void 0 !== o.retries && !e(o.retries))
-        throw new t('retries must be a positive integer');
+        throw new t("retries must be a positive integer");
       if (
         void 0 !== o.retryDelay &&
         !e(o.retryDelay) &&
-        'function' != typeof o.retryDelay
+        "function" != typeof o.retryDelay
       )
         throw new t(
-          'retryDelay must be a positive integer or a function returning a positive integer'
+          "retryDelay must be a positive integer or a function returning a positive integer",
         );
       if (
         void 0 !== o.retryOn &&
         !Array.isArray(o.retryOn) &&
-        'function' != typeof o.retryOn
+        "function" != typeof o.retryOn
       )
-        throw new t('retryOn property expects an array or function');
+        throw new t("retryOn property expects an array or function");
       return (
         (o = Object.assign(
           {
@@ -6344,7 +6367,7 @@
             retryDelay: 1e3,
             retryOn: [],
           },
-          o
+          o,
         )),
         function (r, i) {
           var a = o.retries,
@@ -6352,31 +6375,31 @@
             c = o.retryOn;
           if (i && void 0 !== i.retries) {
             if (!e(i.retries))
-              throw new t('retries must be a positive integer');
+              throw new t("retries must be a positive integer");
             a = i.retries;
           }
           if (i && void 0 !== i.retryDelay) {
-            if (!e(i.retryDelay) && 'function' != typeof i.retryDelay)
+            if (!e(i.retryDelay) && "function" != typeof i.retryDelay)
               throw new t(
-                'retryDelay must be a positive integer or a function returning a positive integer'
+                "retryDelay must be a positive integer or a function returning a positive integer",
               );
             s = i.retryDelay;
           }
           if (i && i.retryOn) {
-            if (!Array.isArray(i.retryOn) && 'function' != typeof i.retryOn)
-              throw new t('retryOn property expects an array or function');
+            if (!Array.isArray(i.retryOn) && "function" != typeof i.retryOn)
+              throw new t("retryOn property expects an array or function");
             c = i.retryOn;
           }
           return new Promise(function (e, t) {
             var o = function (o) {
               var s =
-                'undefined' != typeof Request && r instanceof Request
+                "undefined" != typeof Request && r instanceof Request
                   ? r.clone()
                   : r;
               n(s, i)
                 .then(function (n) {
                   if (Array.isArray(c) && -1 === c.indexOf(n.status)) e(n);
-                  else if ('function' == typeof c)
+                  else if ("function" == typeof c)
                     try {
                       return Promise.resolve(c(o, null, n))
                         .then(function (t) {
@@ -6389,7 +6412,7 @@
                   else o < a ? l(o, null, n) : e(n);
                 })
                 .catch(function (e) {
-                  if ('function' == typeof c)
+                  if ("function" == typeof c)
                     try {
                       Promise.resolve(c(o, e, null))
                         .then(function (n) {
@@ -6405,7 +6428,7 @@
                 });
             };
             function l(e, t, n) {
-              var r = 'function' == typeof s ? s(e, t, n) : s;
+              var r = "function" == typeof s ? s(e, t, n) : s;
               setTimeout(function () {
                 o(++e);
               }, r);
@@ -6425,9 +6448,9 @@
   let St = {
     get(e, t, n) {
       if (e instanceof IDBTransaction) {
-        if ('done' === t) return kt.get(e);
-        if ('objectStoreNames' === t) return e.objectStoreNames || Rt.get(e);
-        if ('store' === t)
+        if ("done" === t) return kt.get(e);
+        if ("objectStoreNames" === t) return e.objectStoreNames || Rt.get(e);
+        if ("store" === t)
           return n.objectStoreNames[1]
             ? void 0
             : n.objectStore(n.objectStoreNames[0]);
@@ -6436,12 +6459,12 @@
     },
     set: (e, t, n) => ((e[t] = n), !0),
     has: (e, t) =>
-      (e instanceof IDBTransaction && ('done' === t || 'store' === t)) ||
+      (e instanceof IDBTransaction && ("done" === t || "store" === t)) ||
       t in e,
   };
   function Lt(e) {
     return e !== IDBDatabase.prototype.transaction ||
-      'objectStoreNames' in IDBTransaction.prototype
+      "objectStoreNames" in IDBTransaction.prototype
       ? (
           Tt ||
           (Tt = [
@@ -6451,38 +6474,38 @@
           ])
         ).includes(e)
         ? function (...t) {
-            return e.apply(zt(this), t), Ot(It.get(this));
+            return (e.apply(zt(this), t), Ot(It.get(this)));
           }
         : function (...t) {
             return Ot(e.apply(zt(this), t));
           }
       : function (t, ...n) {
           const o = e.call(zt(this), t, ...n);
-          return Rt.set(o, t.sort ? t.sort() : [t]), Ot(o);
+          return (Rt.set(o, t.sort ? t.sort() : [t]), Ot(o));
         };
   }
   function Bt(e) {
-    return 'function' == typeof e
+    return "function" == typeof e
       ? Lt(e)
       : (e instanceof IDBTransaction &&
           (function (e) {
             if (kt.has(e)) return;
             const t = new Promise((t, n) => {
               const o = () => {
-                  e.removeEventListener('complete', r),
-                    e.removeEventListener('error', i),
-                    e.removeEventListener('abort', i);
+                  (e.removeEventListener("complete", r),
+                    e.removeEventListener("error", i),
+                    e.removeEventListener("abort", i));
                 },
                 r = () => {
-                  t(), o();
+                  (t(), o());
                 },
                 i = () => {
-                  n(e.error || new DOMException('AbortError', 'AbortError')),
-                    o();
+                  (n(e.error || new DOMException("AbortError", "AbortError")),
+                    o());
                 };
-              e.addEventListener('complete', r),
-                e.addEventListener('error', i),
-                e.addEventListener('abort', i);
+              (e.addEventListener("complete", r),
+                e.addEventListener("error", i),
+                e.addEventListener("abort", i));
             });
             kt.set(e, t);
           })(e),
@@ -6506,16 +6529,16 @@
       return (function (e) {
         const t = new Promise((t, n) => {
           const o = () => {
-              e.removeEventListener('success', r),
-                e.removeEventListener('error', i);
+              (e.removeEventListener("success", r),
+                e.removeEventListener("error", i));
             },
             r = () => {
-              t(Ot(e.result)), o();
+              (t(Ot(e.result)), o());
             },
             i = () => {
-              n(e.error), o();
+              (n(e.error), o());
             };
-          e.addEventListener('success', r), e.addEventListener('error', i);
+          (e.addEventListener("success", r), e.addEventListener("error", i));
         });
         return (
           t
@@ -6529,16 +6552,16 @@
       })(e);
     if (Mt.has(e)) return Mt.get(e);
     const t = Bt(e);
-    return t !== e && (Mt.set(e, t), At.set(t, e)), t;
+    return (t !== e && (Mt.set(e, t), At.set(t, e)), t);
   }
   const zt = (e) => At.get(e);
-  const Nt = ['get', 'getKey', 'getAll', 'getAllKeys', 'count'],
-    $t = ['put', 'add', 'delete', 'clear'],
+  const Nt = ["get", "getKey", "getAll", "getAllKeys", "count"],
+    $t = ["put", "add", "delete", "clear"],
     Pt = new Map();
   function jt(e, t) {
-    if (!(e instanceof IDBDatabase) || t in e || 'string' != typeof t) return;
+    if (!(e instanceof IDBDatabase) || t in e || "string" != typeof t) return;
     if (Pt.get(t)) return Pt.get(t);
-    const n = t.replace(/FromIndex$/, ''),
+    const n = t.replace(/FromIndex$/, ""),
       o = t !== n,
       r = $t.includes(n);
     if (
@@ -6547,14 +6570,14 @@
     )
       return;
     const i = async function (e, ...t) {
-      const i = this.transaction(e, r ? 'readwrite' : 'readonly');
+      const i = this.transaction(e, r ? "readwrite" : "readonly");
       let a = i.store;
       return (
         o && (a = a.index(t.shift())),
         (await Promise.all([a[n](...t), r && i.done]))[0]
       );
     };
-    return Pt.set(t, i), i;
+    return (Pt.set(t, i), i);
   }
   St = ((e) => ({
     ...e,
@@ -6564,34 +6587,34 @@
   const Ft = e(Ct)(fetch, {
       retries: 100,
       retryDelay: (e, t, n) =>
-        'AbortError' !== (null == t ? void 0 : t.name) &&
+        "AbortError" !== (null == t ? void 0 : t.name) &&
         (e > 50 ? 6e4 : e > 20 ? 1e4 : 2e3),
       retryOn: (e, t, n) =>
-        'AbortError' !== (null == t ? void 0 : t.name) &&
+        "AbortError" !== (null == t ? void 0 : t.name) &&
         (null !== t || n.status >= 400 ? !(e > 100) : void 0),
     }),
     ycsOptions =
       ((function (
         e,
         t,
-        { blocked: n, upgrade: o, blocking: r, terminated: i } = {}
+        { blocked: n, upgrade: o, blocking: r, terminated: i } = {},
       ) {
         const a = indexedDB.open(e, t),
           s = Ot(a);
-        o &&
-          a.addEventListener('upgradeneeded', (e) => {
+        (o &&
+          a.addEventListener("upgradeneeded", (e) => {
             o(Ot(a.result), e.oldVersion, e.newVersion, Ot(a.transaction));
           }),
-          n && a.addEventListener('blocked', () => n()),
+          n && a.addEventListener("blocked", () => n()),
           s
             .then((e) => {
-              i && e.addEventListener('close', () => i()),
-                r && e.addEventListener('versionchange', () => r());
+              (i && e.addEventListener("close", () => i()),
+                r && e.addEventListener("versionchange", () => r()));
             })
-            .catch(() => {});
-      })('IDB_YCS', 1, {
+            .catch(() => {}));
+      })("IDB_YCS", 1, {
         upgrade(e) {
-          e.createObjectStore('STORE_CACHE_YCS');
+          e.createObjectStore("STORE_CACHE_YCS");
         },
       }),
       (() => {
@@ -6599,8 +6622,8 @@
         return () => e;
       })());
   function Dt(e) {
-    let t = '';
-    const n = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',
+    let t = "";
+    const n = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
       o = n.length;
     for (let r = 0; r < e; r++) t += n.charAt(Math.floor(Math.random() * o));
     return t;
@@ -6617,7 +6640,7 @@
       if (
         !elementMap ||
         Object.keys(elementMap).length === 0 ||
-        typeof className !== 'string'
+        typeof className !== "string"
       ) {
         return;
       }
@@ -6637,21 +6660,21 @@
   function toggleVisibility(selector, on) {
     const elm = document.querySelector(selector);
     if (elm) {
-      if (typeof on === 'boolean') {
-        elm.classList.toggle('ycs-hidden', !on);
+      if (typeof on === "boolean") {
+        elm.classList.toggle("ycs-hidden", !on);
       } else {
-        const v = elm.classList.contains('ycs-hidden');
-        elm.classList.toggle('ycs-hidden', !v);
+        const v = elm.classList.contains("ycs-hidden");
+        elm.classList.toggle("ycs-hidden", !v);
       }
     }
   }
   function Gt(e, t, n) {
     try {
       const o = (function (e) {
-        if ('string' != typeof e) return e;
+        if ("string" != typeof e) return e;
         const t = [];
         return (
-          e.split('.').forEach(function (e) {
+          e.split(".").forEach(function (e) {
             e.split(/\[([^}]+)\]/g).forEach(function (e) {
               e.length > 0 && t.push(e);
             });
@@ -6682,13 +6705,13 @@
       (function e(o, r) {
         let i, a;
         const s = function (e) {
-          return r ? r + '.' + e : e;
+          return r ? r + "." + e : e;
         };
         for (a in ((null == o ? void 0 : o.hasOwnProperty(t)) &&
           ((i = {}), (i[s(t)] = o[t]), n.push(i)),
         o))
           (null == o ? void 0 : o.hasOwnProperty(a)) &&
-            'object' == typeof o[a] &&
+            "object" == typeof o[a] &&
             e(o[a], s(a));
       })(e);
     } catch (e) {
@@ -6698,26 +6721,26 @@
   }
   function getVideoId(url) {
     try {
-      if ('string' != typeof url) return;
-      return new URL(url).searchParams.get('v');
+      if ("string" != typeof url) return;
+      return new URL(url).searchParams.get("v");
     } catch (e) {
       return;
     }
   }
   function Yt() {
-    return window.location.href.includes('/watch?');
+    return window.location.href.includes("/watch?");
   }
   function Kt(e, t) {
     t && (t.textContent = e.toString());
   }
   function Xt(e) {
     try {
-      if ('string' != typeof e) return;
+      if ("string" != typeof e) return;
       const t = new URL(e),
-        n = t.searchParams.get('v');
+        n = t.searchParams.get("v");
       if (n) {
         const e = new URL(t.origin);
-        return (e.pathname = '/watch'), e.searchParams.set('v', n), e.href;
+        return ((e.pathname = "/watch"), e.searchParams.set("v", n), e.href);
       }
       return;
     } catch (e) {
@@ -6734,10 +6757,10 @@
           continuation: null,
           itct: null,
           params: {
-            credentials: 'include',
+            credentials: "include",
             headers: {
-              accept: '*/*',
-              'accept-language':
+              accept: "*/*",
+              "accept-language":
                 (null === (o = n.ytcfg) ||
                 void 0 === o ||
                 null === (r = o.data_) ||
@@ -6745,61 +6768,61 @@
                 null === (i = r.GOOGLE_FEEDBACK_PRODUCT_DATA) ||
                 void 0 === i
                   ? void 0
-                  : i.accept_language) || 'en-US,en;q=0.9',
-              'cache-control': 'no-cache',
-              'content-type': 'application/x-www-form-urlencoded',
-              pragma: 'no-cache',
-              'sec-fetch-dest': 'empty',
-              'sec-fetch-mode': 'cors',
-              'sec-fetch-site': 'same-origin',
-              'x-spf-previous': Xt(n.location.href),
-              'x-spf-referer': Xt(n.location.href),
-              'x-youtube-identity-token':
+                  : i.accept_language) || "en-US,en;q=0.9",
+              "cache-control": "no-cache",
+              "content-type": "application/x-www-form-urlencoded",
+              pragma: "no-cache",
+              "sec-fetch-dest": "empty",
+              "sec-fetch-mode": "cors",
+              "sec-fetch-site": "same-origin",
+              "x-spf-previous": Xt(n.location.href),
+              "x-spf-referer": Xt(n.location.href),
+              "x-youtube-identity-token":
                 null === (a = n.ytcfg) ||
                 void 0 === a ||
                 null === (s = a.data_) ||
                 void 0 === s
                   ? void 0
                   : s.ID_TOKEN,
-              'x-youtube-client-name':
+              "x-youtube-client-name":
                 (null === (c = n.ytcfg) ||
                 void 0 === c ||
                 null === (l = c.data_) ||
                 void 0 === l
                   ? void 0
-                  : l.INNERTUBE_CONTEXT_CLIENT_NAME) || '1',
-              'x-youtube-client-version':
+                  : l.INNERTUBE_CONTEXT_CLIENT_NAME) || "1",
+              "x-youtube-client-version":
                 null === (d = n.ytcfg) ||
                 void 0 === d ||
                 null === (u = d.data_) ||
                 void 0 === u
                   ? void 0
                   : u.INNERTUBE_CONTEXT_CLIENT_VERSION,
-              'x-youtube-device':
+              "x-youtube-device":
                 (null === (h = n.ytcfg) ||
                 void 0 === h ||
                 null === (m = h.data_) ||
                 void 0 === m
                   ? void 0
-                  : m.DEVICE) || 'cbr=Chrome&cplatform=DESKTOP',
-              'x-youtube-page-cl':
+                  : m.DEVICE) || "cbr=Chrome&cplatform=DESKTOP",
+              "x-youtube-page-cl":
                 null === (p = n.ytcfg) ||
                 void 0 === p ||
                 null === (f = p.data_) ||
                 void 0 === f
                   ? void 0
                   : f.PAGE_CL,
-              'x-youtube-page-label':
+              "x-youtube-page-label":
                 null === (v = n.ytcfg) ||
                 void 0 === v ||
                 null === (y = v.data_) ||
                 void 0 === y
                   ? void 0
                   : y.PAGE_BUILD_LABEL,
-              'x-youtube-time-zone':
+              "x-youtube-time-zone":
                 Intl.DateTimeFormat().resolvedOptions().timeZone,
-              'x-youtube-utc-offset': Math.abs(new Date().getTimezoneOffset()),
-              'x-youtube-variants-checksum':
+              "x-youtube-utc-offset": Math.abs(new Date().getTimezoneOffset()),
+              "x-youtube-variants-checksum":
                 null === (g = n.ytcfg) ||
                 void 0 === g ||
                 null === (w = g.data_) ||
@@ -6808,7 +6831,7 @@
                   : w.VARIANTS_CHECKSUM,
             },
             referrer: Xt(n.location.href),
-            referrerPolicy: 'origin-when-cross-origin',
+            referrerPolicy: "origin-when-cross-origin",
             body: `session_token=${
               null === (b = n.ytcfg) ||
               void 0 === b ||
@@ -6817,19 +6840,19 @@
                 ? void 0
                 : x.XSRF_TOKEN
             }`,
-            method: 'POST',
-            mode: 'cors',
+            method: "POST",
+            mode: "cors",
           },
-        })
+        }),
       )).params;
-      (_.method = 'GET'), delete _.headers['content-type'], delete _.body;
+      ((_.method = "GET"), delete _.headers["content-type"], delete _.body);
       const C = await fetch(`${Xt(e)}&pbj=1`, {
           ..._,
           signal: t,
-          cache: 'no-store',
+          cache: "no-store",
         }),
         E = await C.json();
-      return (ycsOptions.getInitYtData = E), E;
+      return ((ycsOptions.getInitYtData = E), E);
     } catch (e) {
       return;
     }
@@ -6842,8 +6865,8 @@
         return JSON.parse(
           JSON.stringify({
             headers: {
-              accept: '*/*',
-              'accept-language':
+              accept: "*/*",
+              "accept-language":
                 (null === (o = e.ytcfg) ||
                 void 0 === o ||
                 null === (r = o.data_) ||
@@ -6851,18 +6874,18 @@
                 null === (i = r.GOOGLE_FEEDBACK_PRODUCT_DATA) ||
                 void 0 === i
                   ? void 0
-                  : i.accept_language) || 'en-US,en;q=0.9',
-              'content-type': 'application/json',
-              pragma: 'no-cache',
-              'cache-control': 'no-store',
-              'x-youtube-client-name':
+                  : i.accept_language) || "en-US,en;q=0.9",
+              "content-type": "application/json",
+              pragma: "no-cache",
+              "cache-control": "no-store",
+              "x-youtube-client-name":
                 (null === (a = e.ytcfg) ||
                 void 0 === a ||
                 null === (s = a.data_) ||
                 void 0 === s
                   ? void 0
-                  : s.INNERTUBE_CONTEXT_CLIENT_NAME) || '1',
-              'x-youtube-client-version':
+                  : s.INNERTUBE_CONTEXT_CLIENT_NAME) || "1",
+              "x-youtube-client-version":
                 null === (c = e.ytcfg) ||
                 void 0 === c ||
                 null === (l = c.data_) ||
@@ -6870,7 +6893,7 @@
                   ? void 0
                   : l.INNERTUBE_CONTEXT_CLIENT_VERSION,
             },
-            referrerPolicy: 'strict-origin-when-cross-origin',
+            referrerPolicy: "strict-origin-when-cross-origin",
             body: JSON.stringify({
               context: {
                 client:
@@ -6888,10 +6911,10 @@
                 playerOffsetMs: n.toString(),
               },
             }),
-            method: 'POST',
-            mode: 'cors',
-            credentials: 'include',
-          })
+            method: "POST",
+            mode: "cors",
+            credentials: "include",
+          }),
         );
       } catch (e) {
         return;
@@ -6903,8 +6926,8 @@
       return JSON.parse(
         JSON.stringify({
           headers: {
-            accept: '*/*',
-            'accept-language':
+            accept: "*/*",
+            "accept-language":
               (null === (n = e.ytcfg) ||
               void 0 === n ||
               null === (o = n.data_) ||
@@ -6912,18 +6935,18 @@
               null === (r = o.GOOGLE_FEEDBACK_PRODUCT_DATA) ||
               void 0 === r
                 ? void 0
-                : r.accept_language) || 'en-US,en;q=0.9',
-            'content-type': 'application/json',
-            pragma: 'no-cache',
-            'cache-control': 'no-store',
-            'x-youtube-client-name':
+                : r.accept_language) || "en-US,en;q=0.9",
+            "content-type": "application/json",
+            pragma: "no-cache",
+            "cache-control": "no-store",
+            "x-youtube-client-name":
               (null === (i = e.ytcfg) ||
               void 0 === i ||
               null === (a = i.data_) ||
               void 0 === a
                 ? void 0
-                : a.INNERTUBE_CONTEXT_CLIENT_NAME) || '1',
-            'x-youtube-client-version':
+                : a.INNERTUBE_CONTEXT_CLIENT_NAME) || "1",
+            "x-youtube-client-version":
               null === (s = e.ytcfg) ||
               void 0 === s ||
               null === (c = s.data_) ||
@@ -6931,7 +6954,7 @@
                 ? void 0
                 : c.INNERTUBE_CONTEXT_CLIENT_VERSION,
           },
-          referrerPolicy: 'strict-origin-when-cross-origin',
+          referrerPolicy: "strict-origin-when-cross-origin",
           body: JSON.stringify({
             context: {
               client:
@@ -6949,10 +6972,10 @@
             },
             continuation: t.continue,
           }),
-          method: 'POST',
-          mode: 'cors',
-          credentials: 'include',
-        })
+          method: "POST",
+          mode: "cors",
+          credentials: "include",
+        }),
       );
     } catch (e) {
       return;
@@ -6964,8 +6987,8 @@
       return JSON.parse(
         JSON.stringify({
           headers: {
-            accept: '*/*',
-            'accept-language':
+            accept: "*/*",
+            "accept-language":
               (null === (n = e.ytcfg) ||
               void 0 === n ||
               null === (o = n.data_) ||
@@ -6973,18 +6996,18 @@
               null === (r = o.GOOGLE_FEEDBACK_PRODUCT_DATA) ||
               void 0 === r
                 ? void 0
-                : r.accept_language) || 'en-US,en;q=0.9',
-            'content-type': 'application/json',
-            pragma: 'no-cache',
-            'cache-control': 'no-store',
-            'x-youtube-client-name':
+                : r.accept_language) || "en-US,en;q=0.9",
+            "content-type": "application/json",
+            pragma: "no-cache",
+            "cache-control": "no-store",
+            "x-youtube-client-name":
               (null === (i = e.ytcfg) ||
               void 0 === i ||
               null === (a = i.data_) ||
               void 0 === a
                 ? void 0
-                : a.INNERTUBE_CONTEXT_CLIENT_NAME) || '1',
-            'x-youtube-client-version':
+                : a.INNERTUBE_CONTEXT_CLIENT_NAME) || "1",
+            "x-youtube-client-version":
               null === (s = e.ytcfg) ||
               void 0 === s ||
               null === (c = s.data_) ||
@@ -6992,7 +7015,7 @@
                 ? void 0
                 : c.INNERTUBE_CONTEXT_CLIENT_VERSION,
           },
-          referrerPolicy: 'strict-origin-when-cross-origin',
+          referrerPolicy: "strict-origin-when-cross-origin",
           body: JSON.stringify({
             context: {
               client:
@@ -7010,10 +7033,10 @@
             },
             continuation: t.continue,
           }),
-          method: 'POST',
-          mode: 'cors',
-          credentials: 'include',
-        })
+          method: "POST",
+          mode: "cors",
+          credentials: "include",
+        }),
       );
     } catch (e) {
       return;
@@ -7145,7 +7168,7 @@
               t[3].response.contents.twoColumnWatchNextResults.conversationBar
                 .liveChatRenderer.header.liveChatHeaderRenderer.viewSelector
                 .sortFilterSubMenuRenderer.subMenuItems[1].continuation
-                .reloadContinuationData
+                .reloadContinuationData,
           )
         )
           return qt(
@@ -7153,9 +7176,9 @@
               t[3].response.contents.twoColumnWatchNextResults.conversationBar
                 .liveChatRenderer.header.liveChatHeaderRenderer.viewSelector
                 .sortFilterSubMenuRenderer.subMenuItems[1].continuation
-                .reloadContinuationData
+                .reloadContinuationData,
           );
-        const e = Wt(t, 'reloadContinuationData');
+        const e = Wt(t, "reloadContinuationData");
         if (e.length > 0) return Object.values(e[e.length - 1])[0];
       }
       return;
@@ -7173,8 +7196,8 @@
               return JSON.parse(
                 JSON.stringify({
                   headers: {
-                    accept: '*/*',
-                    'accept-language':
+                    accept: "*/*",
+                    "accept-language":
                       (null === (n = e.ytcfg) ||
                       void 0 === n ||
                       null === (o = n.data_) ||
@@ -7182,18 +7205,18 @@
                       null === (r = o.GOOGLE_FEEDBACK_PRODUCT_DATA) ||
                       void 0 === r
                         ? void 0
-                        : r.accept_language) || 'en-US,en;q=0.9',
-                    'content-type': 'application/json',
-                    pragma: 'no-cache',
-                    'cache-control': 'no-store',
-                    'x-youtube-client-name':
+                        : r.accept_language) || "en-US,en;q=0.9",
+                    "content-type": "application/json",
+                    pragma: "no-cache",
+                    "cache-control": "no-store",
+                    "x-youtube-client-name":
                       (null === (i = e.ytcfg) ||
                       void 0 === i ||
                       null === (a = i.data_) ||
                       void 0 === a
                         ? void 0
-                        : a.INNERTUBE_CONTEXT_CLIENT_NAME) || '1',
-                    'x-youtube-client-version':
+                        : a.INNERTUBE_CONTEXT_CLIENT_NAME) || "1",
+                    "x-youtube-client-version":
                       null === (s = e.ytcfg) ||
                       void 0 === s ||
                       null === (c = s.data_) ||
@@ -7201,7 +7224,7 @@
                         ? void 0
                         : c.INNERTUBE_CONTEXT_CLIENT_VERSION,
                   },
-                  referrerPolicy: 'strict-origin-when-cross-origin',
+                  referrerPolicy: "strict-origin-when-cross-origin",
                   body: JSON.stringify({
                     context: {
                       client:
@@ -7216,10 +7239,10 @@
                     },
                     continuation: t.continuation,
                   }),
-                  method: 'POST',
-                  mode: 'cors',
-                  credentials: 'include',
-                })
+                  method: "POST",
+                  mode: "cors",
+                  credentials: "include",
+                }),
               );
             } catch (e) {
               return;
@@ -7232,8 +7255,8 @@
             {
               ...o,
               signal,
-              cache: 'no-store',
-            }
+              cache: "no-store",
+            },
           ),
           r = await n.json();
         return null == r ||
@@ -7253,26 +7276,26 @@
       const response = await fetch(
         `https://www.youtube.com/watch?v=${videoId}`,
         {
-          method: 'GET',
-          mode: 'no-cors',
-          credentials: 'include',
+          method: "GET",
+          mode: "no-cors",
+          credentials: "include",
           signal,
-          cache: 'no-store',
-        }
+          cache: "no-store",
+        },
       );
       const html = await response.text();
       const splittedHtml = html.split('"captions":');
       if (splittedHtml.length <= 1) {
-        throw new Error('Fail to load video html');
+        throw new Error("Fail to load video html");
       }
       const captions = JSON.parse(
-        splittedHtml[1].split(',"videoDetails')[0].replace('\n', '')
+        splittedHtml[1].split(',"videoDetails')[0].replace("\n", ""),
       ).playerCaptionsTracklistRenderer;
       const generatedTracks = captions.captionTracks.filter(
-        ({ kind }) => kind === 'asr'
+        ({ kind }) => kind === "asr",
       );
       const englishTracks = generatedTracks.filter(
-        ({ languageCode }) => languageCode === 'en'
+        ({ languageCode }) => languageCode === "en",
       );
       return englishTracks.length > 0
         ? englishTracks[0].baseUrl
@@ -7281,15 +7304,15 @@
 
     const getRawTranscript = async (url) => {
       const response = await fetch(url, {
-        method: 'GET',
-        mode: 'no-cors',
-        credentials: 'include',
+        method: "GET",
+        mode: "no-cors",
+        credentials: "include",
         signal,
-        cache: 'no-store',
+        cache: "no-store",
       });
       const xmlText = await response.text();
       const parser = new DOMParser();
-      const doc = parser.parseFromString(xmlText, 'application/xml');
+      const doc = parser.parseFromString(xmlText, "application/xml");
       return [].slice.call(doc.childNodes[0].childNodes).map((node) => {
         return {
           text: node.textContent,
@@ -7307,16 +7330,16 @@
       left -= m * 60;
       const s = left >>> 0;
 
-      let output = `${s}`.padStart(2, '0');
+      let output = `${s}`.padStart(2, "0");
 
       if (m || h) {
         let seg;
 
         if (!m) {
-          seg = '00';
+          seg = "00";
         } else {
           if (h) {
-            seg = `${m}`.padStart(2, '0');
+            seg = `${m}`.padStart(2, "0");
           } else {
             seg = m;
           }
@@ -7385,7 +7408,7 @@
     }
   }
   function sn(e) {
-    if ('string' != typeof e) return;
+    if ("string" != typeof e) return;
     const t = document.querySelectorAll(e);
     for (const e of t) e.remove();
   }
@@ -7395,12 +7418,12 @@
           const e = await (async function (e, t, n) {
               try {
                 var o, r, i, a, s, c, l, d, u, h;
-                if ('string' != typeof t) return;
+                if ("string" != typeof t) return;
                 const m = JSON.parse(
                     JSON.stringify({
                       headers: {
-                        accept: '*/*',
-                        'accept-language':
+                        accept: "*/*",
+                        "accept-language":
                           (null === (o = e.ytcfg) ||
                           void 0 === o ||
                           null === (r = o.data_) ||
@@ -7408,18 +7431,18 @@
                           null === (i = r.GOOGLE_FEEDBACK_PRODUCT_DATA) ||
                           void 0 === i
                             ? void 0
-                            : i.accept_language) || 'en-US,en;q=0.9',
-                        'content-type': 'application/json',
-                        pragma: 'no-cache',
-                        'cache-control': 'no-store',
-                        'x-youtube-client-name':
+                            : i.accept_language) || "en-US,en;q=0.9",
+                        "content-type": "application/json",
+                        pragma: "no-cache",
+                        "cache-control": "no-store",
+                        "x-youtube-client-name":
                           (null === (a = e.ytcfg) ||
                           void 0 === a ||
                           null === (s = a.data_) ||
                           void 0 === s
                             ? void 0
-                            : s.INNERTUBE_CONTEXT_CLIENT_NAME) || '1',
-                        'x-youtube-client-version':
+                            : s.INNERTUBE_CONTEXT_CLIENT_NAME) || "1",
+                        "x-youtube-client-version":
                           null === (c = e.ytcfg) ||
                           void 0 === c ||
                           null === (l = c.data_) ||
@@ -7428,7 +7451,7 @@
                             : l.INNERTUBE_CONTEXT_CLIENT_VERSION,
                       },
                       referrer: t,
-                      referrerPolicy: 'strict-origin-when-cross-origin',
+                      referrerPolicy: "strict-origin-when-cross-origin",
                       body: JSON.stringify({
                         context: {
                           client:
@@ -7443,18 +7466,18 @@
                         },
                         videoId: getVideoId(t),
                       }),
-                      method: 'POST',
-                      mode: 'cors',
-                      credentials: 'include',
-                    })
+                      method: "POST",
+                      mode: "cors",
+                      credentials: "include",
+                    }),
                   ),
                   p = await fetch(
                     `https://www.youtube.com/youtubei/v1/next?key=${nn()}`,
                     {
                       ...m,
                       signal: n,
-                      cache: 'no-store',
-                    }
+                      cache: "no-store",
+                    },
                   );
                 return await p.json();
               } catch (e) {
@@ -7463,23 +7486,23 @@
             })(window, Xt(window.location.href), n),
             t = objectScan(
               [
-                '**.contents.twoColumnWatchNextResults.results.results.contents[?].itemSectionRenderer.contents[?].continuationItemRenderer.continuationEndpoint.continuationCommand.token',
+                "**.contents.twoColumnWatchNextResults.results.results.contents[?].itemSectionRenderer.contents[?].continuationItemRenderer.continuationEndpoint.continuationCommand.token",
               ],
               {
                 joined: !0,
-                rtn: 'value',
+                rtn: "value",
                 abort: !0,
-              }
+              },
             )(e),
             o = await (async function (e, t, n) {
               try {
                 var o, r, i, a, s, c, l, d, u, h;
-                if ('object' != typeof t) return;
+                if ("object" != typeof t) return;
                 const m = JSON.parse(
                     JSON.stringify({
                       headers: {
-                        accept: '*/*',
-                        'accept-language':
+                        accept: "*/*",
+                        "accept-language":
                           (null === (o = e.ytcfg) ||
                           void 0 === o ||
                           null === (r = o.data_) ||
@@ -7487,18 +7510,18 @@
                           null === (i = r.GOOGLE_FEEDBACK_PRODUCT_DATA) ||
                           void 0 === i
                             ? void 0
-                            : i.accept_language) || 'en-US,en;q=0.9',
-                        'content-type': 'application/json',
-                        pragma: 'no-cache',
-                        'cache-control': 'no-store',
-                        'x-youtube-client-name':
+                            : i.accept_language) || "en-US,en;q=0.9",
+                        "content-type": "application/json",
+                        pragma: "no-cache",
+                        "cache-control": "no-store",
+                        "x-youtube-client-name":
                           (null === (a = e.ytcfg) ||
                           void 0 === a ||
                           null === (s = a.data_) ||
                           void 0 === s
                             ? void 0
-                            : s.INNERTUBE_CONTEXT_CLIENT_NAME) || '1',
-                        'x-youtube-client-version':
+                            : s.INNERTUBE_CONTEXT_CLIENT_NAME) || "1",
+                        "x-youtube-client-version":
                           null === (c = e.ytcfg) ||
                           void 0 === c ||
                           null === (l = c.data_) ||
@@ -7507,7 +7530,7 @@
                             : l.INNERTUBE_CONTEXT_CLIENT_VERSION,
                       },
                       referrer: t.url,
-                      referrerPolicy: 'strict-origin-when-cross-origin',
+                      referrerPolicy: "strict-origin-when-cross-origin",
                       body: JSON.stringify({
                         context: {
                           client:
@@ -7521,22 +7544,22 @@
                               : h.client,
                         },
                         clickTracking: {
-                          clickTrackingParams: '',
+                          clickTrackingParams: "",
                         },
                         continuation: t.continue,
                       }),
-                      method: 'POST',
-                      mode: 'cors',
-                      credentials: 'include',
-                    })
+                      method: "POST",
+                      mode: "cors",
+                      credentials: "include",
+                    }),
                   ),
                   p = await fetch(
                     `https://www.youtube.com/youtubei/v1/next?key=${nn()}`,
                     {
                       ...m,
                       signal: n,
-                      cache: 'no-store',
-                    }
+                      cache: "no-store",
+                    },
                   );
                 return await p.json();
               } catch (e) {
@@ -7548,12 +7571,12 @@
                 url: Xt(window.location.href),
                 continue: t,
               },
-              n
+              n,
             ),
             r = [
-              '**.sortMenu.sortFilterSubMenuRenderer.subMenuItems[?].serviceEndpoint.clickTrackingParams',
-              '**.sortMenu.sortFilterSubMenuRenderer.subMenuItems[?].serviceEndpoint.continuationCommand.command.clickTrackingParams',
-              '**.sortMenu.sortFilterSubMenuRenderer.subMenuItems[?].trackingParams',
+              "**.sortMenu.sortFilterSubMenuRenderer.subMenuItems[?].serviceEndpoint.clickTrackingParams",
+              "**.sortMenu.sortFilterSubMenuRenderer.subMenuItems[?].serviceEndpoint.continuationCommand.command.clickTrackingParams",
+              "**.sortMenu.sortFilterSubMenuRenderer.subMenuItems[?].trackingParams",
             ];
           let i;
           for (const e of r)
@@ -7561,7 +7584,7 @@
               if (
                 ((i = objectScan([`${e}`], {
                   joined: !0,
-                  rtn: 'value',
+                  rtn: "value",
                   abort: !0,
                 })(o)),
                 i)
@@ -7573,13 +7596,13 @@
           return {
             continue: objectScan(
               [
-                '**.sortMenu.sortFilterSubMenuRenderer.subMenuItems[?].serviceEndpoint.continuationCommand.token',
+                "**.sortMenu.sortFilterSubMenuRenderer.subMenuItems[?].serviceEndpoint.continuationCommand.token",
               ],
               {
                 joined: !0,
-                rtn: 'value',
+                rtn: "value",
                 abort: !0,
-              }
+              },
             )(o),
             clickTrackingParams: i,
           };
@@ -7593,7 +7616,7 @@
             qt(
               () =>
                 e.commentRenderer.actionButtons.commentActionButtonsRenderer
-                  .creatorHeart
+                  .creatorHeart,
             )
           )
             try {
@@ -7602,7 +7625,7 @@
                   () =>
                     e.commentRenderer.actionButtons.commentActionButtonsRenderer
                       .creatorHeart.creatorHeartRenderer.creatorThumbnail
-                      .accessibility.accessibilityData.label
+                      .accessibility.accessibilityData.label,
                 ),
               };
             } catch (e) {}
@@ -7610,28 +7633,28 @@
             qt(
               () =>
                 e.commentRenderer.authorCommentBadge.authorCommentBadgeRenderer.icon.iconType.indexOf(
-                  'CHECK'
-                ) >= 0
+                  "CHECK",
+                ) >= 0,
             ) ||
             qt(
               () =>
                 e.commentRenderer.authorCommentBadge.authorCommentBadgeRenderer.iconTooltip.indexOf(
-                  'Verified'
-                ) >= 0
+                  "Verified",
+                ) >= 0,
             )
           )
             try {
               e.commentRenderer.verifiedAuthor = !0;
             } catch (e) {}
           const t = [
-            'actionButtons',
-            'authorCommentBadge',
-            'collapseButton',
-            'expandButton',
-            'loggingDirectives',
-            'voteStatus',
-            'trackingParams',
-            'isLiked',
+            "actionButtons",
+            "authorCommentBadge",
+            "collapseButton",
+            "expandButton",
+            "loggingDirectives",
+            "voteStatus",
+            "trackingParams",
+            "isLiked",
           ];
           for (const n of t) qt(() => delete e.commentRenderer[n]);
           if (
@@ -7639,53 +7662,54 @@
             qt(() => (e.commentRenderer.authorThumbnail.thumbnails.length = 1)),
             qt(
               () =>
-                delete e.commentRenderer.authorThumbnail.thumbnails[0].height
+                delete e.commentRenderer.authorThumbnail.thumbnails[0].height,
             ),
             qt(
-              () => delete e.commentRenderer.authorThumbnail.thumbnails[0].width
+              () =>
+                delete e.commentRenderer.authorThumbnail.thumbnails[0].width,
             ),
             qt(
               () =>
                 delete e.commentRenderer.publishedTimeText.runs[0]
-                  .navigationEndpoint.commandMetadata.webCommandMetadata.rootVe
+                  .navigationEndpoint.commandMetadata.webCommandMetadata.rootVe,
             ),
             qt(
               () =>
                 delete e.commentRenderer.publishedTimeText.runs[0]
                   .navigationEndpoint.commandMetadata.webCommandMetadata
-                  .webPageType
+                  .webPageType,
             ),
             qt(
               () =>
                 delete e.commentRenderer.publishedTimeText.runs[0]
-                  .navigationEndpoint.watchEndpoint.params
+                  .navigationEndpoint.watchEndpoint.params,
             ),
             qt(
-              () => delete e.commentRenderer.authorEndpoint.clickTrackingParams
-            ),
-            qt(
-              () =>
-                delete e.commentRenderer.authorEndpoint.commandMetadata
-                  .webCommandMetadata.apiUrl
+              () => delete e.commentRenderer.authorEndpoint.clickTrackingParams,
             ),
             qt(
               () =>
                 delete e.commentRenderer.authorEndpoint.commandMetadata
-                  .webCommandMetadata.rootVe
+                  .webCommandMetadata.apiUrl,
             ),
             qt(
               () =>
                 delete e.commentRenderer.authorEndpoint.commandMetadata
-                  .webCommandMetadata.webPageType
+                  .webCommandMetadata.rootVe,
             ),
             qt(
               () =>
-                delete e.commentRenderer.authorEndpoint.browseEndpoint.browseId
+                delete e.commentRenderer.authorEndpoint.commandMetadata
+                  .webCommandMetadata.webPageType,
+            ),
+            qt(
+              () =>
+                delete e.commentRenderer.authorEndpoint.browseEndpoint.browseId,
             ),
             qt(
               () =>
                 delete e.commentRenderer.publishedTimeText.runs[0]
-                  .navigationEndpoint.clickTrackingParams
+                  .navigationEndpoint.clickTrackingParams,
             ),
             qt(() => e.commentRenderer.contentText.runs.length > 0))
           )
@@ -7695,24 +7719,24 @@
                     () =>
                       delete e.commentRenderer.contentText.runs[t]
                         .navigationEndpoint.commandMetadata.webCommandMetadata
-                        .apiUrl
+                        .apiUrl,
                   ),
                   qt(
                     () =>
                       delete e.commentRenderer.contentText.runs[t]
                         .navigationEndpoint.commandMetadata.webCommandMetadata
-                        .rootVe
+                        .rootVe,
                   ),
                   qt(
                     () =>
                       delete e.commentRenderer.contentText.runs[t]
                         .navigationEndpoint.commandMetadata.webCommandMetadata
-                        .webPageType
+                        .webPageType,
                   ),
                   qt(
                     () =>
                       delete e.commentRenderer.contentText.runs[t]
-                        .navigationEndpoint.clickTrackingParams
+                        .navigationEndpoint.clickTrackingParams,
                   ),
                   qt(() => delete e.commentRenderer.contentText.runs[t].text))
                 : qt(() => delete e.commentRenderer.contentText.runs[t]);
@@ -7733,27 +7757,27 @@
           if (item.commentThreadRenderer.comment) {
             const contentText =
               item.commentThreadRenderer.comment.commentRenderer.contentText;
-            let fullText = '';
-            let renderFullText = '';
+            let fullText = "";
+            let renderFullText = "";
             const runs = contentText.runs || [];
             for (const run of runs) {
-              fullText += run.text || '';
+              fullText += run.text || "";
               run.text = stopXSS(run.text); // this might not be adequate enough for XSS prevention.
               try {
                 if (run.attachment) {
                   let image;
                   if ((image = run.attachment.image)) {
                     const { url, width, height, margin } = image;
-                    const alt = run.text || '';
+                    const alt = run.text || "";
                     const style = `margin-left: ${margin.left}px; margin-right: ${margin.right}px;`;
                     renderFullText += `<img src="${url}" alt="${alt}" title="${alt}" width="${width}" height="${height}" style="${style}" class="ycs-attachment" />`;
                   } else {
-                    renderFullText += run.text || '';
+                    renderFullText += run.text || "";
                   }
                 } else if (run.navigationEndpoint) {
                   if (
                     parseInt(
-                      run.navigationEndpoint.watchEndpoint.startTimeSeconds
+                      run.navigationEndpoint.watchEndpoint.startTimeSeconds,
                     ) >= 0
                   ) {
                     renderFullText += `<a class="ycs-cpointer ycs-gotochat-video" href="https://www.youtube.com/watch?v=${
@@ -7764,24 +7788,24 @@
                       run.navigationEndpoint.watchEndpoint.startTimeSeconds
                     }" data-video-id="${
                       run.navigationEndpoint.watchEndpoint.videoId
-                    }">${run.text || ''}</a>`;
+                    }">${run.text || ""}</a>`;
 
                     if (
                       currentVideoId ===
                       run.navigationEndpoint.watchEndpoint.videoId
                     ) {
                       item.commentThreadRenderer.comment.commentRenderer.isTimeLine =
-                        'timeline';
+                        "timeline";
                     }
                   } else {
                     if (run.navigationEndpoint.browseEndpoint) {
                       renderFullText += `<a class="ycs-cpointer ycs-comment-link" href="${
                         run.navigationEndpoint.browseEndpoint.canonicalBaseUrl
-                      }" target="_blank">${run.text || ''}</a>`;
+                      }" target="_blank">${run.text || ""}</a>`;
                     } else if (run.navigationEndpoint.urlEndpoint) {
                       renderFullText += `<a class="ycs-cpointer ycs-comment-link" href="${
                         run.navigationEndpoint.urlEndpoint.url
-                      }" target="_blank">${run.text || ''}</a>`;
+                      }" target="_blank">${run.text || ""}</a>`;
                     } else if (
                       run.navigationEndpoint.commandMetadata &&
                       run.navigationEndpoint.commandMetadata.webCommandMetadata
@@ -7789,16 +7813,16 @@
                       renderFullText += `<a class="ycs-cpointer ycs-comment-link" href="${
                         run.navigationEndpoint.commandMetadata
                           .webCommandMetadata.url
-                      }" target="_blank">${run.text || ''}</a>`;
+                      }" target="_blank">${run.text || ""}</a>`;
                     } else {
-                      renderFullText += run.text || '';
+                      renderFullText += run.text || "";
                     }
                   }
                 } else {
-                  renderFullText += run.text || '';
+                  renderFullText += run.text || "";
                 }
               } catch (e) {
-                renderFullText += run.text || '';
+                renderFullText += run.text || "";
                 continue;
               }
             }
@@ -7810,7 +7834,7 @@
               item.commentThreadRenderer.comment.commentRenderer.contentText.renderFullText =
                 renderFullText;
             }
-            item.commentThreadRenderer.comment.typeComment = 'C';
+            item.commentThreadRenderer.comment.typeComment = "C";
             a.push(i(item.commentThreadRenderer.comment));
             Kt(a.length, t);
           }
@@ -7833,8 +7857,8 @@
                   {
                     ...requestOptions,
                     signal: n,
-                    cache: 'no-store',
-                  }
+                    cache: "no-store",
+                  },
                 );
                 let responseData = await response.json();
                 if (
@@ -7848,12 +7872,12 @@
                     getFrameworkUpdatesById(responseData);
                   const subItems = migrateContinuationSubItems(
                     continuationItems,
-                    frameworkUpdatesById
+                    frameworkUpdatesById,
                   );
                   for (const subItem of subItems) {
                     if (!subItem.commentRenderer) continue;
-                    let fullText = '';
-                    let renderFullText = '';
+                    let fullText = "";
+                    let renderFullText = "";
                     const runs = subItem.commentRenderer.contentText.runs || [];
                     for (const run of runs) {
                       try {
@@ -7863,16 +7887,16 @@
                           if (
                             parseInt(
                               run.navigationEndpoint.watchEndpoint
-                                .startTimeSeconds
+                                .startTimeSeconds,
                             ) >= 0
                           ) {
-                            let targetStr = '';
+                            let targetStr = "";
 
                             if (
                               currentVideoId ===
                               run.navigationEndpoint.watchEndpoint.videoId
                             ) {
-                              subItem.commentRenderer.isTimeLine = 'timeline';
+                              subItem.commentRenderer.isTimeLine = "timeline";
                             } else {
                               targetStr =
                                 ' target="_blank" rel="noopener noreferrer" ';
@@ -7888,17 +7912,17 @@
                                 .startTimeSeconds
                             }" data-video-id="${
                               run.navigationEndpoint.watchEndpoint.videoId
-                            }"${targetStr}>${run.text || ''}</a>`;
+                            }"${targetStr}>${run.text || ""}</a>`;
                           } else {
                             if (run.navigationEndpoint.browseEndpoint) {
                               renderFullText += `<a class="ycs-cpointer ycs-comment-link" href="${
                                 run.navigationEndpoint.browseEndpoint
                                   .canonicalBaseUrl
-                              }" target="_blank">${run.text || ''}</a>`;
+                              }" target="_blank">${run.text || ""}</a>`;
                             } else if (run.navigationEndpoint.urlEndpoint) {
                               renderFullText += `<a class="ycs-cpointer ycs-comment-link" href="${
                                 run.navigationEndpoint.urlEndpoint.url
-                              }" target="_blank">${run.text || ''}</a>`;
+                              }" target="_blank">${run.text || ""}</a>`;
                             } else if (
                               run.navigationEndpoint.commandMetadata &&
                               run.navigationEndpoint.commandMetadata
@@ -7907,14 +7931,14 @@
                               renderFullText += `<a class="ycs-cpointer ycs-comment-link" href="${
                                 run.navigationEndpoint.commandMetadata
                                   .webCommandMetadata.url
-                              }" target="_blank">${run.text || ''}</a>`;
+                              }" target="_blank">${run.text || ""}</a>`;
                             } else {
-                              renderFullText += run.text || '';
+                              renderFullText += run.text || "";
                             }
                           }
                         }
                       } catch (t) {
-                        renderFullText += run.text || '';
+                        renderFullText += run.text || "";
                       }
                     }
                     if (subItem.commentRenderer.contentText) {
@@ -7922,7 +7946,7 @@
                       subItem.commentRenderer.contentText.renderFullText =
                         renderFullText;
                     }
-                    subItem.typeComment = 'R';
+                    subItem.typeComment = "R";
                     subItem.originComment = item.commentThreadRenderer.comment;
                     a.push(i(subItem));
                     Kt(a.length, t);
@@ -7963,8 +7987,8 @@
                     {
                       ...requestOptions,
                       signal: n,
-                      cache: 'no-store',
-                    }
+                      cache: "no-store",
+                    },
                   );
                   responseData = await response.json();
                   if (
@@ -7978,12 +8002,12 @@
                       getFrameworkUpdatesById(responseData);
                     const subItems = migrateContinuationSubItems(
                       continuationItems,
-                      frameworkUpdatesById
+                      frameworkUpdatesById,
                     );
                     for (const subItem of subItems) {
                       if (!subItem.commentRenderer) continue;
-                      let fullText = '';
-                      let renderFullText = '';
+                      let fullText = "";
+                      let renderFullText = "";
                       const runs =
                         subItem.commentRenderer.contentText.runs || [];
                       for (const run of runs) {
@@ -7994,16 +8018,16 @@
                             if (
                               parseInt(
                                 run.navigationEndpoint.watchEndpoint
-                                  .startTimeSeconds
+                                  .startTimeSeconds,
                               ) >= 0
                             ) {
-                              let targetStr = '';
+                              let targetStr = "";
 
                               if (
                                 currentVideoId ===
                                 run.navigationEndpoint.watchEndpoint.videoId
                               ) {
-                                subItem.commentRenderer.isTimeLine = 'timeline';
+                                subItem.commentRenderer.isTimeLine = "timeline";
                               } else {
                                 targetStr =
                                   ' target="_blank" rel="noopener noreferrer" ';
@@ -8019,17 +8043,17 @@
                                   .startTimeSeconds
                               }" data-video-id="${
                                 run.navigationEndpoint.watchEndpoint.videoId
-                              }"${targetStr}>${run.text || ''}</a>`;
+                              }"${targetStr}>${run.text || ""}</a>`;
                             } else {
                               if (run.navigationEndpoint.browseEndpoint) {
                                 renderFullText += `<a class="ycs-cpointer ycs-comment-link" href="${
                                   run.navigationEndpoint.browseEndpoint
                                     .canonicalBaseUrl
-                                }" target="_blank">${run.text || ''}</a>`;
+                                }" target="_blank">${run.text || ""}</a>`;
                               } else if (run.navigationEndpoint.urlEndpoint) {
                                 renderFullText += `<a class="ycs-cpointer ycs-comment-link" href="${
                                   run.navigationEndpoint.urlEndpoint.url
-                                }" target="_blank">${run.text || ''}</a>`;
+                                }" target="_blank">${run.text || ""}</a>`;
                               } else if (
                                 run.navigationEndpoint.commandMetadata &&
                                 run.navigationEndpoint.commandMetadata
@@ -8038,14 +8062,14 @@
                                 renderFullText += `<a class="ycs-cpointer ycs-comment-link" href="${
                                   run.navigationEndpoint.commandMetadata
                                     .webCommandMetadata.url
-                                }" target="_blank">${run.text || ''}</a>`;
+                                }" target="_blank">${run.text || ""}</a>`;
                               } else {
-                                renderFullText += run.text || '';
+                                renderFullText += run.text || "";
                               }
                             }
                           }
                         } catch (t) {
-                          renderFullText += run.text || '';
+                          renderFullText += run.text || "";
                         }
                       }
                       if (subItem.commentRenderer.contentText) {
@@ -8053,7 +8077,7 @@
                         subItem.commentRenderer.contentText.renderFullText =
                           renderFullText;
                       }
-                      subItem.typeComment = 'R';
+                      subItem.typeComment = "R";
                       subItem.originComment =
                         item.commentThreadRenderer.comment;
                       a.push(i(subItem));
@@ -8159,16 +8183,16 @@
       if (propContent.commandRuns) {
         propContent.commandRuns.forEach((commandRun) => {
           const watchEndpoint = qt(
-            () => commandRun.onTap.innertubeCommand.watchEndpoint
+            () => commandRun.onTap.innertubeCommand.watchEndpoint,
           );
           const browseEndpoint = qt(
-            () => commandRun.onTap.innertubeCommand.browseEndpoint
+            () => commandRun.onTap.innertubeCommand.browseEndpoint,
           );
           if (watchEndpoint || browseEndpoint) {
             const { startIndex, length } = commandRun;
 
             let text;
-            if (typeof startIndex === 'number' && typeof length === 'number') {
+            if (typeof startIndex === "number" && typeof length === "number") {
               text = propContent.content.slice(startIndex, startIndex + length);
             }
 
@@ -8190,11 +8214,11 @@
               const url = qt(
                 () =>
                   commandRun.onTap.innertubeCommand.commandMetadata
-                    .webCommandMetadata.url
+                    .webCommandMetadata.url,
               );
               const canonicalBaseUrl = url
                 ? `https://www.youtube.com${url}`
-                : '';
+                : "";
               rawRuns.push({
                 text,
                 startIndex,
@@ -8224,13 +8248,13 @@
           const { startIndex, length } = attachmentRun;
 
           let text;
-          if (typeof startIndex === 'number' && typeof length === 'number') {
+          if (typeof startIndex === "number" && typeof length === "number") {
             text = propContent.content.slice(startIndex, startIndex + length);
           }
 
           const imageSource = image.sources[0];
           const imageMargin = qt(
-            () => attachmentRun.element.properties.layoutProperties.margin
+            () => attachmentRun.element.properties.layoutProperties.margin,
           );
           rawRuns.push({
             text,
@@ -8260,7 +8284,7 @@
 
       const likeCountLiked = update.toolbar.likeCountLiked;
       let likeCount;
-      if (likeCountLiked === '1') {
+      if (likeCountLiked === "1") {
         likeCount = 0;
       } else {
         // likeCountLike is always one more than actual like count
@@ -8275,7 +8299,7 @@
       let replyCount;
       {
         const { number } = parseFormattedNumber(
-          update.toolbar.replyCount || '0'
+          update.toolbar.replyCount || "0",
         );
         replyCount = number;
       }
@@ -8325,7 +8349,7 @@
       }
       if (
         toolbarStateUpdate &&
-        toolbarStateUpdate.heartState === 'TOOLBAR_HEART_STATE_HEARTED'
+        toolbarStateUpdate.heartState === "TOOLBAR_HEART_STATE_HEARTED"
       ) {
         comment.commentRenderer.creatorHeart = {
           tooltip: update.toolbar.heartActiveTooltip,
@@ -8359,7 +8383,7 @@
     }
     function migrateContinuationItems(
       continuationItems,
-      frameworkUpdatesByCommentId
+      frameworkUpdatesByCommentId,
     ) {
       return continuationItems
         .map((item) => {
@@ -8401,7 +8425,7 @@
             const continuationEndpoint = qt(
               () =>
                 item.commentThreadRenderer.replies.commentRepliesRenderer
-                  .contents[0].continuationItemRenderer.continuationEndpoint
+                  .contents[0].continuationItemRenderer.continuationEndpoint,
             );
             if (continuationEndpoint) {
               // add structure for replies continuation
@@ -8429,7 +8453,7 @@
     }
     function migrateContinuationSubItems(
       continuationItems,
-      frameworkUpdatesById
+      frameworkUpdatesById,
     ) {
       return continuationItems
         .map((item) => {
@@ -8476,26 +8500,26 @@
                 continue: qt(() =>
                   objectScan(
                     [
-                      '**.sortMenu.sortFilterSubMenuRenderer.subMenuItems[?].serviceEndpoint.continuationCommand.token',
+                      "**.sortMenu.sortFilterSubMenuRenderer.subMenuItems[?].serviceEndpoint.continuationCommand.token",
                     ],
                     {
                       joined: !0,
-                      rtn: 'value',
+                      rtn: "value",
                       abort: !0,
-                    }
-                  )(window.ytInitialData)
+                    },
+                  )(window.ytInitialData),
                 ),
                 clickTrackingParams: qt(() =>
                   objectScan(
                     [
-                      '**.sortMenu.sortFilterSubMenuRenderer.subMenuItems[?].serviceEndpoint.clickTrackingParams',
+                      "**.sortMenu.sortFilterSubMenuRenderer.subMenuItems[?].serviceEndpoint.clickTrackingParams",
                     ],
                     {
                       joined: !0,
-                      rtn: 'value',
+                      rtn: "value",
                       abort: !0,
-                    }
-                  )(window.ytInitialData)
+                    },
+                  )(window.ytInitialData),
                 ),
               })),
           i &&
@@ -8504,8 +8528,8 @@
               {
                 ...i,
                 signal: n,
-                cache: 'no-store',
-              }
+                cache: "no-store",
+              },
             )),
           200 !== (null == e ? void 0 : e.status))
         )
@@ -8520,7 +8544,7 @@
       let i = qt(
         () =>
           o.onResponseReceivedEndpoints[1].reloadContinuationItemsCommand
-            .continuationItems
+            .continuationItems,
       );
       // temporarily store last response
       let contData;
@@ -8560,8 +8584,8 @@
               {
                 ...o,
                 signal: n,
-                cache: 'no-store',
-              }
+                cache: "no-store",
+              },
             );
           if (200 === (null == r ? void 0 : r.status)) {
             const e = await r.json();
@@ -8569,7 +8593,7 @@
               qt(
                 () =>
                   e.onResponseReceivedEndpoints[0].appendContinuationItemsAction
-                    .continuationItems
+                    .continuationItems,
               ) || [];
             // update last response
             contData = e;
@@ -8579,12 +8603,12 @@
     } catch (e) {
       return a;
     }
-    return await s.onIdle(), a;
+    return (await s.onIdle(), a);
   }
   function ln(e) {
     try {
       const t = new URL(window.location.href),
-        n = `https://youtu.be/${t.searchParams.get('v')}?t=${
+        n = `https://youtu.be/${t.searchParams.get("v")}?t=${
           (function (e) {
             try {
               return e && e > 0 ? parseInt(e / 1e3, 10) : void 0;
@@ -8600,38 +8624,38 @@
   }
   function postTextMessage(e, t) {
     try {
-      ('string' != typeof t && 'number' != typeof t) ||
-        'string' != typeof e ||
+      ("string" != typeof t && "number" != typeof t) ||
+        "string" != typeof e ||
         window.postMessage(
           {
             type: e.toString(),
             text: t.toString(),
           },
-          window.location.origin
+          window.location.origin,
         );
     } catch (e) {}
   }
   function un(e) {
     if (e && e > 0) {
       const t = new Date(e / 1e3);
-      return `${t.toISOString().split('T')[0]}, ${t
+      return `${t.toISOString().split("T")[0]}, ${t
         .toISOString()
-        .split('T')[1]
-        .split('.')[0]
+        .split("T")[1]
+        .split(".")[0]
         .slice(0, 5)}`;
     }
-    return '';
+    return "";
   }
   function hn(e, t, n) {
     try {
-      const o = document.createElement('a'),
+      const o = document.createElement("a"),
         r = new Blob([e], {
           type: n,
         });
-      (o.href = URL.createObjectURL(r)),
+      ((o.href = URL.createObjectURL(r)),
         (o.download = t),
         o.click(),
-        URL.revokeObjectURL(o.href);
+        URL.revokeObjectURL(o.href));
     } catch (e) {
       return;
     }
@@ -8639,14 +8663,14 @@
   function mn(e) {
     if (Array.isArray(e))
       try {
-        let h = '',
+        let h = "",
           m = 0;
         const p = new Set(),
           f = new Set();
         for (const t of e)
-          'C' === (null == t ? void 0 : t.typeComment)
+          "C" === (null == t ? void 0 : t.typeComment)
             ? ((t.commentRenderer.ycsReplies = []), p.add(t))
-            : 'R' === (null == t ? void 0 : t.typeComment) && f.add(t);
+            : "R" === (null == t ? void 0 : t.typeComment) && f.add(t);
         for (const e of p)
           if (qt(() => e.commentRenderer.replyCount > 0))
             for (const t of f)
@@ -8671,26 +8695,26 @@
               ) {
                 return ` | member: ${e.commentRenderer.sponsorCommentBadge.sponsorCommentBadgeRenderer.tooltip}`;
               }
-              return '';
+              return "";
             } catch (e) {
-              return '';
+              return "";
             }
           },
           y = (e) => {
             try {
-              return 'C' === (null == e ? void 0 : e.typeComment)
-                ? '[COMMENT]'
-                : 'R' === (null == e ? void 0 : e.typeComment)
-                ? '[REPLY]'
-                : '';
+              return "C" === (null == e ? void 0 : e.typeComment)
+                ? "[COMMENT]"
+                : "R" === (null == e ? void 0 : e.typeComment)
+                  ? "[REPLY]"
+                  : "";
             } catch (e) {
-              return '';
+              return "";
             }
           },
           g = (e) => {
             try {
               var t;
-              return 'C' === (null == e ? void 0 : e.typeComment)
+              return "C" === (null == e ? void 0 : e.typeComment)
                 ? ` | reply: ${
                     (null == e ||
                     null === (t = e.commentRenderer) ||
@@ -8698,9 +8722,9 @@
                       ? void 0
                       : t.replyCount) || 0
                   }`
-                : '';
+                : "";
             } catch (e) {
-              return '';
+              return "";
             }
           },
           w = (e) => {
@@ -8715,10 +8739,10 @@
                   ? void 0
                   : n.length) > 0
               ) {
-                let t = '\nReplies:\n';
+                let t = "\nReplies:\n";
                 for (const n of e.commentRenderer.ycsReplies) {
                   var o, r, i, a, s, c, l, d, u, h, p;
-                  m++,
+                  (m++,
                     (t += `\n${y(n)}\n${
                       (null == n ||
                       null === (o = n.commentRenderer) ||
@@ -8726,7 +8750,7 @@
                       null === (r = o.authorText) ||
                       void 0 === r
                         ? void 0
-                        : r.simpleText) || ''
+                        : r.simpleText) || ""
                     }\nyoutube.com${
                       (null == n ||
                       null === (i = n.commentRenderer) ||
@@ -8738,18 +8762,18 @@
                       null === (c = s.webCommandMetadata) ||
                       void 0 === c
                         ? void 0
-                        : c.url) || ''
+                        : c.url) || ""
                     }\n\nyoutube.com${
                       qt(
                         () =>
                           n.commentRenderer.publishedTimeText.runs[0]
                             .navigationEndpoint.commandMetadata
-                            .webCommandMetadata.url
-                      ) || ''
+                            .webCommandMetadata.url,
+                      ) || ""
                     }\n${
                       qt(
-                        () => n.commentRenderer.publishedTimeText.runs[0].text
-                      ) || ''
+                        () => n.commentRenderer.publishedTimeText.runs[0].text,
+                      ) || ""
                     } | like: ${
                       (null == n ||
                       null === (l = n.commentRenderer) ||
@@ -8771,20 +8795,20 @@
                       null === (p = h.contentText) ||
                       void 0 === p
                         ? void 0
-                        : p.fullText) || ''
-                    }\n\n                        `);
+                        : p.fullText) || ""
+                    }\n\n                        `));
                 }
                 return t;
               }
-              return '';
+              return "";
             } catch (e) {
-              return '';
+              return "";
             }
           };
         for (const e of p)
           try {
             var t, n, o, r, i, a, s, c, l, d, u;
-            m++,
+            (m++,
               (h += `\n\n#####\n\n${y(e)}\n${
                 (null == e ||
                 null === (t = e.commentRenderer) ||
@@ -8792,7 +8816,7 @@
                 null === (n = t.authorText) ||
                 void 0 === n
                   ? void 0
-                  : n.simpleText) || ''
+                  : n.simpleText) || ""
               }\nyoutube.com${
                 (null == e ||
                 null === (o = e.commentRenderer) ||
@@ -8804,15 +8828,16 @@
                 null === (a = i.webCommandMetadata) ||
                 void 0 === a
                   ? void 0
-                  : a.url) || ''
+                  : a.url) || ""
               }\n\nyoutube.com${
                 qt(
                   () =>
                     e.commentRenderer.publishedTimeText.runs[0]
-                      .navigationEndpoint.commandMetadata.webCommandMetadata.url
-                ) || ''
+                      .navigationEndpoint.commandMetadata.webCommandMetadata
+                      .url,
+                ) || ""
               }\n${
-                qt(() => e.commentRenderer.publishedTimeText.runs[0].text) || ''
+                qt(() => e.commentRenderer.publishedTimeText.runs[0].text) || ""
               } | like: ${
                 (null == e || null === (s = e.commentRenderer) || void 0 === s
                   ? void 0
@@ -8832,8 +8857,8 @@
                 null === (u = d.contentText) ||
                 void 0 === u
                   ? void 0
-                  : u.fullText) || ''
-              }\n${w(e)}\n#####\n`);
+                  : u.fullText) || ""
+              }\n${w(e)}\n#####\n`));
           } catch (e) {
             continue;
           }
@@ -8848,51 +8873,52 @@
   function pn(e) {
     if (Array.isArray(e))
       try {
-        let t = '',
+        let t = "",
           n = 0;
         for (const o of e)
           try {
-            n++,
+            (n++,
               (t += `\n\n#####\n\n${
                 qt(
                   () =>
                     o.replayChatItemAction.actions[0].addChatItemAction.item
-                      .liveChatTextMessageRenderer.authorName.simpleText
-                ) || ''
+                      .liveChatTextMessageRenderer.authorName.simpleText,
+                ) || ""
               }\nyoutube.com/channel/${
                 qt(
                   () =>
                     o.replayChatItemAction.actions[0].addChatItemAction.item
-                      .liveChatTextMessageRenderer.authorExternalChannelId
-                ) || ''
+                      .liveChatTextMessageRenderer.authorExternalChannelId,
+                ) || ""
               }\n\ndate: ${
                 qt(() =>
                   new Date(
                     o.replayChatItemAction.actions[0].addChatItemAction.item
-                      .liveChatTextMessageRenderer.timestampUsec / 1e3
+                      .liveChatTextMessageRenderer.timestampUsec / 1e3,
                   )
                     .toISOString()
-                    .slice(0, -5)
-                ) || ''
+                    .slice(0, -5),
+                ) || ""
               }\n\n${
                 qt(
                   () =>
                     o.replayChatItemAction.actions[0].addChatItemAction.item
-                      .liveChatTextMessageRenderer.purchaseAmountText.simpleText
+                      .liveChatTextMessageRenderer.purchaseAmountText
+                      .simpleText,
                 )
-                  ? 'donated: ' +
+                  ? "donated: " +
                     o.replayChatItemAction.actions[0].addChatItemAction.item
                       .liveChatTextMessageRenderer.purchaseAmountText
                       .simpleText +
-                    '\n'
-                  : ''
+                    "\n"
+                  : ""
               }\n${
                 qt(
                   () =>
                     o.replayChatItemAction.actions[0].addChatItemAction.item
-                      .liveChatTextMessageRenderer.message.fullText
-                ) || ''
-              }\n\n#####\n`);
+                      .liveChatTextMessageRenderer.message.fullText,
+                ) || ""
+              }\n\n#####\n`));
           } catch (e) {
             continue;
           }
@@ -8907,7 +8933,7 @@
   function fn(e) {
     if (Array.isArray(e)) {
       try {
-        let formattedTranscript = '';
+        let formattedTranscript = "";
         let count = 0;
         for (const item of e) {
           try {
@@ -8918,8 +8944,8 @@
               qt(
                 () =>
                   item.transcriptCueGroupRenderer.cues[0].transcriptCueRenderer
-                    .cue.simpleText
-              ) || '';
+                    .cue.simpleText,
+              ) || "";
             count++;
             formattedTranscript += `\n\n#####\n\nTime: ${time}\n\n${cue}\n\n#####\n`;
           } catch (error) {
@@ -8937,11 +8963,11 @@
   }
   function vn() {
     try {
-      if ('undefined' == typeof document)
+      if ("undefined" == typeof document)
         return {
           supported: !1,
         };
-      const e = document.createElement('video');
+      const e = document.createElement("video");
       return document.pictureInPictureEnabled && !e.disablePictureInPicture
         ? {
             supported: !0,
@@ -8949,21 +8975,22 @@
             exit: () => document.exitPictureInPicture(),
             isActive: (e) => e === document.pictureInPictureElement,
           }
-        : 'function' == typeof e.webkitSetPresentationMode
-        ? /ipad|iphone/i.test(window.navigator.userAgent)
-          ? {
-              supported: !1,
-            }
+        : "function" == typeof e.webkitSetPresentationMode
+          ? /ipad|iphone/i.test(window.navigator.userAgent)
+            ? {
+                supported: !1,
+              }
+            : {
+                supported: !0,
+                request: (e) =>
+                  e.webkitSetPresentationMode("picture-in-picture"),
+                exit: (e) => e.webkitSetPresentationMode("inline"),
+                isActive: (e) =>
+                  "picture-in-picture" === e.webkitPresentationMode,
+              }
           : {
-              supported: !0,
-              request: (e) => e.webkitSetPresentationMode('picture-in-picture'),
-              exit: (e) => e.webkitSetPresentationMode('inline'),
-              isActive: (e) =>
-                'picture-in-picture' === e.webkitPresentationMode,
-            }
-        : {
-            supported: !1,
-          };
+              supported: !1,
+            };
     } catch (e) {
       return {
         supported: !1,
@@ -8979,23 +9006,23 @@
       ) {
         return;
       }
-      if (document.getElementById('ycs_extended_search').checked) {
+      if (document.getElementById("ycs_extended_search").checked) {
         return;
       }
 
       if (!ycsOptions.highlightExact) {
         const magic = (e) => {
           try {
-            if ('string' != typeof e) return;
-            let t = '';
+            if ("string" != typeof e) return;
+            let t = "";
             return (
               e.length <= 2
                 ? (t = e)
                 : e.length >= 3 && e.length <= 5
-                ? (t = e.slice(0, -1))
-                : e.length >= 6 && e.length <= 8
-                ? (t = e.slice(0, -3))
-                : e.length >= 9 && (t = e.slice(0, -4)),
+                  ? (t = e.slice(0, -1))
+                  : e.length >= 6 && e.length <= 8
+                    ? (t = e.slice(0, -3))
+                    : e.length >= 9 && (t = e.slice(0, -4)),
               t
             );
           } catch (t) {
@@ -9003,29 +9030,29 @@
           }
         };
 
-        if (searchText.split(' ').length === 1) {
+        if (searchText.split(" ").length === 1) {
           searchText = magic(searchText) || searchText;
-        } else if (searchText.split(' ').length > 1) {
-          let modifiedSearchText = '';
-          for (const word of searchText.split(' ')) {
-            modifiedSearchText += magic(word) + ' ';
+        } else if (searchText.split(" ").length > 1) {
+          let modifiedSearchText = "";
+          for (const word of searchText.split(" ")) {
+            modifiedSearchText += magic(word) + " ";
           }
           searchText = modifiedSearchText.trim();
         }
       }
 
       const markOptions = {
-        element: 'span',
-        className: 'ycs-mark-words',
+        element: "span",
+        className: "ycs-mark-words",
         separateWordSearch: !ycsOptions.highlightExact,
       };
 
-      if (typeof selector !== 'string') {
+      if (typeof selector !== "string") {
         const titleElements = new (e(k))(
-          selector?.querySelectorAll('.ycs-head__title')
+          selector?.querySelectorAll(".ycs-head__title"),
         );
         const textElements = new (e(k))(
-          selector?.querySelectorAll('.ycs-comment__main-text')
+          selector?.querySelectorAll(".ycs-comment__main-text"),
         );
         titleElements.mark(searchText, markOptions);
         textElements.mark(searchText, markOptions);
@@ -9041,7 +9068,7 @@
     try {
       window.postMessage(
         {
-          type: 'YCS_CACHE_STORAGE_SET',
+          type: "YCS_CACHE_STORAGE_SET",
           body: {
             url: t,
             videoId: getVideoId(Xt(t)),
@@ -9052,7 +9079,7 @@
             commentsTrVideo: e.commentsTrVideo,
           },
         },
-        window.location.origin
+        window.location.origin,
       );
     } catch (e) {}
   }
@@ -9060,10 +9087,10 @@
     if (!e) return;
     const r = (e) => {
         try {
-          if ('string' == typeof e || 'number' == typeof e)
+          if ("string" == typeof e || "number" == typeof e)
             return `\n                    <div class="ycs-wrap-like">\n                        <span class="ycs-icon-like">\n                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet">\n                                <g>\n                                    <path\n                                        d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1.91l-.01-.01L23 10z"></path>\n                                </g>\n                            </svg>\n                        </span>\n                        <span class="ycs-like-count">${e}</span>\n                    </div>\n                `;
         } catch (e) {}
-        return '';
+        return "";
       },
       i = (e) => {
         try {
@@ -9087,13 +9114,13 @@
               qt(
                 () =>
                   e.item.commentRenderer.sponsorCommentBadge
-                    .sponsorCommentBadgeRenderer.customBadge.thumbnails[0].url
-              ) || ''
+                    .sponsorCommentBadgeRenderer.customBadge.thumbnails[0].url,
+              ) || ""
             }" loading="lazy">\n                `;
           }
-          return '';
+          return "";
         } catch (e) {
-          return '';
+          return "";
         }
       },
       a = (e) => {
@@ -9111,7 +9138,7 @@
             return `\n                    <div class="ycs-heart-wrap" title="${e.item.commentRenderer.creatorHeart.tooltip}">\n                        <span class="ycs-heart-icon">❤</span>\n                    </div>\n                `;
           }
         } catch (e) {}
-        return '';
+        return "";
       },
       s = (e) => {
         try {
@@ -9125,16 +9152,16 @@
               ? void 0
               : n.verifiedAuthor
           ) {
-            return `\n                    <div class="ycs-verified-wrap" title="${'Verified user'}">\n                        <span class="ycs-verified-icon">✔</span>\n                    </div>\n                `;
+            return `\n                    <div class="ycs-verified-wrap" title="${"Verified user"}">\n                        <span class="ycs-verified-icon">✔</span>\n                    </div>\n                `;
           }
         } catch (e) {}
-        return '';
+        return "";
       },
-      c = document.createElement('div');
+      c = document.createElement("div");
     let l;
     if (
-      ((c.id = 'ycs_wrap_comments'),
-      (l = 'string' == typeof e ? document.querySelector(e) : e),
+      ((c.id = "ycs_wrap_comments"),
+      (l = "string" == typeof e ? document.querySelector(e) : e),
       null == l || l.appendChild(c),
       l)
     ) {
@@ -9189,7 +9216,7 @@
               null === (p = m.webCommandMetadata) ||
               void 0 === p
                 ? void 0
-                : p.url) || ''
+                : p.url) || ""
             }" target="_blank">\n                                <div class="ycs-render-img">\n                                    <img alt="${
               (null === (f = e.item) ||
               void 0 === f ||
@@ -9198,11 +9225,11 @@
               null === (y = v.authorText) ||
               void 0 === y
                 ? void 0
-                : y.simpleText) || ''
+                : y.simpleText) || ""
             }" height="40" width="40"\n                                    src="${
               qt(
-                () => e.item.commentRenderer.authorThumbnail.thumbnails[0].url
-              ) || ''
+                () => e.item.commentRenderer.authorThumbnail.thumbnails[0].url,
+              ) || ""
             }" loading="lazy">\n                                </div>\n                            </a>\n                        </div>\n                        <div class="ycs-comment-block">\n                            <div class="ycs-head-block__dib ycs-head-block ycs-head__title-main">\n                                <a class="ycs-head__title"\n                                href="${
               (null === (g = e.item) ||
               void 0 === g ||
@@ -9215,7 +9242,7 @@
               null === (_ = x.webCommandMetadata) ||
               void 0 === _
                 ? void 0
-                : _.url) || ''
+                : _.url) || ""
             }" target="_blank">\n                                    <span>\n                                        ${
               (null === (C = e.item) ||
               void 0 === C ||
@@ -9224,22 +9251,22 @@
               null === (T = E.authorText) ||
               void 0 === T
                 ? void 0
-                : T.simpleText) || ''
+                : T.simpleText) || ""
             }\n                                    </span>\n                                </a>\n                                ${s(
-              e
+              e,
             )}\n                                <div class="ycs-head-block__dib ycs-head-block__lh">\n                                    ${i(
-              e
+              e,
             )}\n                                    <a\n                                        class="ycs-datetime-goto"\n                                        href="${
               qt(
                 () =>
                   e.item.commentRenderer.publishedTimeText.runs[0]
-                    .navigationEndpoint.commandMetadata.webCommandMetadata.url
-              ) || ''
+                    .navigationEndpoint.commandMetadata.webCommandMetadata.url,
+              ) || ""
             }" target="_blank" title="Open a comment, a reply, in a new window, for edit">\n                                            ${
               qt(() => e.item.commentRenderer.publishedTimeText.runs[0].text) ||
-              ''
+              ""
             }\n                                    </a>\n                                    ${a(
-              e
+              e,
             )}\n                                    ${r(
               (null == e ||
               null === (I = e.item) ||
@@ -9256,7 +9283,7 @@
                 null === (A = M.voteCount) ||
                 void 0 === A
                   ? void 0
-                  : A.simpleText)
+                  : A.simpleText),
             )}\n                                    ${
               ((D =
                 null == e ||
@@ -9273,16 +9300,16 @@
                 void 0 === O
                   ? void 0
                   : O.commentId),
-              'string' == typeof D || ('number' == typeof D && 0 !== D)
+              "string" == typeof D || ("number" == typeof D && 0 !== D)
                 ? `\n                <div class="ycs-wrap-like">\n                    <span class="ycs-icons__speech">\n                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="14px" height="14px">\n                            <linearGradient x1="12.686" x2="35.58" y1="4.592" y2="41.841"\n                                gradientUnits="userSpaceOnUse">\n                                <stop offset="0" stop-color="#21ad64" />\n                                <stop offset="1" stop-color="#088242" />\n                            </linearGradient>\n                            <path\n                                d="M42,8H6c-1.105,0-2,0.895-2,2v26c0,1.105,0.895,2,2,2h8v7.998\tc0,0.891,1.077,1.337,1.707,0.707L24.412,38H42c1.105,0,2-0.895,2-2V10C44,8.895,43.105,8,42,8z" />\n                        </svg>\n                    </span>\n                    <span class="ycs-like-count">${D}</span>\n                    <button class="ycs-open-reply" data-idcom="${V}" title="Open replies to the comment">+</button>\n                </div>\n            `
-                : '')
+                : "")
             }\n                                    ${
-              'R' ===
+              "R" ===
                 (null === (z = e.item) || void 0 === z
                   ? void 0
                   : z.typeComment) && n
                 ? `<span class="ycs-datetime-goto">(reply)</span><button id=${e.refIndex} title="Open the comment to the reply here." class="ycs-open-comment">▼</button>`
-                : ''
+                : ""
             }\n                                </div>\n                            </div>\n                            <div class="ycs-comment__main-text">${
               (null === (N = e.item) ||
               void 0 === N ||
@@ -9300,9 +9327,9 @@
               void 0 === U
                 ? void 0
                 : U.fullText) ||
-              ''
+              ""
             }${
-              IS_DEBUG ? ` [${[e.item._index, e.item._score]}]` : ''
+              IS_DEBUG ? ` [${[e.item._index, e.item._score]}]` : ""
             }</div>\n                        </div>\n                    </div>\n                `,
           });
         } catch (e) {
@@ -9311,33 +9338,33 @@
       try {
         const e = l.slice(G, H);
         if (e.length > 0) {
-          for (const t of e) c.insertAdjacentHTML('beforeend', t.html), G++;
+          for (const t of e) (c.insertAdjacentHTML("beforeend", t.html), G++);
           if (l.length > H) {
             c.insertAdjacentHTML(
-              'beforeend',
+              "beforeend",
               `\n                        <div id="ycs_search_show_more" class="ycs-render-comment ycs-show_more_block">\n                            <div id="ycs__show-more-button"\n                                class="ycs-title">\n                                Show more, found comments (${
                 l.length - G
-              }) \n        <span class="ycs-icons__coll_exp">\n            <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" enable-background="new 0 0 48 48">\n                <polygon fill="#2196F3" points="43,17.1 39.9,14 24,29.9 8.1,14 5,17.1 24,36"/>\n            </svg>    \n        </span>\n    \n                            </div>\n                        </div>\n                    `
+              }) \n        <span class="ycs-icons__coll_exp">\n            <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" enable-background="new 0 0 48 48">\n                <polygon fill="#2196F3" points="43,17.1 39.9,14 24,29.9 8.1,14 5,17.1 24,36"/>\n            </svg>    \n        </span>\n    \n                            </div>\n                        </div>\n                    `,
             );
-            const e = document.getElementById('ycs_search_show_more');
+            const e = document.getElementById("ycs_search_show_more");
             null == e ||
-              e.addEventListener('click', () => {
+              e.addEventListener("click", () => {
                 const t = l.slice(G, H + G);
                 if (t.length > 0) {
                   const n = Dt(15);
                   e.insertAdjacentHTML(
-                    'beforebegin',
-                    `<div class="${n}"></div>`
+                    "beforebegin",
+                    `<div class="${n}"></div>`,
                   );
                   const r = document.getElementsByClassName(n)[0];
                   for (const e of t)
-                    r.insertAdjacentHTML('beforeend', e.html), G++;
+                    (r.insertAdjacentHTML("beforeend", e.html), G++);
                   if ((o && markElements(`.${n}`, o), l.length - G <= 0)) {
-                    const e = document.getElementById('ycs_search_show_more');
+                    const e = document.getElementById("ycs_search_show_more");
                     e && e.remove();
                   } else {
                     const e = document.querySelector(
-                      '#ycs_search_show_more #ycs__show-more-button'
+                      "#ycs_search_show_more #ycs__show-more-button",
                     );
                     e &&
                       (e.innerHTML = `Show more, found comments (${
@@ -9350,16 +9377,16 @@
         }
       } catch (e) {
         G = 0;
-        for (const e of l) c.insertAdjacentHTML('beforeend', e.html);
+        for (const e of l) c.insertAdjacentHTML("beforeend", e.html);
       }
       o && markElements(e, o);
     }
     var D, V;
   }
   function bn(e, t, n) {
-    if ('string' != typeof e) return;
-    const o = document.createElement('div');
-    o.id = 'ycs_wrap_comments_chat';
+    if ("string" != typeof e) return;
+    const o = document.createElement("div");
+    o.id = "ycs_wrap_comments_chat";
     const r = document.querySelector(e);
     null == r || r.appendChild(o);
     const i = (e) => {
@@ -9384,12 +9411,13 @@
                 qt(
                   () =>
                     e.item.replayChatItemAction.actions[0].addChatItemAction
-                      .item.liveChatTextMessageRenderer.timestampText.simpleText
-                ) || ''
+                      .item.liveChatTextMessageRenderer.timestampText
+                      .simpleText,
+                ) || ""
               }\n                    </span>\n                `
-            : '';
+            : "";
         } catch (e) {
-          return '';
+          return "";
         }
       },
       a = (e) => {
@@ -9397,7 +9425,7 @@
           const o = qt(
             () =>
               e.item.replayChatItemAction.actions[0].addChatItemAction.item
-                .liveChatTextMessageRenderer.authorBadges
+                .liveChatTextMessageRenderer.authorBadges,
           );
           let r;
           var t;
@@ -9425,13 +9453,13 @@
               qt(
                 () =>
                   r.liveChatAuthorBadgeRenderer.customThumbnail.thumbnails[0]
-                    .url
-              ) || ''
+                    .url,
+              ) || ""
             }" loading="lazy">\n                `;
           }
-          return '';
+          return "";
         } catch (e) {
-          return '';
+          return "";
         }
       },
       s = (e) => {
@@ -9447,10 +9475,10 @@
                 : t.liveChatTextMessageRenderer.verifiedAuthor;
             })
           ) {
-            return `\n                    <div class="ycs-verified-wrap" title="${'Verified user'}">\n                        <span class="ycs-verified-icon">✔</span>\n                    </div>\n                `;
+            return `\n                    <div class="ycs-verified-wrap" title="${"Verified user"}">\n                        <span class="ycs-verified-icon">✔</span>\n                    </div>\n                `;
           }
         } catch (e) {}
-        return '';
+        return "";
       };
     if (r) {
       const r = [],
@@ -9465,36 +9493,36 @@
               qt(
                 () =>
                   e.item.replayChatItemAction.actions[0].addChatItemAction.item
-                    .liveChatTextMessageRenderer.authorExternalChannelId
-              ) || ''
+                    .liveChatTextMessageRenderer.authorExternalChannelId,
+              ) || ""
             }" target="_blank">\n                                <div class="ycs-render-img">\n                                    <img alt="${
               qt(
                 () =>
                   e.item.replayChatItemAction.actions[0].addChatItemAction.item
-                    .liveChatTextMessageRenderer.authorName.simpleText
-              ) || ''
+                    .liveChatTextMessageRenderer.authorName.simpleText,
+              ) || ""
             }" height="40" width="40"\n                                    src="${
               qt(
                 () =>
                   e.item.replayChatItemAction.actions[0].addChatItemAction.item
-                    .liveChatTextMessageRenderer.authorPhoto.thumbnails[0].url
-              ) || ''
+                    .liveChatTextMessageRenderer.authorPhoto.thumbnails[0].url,
+              ) || ""
             }" loading="lazy">\n                                </div>\n                            </a>\n                        </div>\n                        <div class="ycs-comment-block">\n                            <div class="ycs-head-block__dib ycs-head-block ycs-head__title-main">\n                                <a class="ycs-head__title""\n                                href="/channel/${
               qt(
                 () =>
                   e.item.replayChatItemAction.actions[0].addChatItemAction.item
-                    .liveChatTextMessageRenderer.authorExternalChannelId
-              ) || ''
+                    .liveChatTextMessageRenderer.authorExternalChannelId,
+              ) || ""
             }" target="_blank">\n                                    <span>\n                                    ${
               qt(
                 () =>
                   e.item.replayChatItemAction.actions[0].addChatItemAction.item
-                    .liveChatTextMessageRenderer.authorName.simpleText
-              ) || ''
+                    .liveChatTextMessageRenderer.authorName.simpleText,
+              ) || ""
             }\n                                    </span>\n                                </a>\n                                ${s(
-              e
+              e,
             )}\n                                <div class="ycs-head-block__dib ycs-head-block__lh ycs-time-size">\n                                    ${a(
-              e
+              e,
             )}\n                                    <a\n                                        class="ycs-datetime-goto" title="GMT0"\n                                        href="${
               ln(
                 null === (c = e.item) ||
@@ -9502,28 +9530,28 @@
                   null === (l = c.replayChatItemAction) ||
                   void 0 === l
                   ? void 0
-                  : l.videoOffsetTimeMsec
-              ) || ''
+                  : l.videoOffsetTimeMsec,
+              ) || ""
             }" target="_blank">\n                                            ${un(
               qt(
                 () =>
                   e.item.replayChatItemAction.actions[0].addChatItemAction.item
-                    .liveChatTextMessageRenderer.timestampUsec
-              )
+                    .liveChatTextMessageRenderer.timestampUsec,
+              ),
             )}\n                                    </a>\n                                    <span class="ycs_chat_info">(chat)</span>\n                                    ${i(
-              e
+              e,
             )}\n                                </div>\n                            </div>\n                            <div class="ycs-comment__main-text">${
               qt(
                 () =>
                   e.item.replayChatItemAction.actions[0].addChatItemAction.item
-                    .liveChatTextMessageRenderer.message.renderFullText
+                    .liveChatTextMessageRenderer.message.renderFullText,
               ) ||
               qt(
                 () =>
                   e.item.replayChatItemAction.actions[0].addChatItemAction.item
-                    .liveChatTextMessageRenderer.message.fullText
+                    .liveChatTextMessageRenderer.message.fullText,
               ) ||
-              ''
+              ""
             }</div>\n                        </div>\n                    </div>\n                `,
           });
         } catch (e) {
@@ -9532,35 +9560,35 @@
       try {
         const t = r.slice(u, d);
         if (t.length > 0) {
-          for (const e of t) o.insertAdjacentHTML('beforeend', e.html), u++;
+          for (const e of t) (o.insertAdjacentHTML("beforeend", e.html), u++);
           if (r.length > d) {
             o.insertAdjacentHTML(
-              'beforeend',
+              "beforeend",
               `\n                        <div id="ycs_search_chat_show_more" class="ycs-render-comment ycs-show_more_block">\n                            <div id="ycs__show-more-button"\n                                class="ycs-title">\n                                Show more, found chat replay (${
                 r.length - u
-              }) \n        <span class="ycs-icons__coll_exp">\n            <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" enable-background="new 0 0 48 48">\n                <polygon fill="#2196F3" points="43,17.1 39.9,14 24,29.9 8.1,14 5,17.1 24,36"/>\n            </svg>    \n        </span>\n    \n                            </div>\n                        </div>\n                    `
+              }) \n        <span class="ycs-icons__coll_exp">\n            <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" enable-background="new 0 0 48 48">\n                <polygon fill="#2196F3" points="43,17.1 39.9,14 24,29.9 8.1,14 5,17.1 24,36"/>\n            </svg>    \n        </span>\n    \n                            </div>\n                        </div>\n                    `,
             );
-            const e = document.getElementById('ycs_search_chat_show_more');
+            const e = document.getElementById("ycs_search_chat_show_more");
             null == e ||
-              e.addEventListener('click', () => {
+              e.addEventListener("click", () => {
                 const t = r.slice(u, d + u);
                 if (t.length > 0) {
                   const o = Dt(15);
                   e.insertAdjacentHTML(
-                    'beforebegin',
-                    `<div class="${o}"></div>`
+                    "beforebegin",
+                    `<div class="${o}"></div>`,
                   );
                   const i = document.getElementsByClassName(o)[0];
                   for (const e of t)
-                    i.insertAdjacentHTML('beforeend', e.html), u++;
+                    (i.insertAdjacentHTML("beforeend", e.html), u++);
                   if ((n && markElements(`.${o}`, n), r.length - u <= 0)) {
                     const e = document.getElementById(
-                      'ycs_search_chat_show_more'
+                      "ycs_search_chat_show_more",
                     );
                     e && e.remove();
                   } else {
                     const e = document.querySelector(
-                      '#ycs_search_chat_show_more #ycs__show-more-button'
+                      "#ycs_search_chat_show_more #ycs__show-more-button",
                     );
                     e &&
                       (e.innerHTML = `Show more, found chat replay (${
@@ -9574,17 +9602,17 @@
         n && markElements(e, n);
       } catch (e) {
         u = 0;
-        for (const e of r) o.insertAdjacentHTML('beforeend', e.html);
+        for (const e of r) o.insertAdjacentHTML("beforeend", e.html);
       }
     }
   }
   function xn(elementSelector, comments, searchText) {
-    if (typeof elementSelector !== 'string') {
+    if (typeof elementSelector !== "string") {
       return;
     }
 
-    const container = document.createElement('div');
-    container.id = 'ycs_wrap_comments_trvideo';
+    const container = document.createElement("div");
+    container.id = "ycs_wrap_comments_trvideo";
 
     const targetElement = document.querySelector(elementSelector);
     if (targetElement) {
@@ -9600,17 +9628,17 @@
           const startOffsetMs = qt(
             () =>
               comment.item.transcriptCueGroupRenderer.cues[0]
-                .transcriptCueRenderer.startOffsetMs
+                .transcriptCueRenderer.startOffsetMs,
           );
           const formattedStartOffset = qt(
             () =>
               comment.item.transcriptCueGroupRenderer.formattedStartOffset
-                .simpleText
+                .simpleText,
           );
           const cueText = qt(
             () =>
               comment.item.transcriptCueGroupRenderer.cues[0]
-                .transcriptCueRenderer.cue.simpleText
+                .transcriptCueRenderer.cue.simpleText,
           );
 
           renderedComments.push({
@@ -9618,22 +9646,22 @@
               <div id="ycs-number-comment-${++endIndex}" class="ycs-render-comment ycs-oc-ml">
                 <div class="ycs-left">
                   <a class="ycs-goto-video ycs-cpointer" href="${
-                    ln(startOffsetMs) || ''
+                    ln(startOffsetMs) || ""
                   }" target="_blank" data-offsetvideo="${
-              startOffsetMs || ''
-            }" title="Go to the video by time.">
+                    startOffsetMs || ""
+                  }" title="Go to the video by time.">
                     |▶ Go to: ${formattedStartOffset || 0}
                   </a>
                   <div class="ycs-head-block__dib ycs-head-block ycs-head__title-main">
                     <a class="ycs-datetime-goto" href="${
-                      ln(startOffsetMs) || ''
+                      ln(startOffsetMs) || ""
                     }" target="_blank" title="Timestamp link">
                       Share link
                     </a>
                   </div>
                 </div>
                 <div class="ycs-comment__main-text ycs-clear">
-                  ${cueText || ''}
+                  ${cueText || ""}
                 </div>
               </div>
             `,
@@ -9647,7 +9675,7 @@
         const batch = renderedComments.slice(startIndex, batchSize);
         if (batch.length > 0) {
           for (const comment of batch) {
-            container.insertAdjacentHTML('beforeend', comment.html);
+            container.insertAdjacentHTML("beforeend", comment.html);
             startIndex++;
           }
 
@@ -9668,26 +9696,26 @@
             `);
 
             const showMoreButton = document.getElementById(
-              'ycs_search_trvideo_show_more'
+              "ycs_search_trvideo_show_more",
             );
             if (showMoreButton) {
-              showMoreButton.addEventListener('click', () => {
+              showMoreButton.addEventListener("click", () => {
                 const nextBatch = renderedComments.slice(
                   startIndex,
-                  batchSize + startIndex
+                  batchSize + startIndex,
                 );
                 if (nextBatch.length > 0) {
                   const uniqueClass = Dt(15);
                   container.insertAdjacentHTML(
-                    'beforebegin',
-                    `<div class="${uniqueClass}"></div>`
+                    "beforebegin",
+                    `<div class="${uniqueClass}"></div>`,
                   );
                   const batchContainer =
                     document.getElementsByClassName(uniqueClass)[0];
                   for (const comment of nextBatch) {
                     batchContainer.insertAdjacentHTML(
-                      'beforeend',
-                      comment.html
+                      "beforeend",
+                      comment.html,
                     );
                     startIndex++;
                   }
@@ -9698,14 +9726,14 @@
 
                   if (renderedComments.length - startIndex <= 0) {
                     const showMoreButton = document.getElementById(
-                      'ycs_search_trvideo_show_more'
+                      "ycs_search_trvideo_show_more",
                     );
                     if (showMoreButton) {
                       showMoreButton.remove();
                     }
                   } else {
                     const showMoreButton = document.querySelector(
-                      '#ycs_search_trvideo_show_more #ycs__show-more-button'
+                      "#ycs_search_trvideo_show_more #ycs__show-more-button",
                     );
                     if (showMoreButton) {
                       showMoreButton.innerHTML = `Show more, found transcript video (${
@@ -9731,26 +9759,26 @@
       } catch (error) {
         startIndex = 0;
         for (const comment of renderedComments) {
-          container.insertAdjacentHTML('beforeend', comment.html);
+          container.insertAdjacentHTML("beforeend", comment.html);
         }
       }
     }
   }
   function _n(e) {
-    if ('string' != typeof e) return;
+    if ("string" != typeof e) return;
     const t = document.querySelector(e),
-      n = document.createElement('div');
-    (n.className = 'ycs-app'),
+      n = document.createElement("div");
+    ((n.className = "ycs-app"),
       (n.innerHTML = `\n        <div class="ycs-app-main">\n            <div class="ycs-head-search">\n                <p class="ycs-title ycs-left" id="ycs_title_information">\n                    YouTube Comment Search <span id="ycs-count-load"></span>\n                </p>\n                <div class="ycs_load_all ycs-right">\n                    <button id="ycs-load-all" class="ycs-btn-search ycs-title ycs_noselect" name="Load all comments" type="button"\n                        title="Load all available comments">\n                        Load all\n                    </button>\n                    <button id="ycs_load_stop" class="ycs_btn_load-stop ycs-title ycs_noselect" name="Stop load all comments" type="button"\n                        title="Stop load all available comments">\n                        stop\n                    </button>\n                </div>\n            </div>\n            <div class="ycs-title ycs-clear ycs-infobar">\n                <div id="ycs-desc__search">\n                    \n                    <div>\n                        <p class="ycs-infobar-field"><span id="ycs_status_cmnt">\n        <span class="ycs-icons">\n            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">\n                <path fill="#ff6f02" d="M31 7.002l13 1.686L33.296 19 31 7.002zM17 41L4 39.314 14.704 29 17 41z"></path>\n                <path fill="#ff6f00"\n                    d="M8 24c0-8.837 7.163-16 16-16 1.024 0 2.021.106 2.992.29l.693-3.865C26.525 4.112 25.262 4.005 24 4.005c-11.053 0-20 8.947-20 20 0 4.844 1.686 9.474 4.844 13.051l3.037-2.629C9.468 31.625 8 27.987 8 24zM39.473 11.267l-3.143 2.537C38.622 16.572 40 20.125 40 24c0 8.837-7.163 16-16 16-1.029 0-2.033-.106-3.008-.292l-.676 3.771c1.262.21 2.525.317 3.684.317 11.053 0 20-8.947 20-20C44 19.375 42.421 14.848 39.473 11.267z">\n                </path>\n            </svg>\n        </span>\n    </span> Comments: </p>\n                        <div class="ycs-infobar__search">\n                            <span id="ycs_cmnts">0</span>\n\n                            <div class="ycs_infobar_btns ycs_noselect">\n                                <div class="ycs_load_wrap">\n                                    <button id="ycs-load-cmnts" class="ycs-btn-search ycs-title" name="Load comments" type="button"\n                                        title="Load comments">\n                                        load\n                                    </button>\n                                </div>\n                                <div class="ycs_open_wrap">\n                                    <button id="ycs_open_all_comments_window" class="ycs-btn-search ycs-title"\n                                        name="Open comments in the new popup window" title="Open comments in the new popup window">\n                                        open\n                                    </button>\n                                </div>\n                                <div class="ycs_save_wrap">\n                                    <button id="ycs_save_all_comments" class="ycs-btn-search ycs-title" name="Save comments to file"\n                                        title="Save comments to file">\n                                        save\n                                    </button>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <span id="ycs_anchor_vmode" class="ycs-hidden"></span>\n                    <div>\n                        <p class="ycs-infobar-field"><span id="ycs_status_chat">\n        <span class="ycs-icons">\n            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">\n                <path fill="#ff6f02" d="M31 7.002l13 1.686L33.296 19 31 7.002zM17 41L4 39.314 14.704 29 17 41z"></path>\n                <path fill="#ff6f00"\n                    d="M8 24c0-8.837 7.163-16 16-16 1.024 0 2.021.106 2.992.29l.693-3.865C26.525 4.112 25.262 4.005 24 4.005c-11.053 0-20 8.947-20 20 0 4.844 1.686 9.474 4.844 13.051l3.037-2.629C9.468 31.625 8 27.987 8 24zM39.473 11.267l-3.143 2.537C38.622 16.572 40 20.125 40 24c0 8.837-7.163 16-16 16-1.029 0-2.033-.106-3.008-.292l-.676 3.771c1.262.21 2.525.317 3.684.317 11.053 0 20-8.947 20-20C44 19.375 42.421 14.848 39.473 11.267z">\n                </path>\n            </svg>\n        </span>\n    </span> Chat replay: </p>\n                        <div class="ycs-infobar__search">\n                            <span id="ycs_cmnts_chat">0</span>\n\n                            <div class="ycs_infobar_btns ycs_noselect">\n                                <div class="ycs_load_wrap">\n                                    <button id="ycs-load-chat" class="ycs-btn-search ycs-title" name="Load chat replay" type="button"\n                                        title="Load chat replay">\n                                        load\n                                    </button>\n                                </div>\n                                <div class="ycs_open_wrap">\n                                    <button id="ycs_open_all_comments_chat_window" class="ycs-btn-search ycs-title"\n                                        name="Open chat comments in the new popup window"\n                                        title="Open chat comments in the new popup window">\n                                        open\n                                    </button>\n                                </div>\n                                <div class="ycs_save_wrap">\n                                    <button id="ycs_save_all_comments_chat" class="ycs-btn-search ycs-title"\n                                        name="Save chat comments to file" title="Save chat comments to file">\n                                        save\n                                    </button>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div>\n                        <p class="ycs-infobar-field"><span id="ycs_status_trvideo">\n        <span class="ycs-icons">\n            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">\n                <path fill="#ff6f02" d="M31 7.002l13 1.686L33.296 19 31 7.002zM17 41L4 39.314 14.704 29 17 41z"></path>\n                <path fill="#ff6f00"\n                    d="M8 24c0-8.837 7.163-16 16-16 1.024 0 2.021.106 2.992.29l.693-3.865C26.525 4.112 25.262 4.005 24 4.005c-11.053 0-20 8.947-20 20 0 4.844 1.686 9.474 4.844 13.051l3.037-2.629C9.468 31.625 8 27.987 8 24zM39.473 11.267l-3.143 2.537C38.622 16.572 40 20.125 40 24c0 8.837-7.163 16-16 16-1.029 0-2.033-.106-3.008-.292l-.676 3.771c1.262.21 2.525.317 3.684.317 11.053 0 20-8.947 20-20C44 19.375 42.421 14.848 39.473 11.267z">\n                </path>\n            </svg>\n        </span>\n    </span> Transcript video: </p>\n                        <div class="ycs-infobar__search">\n                            <span id="ycs_cmnts_video">0</span>\n                            \n                            <div class="ycs_infobar_btns ycs_noselect">\n                                <div class="ycs_load_wrap">\n                                    <button id="ycs-load-transcript-video" class="ycs-btn-search ycs-title" name="Load transcript video"\n                                        type="button" title="Load transcript video">\n                                        load\n                                    </button>\n                                </div>\n                                <div class="ycs_open_wrap">\n                                    <button id="ycs_open_all_comments_trvideo_window" class="ycs-btn-search ycs-title"\n                                        name="Open transcript video in the new popup window"\n                                        title="Open transcript video in the new popup window">\n                                        open\n                                    </button>\n                                </div>\n                                <div class="ycs_save_wrap">\n                                    <button id="ycs_save_all_comments_trvideo" class="ycs-btn-search ycs-title"\n                                        name="Save transcript video to file" title="Save transcript video to file">\n                                        save\n                                    </button>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n            </div>\n            \n            <div id="ycs-search"></div>\n            <div><p class="ycs-title ycs_notify_box"><i></i></p></div>\n\n            <div class="ycs_extra_panel ycs-right">\n                <div>\n                    ${(() => {
         try {
           return vn().supported
             ? '<button id="ycs_view_mode" class="ycs-btn-search ycs-title ycs_noselect" name="View Mode" type="button" title="⌨ HOTKEY: [ Alt + ~ ] Viewer mode for more easier searches and video watching">V. Mode</button>'
-            : '';
+            : "";
         } catch (e) {
-          return '';
+          return "";
         }
       })()}\n                </div>\n            </div>\n\n            <div id="ycs-search-result" class="ycs-clear"></div>\n\n            <div id="ycs_modal_window" class="ycs_modal">\n                <div class="ycs_modal-content">\n                    <button id="ycs_btn_close_modal" class="ycs_btn_close ycs_noselect">✖</button>\n                    <div class="ycs_modal_body">\n                        <h2>Instructions</h2>\n                        <ol>\n                            <li>Open video on YouTube</li>\n                            <li>Find the YCS extension under the current video and click the button "Load all" or choose to load the categories\n                            </li>\n                            <li>Write the search query, press Enter or click the button Search</li>\n                        </ol>\n                        <hr />\n                        <h2>FAQ</h2>\n                        <ol>\n                            <li>\n                                <p><strong>How to like, reply to a comment?</strong><br />In the search results, click on the date (like, "2\n                                    months ago") of the comment and will open a new window with an active comment or reply under the video,\n                                    where you can do any action.</p>\n                            </li>\n                            <li>\n                                <p><strong>How do I find all timestamped comments and replies on a video?</strong><br />Click on the "Timestamps" button under the search bar.</p>\n                            </li>\n                            <li>\n                                <p><strong>How can I find addressed to user's comments, replies?</strong><br />Write&nbsp;<code>@</code>&nbsp;in\n                                    the input field.</p>\n                            </li>\n                            <li>\n                                <p><strong>How can I view the contents of the video transcript at a specific minute?</strong><br />You can write\n                                    a search query for Trp. Video, in the&nbsp;<code>mm:ss</code>&nbsp;format. For\n                                    example:<br /><code>:</code>&nbsp;- all the text of the video transcript.<br /><code>15:</code>&nbsp;- all\n                                    the text in the 15th minute.</p>\n                            </li>\n                            <li>\n                                <p><strong>How can I view the comment for a found reply?</strong><br />Click on\n                                    the&nbsp;<strong>▼</strong>&nbsp;button.</p>\n                            </li>\n                            <li>\n                                <p><strong>How can I see the all replies to the found comment?</strong><br />In the header of the found comment,\n                                    you can find the reply icon and the count, to see the replies click on\n                                    the&nbsp;<strong>+</strong>&nbsp;button.</p>\n                            </li>\n                            <li>\n                                <p><strong>How to use search in YouTube shorts?</strong><br />\n                                    Open a YouTube video short. Click badge <strong>YCS</strong> (right of the address bar) and click on the button <strong>Open YT short</strong>.</p>\n                            </li>\n                        </ol>\n\n                        <div>\n                            <p>You can use the search engine (YCS), while loading comments, chat, transcript video.</p>\n                            &nbsp;&nbsp;\n                        </div>\n\n                    </div>\n                </div>\n            </div>\n\n        </div>\n    `),
-      null == t || t.appendChild(n);
+      null == t || t.appendChild(n));
   }
   function buildSearchUI(element) {
     element.innerHTML = `
@@ -10115,13 +10143,13 @@
   !(function () {
     const t = setInterval(() => {
       Yt() &&
-        document.querySelector('#meta.style-scope.ytd-watch-flexy') &&
+        document.querySelector("#meta.style-scope.ytd-watch-flexy") &&
         (clearInterval(t),
         (function () {
           let t, n;
           function o() {
             if (!Yt()) return;
-            n && window.removeEventListener('message', n);
+            n && window.removeEventListener("message", n);
             // counters to be used for action button display
             const countsAct = {
                 comments: 0,
@@ -10151,10 +10179,10 @@
             const getLockedFilterSortOrder = (sortOrder) => {
               if (filterSortLock) {
                 // reverse sort order state if we want to preserve the sort order
-                if (sortOrder === 'newest') {
-                  return 'oldest';
+                if (sortOrder === "newest") {
+                  return "oldest";
                 }
-                return 'newest';
+                return "newest";
               }
               return sortOrder;
             };
@@ -10173,292 +10201,292 @@
               distance: 1e5,
             };
             if (
-              (postTextMessage('NUMBER_COMMENTS', ''),
-              sn('.ycs-app'),
-              document.querySelector('#meta.style-scope.ytd-watch-flexy'))
+              (postTextMessage("NUMBER_COMMENTS", ""),
+              sn(".ycs-app"),
+              document.querySelector("#meta.style-scope.ytd-watch-flexy"))
             )
-              _n('#meta.style-scope.ytd-watch-flexy');
+              _n("#meta.style-scope.ytd-watch-flexy");
             else {
-              if (!document.querySelector('#meta.style-scope')) return;
-              _n('#meta.style-scope');
+              if (!document.querySelector("#meta.style-scope")) return;
+              _n("#meta.style-scope");
             }
-            const l = document.getElementById('ycs-search');
+            const l = document.getElementById("ycs-search");
             buildSearchUI(l);
 
             const btnPool = (() => ({
-              elPTimeStamps: document.getElementById('ycs_btn_timestamps'),
-              elPAuthor: document.getElementById('ycs_btn_author'),
-              elPHeart: document.getElementById('ycs_btn_heart'),
-              elPVerified: document.getElementById('ycs_btn_verified'),
-              elPLinks: document.getElementById('ycs_btn_links'),
-              elPLikes: document.getElementById('ycs_btn_likes'),
-              elPReplied: document.getElementById('ycs_btn_replied_comments'),
-              elPMembers: document.getElementById('ycs_btn_members'),
-              elPDonated: document.getElementById('ycs_btn_donated'),
-              elPClear: document.getElementById('ycs_btn_clear'),
-              elPRandom: document.getElementById('ycs_btn_random'),
-              elFirstComments: document.getElementById('ycs_btn_sort_first'),
+              elPTimeStamps: document.getElementById("ycs_btn_timestamps"),
+              elPAuthor: document.getElementById("ycs_btn_author"),
+              elPHeart: document.getElementById("ycs_btn_heart"),
+              elPVerified: document.getElementById("ycs_btn_verified"),
+              elPLinks: document.getElementById("ycs_btn_links"),
+              elPLikes: document.getElementById("ycs_btn_likes"),
+              elPReplied: document.getElementById("ycs_btn_replied_comments"),
+              elPMembers: document.getElementById("ycs_btn_members"),
+              elPDonated: document.getElementById("ycs_btn_donated"),
+              elPClear: document.getElementById("ycs_btn_clear"),
+              elPRandom: document.getElementById("ycs_btn_random"),
+              elFirstComments: document.getElementById("ycs_btn_sort_first"),
             }))();
             ((pool) => {
               if (pool) {
                 var t, n, o, i, a, s, c, l, d, h, m, p;
                 const f = () => {
-                  (countsReport.comments = 0),
+                  ((countsReport.comments = 0),
                     (countsReport.commentsChat = 0),
-                    (countsReport.commentsTrVideo = 0);
+                    (countsReport.commentsTrVideo = 0));
                 };
-                null == pool ||
+                (null == pool ||
                   null === (t = pool.elPTimeStamps) ||
                   void 0 === t ||
-                  t.addEventListener('click', (e) => {
+                  t.addEventListener("click", (e) => {
                     try {
                       var t;
                       const n = e.currentTarget;
-                      toggleVisibility('#ycs_btn_clear', true);
-                      const removed = removeClassName(pool, 'ycs_btn_active');
+                      toggleVisibility("#ycs_btn_clear", true);
+                      const removed = removeClassName(pool, "ycs_btn_active");
                       if (!removed.includes(n)) {
                         lockFilterSort(100);
                       }
                       removed.length = 0;
 
-                      f(),
+                      (f(),
                         null === (t = n) ||
                           void 0 === t ||
-                          t.classList.add('ycs_btn_active'),
-                        dispatchSearch({ timestamp: !0 });
+                          t.classList.add("ycs_btn_active"),
+                        dispatchSearch({ timestamp: !0 }));
                     } catch (e) {}
                   }),
                   null == pool ||
                     null === (n = pool.elPAuthor) ||
                     void 0 === n ||
-                    n.addEventListener('click', (e) => {
+                    n.addEventListener("click", (e) => {
                       try {
                         var t;
                         const n = e.currentTarget;
-                        toggleVisibility('#ycs_btn_clear', true);
-                        const removed = removeClassName(pool, 'ycs_btn_active');
+                        toggleVisibility("#ycs_btn_clear", true);
+                        const removed = removeClassName(pool, "ycs_btn_active");
                         if (!removed.includes(n)) {
                           lockFilterSort(100);
                         }
                         removed.length = 0;
-                        f(),
+                        (f(),
                           null === (t = n) ||
                             void 0 === t ||
-                            t.classList.add('ycs_btn_active'),
-                          dispatchSearch({ author: !0 });
+                            t.classList.add("ycs_btn_active"),
+                          dispatchSearch({ author: !0 }));
                       } catch (e) {}
                     }),
                   null == pool ||
                     null === (o = pool.elPHeart) ||
                     void 0 === o ||
-                    o.addEventListener('click', (e) => {
+                    o.addEventListener("click", (e) => {
                       try {
                         var t;
                         const n = e.currentTarget;
-                        toggleVisibility('#ycs_btn_clear', true);
-                        const removed = removeClassName(pool, 'ycs_btn_active');
+                        toggleVisibility("#ycs_btn_clear", true);
+                        const removed = removeClassName(pool, "ycs_btn_active");
                         if (!removed.includes(n)) {
                           lockFilterSort(100);
                         }
                         removed.length = 0;
-                        f(),
+                        (f(),
                           null === (t = n) ||
                             void 0 === t ||
-                            t.classList.add('ycs_btn_active'),
-                          dispatchSearch({ heart: !0 });
+                            t.classList.add("ycs_btn_active"),
+                          dispatchSearch({ heart: !0 }));
                       } catch (e) {}
                     }),
                   null == pool ||
                     null === (i = pool.elPVerified) ||
                     void 0 === i ||
-                    i.addEventListener('click', (e) => {
+                    i.addEventListener("click", (e) => {
                       try {
                         var t;
                         const n = e.currentTarget;
-                        toggleVisibility('#ycs_btn_clear', true);
-                        const removed = removeClassName(pool, 'ycs_btn_active');
+                        toggleVisibility("#ycs_btn_clear", true);
+                        const removed = removeClassName(pool, "ycs_btn_active");
                         if (!removed.includes(n)) {
                           lockFilterSort(100);
                         }
                         removed.length = 0;
-                        f(),
+                        (f(),
                           null === (t = n) ||
                             void 0 === t ||
-                            t.classList.add('ycs_btn_active'),
-                          dispatchSearch({ verified: !0 });
+                            t.classList.add("ycs_btn_active"),
+                          dispatchSearch({ verified: !0 }));
                       } catch (e) {}
                     }),
                   null == pool ||
                     null === (a = pool.elPLinks) ||
                     void 0 === a ||
-                    a.addEventListener('click', (e) => {
+                    a.addEventListener("click", (e) => {
                       try {
                         var t;
                         const n = e.currentTarget;
-                        toggleVisibility('#ycs_btn_clear', true);
-                        const removed = removeClassName(pool, 'ycs_btn_active');
+                        toggleVisibility("#ycs_btn_clear", true);
+                        const removed = removeClassName(pool, "ycs_btn_active");
                         if (!removed.includes(n)) {
                           lockFilterSort(100);
                         }
                         removed.length = 0;
-                        f(),
+                        (f(),
                           null === (t = n) ||
                             void 0 === t ||
-                            t.classList.add('ycs_btn_active'),
-                          dispatchSearch({ links: !0 });
+                            t.classList.add("ycs_btn_active"),
+                          dispatchSearch({ links: !0 }));
                       } catch (e) {}
                     }),
                   null == pool ||
                     null === (s = pool.elPLikes) ||
                     void 0 === s ||
-                    s.addEventListener('click', (e) => {
+                    s.addEventListener("click", (e) => {
                       try {
                         var t;
                         const n = e.currentTarget;
-                        toggleVisibility('#ycs_btn_clear', true);
-                        removeClassName(pool, 'ycs_btn_active'),
+                        toggleVisibility("#ycs_btn_clear", true);
+                        (removeClassName(pool, "ycs_btn_active"),
                           f(),
                           null === (t = n) ||
                             void 0 === t ||
-                            t.classList.add('ycs_btn_active'),
-                          dispatchSearch({ likes: !0 });
+                            t.classList.add("ycs_btn_active"),
+                          dispatchSearch({ likes: !0 }));
                       } catch (e) {}
                     }),
                   null == pool ||
                     null === (c = pool.elPReplied) ||
                     void 0 === c ||
-                    c.addEventListener('click', (e) => {
+                    c.addEventListener("click", (e) => {
                       try {
                         var t;
                         const n = e.currentTarget;
-                        toggleVisibility('#ycs_btn_clear', true);
-                        removeClassName(pool, 'ycs_btn_active'),
+                        toggleVisibility("#ycs_btn_clear", true);
+                        (removeClassName(pool, "ycs_btn_active"),
                           f(),
                           null === (t = n) ||
                             void 0 === t ||
-                            t.classList.add('ycs_btn_active'),
-                          dispatchSearch({ replied: !0 });
+                            t.classList.add("ycs_btn_active"),
+                          dispatchSearch({ replied: !0 }));
                       } catch (e) {}
                     }),
                   null == pool ||
                     null === (l = pool.elPMembers) ||
                     void 0 === l ||
-                    l.addEventListener('click', (e) => {
+                    l.addEventListener("click", (e) => {
                       try {
                         var t;
                         const n = e.currentTarget;
-                        toggleVisibility('#ycs_btn_clear', true);
-                        const removed = removeClassName(pool, 'ycs_btn_active');
+                        toggleVisibility("#ycs_btn_clear", true);
+                        const removed = removeClassName(pool, "ycs_btn_active");
                         if (!removed.includes(n)) {
                           lockFilterSort(100);
                         }
                         removed.length = 0;
-                        f(),
+                        (f(),
                           null === (t = n) ||
                             void 0 === t ||
-                            t.classList.add('ycs_btn_active'),
-                          dispatchSearch({ members: !0 });
+                            t.classList.add("ycs_btn_active"),
+                          dispatchSearch({ members: !0 }));
                       } catch (e) {}
                     }),
                   null == pool ||
                     null === (d = pool.elPDonated) ||
                     void 0 === d ||
-                    d.addEventListener('click', (e) => {
+                    d.addEventListener("click", (e) => {
                       try {
                         var t;
                         const n = e.currentTarget;
-                        toggleVisibility('#ycs_btn_clear', true);
-                        const removed = removeClassName(pool, 'ycs_btn_active');
+                        toggleVisibility("#ycs_btn_clear", true);
+                        const removed = removeClassName(pool, "ycs_btn_active");
                         if (!removed.includes(n)) {
                           lockFilterSort(100);
                         }
                         removed.length = 0;
-                        f(),
+                        (f(),
                           null === (t = n) ||
                             void 0 === t ||
-                            t.classList.add('ycs_btn_active'),
-                          dispatchSearch({ donated: !0 });
+                            t.classList.add("ycs_btn_active"),
+                          dispatchSearch({ donated: !0 }));
                       } catch (e) {}
                     }),
                   null == pool ||
                     null === (h = pool.elPClear) ||
                     void 0 === h ||
-                    h.addEventListener('click', (e) => {
+                    h.addEventListener("click", (e) => {
                       try {
-                        toggleVisibility('#ycs_btn_clear', false);
-                        removeClassName(pool, 'ycs_btn_active'), f();
+                        toggleVisibility("#ycs_btn_clear", false);
+                        (removeClassName(pool, "ycs_btn_active"), f());
 
                         const eInputSearch =
-                          document.getElementById('ycs-input-search');
+                          document.getElementById("ycs-input-search");
                         // if search input is not empty, trigger search again for results without button filter
                         if (eInputSearch.value && eInputSearch.value.trim()) {
                           requestAnimationFrame(() => {
-                            document.getElementById('ycs_btn_search').click();
+                            document.getElementById("ycs_btn_search").click();
                           });
                         } else {
                           const e =
-                              document.getElementById('ycs-search-result'),
+                              document.getElementById("ycs-search-result"),
                             t = document.getElementById(
-                              'ycs-search-total-result'
+                              "ycs-search-total-result",
                             );
                           e &&
-                            ((e.innerText = ''),
-                            (t.innerText = 'Search cleared'));
+                            ((e.innerText = ""),
+                            (t.innerText = "Search cleared"));
                         }
                       } catch (e) {}
                     }),
                   null == pool ||
                     null === (m = pool.elPRandom) ||
                     void 0 === m ||
-                    m.addEventListener('click', (e) => {
+                    m.addEventListener("click", (e) => {
                       try {
                         var t;
                         const n = e.currentTarget;
-                        toggleVisibility('#ycs_btn_clear', true);
-                        removeClassName(pool, 'ycs_btn_active'),
+                        toggleVisibility("#ycs_btn_clear", true);
+                        (removeClassName(pool, "ycs_btn_active"),
                           f(),
                           null === (t = n) ||
                             void 0 === t ||
-                            t.classList.add('ycs_btn_active'),
-                          dispatchSearch({ random: !0 });
+                            t.classList.add("ycs_btn_active"),
+                          dispatchSearch({ random: !0 }));
                       } catch (e) {}
                     }),
                   null == pool ||
                     null === (p = pool.elFirstComments) ||
                     void 0 === p ||
-                    p.addEventListener('click', (e) => {
+                    p.addEventListener("click", (e) => {
                       try {
                         var t;
                         const n = e.currentTarget;
-                        toggleVisibility('#ycs_btn_clear', true);
-                        const removed = removeClassName(pool, 'ycs_btn_active');
+                        toggleVisibility("#ycs_btn_clear", true);
+                        const removed = removeClassName(pool, "ycs_btn_active");
                         if (!removed.includes(n)) {
                           lockFilterSort(100);
                         }
                         removed.length = 0;
-                        f(),
+                        (f(),
                           null === (t = n) ||
                             void 0 === t ||
-                            t.classList.add('ycs_btn_active'),
-                          dispatchSearch({ sortFirst: !0 });
+                            t.classList.add("ycs_btn_active"),
+                          dispatchSearch({ sortFirst: !0 }));
                       } catch (e) {}
-                    });
+                    }));
               }
             })(btnPool);
-            const h = document.getElementsByClassName('ycs-app')[0],
-              m = document.getElementById('ycs-count-load'),
-              p = document.getElementById('ycs-load-cmnts');
+            const h = document.getElementsByClassName("ycs-app")[0],
+              m = document.getElementById("ycs-count-load"),
+              p = document.getElementById("ycs-load-cmnts");
             p &&
-              p.addEventListener('click', async function (e) {
+              p.addEventListener("click", async function (e) {
                 if (!h.parentNode || !h.parentElement) return;
                 commentsDataBuf.length = 0;
                 const n = e.currentTarget;
-                (n.disabled = !0), (n.innerText = 'reload');
-                const r = document.getElementById('ycs_status_cmnt'),
-                  c = document.getElementById('ycs_cmnts');
-                c &&
+                ((n.disabled = !0), (n.innerText = "reload"));
+                const r = document.getElementById("ycs_status_cmnt"),
+                  c = document.getElementById("ycs_cmnts");
+                (c &&
                   r &&
-                  ((c.textContent = '0'),
+                  ((c.textContent = "0"),
                   (r.innerHTML =
                     '\n        <span class="ycs-icons">\n            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">\n                <path fill="#ff6f02" d="M31 7.002l13 1.686L33.296 19 31 7.002zM17 41L4 39.314 14.704 29 17 41z"></path>\n                <path fill="#ff6f00"\n                    d="M8 24c0-8.837 7.163-16 16-16 1.024 0 2.021.106 2.992.29l.693-3.865C26.525 4.112 25.262 4.005 24 4.005c-11.053 0-20 8.947-20 20 0 4.844 1.686 9.474 4.844 13.051l3.037-2.629C9.468 31.625 8 27.987 8 24zM39.473 11.267l-3.143 2.537C38.622 16.572 40 20.125 40 24c0 8.837-7.163 16-16 16-1.029 0-2.033-.106-3.008-.292l-.676 3.771c1.262.21 2.525.317 3.684.317 11.053 0 20-8.947 20-20C44 19.375 42.421 14.848 39.473 11.267z">\n                </path>\n            </svg>\n        </span>\n    '),
                   await cn(c, t.signal, commentsDataBuf),
@@ -10469,49 +10497,49 @@
                       {
                         comments: commentsDataBuf,
                         commentsChat: JSON.stringify(
-                          Array.from(chatDataBuf.entries())
+                          Array.from(chatDataBuf.entries()),
                         ),
                         commentsTrVideo: transcriptDataBuf,
                       },
                       window.location.href,
-                      document.title
+                      document.title,
                     ))),
                   commentsDataBuf.length > 0 &&
-                    (countsAct.comments = commentsDataBuf.length);
+                    (countsAct.comments = commentsDataBuf.length));
                 const l =
                   countsAct.comments +
                   countsAct.commentsChat +
                   countsAct.commentsTrVideo;
-                postTextMessage('NUMBER_COMMENTS', l),
+                (postTextMessage("NUMBER_COMMENTS", l),
                   c && (c.textContent = `${commentsDataBuf.length}`),
                   m && (m.textContent = `(${l})`),
-                  (n.disabled = !1);
+                  (n.disabled = !1));
               });
-            const f = document.getElementById('ycs-load-chat');
+            const f = document.getElementById("ycs-load-chat");
             f &&
-              f.addEventListener('click', async function (e) {
+              f.addEventListener("click", async function (e) {
                 if (!h.parentNode || !h.parentElement) return;
                 chatDataBuf.clear();
                 const n = e.currentTarget;
-                (n.disabled = !0), (n.innerText = 'reload');
-                const r = document.getElementById('ycs_status_chat'),
-                  c = document.getElementById('ycs_cmnts_chat');
-                c &&
+                ((n.disabled = !0), (n.innerText = "reload"));
+                const r = document.getElementById("ycs_status_chat"),
+                  c = document.getElementById("ycs_cmnts_chat");
+                (c &&
                   r &&
-                  ((c.textContent = '0'),
+                  ((c.textContent = "0"),
                   (r.innerHTML =
                     '\n        <span class="ycs-icons">\n            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">\n                <path fill="#ff6f02" d="M31 7.002l13 1.686L33.296 19 31 7.002zM17 41L4 39.314 14.704 29 17 41z"></path>\n                <path fill="#ff6f00"\n                    d="M8 24c0-8.837 7.163-16 16-16 1.024 0 2.021.106 2.992.29l.693-3.865C26.525 4.112 25.262 4.005 24 4.005c-11.053 0-20 8.947-20 20 0 4.844 1.686 9.474 4.844 13.051l3.037-2.629C9.468 31.625 8 27.987 8 24zM39.473 11.267l-3.143 2.537C38.622 16.572 40 20.125 40 24c0 8.837-7.163 16-16 16-1.029 0-2.033-.106-3.008-.292l-.676 3.771c1.262.21 2.525.317 3.684.317 11.053 0 20-8.947 20-20C44 19.375 42.421 14.848 39.473 11.267z">\n                </path>\n            </svg>\n        </span>\n    '),
                   await (async function (signal, t, n) {
                     function processChatRun(run, { item }) {
-                      let plainText = '';
-                      let htmlText = '';
+                      let plainText = "";
+                      let htmlText = "";
                       try {
-                        let text = run?.text || '';
+                        let text = run?.text || "";
 
                         if (
                           parseInt(
                             run?.navigationEndpoint?.watchEndpoint
-                              ?.startTimeSeconds
+                              ?.startTimeSeconds,
                           ) >= 0
                         ) {
                           const videoId =
@@ -10527,11 +10555,11 @@
                               () =>
                                 item.replayChatItemAction.actions[0]
                                   .addChatItemAction.item
-                                  .liveChatTextMessageRenderer
+                                  .liveChatTextMessageRenderer,
                             )
                           ) {
                             item.replayChatItemAction.actions[0].addChatItemAction.item.liveChatTextMessageRenderer.isTimeLine =
-                              'timeline';
+                              "timeline";
                           }
                         } else if (run?.navigationEndpoint) {
                           const baseUrl =
@@ -10550,17 +10578,17 @@
                             // retrieve best resolution url
                             return thumbnails[thumbnails.length - 1].url;
                           });
-                          const alt = run.emoji.shortcuts?.[0] || '';
+                          const alt = run.emoji.shortcuts?.[0] || "";
                           const style = `margin-left: 2px; margin-right: 2px;`;
                           htmlText += `<img src="${url}" alt="${alt}" title="${alt}" width="24" height="24" style="${style}" class="ycs-attachment" />`;
                         } else {
-                          htmlText += text || '';
+                          htmlText += text || "";
                         }
 
                         plainText +=
-                          run.text || run.emoji?.shortcuts?.[0] || '';
+                          run.text || run.emoji?.shortcuts?.[0] || "";
                       } catch (e) {
-                        htmlText += run?.text || '';
+                        htmlText += run?.text || "";
                       }
 
                       return { plainText, htmlText };
@@ -10573,20 +10601,20 @@
                               qt(
                                 () =>
                                   e.replayChatItemAction.actions[0].addChatItemAction.item.liveChatTextMessageRenderer.authorBadges[0].liveChatAuthorBadgeRenderer.icon.iconType.indexOf(
-                                    'VERIFIED'
-                                  ) >= 0
+                                    "VERIFIED",
+                                  ) >= 0,
                               ) ||
                               qt(
                                 () =>
                                   e.replayChatItemAction.actions[0].addChatItemAction.item.liveChatTextMessageRenderer.authorBadges[0].liveChatAuthorBadgeRenderer.icon.iconType.indexOf(
-                                    'CHECK'
-                                  ) >= 0
+                                    "CHECK",
+                                  ) >= 0,
                               ) ||
                               qt(
                                 () =>
                                   e.replayChatItemAction.actions[0].addChatItemAction.item.liveChatTextMessageRenderer.authorBadges[0].liveChatAuthorBadgeRenderer.tooltip.indexOf(
-                                    'Verified'
-                                  ) >= 0
+                                    "Verified",
+                                  ) >= 0,
                               )
                             )
                               try {
@@ -10631,7 +10659,7 @@
                                       o.replayChatItemAction.actions[0]
                                         .addChatItemAction.item
                                         .liveChatTextMessageRenderer
-                                        .timestampUsec
+                                        .timestampUsec,
                                   )
                                 )
                                   if (
@@ -10639,7 +10667,7 @@
                                       () =>
                                         o.replayChatItemAction.actions[0]
                                           .addChatItemAction.item
-                                          .liveChatPaidMessageRenderer
+                                          .liveChatPaidMessageRenderer,
                                     )
                                   )
                                     o.replayChatItemAction.actions[0].addChatItemAction.item.liveChatTextMessageRenderer =
@@ -10650,17 +10678,17 @@
                                         o.replayChatItemAction.actions[0]
                                           .addBannerToLiveChatCommand
                                           .bannerRenderer.liveChatBannerRenderer
-                                          .contents.liveChatTextMessageRenderer
+                                          .contents.liveChatTextMessageRenderer,
                                     )
                                   )
-                                    (o.replayChatItemAction.actions[0].addChatItemAction =
+                                    ((o.replayChatItemAction.actions[0].addChatItemAction =
                                       {
                                         item: {
                                           liveChatTextMessageRenderer: {},
                                         },
                                       }),
                                       (o.replayChatItemAction.actions[0].addChatItemAction.item.liveChatTextMessageRenderer =
-                                        o.replayChatItemAction.actions[0].addBannerToLiveChatCommand.bannerRenderer.liveChatBannerRenderer.contents.liveChatTextMessageRenderer);
+                                        o.replayChatItemAction.actions[0].addBannerToLiveChatCommand.bannerRenderer.liveChatBannerRenderer.contents.liveChatTextMessageRenderer));
                                   else if (
                                     qt(
                                       () =>
@@ -10669,23 +10697,23 @@
                                           .liveChatTickerPaidMessageItemRenderer
                                           .showItemEndpoint
                                           .showLiveChatItemEndpoint.renderer
-                                          .liveChatPaidMessageRenderer
+                                          .liveChatPaidMessageRenderer,
                                     )
                                   )
-                                    (o.replayChatItemAction.actions[0].addChatItemAction =
+                                    ((o.replayChatItemAction.actions[0].addChatItemAction =
                                       {
                                         item: {
                                           liveChatTextMessageRenderer: {},
                                         },
                                       }),
                                       (o.replayChatItemAction.actions[0].addChatItemAction.item.liveChatTextMessageRenderer =
-                                        o.replayChatItemAction.actions[0].addLiveChatTickerItemAction.item.liveChatTickerPaidMessageItemRenderer.showItemEndpoint.showLiveChatItemEndpoint.renderer.liveChatPaidMessageRenderer);
+                                        o.replayChatItemAction.actions[0].addLiveChatTickerItemAction.item.liveChatTickerPaidMessageItemRenderer.showItemEndpoint.showLiveChatItemEndpoint.renderer.liveChatPaidMessageRenderer));
                                   else {
                                     const e = qt(() =>
-                                      Object.keys(Wt(o, 'timestampUsec')[0])[0]
-                                        .split('.')
+                                      Object.keys(Wt(o, "timestampUsec")[0])[0]
+                                        .split(".")
                                         .slice(0, -1)
-                                        .join('.')
+                                        .join("."),
                                     );
                                     if (e) {
                                       const t = Gt(o, e, void 0);
@@ -10706,7 +10734,8 @@
                                   () =>
                                     o.replayChatItemAction.actions[0]
                                       .addChatItemAction.item
-                                      .liveChatTextMessageRenderer.timestampUsec
+                                      .liveChatTextMessageRenderer
+                                      .timestampUsec,
                                 );
                                 if (w && !P.has(parseInt(w, 10))) {
                                   const runs =
@@ -10715,10 +10744,10 @@
                                         o.replayChatItemAction.actions[0]
                                           .addChatItemAction.item
                                           .liveChatTextMessageRenderer.message
-                                          .runs
+                                          .runs,
                                     ) || [];
-                                  let fullText = '';
-                                  let renderFullText = '';
+                                  let fullText = "";
+                                  let renderFullText = "";
 
                                   if (
                                     o.replayChatItemAction.actions[0]
@@ -10736,7 +10765,7 @@
                                     fullText += plainText;
                                     renderFullText += htmlText;
                                   }
-                                  fullText &&
+                                  (fullText &&
                                     ((o.replayChatItemAction.actions[0].addChatItemAction.item.liveChatTextMessageRenderer.message.fullText =
                                       fullText),
                                     (o.replayChatItemAction.actions[0].addChatItemAction.item.liveChatTextMessageRenderer.message.renderFullText =
@@ -10746,10 +10775,10 @@
                                         o.replayChatItemAction.actions[0]
                                           .addChatItemAction.item
                                           .liveChatTextMessageRenderer
-                                          .authorName
+                                          .authorName,
                                     ) &&
                                       (P.set(parseInt(w, 10), N(o)),
-                                      Kt(P.size, t));
+                                      Kt(P.size, t)));
                                 }
                               } catch (e) {
                                 continue;
@@ -10763,7 +10792,7 @@
                             o = !0;
                           for (; o; ) {
                             const r = Zt(window, $, n);
-                            if (!r) return (o = !1), P;
+                            if (!r) return ((o = !1), P);
                             {
                               var w, b;
                               const i = await Ft(
@@ -10771,8 +10800,8 @@
                                 {
                                   ...r,
                                   signal,
-                                  cache: 'no-store',
-                                }
+                                  cache: "no-store",
+                                },
                               );
                               let a = await i.json();
                               if (
@@ -10787,7 +10816,7 @@
                                 a && a.length > 0)
                               ) {
                                 const [, e] = Object.entries(
-                                  Wt(a[a.length - 1], 'videoOffsetTimeMsec')[0]
+                                  Wt(a[a.length - 1], "videoOffsetTimeMsec")[0],
                                 )[0];
                                 if (n === e) {
                                   o = !1;
@@ -10801,7 +10830,7 @@
                                           e.replayChatItemAction.actions[0]
                                             .addChatItemAction.item
                                             .liveChatTextMessageRenderer
-                                            .timestampUsec
+                                            .timestampUsec,
                                       )
                                     )
                                       if (
@@ -10809,7 +10838,7 @@
                                           () =>
                                             e.replayChatItemAction.actions[0]
                                               .addChatItemAction.item
-                                              .liveChatPaidMessageRenderer
+                                              .liveChatPaidMessageRenderer,
                                         )
                                       )
                                         e.replayChatItemAction.actions[0].addChatItemAction.item.liveChatTextMessageRenderer =
@@ -10821,17 +10850,17 @@
                                               .addBannerToLiveChatCommand
                                               .bannerRenderer
                                               .liveChatBannerRenderer.contents
-                                              .liveChatTextMessageRenderer
+                                              .liveChatTextMessageRenderer,
                                         )
                                       )
-                                        (e.replayChatItemAction.actions[0].addChatItemAction =
+                                        ((e.replayChatItemAction.actions[0].addChatItemAction =
                                           {
                                             item: {
                                               liveChatTextMessageRenderer: {},
                                             },
                                           }),
                                           (e.replayChatItemAction.actions[0].addChatItemAction.item.liveChatTextMessageRenderer =
-                                            e.replayChatItemAction.actions[0].addBannerToLiveChatCommand.bannerRenderer.liveChatBannerRenderer.contents.liveChatTextMessageRenderer);
+                                            e.replayChatItemAction.actions[0].addBannerToLiveChatCommand.bannerRenderer.liveChatBannerRenderer.contents.liveChatTextMessageRenderer));
                                       else if (
                                         qt(
                                           () =>
@@ -10840,25 +10869,25 @@
                                               .liveChatTickerPaidMessageItemRenderer
                                               .showItemEndpoint
                                               .showLiveChatItemEndpoint.renderer
-                                              .liveChatPaidMessageRenderer
+                                              .liveChatPaidMessageRenderer,
                                         )
                                       )
-                                        (e.replayChatItemAction.actions[0].addChatItemAction =
+                                        ((e.replayChatItemAction.actions[0].addChatItemAction =
                                           {
                                             item: {
                                               liveChatTextMessageRenderer: {},
                                             },
                                           }),
                                           (e.replayChatItemAction.actions[0].addChatItemAction.item.liveChatTextMessageRenderer =
-                                            e.replayChatItemAction.actions[0].addLiveChatTickerItemAction.item.liveChatTickerPaidMessageItemRenderer.showItemEndpoint.showLiveChatItemEndpoint.renderer.liveChatPaidMessageRenderer);
+                                            e.replayChatItemAction.actions[0].addLiveChatTickerItemAction.item.liveChatTickerPaidMessageItemRenderer.showItemEndpoint.showLiveChatItemEndpoint.renderer.liveChatPaidMessageRenderer));
                                       else {
                                         const t = qt(() =>
                                           Object.keys(
-                                            Wt(e, 'timestampUsec')[0]
+                                            Wt(e, "timestampUsec")[0],
                                           )[0]
-                                            .split('.')
+                                            .split(".")
                                             .slice(0, -1)
-                                            .join('.')
+                                            .join("."),
                                         );
                                         if (t) {
                                           const n = Gt(e, t, void 0);
@@ -10883,7 +10912,7 @@
                                         e.replayChatItemAction.actions[0]
                                           .addChatItemAction.item
                                           .liveChatTextMessageRenderer
-                                          .timestampUsec
+                                          .timestampUsec,
                                     );
                                     if (n && !P.has(parseInt(n, 10))) {
                                       const runs =
@@ -10892,17 +10921,17 @@
                                             e.replayChatItemAction.actions[0]
                                               .addChatItemAction.item
                                               .liveChatTextMessageRenderer
-                                              .message.runs
+                                              .message.runs,
                                         ) || [];
-                                      let fullText = '';
-                                      let renderFullText = '';
+                                      let fullText = "";
+                                      let renderFullText = "";
 
                                       qt(
                                         () =>
                                           e.replayChatItemAction.actions[0]
                                             .addChatItemAction.item
                                             .liveChatTextMessageRenderer
-                                            .purchaseAmountText.simpleText
+                                            .purchaseAmountText.simpleText,
                                       ) &&
                                         ((renderFullText += `<span class="ycs-chat_donation ycs-chat_donation__title">Donated: </span><span class="ycs-chat_donation ycs-chat_donation__bg">${e.replayChatItemAction.actions[0].addChatItemAction.item.liveChatTextMessageRenderer.purchaseAmountText.simpleText}</span><br><br>`),
                                         (fullText += `${e.replayChatItemAction.actions[0].addChatItemAction.item.liveChatTextMessageRenderer.purchaseAmountText.simpleText} `));
@@ -10913,7 +10942,7 @@
                                         fullText += plainText;
                                         renderFullText += htmlText;
                                       }
-                                      fullText &&
+                                      (fullText &&
                                         ((e.replayChatItemAction.actions[0].addChatItemAction.item.liveChatTextMessageRenderer.message.fullText =
                                           fullText),
                                         (e.replayChatItemAction.actions[0].addChatItemAction.item.liveChatTextMessageRenderer.message.renderFullText =
@@ -10923,10 +10952,10 @@
                                             e.replayChatItemAction.actions[0]
                                               .addChatItemAction.item
                                               .liveChatTextMessageRenderer
-                                              .authorName
+                                              .authorName,
                                         ) &&
                                           (P.set(parseInt(n, 10), N(e)),
-                                          Kt(P.size, t));
+                                          Kt(P.size, t)));
                                     }
                                   } catch (e) {
                                     continue;
@@ -10952,42 +10981,42 @@
                       {
                         comments: commentsDataBuf,
                         commentsChat: JSON.stringify(
-                          Array.from(chatDataBuf.entries())
+                          Array.from(chatDataBuf.entries()),
                         ),
                         commentsTrVideo: transcriptDataBuf,
                       },
                       window.location.href,
-                      document.title
+                      document.title,
                     ))),
                   chatDataBuf &&
                     chatDataBuf.size > 0 &&
                     (h.parentNode || h.parentElement) &&
-                    (countsAct.commentsChat = chatDataBuf.size);
+                    (countsAct.commentsChat = chatDataBuf.size));
                 const l =
                   countsAct.comments +
                   countsAct.commentsChat +
                   countsAct.commentsTrVideo;
-                postTextMessage('NUMBER_COMMENTS', l),
+                (postTextMessage("NUMBER_COMMENTS", l),
                   m && (m.textContent = `(${l})`),
-                  (n.disabled = !1);
+                  (n.disabled = !1));
               });
-            const v = document.getElementById('ycs-load-transcript-video');
+            const v = document.getElementById("ycs-load-transcript-video");
             v &&
-              v.addEventListener('click', async function (e) {
+              v.addEventListener("click", async function (e) {
                 // Ensure the element has a parent node or parent element
                 if (!h.parentNode || !h.parentElement) return;
 
                 const button = e.currentTarget;
                 button.disabled = true;
-                button.innerText = 'reload';
+                button.innerText = "reload";
 
                 const statusElement =
-                  document.getElementById('ycs_status_trvideo');
+                  document.getElementById("ycs_status_trvideo");
                 const commentsElement =
-                  document.getElementById('ycs_cmnts_video');
+                  document.getElementById("ycs_cmnts_video");
 
                 if (statusElement && commentsElement) {
-                  commentsElement.textContent = '0';
+                  commentsElement.textContent = "0";
                   statusElement.innerHTML = `
                       <span class="ycs-icons">
                           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
@@ -11015,12 +11044,12 @@
                         {
                           comments: commentsDataBuf,
                           commentsChat: JSON.stringify(
-                            Array.from(chatDataBuf.entries())
+                            Array.from(chatDataBuf.entries()),
                           ),
                           commentsTrVideo: transcriptData,
                         },
                         window.location.href,
-                        document.title
+                        document.title,
                       );
                     } else {
                       transcriptData = undefined;
@@ -11057,7 +11086,7 @@
                     countsAct.comments +
                     countsAct.commentsChat +
                     countsAct.commentsTrVideo;
-                  postTextMessage('NUMBER_COMMENTS', totalComments);
+                  postTextMessage("NUMBER_COMMENTS", totalComments);
 
                   if (m) {
                     m.textContent = `(${totalComments})`;
@@ -11072,68 +11101,68 @@
                 ?.content?.transcriptRenderer?.body?.transcriptBodyRenderer
                 ?.cueGroups?.length;
             }
-            const y = document.getElementById('ycs-load-all');
+            const y = document.getElementById("ycs-load-all");
             y &&
-              y.addEventListener('click', function () {
-                const e = document.getElementById('ycs-load-cmnts'),
-                  t = document.getElementById('ycs-load-chat'),
-                  n = document.getElementById('ycs-load-transcript-video');
-                null == e || e.click(),
+              y.addEventListener("click", function () {
+                const e = document.getElementById("ycs-load-cmnts"),
+                  t = document.getElementById("ycs-load-chat"),
+                  n = document.getElementById("ycs-load-transcript-video");
+                (null == e || e.click(),
                   null == t || t.click(),
-                  null == n || n.click();
+                  null == n || n.click());
               });
-            const g = document.getElementById('ycs_load_stop');
+            const g = document.getElementById("ycs_load_stop");
             g &&
-              g.addEventListener('click', () => {
+              g.addEventListener("click", () => {
                 try {
-                  t.abort(), (t = new AbortController());
+                  (t.abort(), (t = new AbortController()));
                 } catch (e) {}
               });
-            const w = document.getElementById('ycs_btn_search'),
-              b = document.getElementById('ycs-input-search'),
-              eClearSearchBtn = document.getElementById('ycs_btn_clear_search');
+            const w = document.getElementById("ycs_btn_search"),
+              b = document.getElementById("ycs-input-search"),
+              eClearSearchBtn = document.getElementById("ycs_btn_clear_search");
             if (b) {
               b.onkeyup = (e) => {
-                if (e.key === 'Enter' || e.code === 'Enter') {
+                if (e.key === "Enter" || e.code === "Enter") {
                   if (w) {
                     w.click();
                   }
-                } else if (e.key === 'Escape' || e.code === 'Escape') {
+                } else if (e.key === "Escape" || e.code === "Escape") {
                   if (w) {
-                    b.value = '';
+                    b.value = "";
                     w.click();
                   }
                 }
               };
             }
-            const x = document.getElementById('ycs_open_all_comments_window');
+            const x = document.getElementById("ycs_open_all_comments_window");
             null == x ||
-              x.addEventListener('click', () => {
+              x.addEventListener("click", () => {
                 if (0 !== commentsDataBuf.length)
                   try {
                     !(function (e) {
                       if (e.count || e.html)
                         try {
                           const t = window.open(
-                            '',
-                            'CommentsNewWindow',
-                            'width=640,height=700,menubar=0,toolbar=0,location=0,status=0,resizable=1,scrollbars=1,directories=0,channelmode=0,titlebar=0,top=25,left=25'
+                            "",
+                            "CommentsNewWindow",
+                            "width=640,height=700,menubar=0,toolbar=0,location=0,status=0,resizable=1,scrollbars=1,directories=0,channelmode=0,titlebar=0,top=25,left=25",
                           );
                           if (t) {
                             t.document.title = `Comments, ${document.title} (${e.count})`;
-                            const n = document.createElement('pre');
+                            const n = document.createElement("pre");
                             return (
                               (n.style.cssText =
-                                'word-wrap: break-word; white-space: pre-wrap;'),
+                                "word-wrap: break-word; white-space: pre-wrap;"),
                               n.insertAdjacentText(
-                                'afterbegin',
+                                "afterbegin",
                                 `\nYCS - YouTube Comment Search\n\nComments\nFile created by ${new Date().toString()}\nVideo URL: ${Xt(
-                                  window.location.href
+                                  window.location.href,
                                 )}\nTitle: ${document.title}\nTotal: ${
                                   e.count
-                                }\n${e.html}`
+                                }\n${e.html}`,
                               ),
-                              (t.document.body.textContent = ''),
+                              (t.document.body.textContent = ""),
                               t.document.body.appendChild(n),
                               t
                             );
@@ -11146,55 +11175,55 @@
                     return;
                   }
               });
-            const _ = document.getElementById('ycs_save_all_comments');
+            const _ = document.getElementById("ycs_save_all_comments");
             null == _ ||
-              _.addEventListener('click', () => {
+              _.addEventListener("click", () => {
                 if (0 !== commentsDataBuf.length)
                   try {
                     const e = mn(commentsDataBuf);
                     hn(
                       `\nYCS - YouTube Comment Search\n\nComments\nFile created by ${new Date().toString()}\nVideo URL: ${Xt(
-                        window.location.href
+                        window.location.href,
                       )}\nTitle: ${document.title}\nTotal: ${e.count}\n${
                         e.html
                       }`,
                       `Comments, ${document.title} (${e.count}).txt`,
-                      'text/plain'
+                      "text/plain",
                     );
                   } catch (e) {
                     return;
                   }
               });
             const C = document.getElementById(
-              'ycs_open_all_comments_chat_window'
+              "ycs_open_all_comments_chat_window",
             );
             null == C ||
-              C.addEventListener('click', () => {
+              C.addEventListener("click", () => {
                 if (0 !== chatDataBuf.size)
                   try {
                     !(function (e) {
                       if (e.count || e.html)
                         try {
                           const t = window.open(
-                            '',
-                            'CommentsChatNewWindow',
-                            'width=640,height=700,menubar=0,toolbar=0,location=0,status=0,resizable=1,scrollbars=1,directories=0,channelmode=0,titlebar=0,top=50,left=50'
+                            "",
+                            "CommentsChatNewWindow",
+                            "width=640,height=700,menubar=0,toolbar=0,location=0,status=0,resizable=1,scrollbars=1,directories=0,channelmode=0,titlebar=0,top=50,left=50",
                           );
                           if (t) {
                             t.document.title = `Comments chat, ${document.title} (${e.count})`;
-                            const n = document.createElement('pre');
+                            const n = document.createElement("pre");
                             return (
                               (n.style.cssText =
-                                'word-wrap: break-word; white-space: pre-wrap;'),
+                                "word-wrap: break-word; white-space: pre-wrap;"),
                               n.insertAdjacentText(
-                                'afterbegin',
+                                "afterbegin",
                                 `\nYCS - YouTube Comment Search\n\nComments chat\nFile created by ${new Date().toString()}\nVideo URL: ${Xt(
-                                  window.location.href
+                                  window.location.href,
                                 )}\nTitle: ${document.title}\nTotal: ${
                                   e.count
-                                }\n${e.html}`
+                                }\n${e.html}`,
                               ),
-                              (t.document.body.textContent = ''),
+                              (t.document.body.textContent = ""),
                               t.document.body.appendChild(n),
                               t
                             );
@@ -11207,30 +11236,30 @@
                     return;
                   }
               });
-            const E = document.getElementById('ycs_save_all_comments_chat');
+            const E = document.getElementById("ycs_save_all_comments_chat");
             null == E ||
-              E.addEventListener('click', () => {
+              E.addEventListener("click", () => {
                 if (0 !== chatDataBuf.size)
                   try {
                     const e = pn([...chatDataBuf.values()]);
                     hn(
                       `\nYCS - YouTube Comment Search\n\nComments chat\nFile created by ${new Date().toString()}\nVideo URL: ${Xt(
-                        window.location.href
+                        window.location.href,
                       )}\nTitle: ${document.title}\nTotal: ${e.count}\n${
                         e.html
                       }`,
                       `Comments chat, ${document.title} (${e.count}).txt`,
-                      'text/plain'
+                      "text/plain",
                     );
                   } catch (e) {
                     return;
                   }
               });
             const T = document.getElementById(
-              'ycs_open_all_comments_trvideo_window'
+              "ycs_open_all_comments_trvideo_window",
             );
             null == T ||
-              T.addEventListener('click', () => {
+              T.addEventListener("click", () => {
                 try {
                   var e, t, n, o, r, a, s, c, l, d;
                   transcriptDataBuf &&
@@ -11264,25 +11293,25 @@
                       if (e.count || e.html)
                         try {
                           const t = window.open(
-                            '',
-                            'CommentsTrVideoNewWindow',
-                            'width=640,height=700,menubar=0,toolbar=0,location=0,status=0,resizable=1,scrollbars=1,directories=0,channelmode=0,titlebar=0,top=75,left=75'
+                            "",
+                            "CommentsTrVideoNewWindow",
+                            "width=640,height=700,menubar=0,toolbar=0,location=0,status=0,resizable=1,scrollbars=1,directories=0,channelmode=0,titlebar=0,top=75,left=75",
                           );
                           if (t) {
                             t.document.title = `Transcript video, ${document.title} (${e.count})`;
-                            const n = document.createElement('pre');
+                            const n = document.createElement("pre");
                             return (
                               (n.style.cssText =
-                                'word-wrap: break-word; white-space: pre-wrap;'),
+                                "word-wrap: break-word; white-space: pre-wrap;"),
                               n.insertAdjacentText(
-                                'afterbegin',
+                                "afterbegin",
                                 `\nYCS - YouTube Comment Search\n\nTranscript video\nFile created by ${new Date().toString()}\nVideo URL: ${Xt(
-                                  window.location.href
+                                  window.location.href,
                                 )}\nTitle: ${document.title}\nTotal: ${
                                   e.count
-                                }\n${e.html}`
+                                }\n${e.html}`,
                               ),
-                              (t.document.body.textContent = ''),
+                              (t.document.body.textContent = ""),
                               t.document.body.appendChild(n),
                               t
                             );
@@ -11294,16 +11323,16 @@
                       fn(
                         transcriptDataBuf.actions[0].updateEngagementPanelAction
                           .content.transcriptRenderer.body
-                          .transcriptBodyRenderer.cueGroups
-                      )
+                          .transcriptBodyRenderer.cueGroups,
+                      ),
                     );
                 } catch (e) {
                   return;
                 }
               });
-            const k = document.getElementById('ycs_save_all_comments_trvideo');
+            const k = document.getElementById("ycs_save_all_comments_trvideo");
             null == k ||
-              k.addEventListener('click', () => {
+              k.addEventListener("click", () => {
                 try {
                   var e, t, n, o, r, a, s, c, l;
                   if (
@@ -11334,16 +11363,16 @@
                     const e = fn(
                       transcriptDataBuf.actions[0].updateEngagementPanelAction
                         .content.transcriptRenderer.body.transcriptBodyRenderer
-                        .cueGroups
+                        .cueGroups,
                     );
                     hn(
                       `\nYCS - YouTube Comment Search\n\nTranscript video\nFile created by ${new Date().toString()}\nVideo URL: ${Xt(
-                        window.location.href
+                        window.location.href,
                       )}\nTitle: ${document.title}\nTotal: ${e.count}\n${
                         e.html
                       }`,
                       `Transcript video, ${document.title} (${e.count}).txt`,
-                      'text/plain'
+                      "text/plain",
                     );
                   }
                 } catch (e) {
@@ -11354,7 +11383,7 @@
               const n = _n
                 ? {
                     ..._n,
-                    sortKey: _n.sortKey ?? 'sort',
+                    sortKey: _n.sortKey ?? "sort",
                   }
                 : undefined;
 
@@ -11364,22 +11393,22 @@
                   (null == n ? void 0 : n.donated)
                 )
                   return;
-                const o = document.getElementById('ycs-input-search'),
+                const o = document.getElementById("ycs-input-search"),
                   i = null == o ? void 0 : o.value,
                   s = document.querySelector(t);
-                s && (s.textContent = '');
-                const l = document.getElementById('ycs_extended_search_title'),
-                  d = document.getElementById('ycs_extended_search_main');
+                s && (s.textContent = "");
+                const l = document.getElementById("ycs_extended_search_title"),
+                  d = document.getElementById("ycs_extended_search_main");
                 let u = fuseOptionsBase,
                   h = [
-                    'commentRenderer.authorText.simpleText',
-                    'commentRenderer.contentText.fullText',
+                    "commentRenderer.authorText.simpleText",
+                    "commentRenderer.contentText.fullText",
                   ];
                 L.checked &&
                   ((u = JSON.parse(JSON.stringify(fuseOptionsBase))),
                   (u.useExtendedSearch = !0),
-                  l.checked && (h = ['commentRenderer.authorText.simpleText']),
-                  d.checked && (h = ['commentRenderer.contentText.fullText']));
+                  l.checked && (h = ["commentRenderer.authorText.simpleText"]),
+                  d.checked && (h = ["commentRenderer.contentText.fullText"]));
                 const m = {
                   ...u,
                   keys: h,
@@ -11426,23 +11455,23 @@
                             ? void 0
                             : o.likeCount);
                         if (
-                          ('string' != typeof (r = e) &&
-                            'number' != typeof r) ||
+                          ("string" != typeof (r = e) &&
+                            "number" != typeof r) ||
                           isNaN(r) ||
                           isNaN(parseFloat(r))
                         ) {
-                          if ('string' == typeof e || 'number' == typeof e) {
+                          if ("string" == typeof e || "number" == typeof e) {
                             const t = 1e3 * parseFloat(e);
                             t == t
                               ? (e = t)
-                              : 'string' == typeof e &&
+                              : "string" == typeof e &&
                                 a.push({
                                   item: c,
                                   refIndex: c._index,
                                 });
                           }
                         } else e = parseInt(e);
-                        'number' == typeof e &&
+                        "number" == typeof e &&
                           e == e &&
                           ((c.commentRenderer.likesForSort = e),
                           i.push({
@@ -11455,7 +11484,7 @@
                           i.sort(
                             (e, t) =>
                               t.item.commentRenderer.likesForSort -
-                              e.item.commentRenderer.likesForSort
+                              e.item.commentRenderer.likesForSort,
                           ),
                         a.length > 0)
                       ) {
@@ -11464,9 +11493,9 @@
                           t.item.commentRenderer.voteCount.simpleText
                             ? 1
                             : e.item.commentRenderer.voteCount.simpleText <
-                              t.item.commentRenderer.voteCount.simpleText
-                            ? -1
-                            : 0
+                                t.item.commentRenderer.voteCount.simpleText
+                              ? -1
+                              : 0,
                         );
                         for (const e of a) i.unshift(e);
                       }
@@ -11476,7 +11505,7 @@
                     }
                     var r;
                   })(textSearchResults);
-                  (p = e), wn(t, p, !0, i);
+                  ((p = e), wn(t, p, !0, i));
                 } else if (null == n ? void 0 : n.links) {
                   const n = (function (t) {
                     if (0 === t.length) return [];
@@ -11485,7 +11514,7 @@
                       for (const [o, r] of t.entries())
                         try {
                           e(mt)().test(
-                            r.commentRenderer.contentText.fullText
+                            r.commentRenderer.contentText.fullText,
                           ) &&
                             n.push({
                               item: r,
@@ -11501,28 +11530,28 @@
                   })(textSearchResults);
                   if (((p = n), p.length > 0)) {
                     null == p || p.sort((e, t) => e.refIndex - t.refIndex);
-                    const e = document.getElementById('ycs_btn_links'),
+                    const e = document.getElementById("ycs_btn_links"),
                       order = getLockedFilterSortOrder(e.dataset[n.sortKey]);
-                    'newest' === order
+                    "newest" === order
                       ? (wn(t, p, !0, i),
                         !n.skipButtonUIUpdate &&
-                          ((e.dataset[n.sortKey] = 'oldest'),
+                          ((e.dataset[n.sortKey] = "oldest"),
                           (e.innerHTML =
                             'Links \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
                           (e.title =
-                            'Shows links in comments, replies, chat, video transcript (Newest)')))
-                      : 'oldest' === order
-                      ? (wn(t, null == p ? void 0 : p.reverse(), !0, i),
-                        !n.skipButtonUIUpdate &&
-                          ((e.dataset[n.sortKey] = 'newest'),
-                          (e.innerHTML =
-                            'Links \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
-                          (e.title =
-                            'Shows links in comments, replies, chat, video transcript (Oldest)')))
-                      : (wn(t, p, !0, i),
-                        !n.skipButtonUIUpdate &&
-                          (e.innerHTML =
-                            'Links \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '));
+                            "Shows links in comments, replies, chat, video transcript (Newest)")))
+                      : "oldest" === order
+                        ? (wn(t, null == p ? void 0 : p.reverse(), !0, i),
+                          !n.skipButtonUIUpdate &&
+                            ((e.dataset[n.sortKey] = "newest"),
+                            (e.innerHTML =
+                              'Links \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
+                            (e.title =
+                              "Shows links in comments, replies, chat, video transcript (Oldest)")))
+                        : (wn(t, p, !0, i),
+                          !n.skipButtonUIUpdate &&
+                            (e.innerHTML =
+                              'Links \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '));
                   }
                 } else if (null == n ? void 0 : n.members) {
                   const e = (function (e) {
@@ -11552,28 +11581,28 @@
                   })(textSearchResults);
                   if (((p = e), p.length > 0)) {
                     null == p || p.sort((e, t) => e.refIndex - t.refIndex);
-                    const e = document.getElementById('ycs_btn_members'),
+                    const e = document.getElementById("ycs_btn_members"),
                       order = getLockedFilterSortOrder(e.dataset[n.sortKey]);
-                    'newest' === order
+                    "newest" === order
                       ? (wn(t, p, !0, i),
                         !n.skipButtonUIUpdate &&
-                          ((e.dataset[n.sortKey] = 'oldest'),
+                          ((e.dataset[n.sortKey] = "oldest"),
                           (e.innerHTML =
                             'Members \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
                           (e.title =
-                            'Show comments, replies, chat from channel members (Newest)')))
-                      : 'oldest' === order
-                      ? (wn(t, null == p ? void 0 : p.reverse(), !0, i),
-                        !n.skipButtonUIUpdate &&
-                          ((e.dataset[n.sortKey] = 'newest'),
-                          (e.innerHTML =
-                            'Members \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
-                          (e.title =
-                            'Show comments, replies, chat from channel members (Oldest)')))
-                      : (wn(t, p, !0, i),
-                        !n.skipButtonUIUpdate &&
-                          (e.innerHTML =
-                            'Members \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '));
+                            "Show comments, replies, chat from channel members (Newest)")))
+                      : "oldest" === order
+                        ? (wn(t, null == p ? void 0 : p.reverse(), !0, i),
+                          !n.skipButtonUIUpdate &&
+                            ((e.dataset[n.sortKey] = "newest"),
+                            (e.innerHTML =
+                              'Members \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
+                            (e.title =
+                              "Show comments, replies, chat from channel members (Oldest)")))
+                        : (wn(t, p, !0, i),
+                          !n.skipButtonUIUpdate &&
+                            (e.innerHTML =
+                              'Members \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '));
                   }
                 } else if (null == n ? void 0 : n.replied) {
                   const e = (function (e) {
@@ -11588,19 +11617,19 @@
                           void 0 === t
                             ? void 0
                             : t.replyCount;
-                        (e = parseInt(e)),
+                        ((e = parseInt(e)),
                           e &&
                             ((r.commentRenderer.repliedForSort = e),
                             n.push({
                               item: r,
                               refIndex: r._index,
-                            }));
+                            })));
                       }
                       return n.length > 0
                         ? (n.sort(
                             (e, t) =>
                               t.item.commentRenderer.repliedForSort -
-                              e.item.commentRenderer.repliedForSort
+                              e.item.commentRenderer.repliedForSort,
                           ),
                           n)
                         : [];
@@ -11608,7 +11637,7 @@
                       return [];
                     }
                   })(textSearchResults);
-                  (p = e), wn(t, p, !0, i);
+                  ((p = e), wn(t, p, !0, i));
                 } else if (null == n ? void 0 : n.author) {
                   const e = (function (e) {
                     if (0 === e.length) return [];
@@ -11632,28 +11661,28 @@
                   })(textSearchResults);
                   if (((p = e), p.length > 0)) {
                     null == p || p.sort((e, t) => e.refIndex - t.refIndex);
-                    const e = document.getElementById('ycs_btn_author'),
+                    const e = document.getElementById("ycs_btn_author"),
                       order = getLockedFilterSortOrder(e.dataset[n.sortKey]);
-                    'newest' === order
+                    "newest" === order
                       ? (wn(t, p, !0, i),
                         !n.skipButtonUIUpdate &&
-                          ((e.dataset[n.sortKey] = 'oldest'),
+                          ((e.dataset[n.sortKey] = "oldest"),
                           (e.innerHTML =
                             'Author \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
                           (e.title =
-                            'Show comments, replies, chat from the author (Newest)')))
-                      : 'oldest' === order
-                      ? (wn(t, null == p ? void 0 : p.reverse(), !0, i),
-                        !n.skipButtonUIUpdate &&
-                          ((e.dataset[n.sortKey] = 'newest'),
-                          (e.innerHTML =
-                            'Author \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
-                          (e.title =
-                            'Show comments, replies, chat from the author (Oldest)')))
-                      : (wn(t, p, !0, i),
-                        !n.skipButtonUIUpdate &&
-                          (e.innerHTML =
-                            'Author \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '));
+                            "Show comments, replies, chat from the author (Newest)")))
+                      : "oldest" === order
+                        ? (wn(t, null == p ? void 0 : p.reverse(), !0, i),
+                          !n.skipButtonUIUpdate &&
+                            ((e.dataset[n.sortKey] = "newest"),
+                            (e.innerHTML =
+                              'Author \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
+                            (e.title =
+                              "Show comments, replies, chat from the author (Oldest)")))
+                        : (wn(t, p, !0, i),
+                          !n.skipButtonUIUpdate &&
+                            (e.innerHTML =
+                              'Author \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '));
                   }
                 } else if (null == n ? void 0 : n.heart) {
                   const e = (function (e) {
@@ -11678,28 +11707,28 @@
                   })(textSearchResults);
                   if (((p = e), p.length > 0)) {
                     null == p || p.sort((e, t) => e.refIndex - t.refIndex);
-                    const e = document.getElementById('ycs_btn_heart'),
+                    const e = document.getElementById("ycs_btn_heart"),
                       order = getLockedFilterSortOrder(e.dataset[n.sortKey]);
-                    'newest' === order
+                    "newest" === order
                       ? (wn(t, p, !0, i),
                         !n.skipButtonUIUpdate &&
-                          ((e.dataset[n.sortKey] = 'oldest'),
+                          ((e.dataset[n.sortKey] = "oldest"),
                           (e.innerHTML =
                             '<span class="ycs-creator-heart_icon">❤</span> \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
                           (e.title =
-                            'Show comments and replies that the author likes (Newest)')))
-                      : 'oldest' === order
-                      ? (wn(t, null == p ? void 0 : p.reverse(), !0, i),
-                        !n.skipButtonUIUpdate &&
-                          ((e.dataset[n.sortKey] = 'newest'),
-                          (e.innerHTML =
-                            '<span class="ycs-creator-heart_icon">❤</span> \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
-                          (e.title =
-                            'Show comments and replies that the author likes (Oldest)')))
-                      : (wn(t, p, !0, i),
-                        !n.skipButtonUIUpdate &&
-                          (e.innerHTML =
-                            '<span class="ycs-creator-heart_icon">❤</span> \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '));
+                            "Show comments and replies that the author likes (Newest)")))
+                      : "oldest" === order
+                        ? (wn(t, null == p ? void 0 : p.reverse(), !0, i),
+                          !n.skipButtonUIUpdate &&
+                            ((e.dataset[n.sortKey] = "newest"),
+                            (e.innerHTML =
+                              '<span class="ycs-creator-heart_icon">❤</span> \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
+                            (e.title =
+                              "Show comments and replies that the author likes (Oldest)")))
+                        : (wn(t, p, !0, i),
+                          !n.skipButtonUIUpdate &&
+                            (e.innerHTML =
+                              '<span class="ycs-creator-heart_icon">❤</span> \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '));
                   }
                 } else if (null == n ? void 0 : n.verified) {
                   const e = (function (e) {
@@ -11719,28 +11748,28 @@
                   })(textSearchResults);
                   if (((p = e), p.length > 0)) {
                     null == p || p.sort((e, t) => e.refIndex - t.refIndex);
-                    const e = document.getElementById('ycs_btn_verified'),
+                    const e = document.getElementById("ycs_btn_verified"),
                       order = getLockedFilterSortOrder(e.dataset[n.sortKey]);
-                    'newest' === order
+                    "newest" === order
                       ? (wn(t, p, !0, i),
                         !n.skipButtonUIUpdate &&
-                          ((e.dataset[n.sortKey] = 'oldest'),
+                          ((e.dataset[n.sortKey] = "oldest"),
                           (e.innerHTML =
                             '<span class="ycs-creator-verified_icon">✔</span> \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
                           (e.title =
-                            'Show comments,  replies and chat from a verified authors (Newest)')))
-                      : 'oldest' === order
-                      ? (wn(t, null == p ? void 0 : p.reverse(), !0, i),
-                        !n.skipButtonUIUpdate &&
-                          ((e.dataset[n.sortKey] = 'newest'),
-                          (e.innerHTML =
-                            '<span class="ycs-creator-verified_icon">✔</span> \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
-                          (e.title =
-                            'Show comments,  replies and chat from a verified authors (Oldest)')))
-                      : (wn(t, p, !0, i),
-                        !n.skipButtonUIUpdate &&
-                          (e.innerHTML =
-                            '<span class="ycs-creator-verified_icon">✔</span> \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '));
+                            "Show comments,  replies and chat from a verified authors (Newest)")))
+                      : "oldest" === order
+                        ? (wn(t, null == p ? void 0 : p.reverse(), !0, i),
+                          !n.skipButtonUIUpdate &&
+                            ((e.dataset[n.sortKey] = "newest"),
+                            (e.innerHTML =
+                              '<span class="ycs-creator-verified_icon">✔</span> \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
+                            (e.title =
+                              "Show comments,  replies and chat from a verified authors (Oldest)")))
+                        : (wn(t, p, !0, i),
+                          !n.skipButtonUIUpdate &&
+                            (e.innerHTML =
+                              '<span class="ycs-creator-verified_icon">✔</span> \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '));
                   }
                 } else if (null == n ? void 0 : n.random) {
                   const e = (function (e) {
@@ -11748,29 +11777,29 @@
                     try {
                       const t = new Map();
                       for (const [n, o] of e.entries())
-                        'C' === (null == o ? void 0 : o.typeComment) &&
+                        "C" === (null == o ? void 0 : o.typeComment) &&
                           (t.has(
                             qt(
                               () =>
                                 o.commentRenderer.authorEndpoint.browseEndpoint
-                                  .canonicalBaseUrl
-                            )
+                                  .canonicalBaseUrl,
+                            ),
                           )
                             ? t
                                 .get(
                                   o.commentRenderer.authorEndpoint
-                                    .browseEndpoint.canonicalBaseUrl
+                                    .browseEndpoint.canonicalBaseUrl,
                                 )
                                 .add(n)
                             : qt(
                                 () =>
                                   o.commentRenderer.authorEndpoint
-                                    .browseEndpoint.canonicalBaseUrl
+                                    .browseEndpoint.canonicalBaseUrl,
                               ) &&
                               t.set(
                                 o.commentRenderer.authorEndpoint.browseEndpoint
                                   .canonicalBaseUrl,
-                                new Set().add(n)
+                                new Set().add(n),
                               ));
                       if (!(t.size > 0)) return [];
                       {
@@ -11800,14 +11829,14 @@
                       return [];
                     }
                   })(textSearchResults);
-                  (p = e), wn(t, p, !0, i);
+                  ((p = e), wn(t, p, !0, i));
                 } else if (null == n ? void 0 : n.timestamp) {
                   p = (function (e) {
                     if (0 === e.length) return [];
                     try {
                       const t = [];
                       for (const [n, o] of e.entries())
-                        o.commentRenderer?.isTimeLine === 'timeline' &&
+                        o.commentRenderer?.isTimeLine === "timeline" &&
                           t.push({
                             item: o,
                             refIndex: o._index,
@@ -11820,28 +11849,28 @@
 
                   if (p.length > 0) {
                     null == p || p.sort((e, t) => e.refIndex - t.refIndex);
-                    const e = document.getElementById('ycs_btn_timestamps'),
+                    const e = document.getElementById("ycs_btn_timestamps"),
                       order = getLockedFilterSortOrder(e.dataset[n.sortKey]);
-                    'newest' === order
+                    "newest" === order
                       ? (wn(t, p, !0, i),
                         !n.skipButtonUIUpdate &&
-                          ((e.dataset[n.sortKey] = 'oldest'),
+                          ((e.dataset[n.sortKey] = "oldest"),
                           (e.innerHTML =
                             'Time stamps \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
                           (e.title =
-                            'Show comments, replies, chat with time stamps (Newest)')))
-                      : 'oldest' === order
-                      ? (wn(t, null == p ? void 0 : p.reverse(), !0, i),
-                        !n.skipButtonUIUpdate &&
-                          ((e.dataset[n.sortKey] = 'newest'),
-                          (e.innerHTML =
-                            'Time stamps \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
-                          (e.title =
-                            'Show comments, replies, chat with time stamps (Oldest)')))
-                      : (wn(t, p, !0, i),
-                        !n.skipButtonUIUpdate &&
-                          (e.innerHTML =
-                            'Time stamps \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '));
+                            "Show comments, replies, chat with time stamps (Newest)")))
+                      : "oldest" === order
+                        ? (wn(t, null == p ? void 0 : p.reverse(), !0, i),
+                          !n.skipButtonUIUpdate &&
+                            ((e.dataset[n.sortKey] = "newest"),
+                            (e.innerHTML =
+                              'Time stamps \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
+                            (e.title =
+                              "Show comments, replies, chat with time stamps (Oldest)")))
+                        : (wn(t, p, !0, i),
+                          !n.skipButtonUIUpdate &&
+                            (e.innerHTML =
+                              'Time stamps \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '));
                   }
                 } else if (null == n ? void 0 : n.sortFirst) {
                   const e = (function (e) {
@@ -11850,7 +11879,7 @@
                       const t = [];
                       for (const [n, o] of e.entries())
                         try {
-                          'C' === (null == o ? void 0 : o.typeComment) &&
+                          "C" === (null == o ? void 0 : o.typeComment) &&
                             t.push({
                               item: o,
                               refIndex: o._index,
@@ -11863,39 +11892,39 @@
                   })(textSearchResults);
                   if (((p = e), p.length > 0)) {
                     null == p || p.sort((e, t) => e.refIndex - t.refIndex);
-                    const e = document.getElementById('ycs_btn_sort_first'),
+                    const e = document.getElementById("ycs_btn_sort_first"),
                       order = getLockedFilterSortOrder(e.dataset[n.sortKey]);
-                    'newest' === order
+                    "newest" === order
                       ? (wn(t, p, !0, i),
                         !n.skipButtonUIUpdate &&
-                          ((e.dataset[n.sortKey] = 'oldest'),
+                          ((e.dataset[n.sortKey] = "oldest"),
                           (e.innerHTML =
                             'All \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
                           (e.title =
-                            'Show all comments, chat, video transcript sorted by date (Newest)')))
-                      : 'oldest' === order
-                      ? (wn(t, null == p ? void 0 : p.reverse(), !0, i),
-                        !n.skipButtonUIUpdate &&
-                          ((e.dataset[n.sortKey] = 'newest'),
-                          (e.innerHTML =
-                            'All \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
-                          (e.title =
-                            'Show all comments, chat, video transcript sorted by date (Oldest)')))
-                      : (wn(t, p, !0, i),
-                        !n.skipButtonUIUpdate &&
-                          (e.innerHTML =
-                            'All \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '));
+                            "Show all comments, chat, video transcript sorted by date (Newest)")))
+                      : "oldest" === order
+                        ? (wn(t, null == p ? void 0 : p.reverse(), !0, i),
+                          !n.skipButtonUIUpdate &&
+                            ((e.dataset[n.sortKey] = "newest"),
+                            (e.innerHTML =
+                              'All \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
+                            (e.title =
+                              "Show all comments, chat, video transcript sorted by date (Oldest)")))
+                        : (wn(t, p, !0, i),
+                          !n.skipButtonUIUpdate &&
+                            (e.innerHTML =
+                              'All \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '));
                   }
                 } else {
-                  (p = textSearchFuseResults ?? []), wn(t, p, !0, i);
+                  ((p = textSearchFuseResults ?? []), wn(t, p, !0, i));
                 }
-                const f = document.getElementById('ycs-search-total-result');
-                f && (f.innerText = `(Comments) Found: ${p.length}`),
-                  (countsReport.comments = p.length);
+                const f = document.getElementById("ycs-search-total-result");
+                (f && (f.innerText = `(Comments) Found: ${p.length}`),
+                  (countsReport.comments = p.length));
                 const currentVideoId = getVideoId(window.location.href);
-                const v = document.getElementById('ycs_wrap_comments');
+                const v = document.getElementById("ycs_wrap_comments");
                 v &&
-                  v.addEventListener('click', (e) => {
+                  v.addEventListener("click", (e) => {
                     try {
                       var t, n, o, r, s, c;
                       if (
@@ -11904,25 +11933,25 @@
                         null === (n = t.classList) ||
                         void 0 === n
                           ? void 0
-                          : n.contains('ycs-open-comment')
+                          : n.contains("ycs-open-comment")
                       ) {
-                        const t = parseInt(e.target.getAttribute('id'), 10),
-                          n = e.target.closest('.ycs-render-comment');
-                        if (n && t && !document.getElementById('ycs-com-' + t))
+                        const t = parseInt(e.target.getAttribute("id"), 10),
+                          n = e.target.closest(".ycs-render-comment");
+                        if (n && t && !document.getElementById("ycs-com-" + t))
                           try {
                             var l, d, u, h;
                             const o = {
                                 item: commentsDataBuf[t].originComment,
                                 refIndex: t,
                               },
-                              r = document.createElement('div');
+                              r = document.createElement("div");
                             let s;
                             if (
-                              ((r.id = 'ycs-com-' + t.toString()),
+                              ((r.id = "ycs-com-" + t.toString()),
                               (r.className = r.id),
-                              n.insertAdjacentElement('beforebegin', r),
-                              wn('#' + r.id, [o], !0, i),
-                              n.classList.add('ycs-oc-ml'),
+                              n.insertAdjacentElement("beforebegin", r),
+                              wn("#" + r.id, [o], !0, i),
+                              n.classList.add("ycs-oc-ml"),
                               (null === (l = commentsDataBuf[t]) ||
                               void 0 === l ||
                               null === (d = l.commentRenderer) ||
@@ -11964,7 +11993,7 @@
                               for (const e of commentsDataBuf)
                                 try {
                                   var y, g, w;
-                                  'R' === e.typeComment &&
+                                  "R" === e.typeComment &&
                                     e.originComment ===
                                       commentsDataBuf[t].originComment &&
                                     (null === (y = e.commentRenderer) ||
@@ -11983,36 +12012,36 @@
                                   continue;
                                 }
                             if (c.length > 0) {
-                              const e = document.createElement('div');
-                              (e.id = 'ycs-com-rauth-' + t.toString()),
+                              const e = document.createElement("div");
+                              ((e.id = "ycs-com-rauth-" + t.toString()),
                                 (e.className = `ycs-com-${t} ycs-oc-ml`),
-                                n.insertAdjacentElement('beforebegin', e),
-                                wn('#' + e.id, c, !1, i);
+                                n.insertAdjacentElement("beforebegin", e),
+                                wn("#" + e.id, c, !1, i));
                             }
-                            (e.target.innerHTML = '▲'),
+                            ((e.target.innerHTML = "▲"),
                               (e.target.title =
-                                'Close the comment to the reply here.');
+                                "Close the comment to the reply here."));
                           } catch (e) {}
                         else
                           n &&
                             t &&
-                            document.getElementById('ycs-com-' + t) &&
-                            (sn('.ycs-com-' + t),
-                            n.classList.remove('ycs-oc-ml'),
-                            (e.target.innerHTML = '▼'),
+                            document.getElementById("ycs-com-" + t) &&
+                            (sn(".ycs-com-" + t),
+                            n.classList.remove("ycs-oc-ml"),
+                            (e.target.innerHTML = "▼"),
                             (e.target.title =
-                              'Open the comment to the reply here.'));
+                              "Open the comment to the reply here."));
                       } else if (
                         null === (o = e.target) ||
                         void 0 === o ||
                         null === (r = o.classList) ||
                         void 0 === r
                           ? void 0
-                          : r.contains('ycs-gotochat-video')
+                          : r.contains("ycs-gotochat-video")
                       ) {
                         if (o.dataset.videoId === currentVideoId) {
                           e.preventDefault();
-                          const t = document.getElementsByTagName('video')[0];
+                          const t = document.getElementsByTagName("video")[0];
                           if (t) {
                             const n = e.target.dataset.offsetvideo;
                             n && (t.currentTime = parseInt(n));
@@ -12024,10 +12053,10 @@
                         null === (c = s.classList) ||
                         void 0 === c
                           ? void 0
-                          : c.contains('ycs-open-reply')
+                          : c.contains("ycs-open-reply")
                       ) {
                         const t = e.target.dataset.idcom,
-                          n = e.target.closest('.ycs-render-comment');
+                          n = e.target.closest(".ycs-render-comment");
                         if (
                           null == n
                             ? void 0
@@ -12036,9 +12065,9 @@
                           const o = n.querySelector(`.ycs-com-replies-${t}`);
                           return (
                             null == o || o.remove(),
-                            (e.target.innerHTML = '+'),
+                            (e.target.innerHTML = "+"),
                             void (e.target.title =
-                              'Open replies to the comment')
+                              "Open replies to the comment")
                           );
                         }
                         const o = [];
@@ -12072,15 +12101,15 @@
                               }
                         }
                         if (o.length > 0) {
-                          const n = e.target.closest('.ycs-render-comment'),
-                            r = document.createElement('div');
-                          (r.id = 'ycs-com-replies-' + t),
+                          const n = e.target.closest(".ycs-render-comment"),
+                            r = document.createElement("div");
+                          ((r.id = "ycs-com-replies-" + t),
                             (r.className = `ycs-com-replies-${t} ycs-oc-ml ycs-com-replies ycs-com-rp`),
                             null == n ||
-                              n.insertAdjacentElement('beforeend', r),
+                              n.insertAdjacentElement("beforeend", r),
                             wn(r, o, !1, i),
                             (e.target.innerHTML = String.fromCharCode(8722)),
-                            (e.target.title = 'Close replies to the comment');
+                            (e.target.title = "Close replies to the comment"));
                         }
                       }
                     } catch (e) {}
@@ -12091,7 +12120,7 @@
               const n = _n
                 ? {
                     ..._n,
-                    sortKey: _n.sortKey ?? 'sortChat',
+                    sortKey: _n.sortKey ?? "sortChat",
                   }
                 : undefined;
 
@@ -12101,8 +12130,8 @@
                   const key = qt(() =>
                     Number(
                       chatItem.replayChatItemAction.actions[0].addChatItemAction
-                        .item.liveChatTextMessageRenderer.timestampUsec
-                    )
+                        .item.liveChatTextMessageRenderer.timestampUsec,
+                    ),
                   );
                   chatData.set(key, chatItem);
                 });
@@ -12119,30 +12148,30 @@
                   return;
                 if (chatDataBuf && chatDataBuf.size > 0) {
                   const o = document.querySelector(t),
-                    i = document.getElementById('ycs-input-search'),
+                    i = document.getElementById("ycs-input-search"),
                     // chat data is a Map keyed with microsecond timestamp
                     chatItemsBuf = [...chatDataBuf.values()];
-                  let l = '';
-                  i && (l = i.value), o && (o.textContent = '');
+                  let l = "";
+                  (i && (l = i.value), o && (o.textContent = ""));
                   const d = document.getElementById(
-                      'ycs_extended_search_title'
+                      "ycs_extended_search_title",
                     ),
-                    u = document.getElementById('ycs_extended_search_main');
+                    u = document.getElementById("ycs_extended_search_main");
                   let h = fuseOptionsBase,
                     m = [
-                      'replayChatItemAction.actions.addChatItemAction.item.liveChatTextMessageRenderer.authorName.simpleText',
-                      'replayChatItemAction.actions.addChatItemAction.item.liveChatTextMessageRenderer.message.fullText',
+                      "replayChatItemAction.actions.addChatItemAction.item.liveChatTextMessageRenderer.authorName.simpleText",
+                      "replayChatItemAction.actions.addChatItemAction.item.liveChatTextMessageRenderer.message.fullText",
                     ];
                   L.checked &&
                     ((h = JSON.parse(JSON.stringify(fuseOptionsBase))),
                     (h.useExtendedSearch = !0),
                     d.checked &&
                       (m = [
-                        'replayChatItemAction.actions.addChatItemAction.item.liveChatTextMessageRenderer.authorName.simpleText',
+                        "replayChatItemAction.actions.addChatItemAction.item.liveChatTextMessageRenderer.authorName.simpleText",
                       ]),
                     u.checked &&
                       (m = [
-                        'replayChatItemAction.actions.addChatItemAction.item.liveChatTextMessageRenderer.message.fullText',
+                        "replayChatItemAction.actions.addChatItemAction.item.liveChatTextMessageRenderer.message.fullText",
                       ]));
                   const p = {
                     ...h,
@@ -12165,7 +12194,7 @@
                           n = qt(
                             () =>
                               ycsOptions.getInitYtData[2].playerResponse
-                                .videoDetails.channelId
+                                .videoDetails.channelId,
                           );
                         if (n)
                           for (const [o, r] of e.entries())
@@ -12175,7 +12204,7 @@
                                   r.replayChatItemAction.actions[0]
                                     .addChatItemAction.item
                                     .liveChatTextMessageRenderer
-                                    .authorExternalChannelId
+                                    .authorExternalChannelId,
                               ) === n &&
                                 t.push({
                                   item: r,
@@ -12191,12 +12220,12 @@
                     })(textSearchResults);
                     if (((f = e), (null == f ? void 0 : f.length) > 0)) {
                       null == f || f.sort((a, b) => b.refIndex - a.refIndex);
-                      const e = document.getElementById('ycs_btn_author'),
+                      const e = document.getElementById("ycs_btn_author"),
                         order = getLockedFilterSortOrder(e.dataset[n.sortKey]);
-                      if ('newest' === order) {
+                      if ("newest" === order) {
                         bn(t, f, l);
                         if (!n.skipButtonUIUpdate) {
-                          e.dataset[n.sortKey] = 'oldest';
+                          e.dataset[n.sortKey] = "oldest";
                           e.innerHTML = `
                             Author 
                             <span class="ycs-icons">
@@ -12207,11 +12236,11 @@
                           `;
                         }
                         e.title =
-                          'Show comments, replies, chat from the author (Newest)';
-                      } else if ('oldest' === order) {
+                          "Show comments, replies, chat from the author (Newest)";
+                      } else if ("oldest" === order) {
                         bn(t, null == f ? void 0 : f.reverse(), l);
                         if (!n.skipButtonUIUpdate) {
-                          e.dataset[n.sortKey] = 'newest';
+                          e.dataset[n.sortKey] = "newest";
                           e.innerHTML = `
                             Author 
                             <span class="ycs-icons">
@@ -12221,7 +12250,7 @@
                             </span>
                           `;
                           e.title =
-                            'Show comments, replies, chat from the author (Oldest)';
+                            "Show comments, replies, chat from the author (Oldest)";
                         }
                       } else {
                         bn(t, f, l);
@@ -12238,7 +12267,7 @@
                               n.replayChatItemAction.actions[0]
                                 .addChatItemAction.item
                                 .liveChatTextMessageRenderer.purchaseAmountText
-                                .simpleText
+                                .simpleText,
                           ) &&
                             t.push({
                               item: n,
@@ -12247,8 +12276,9 @@
                                   Number(
                                     n.replayChatItemAction.actions[0]
                                       .addChatItemAction.item
-                                      .liveChatTextMessageRenderer.timestampUsec
-                                  ) ?? 0
+                                      .liveChatTextMessageRenderer
+                                      .timestampUsec,
+                                  ) ?? 0,
                               ),
                             });
                         return t;
@@ -12258,28 +12288,28 @@
                     })(textSearchResults);
                     if (((f = e), (null == f ? void 0 : f.length) > 0)) {
                       null == f || f.sort((a, b) => b.refIndex - a.refIndex);
-                      const e = document.getElementById('ycs_btn_donated'),
+                      const e = document.getElementById("ycs_btn_donated"),
                         order = getLockedFilterSortOrder(e.dataset[n.sortKey]);
-                      'newest' === order
+                      "newest" === order
                         ? (bn(t, f, l),
                           !n.skipButtonUIUpdate &&
-                            ((e.dataset[n.sortKey] = 'oldest'),
+                            ((e.dataset[n.sortKey] = "oldest"),
                             (e.innerHTML =
                               'Donated \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
                             (e.title =
-                              'Show chat comments from users who have donated (Newest)')))
-                        : 'oldest' === order
-                        ? (bn(t, null == f ? void 0 : f.reverse(), l),
-                          !n.skipButtonUIUpdate &&
-                            ((e.dataset[n.sortKey] = 'newest'),
-                            (e.innerHTML =
-                              'Donated \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
-                            (e.title =
-                              'Show chat comments from users who have donated (Oldest)')))
-                        : (bn(t, f, l),
-                          !n.skipButtonUIUpdate &&
-                            (e.innerHTML =
-                              'Donated \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '));
+                              "Show chat comments from users who have donated (Newest)")))
+                        : "oldest" === order
+                          ? (bn(t, null == f ? void 0 : f.reverse(), l),
+                            !n.skipButtonUIUpdate &&
+                              ((e.dataset[n.sortKey] = "newest"),
+                              (e.innerHTML =
+                                'Donated \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
+                              (e.title =
+                                "Show chat comments from users who have donated (Oldest)")))
+                          : (bn(t, f, l),
+                            !n.skipButtonUIUpdate &&
+                              (e.innerHTML =
+                                'Donated \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '));
                     }
                   } else if (null == n ? void 0 : n.members) {
                     const e = (function (e) {
@@ -12291,7 +12321,7 @@
                             () =>
                               o.replayChatItemAction.actions[0]
                                 .addChatItemAction.item
-                                .liveChatTextMessageRenderer.authorBadges
+                                .liveChatTextMessageRenderer.authorBadges,
                           );
                           let r;
                           var t;
@@ -12315,8 +12345,9 @@
                                   Number(
                                     o.replayChatItemAction.actions[0]
                                       .addChatItemAction.item
-                                      .liveChatTextMessageRenderer.timestampUsec
-                                  ) ?? 0
+                                      .liveChatTextMessageRenderer
+                                      .timestampUsec,
+                                  ) ?? 0,
                               ),
                             });
                         }
@@ -12327,56 +12358,56 @@
                     })(textSearchResults);
                     if (((f = e), (null == f ? void 0 : f.length) > 0)) {
                       null == f || f.sort((a, b) => b.refIndex - a.refIndex);
-                      const e = document.getElementById('ycs_btn_members'),
+                      const e = document.getElementById("ycs_btn_members"),
                         order = getLockedFilterSortOrder(e.dataset[n.sortKey]);
-                      'newest' === order
+                      "newest" === order
                         ? (bn(t, f, l),
                           !n.skipButtonUIUpdate &&
-                            ((e.dataset[n.sortKey] = 'oldest'),
+                            ((e.dataset[n.sortKey] = "oldest"),
                             (e.innerHTML =
                               'Members \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
                             (e.title =
-                              'Show comments, replies, chat from channel members (Newest)')))
-                        : 'oldest' === order
-                        ? (bn(t, null == f ? void 0 : f.reverse(), l),
-                          !n.skipButtonUIUpdate &&
-                            ((e.dataset[n.sortKey] = 'newest'),
-                            (e.innerHTML =
-                              'Members \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
-                            (e.title =
-                              'Show comments, replies, chat from channel members (Oldest)')))
-                        : bn(t, f, l);
+                              "Show comments, replies, chat from channel members (Newest)")))
+                        : "oldest" === order
+                          ? (bn(t, null == f ? void 0 : f.reverse(), l),
+                            !n.skipButtonUIUpdate &&
+                              ((e.dataset[n.sortKey] = "newest"),
+                              (e.innerHTML =
+                                'Members \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
+                              (e.title =
+                                "Show comments, replies, chat from channel members (Oldest)")))
+                          : bn(t, f, l);
                     }
                   } else if (null == n ? void 0 : n.timestamp) {
                     p.keys = [
-                      'replayChatItemAction.actions.addChatItemAction.item.liveChatTextMessageRenderer.isTimeLine',
+                      "replayChatItemAction.actions.addChatItemAction.item.liveChatTextMessageRenderer.isTimeLine",
                     ];
                     if (
                       ((f = new (e(I))(textSearchResults, p).search(
-                        'timeline'
+                        "timeline",
                       )),
                       (null == f ? void 0 : f.length) > 0)
                     ) {
                       null == f || f.sort((a, b) => b.refIndex - a.refIndex);
-                      const e = document.getElementById('ycs_btn_timestamps'),
+                      const e = document.getElementById("ycs_btn_timestamps"),
                         order = getLockedFilterSortOrder(e.dataset[n.sortKey]);
-                      'newest' === order
+                      "newest" === order
                         ? (bn(t, f, l),
                           !n.skipButtonUIUpdate &&
-                            ((e.dataset[n.sortKey] = 'oldest'),
+                            ((e.dataset[n.sortKey] = "oldest"),
                             (e.innerHTML =
                               'Time stamps \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
                             (e.title =
-                              'Show comments, replies, chat with time stamps (Newest)')))
-                        : 'oldest' === order
-                        ? (bn(t, null == f ? void 0 : f.reverse(), l),
-                          !n.skipButtonUIUpdate &&
-                            ((e.dataset[n.sortKey] = 'newest'),
-                            (e.innerHTML =
-                              'Time stamps \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
-                            (e.title =
-                              'Show comments, replies, chat with time stamps (Oldest)')))
-                        : bn(t, f, l);
+                              "Show comments, replies, chat with time stamps (Newest)")))
+                        : "oldest" === order
+                          ? (bn(t, null == f ? void 0 : f.reverse(), l),
+                            !n.skipButtonUIUpdate &&
+                              ((e.dataset[n.sortKey] = "newest"),
+                              (e.innerHTML =
+                                'Time stamps \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
+                              (e.title =
+                                "Show comments, replies, chat with time stamps (Oldest)")))
+                          : bn(t, f, l);
                     }
                   } else if (null == n ? void 0 : n.sortFirst) {
                     const e = (function (e) {
@@ -12397,25 +12428,25 @@
                     })(rebuildChatData(textSearchResults));
                     if (((f = e), (null == f ? void 0 : f.length) > 0)) {
                       null == f || f.sort((a, b) => b.refIndex - a.refIndex);
-                      const e = document.getElementById('ycs_btn_sort_first'),
+                      const e = document.getElementById("ycs_btn_sort_first"),
                         order = getLockedFilterSortOrder(e.dataset[n.sortKey]);
-                      'newest' === order
+                      "newest" === order
                         ? (bn(t, f, l),
                           !n.skipButtonUIUpdate &&
-                            ((e.dataset[n.sortKey] = 'oldest'),
+                            ((e.dataset[n.sortKey] = "oldest"),
                             (e.innerHTML =
                               'All \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
                             (e.title =
-                              'Show all comments, chat, video transcript sorted by date (Newest)')))
-                        : 'oldest' === order
-                        ? (bn(t, null == f ? void 0 : f.reverse(), l),
-                          !n.skipButtonUIUpdate &&
-                            ((e.dataset[n.sortKey] = 'newest'),
-                            (e.innerHTML =
-                              'All \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
-                            (e.title =
-                              'Show all comments, chat, video transcript sorted by date (Oldest)')))
-                        : bn(t, f, l);
+                              "Show all comments, chat, video transcript sorted by date (Newest)")))
+                        : "oldest" === order
+                          ? (bn(t, null == f ? void 0 : f.reverse(), l),
+                            !n.skipButtonUIUpdate &&
+                              ((e.dataset[n.sortKey] = "newest"),
+                              (e.innerHTML =
+                                'All \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
+                              (e.title =
+                                "Show all comments, chat, video transcript sorted by date (Oldest)")))
+                          : bn(t, f, l);
                     }
                   } else if (null == n ? void 0 : n.verified) {
                     const e = (function (e) {
@@ -12427,7 +12458,7 @@
                             () =>
                               o.replayChatItemAction.actions[0]
                                 .addChatItemAction.item
-                                .liveChatTextMessageRenderer.verifiedAuthor
+                                .liveChatTextMessageRenderer.verifiedAuthor,
                           ) &&
                             t.push({
                               item: o,
@@ -12440,25 +12471,25 @@
                     })(rebuildChatData(textSearchResults));
                     if (((f = e), (null == f ? void 0 : f.length) > 0)) {
                       null == f || f.sort((a, b) => b.refIndex - a.refIndex);
-                      const e = document.getElementById('ycs_btn_verified'),
+                      const e = document.getElementById("ycs_btn_verified"),
                         order = getLockedFilterSortOrder(e.dataset[n.sortKey]);
-                      'newest' === order
+                      "newest" === order
                         ? (bn(t, f, l),
                           !n.skipButtonUIUpdate &&
-                            ((e.dataset[n.sortKey] = 'oldest'),
+                            ((e.dataset[n.sortKey] = "oldest"),
                             (e.innerHTML =
                               '<span class="ycs-creator-verified_icon">✔</span> \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
                             (e.title =
-                              'Show comments,  replies and chat from a verified authors (Newest)')))
-                        : 'oldest' === order
-                        ? (bn(t, null == f ? void 0 : f.reverse(), l),
-                          !n.skipButtonUIUpdate &&
-                            ((e.dataset[n.sortKey] = 'newest'),
-                            (e.innerHTML =
-                              '<span class="ycs-creator-verified_icon">✔</span> \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
-                            (e.title =
-                              'Show comments,  replies and chat from a verified authors (Oldest)')))
-                        : bn(t, f, l);
+                              "Show comments,  replies and chat from a verified authors (Newest)")))
+                        : "oldest" === order
+                          ? (bn(t, null == f ? void 0 : f.reverse(), l),
+                            !n.skipButtonUIUpdate &&
+                              ((e.dataset[n.sortKey] = "newest"),
+                              (e.innerHTML =
+                                '<span class="ycs-creator-verified_icon">✔</span> \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
+                              (e.title =
+                                "Show comments,  replies and chat from a verified authors (Oldest)")))
+                          : bn(t, f, l);
                     }
                   } else if (null == n ? void 0 : n.links) {
                     const n = (function (t) {
@@ -12470,8 +12501,8 @@
                             e(mt)().test(
                               r.replayChatItemAction.actions[0]
                                 .addChatItemAction.item
-                                .liveChatTextMessageRenderer.message.fullText
-                            )
+                                .liveChatTextMessageRenderer.message.fullText,
+                            ),
                           ) &&
                             n.push({
                               item: r,
@@ -12484,35 +12515,35 @@
                     })(rebuildChatData(textSearchResults));
                     if (((f = n), (null == f ? void 0 : f.length) > 0)) {
                       null == f || f.sort((a, b) => b.refIndex - a.refIndex);
-                      const e = document.getElementById('ycs_btn_links'),
+                      const e = document.getElementById("ycs_btn_links"),
                         order = getLockedFilterSortOrder(e.dataset[n.sortKey]);
-                      'newest' === order
+                      "newest" === order
                         ? (bn(t, f, l),
                           !n.skipButtonUIUpdate &&
-                            ((e.dataset[n.sortKey] = 'oldest'),
+                            ((e.dataset[n.sortKey] = "oldest"),
                             (e.innerHTML =
                               'Links \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
                             (e.title =
-                              'Shows links in comments, replies, chat, video transcript (Newest)')))
-                        : 'oldest' === order
-                        ? (bn(t, null == f ? void 0 : f.reverse(), l),
-                          !n.skipButtonUIUpdate &&
-                            ((e.dataset[n.sortKey] = 'newest'),
-                            (e.innerHTML =
-                              'Links \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
-                            (e.title =
-                              'Shows links in comments, replies, chat, video transcript (Oldest)')))
-                        : bn(t, f, l);
+                              "Shows links in comments, replies, chat, video transcript (Newest)")))
+                        : "oldest" === order
+                          ? (bn(t, null == f ? void 0 : f.reverse(), l),
+                            !n.skipButtonUIUpdate &&
+                              ((e.dataset[n.sortKey] = "newest"),
+                              (e.innerHTML =
+                                'Links \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
+                              (e.title =
+                                "Shows links in comments, replies, chat, video transcript (Oldest)")))
+                          : bn(t, f, l);
                     }
                   } else {
-                    (f = textSearchFuseResults ?? []), bn(t, f, l);
+                    ((f = textSearchFuseResults ?? []), bn(t, f, l));
                   }
-                  const v = document.getElementById('ycs-search-total-result');
-                  v && (v.innerText = `(Chat replay) Found: ${f.length}`),
-                    (countsReport.commentsChat = f.length);
-                  const y = document.getElementById('ycs_wrap_comments_chat');
+                  const v = document.getElementById("ycs-search-total-result");
+                  (v && (v.innerText = `(Chat replay) Found: ${f.length}`),
+                    (countsReport.commentsChat = f.length));
+                  const y = document.getElementById("ycs_wrap_comments_chat");
                   null == y ||
-                    y.addEventListener('click', (e) => {
+                    y.addEventListener("click", (e) => {
                       try {
                         var t, n;
                         if (
@@ -12521,9 +12552,9 @@
                           null === (n = t.classList) ||
                           void 0 === n
                             ? void 0
-                            : n.contains('ycs-gotochat-video')
+                            : n.contains("ycs-gotochat-video")
                         ) {
-                          const t = document.getElementsByTagName('video')[0];
+                          const t = document.getElementsByTagName("video")[0];
                           if ((e.preventDefault(), t)) {
                             const n = e.target.dataset.offsetvideo;
                             n && (t.currentTime = parseInt(n) / 1e3);
@@ -12540,7 +12571,7 @@
               const n = _n
                 ? {
                     ..._n,
-                    sortKey: _n.sortKey ?? 'sortTrp',
+                    sortKey: _n.sortKey ?? "sortTrp",
                   }
                 : undefined;
 
@@ -12552,32 +12583,32 @@
                     .cueGroups.length > 0
                 ) {
                   const o = document.querySelector(t),
-                    a = document.getElementById('ycs-input-search'),
+                    a = document.getElementById("ycs-input-search"),
                     cueGroupsBuf =
                       transcriptDataBuf.actions[0].updateEngagementPanelAction
                         .content.transcriptRenderer.body.transcriptBodyRenderer
                         .cueGroups;
-                  let l = '';
-                  a && (l = a.value), o && (o.textContent = '');
+                  let l = "";
+                  (a && (l = a.value), o && (o.textContent = ""));
                   const d = document.getElementById(
-                      'ycs_extended_search_title'
+                      "ycs_extended_search_title",
                     ),
-                    u = document.getElementById('ycs_extended_search_main');
+                    u = document.getElementById("ycs_extended_search_main");
                   let h = fuseOptionsBase,
                     m = [
-                      'transcriptCueGroupRenderer.cues.transcriptCueRenderer.cue.simpleText',
-                      'transcriptCueGroupRenderer.formattedStartOffset.simpleText',
+                      "transcriptCueGroupRenderer.cues.transcriptCueRenderer.cue.simpleText",
+                      "transcriptCueGroupRenderer.formattedStartOffset.simpleText",
                     ];
                   L.checked &&
                     ((h = JSON.parse(JSON.stringify(fuseOptionsBase))),
                     (h.useExtendedSearch = !0),
                     d.checked &&
                       (m = [
-                        'transcriptCueGroupRenderer.formattedStartOffset.simpleText',
+                        "transcriptCueGroupRenderer.formattedStartOffset.simpleText",
                       ]),
                     u.checked &&
                       (m = [
-                        'transcriptCueGroupRenderer.cues.transcriptCueRenderer.cue.simpleText',
+                        "transcriptCueGroupRenderer.cues.transcriptCueRenderer.cue.simpleText",
                       ]));
                   const p = {
                     ...h,
@@ -12602,7 +12633,7 @@
                             try {
                               e(mt)().test(
                                 o.transcriptCueGroupRenderer.cues[0]
-                                  .transcriptCueRenderer.cue.simpleText
+                                  .transcriptCueRenderer.cue.simpleText,
                               ) &&
                                 n.push({
                                   item: o,
@@ -12620,27 +12651,27 @@
                       })(textSearchResults);
                       if (((f = n), (null == f ? void 0 : f.length) > 0)) {
                         null == f || f.sort((a, b) => b.refIndex - a.refIndex);
-                        const e = document.getElementById('ycs_btn_links'),
+                        const e = document.getElementById("ycs_btn_links"),
                           order = getLockedFilterSortOrder(
-                            e.dataset[n.sortKey]
+                            e.dataset[n.sortKey],
                           );
-                        'newest' === order
+                        "newest" === order
                           ? (xn(t, f, l),
                             !n.skipButtonUIUpdate &&
-                              ((e.dataset[n.sortKey] = 'oldest'),
+                              ((e.dataset[n.sortKey] = "oldest"),
                               (e.innerHTML =
                                 'Links \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
                               (e.title =
-                                'Shows links in comments, replies, chat, video transcript (Newest)')))
-                          : 'oldest' === order
-                          ? (xn(t, null == f ? void 0 : f.reverse(), l),
-                            !n.skipButtonUIUpdate &&
-                              ((e.dataset[n.sortKey] = 'newest'),
-                              (e.innerHTML =
-                                'Links \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
-                              (e.title =
-                                'Shows links in comments, replies, chat, video transcript (Oldest)')))
-                          : xn(t, f, l);
+                                "Shows links in comments, replies, chat, video transcript (Newest)")))
+                          : "oldest" === order
+                            ? (xn(t, null == f ? void 0 : f.reverse(), l),
+                              !n.skipButtonUIUpdate &&
+                                ((e.dataset[n.sortKey] = "newest"),
+                                (e.innerHTML =
+                                  'Links \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
+                                (e.title =
+                                  "Shows links in comments, replies, chat, video transcript (Oldest)")))
+                            : xn(t, f, l);
                       }
                     } else {
                       if (!(null == n ? void 0 : n.sortFirst)) return;
@@ -12669,41 +12700,41 @@
                           null == f ||
                             f.sort((a, b) => b.refIndex - a.refIndex);
                           const e =
-                              document.getElementById('ycs_btn_sort_first'),
+                              document.getElementById("ycs_btn_sort_first"),
                             order = getLockedFilterSortOrder(
-                              e.dataset[n.sortKey]
+                              e.dataset[n.sortKey],
                             );
-                          'newest' === order
+                          "newest" === order
                             ? (xn(t, f, l),
                               !n.skipButtonUIUpdate &&
-                                ((e.dataset[n.sortKey] = 'oldest'),
+                                ((e.dataset[n.sortKey] = "oldest"),
                                 (e.innerHTML =
                                   'All \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-down">\n                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
                                 (e.title =
-                                  'Show all comments, chat, video transcript sorted by date (Newest)')))
-                            : 'oldest' === order
-                            ? (xn(t, null == f ? void 0 : f.reverse(), l),
-                              !n.skipButtonUIUpdate &&
-                                ((e.dataset[n.sortKey] = 'newest'),
-                                (e.innerHTML =
-                                  'All \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
-                                (e.title =
-                                  'Show all comments, chat, video transcript sorted by date (Oldest)')))
-                            : xn(t, f, l);
+                                  "Show all comments, chat, video transcript sorted by date (Newest)")))
+                            : "oldest" === order
+                              ? (xn(t, null == f ? void 0 : f.reverse(), l),
+                                !n.skipButtonUIUpdate &&
+                                  ((e.dataset[n.sortKey] = "newest"),
+                                  (e.innerHTML =
+                                    'All \n        <span class="ycs-icons">\n            <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sort-up">\n                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>\n            </svg>\n        </span>\n    '),
+                                  (e.title =
+                                    "Show all comments, chat, video transcript sorted by date (Oldest)")))
+                              : xn(t, f, l);
                         }
                       }
                     }
                   else {
-                    (f = textSearchFuseResults ?? []), xn(t, f, l);
+                    ((f = textSearchFuseResults ?? []), xn(t, f, l));
                   }
-                  const v = document.getElementById('ycs-search-total-result');
-                  v && (v.innerText = `(Tr. video) Found: ${f.length}`),
-                    (countsReport.commentsTrVideo = f.length);
+                  const v = document.getElementById("ycs-search-total-result");
+                  (v && (v.innerText = `(Tr. video) Found: ${f.length}`),
+                    (countsReport.commentsTrVideo = f.length));
                   const y = document.getElementById(
-                    'ycs_wrap_comments_trvideo'
+                    "ycs_wrap_comments_trvideo",
                   );
                   null == y ||
-                    y.addEventListener('click', (e) => {
+                    y.addEventListener("click", (e) => {
                       try {
                         var t, n;
                         if (
@@ -12712,10 +12743,10 @@
                           null === (n = t.classList) ||
                           void 0 === n
                             ? void 0
-                            : n.contains('ycs-goto-video')
+                            : n.contains("ycs-goto-video")
                         ) {
                           e.preventDefault();
-                          const t = document.getElementsByTagName('video')[0];
+                          const t = document.getElementsByTagName("video")[0];
                           if (t) {
                             const n = e.target.dataset.offsetvideo;
                             n && (t.currentTime = parseInt(n) / 1e3);
@@ -12730,24 +12761,24 @@
             };
             const handleAllSearch = (targetSelector, searchOptions) => {
               const n = document.querySelector(targetSelector);
-              const o = document.getElementById('ycs-search-total-result');
+              const o = document.getElementById("ycs-search-total-result");
 
               if (o) {
-                o.classList.add('ycs-hidden');
+                o.classList.add("ycs-hidden");
               }
 
               if (n) {
-                n.textContent = '';
+                n.textContent = "";
               }
 
-              const c = document.createElement('div');
-              c.id = 'ycs_allsearch__wrap_comments';
+              const c = document.createElement("div");
+              c.id = "ycs_allsearch__wrap_comments";
 
-              const l = document.createElement('div');
-              l.id = 'ycs_allsearch__wrap_comments_chat';
+              const l = document.createElement("div");
+              l.id = "ycs_allsearch__wrap_comments_chat";
 
-              const d = document.createElement('div');
-              d.id = 'ycs_allsearch__wrap_comments_trvideo';
+              const d = document.createElement("div");
+              d.id = "ycs_allsearch__wrap_comments_trvideo";
 
               try {
                 // only one of the search functions should update the UI when searching with type "all"
@@ -12758,14 +12789,14 @@
                     n.appendChild(c);
                   }
                   handleCommentsSearch(
-                    '#ycs_allsearch__wrap_comments',
+                    "#ycs_allsearch__wrap_comments",
                     searchOptions
                       ? {
                           ...searchOptions,
                           skipButtonUIUpdate,
-                          sortKey: 'sortAll',
+                          sortKey: "sortAll",
                         }
-                      : undefined
+                      : undefined,
                   );
                   skipButtonUIUpdate = true;
                 }
@@ -12775,14 +12806,14 @@
                     n.appendChild(l);
                   }
                   handleChatSearch(
-                    '#ycs_allsearch__wrap_comments_chat',
+                    "#ycs_allsearch__wrap_comments_chat",
                     searchOptions
                       ? {
                           ...searchOptions,
                           skipButtonUIUpdate,
-                          sortKey: 'sortAll',
+                          sortKey: "sortAll",
                         }
-                      : undefined
+                      : undefined,
                   );
                   skipButtonUIUpdate = true;
                 }
@@ -12793,21 +12824,21 @@
                     () =>
                       transcriptDataBuf.actions[0].updateEngagementPanelAction
                         .content.transcriptRenderer.body.transcriptBodyRenderer
-                        .cueGroups.length
+                        .cueGroups.length,
                   ) > 0
                 ) {
                   if (n) {
                     n.appendChild(d);
                   }
                   handleTranscriptSearch(
-                    '#ycs_allsearch__wrap_comments_trvideo',
+                    "#ycs_allsearch__wrap_comments_trvideo",
                     searchOptions
                       ? {
                           ...searchOptions,
                           skipButtonUIUpdate,
-                          sortKey: 'sortAll',
+                          sortKey: "sortAll",
                         }
-                      : undefined
+                      : undefined,
                   );
                   skipButtonUIUpdate = true;
                 }
@@ -12844,57 +12875,57 @@
                     o.innerText = `(All) Found: ${e}`;
                   }
 
-                  o.classList.remove('ycs-hidden');
+                  o.classList.remove("ycs-hidden");
                 }
               } catch (e) {}
             };
 
             function dispatchSearch(
               searchOptions,
-              { typeSelector = '#ycs_search_select', type: optType } = {}
+              { typeSelector = "#ycs_search_select", type: optType } = {},
             ) {
               let type = optType;
               if (typeSelector) {
                 const eSearchSelect =
-                  document.getElementById('ycs_search_select');
+                  document.getElementById("ycs_search_select");
                 type = eSearchSelect?.value;
               }
 
-              const eSearchInput = document.getElementById('ycs-input-search');
+              const eSearchInput = document.getElementById("ycs-input-search");
               const value = eSearchInput.value.trim();
-              toggleVisibility('#ycs_btn_clear_search', !!value);
+              toggleVisibility("#ycs_btn_clear_search", !!value);
 
               switch (type) {
-                case 'comments':
-                  handleCommentsSearch('#ycs-search-result', searchOptions);
+                case "comments":
+                  handleCommentsSearch("#ycs-search-result", searchOptions);
                   break;
-                case 'chat':
-                  handleChatSearch('#ycs-search-result', searchOptions);
+                case "chat":
+                  handleChatSearch("#ycs-search-result", searchOptions);
                   break;
-                case 'video':
-                  handleTranscriptSearch('#ycs-search-result', searchOptions);
+                case "video":
+                  handleTranscriptSearch("#ycs-search-result", searchOptions);
                   break;
-                case 'all':
-                  handleAllSearch('#ycs-search-result', searchOptions);
+                case "all":
+                  handleAllSearch("#ycs-search-result", searchOptions);
                   break;
                 default:
-                  handleAllSearch('#ycs-search-result', searchOptions);
+                  handleAllSearch("#ycs-search-result", searchOptions);
                   break;
               }
             }
 
             eClearSearchBtn &&
-              eClearSearchBtn.addEventListener('click', () => {
+              eClearSearchBtn.addEventListener("click", () => {
                 if (w) {
                   const eSearchInput =
-                    document.getElementById('ycs-input-search');
-                  eSearchInput.value = '';
+                    document.getElementById("ycs-input-search");
+                  eSearchInput.value = "";
                   w.click();
                 }
               });
 
-            w &&
-              w.addEventListener('click', () => {
+            (w &&
+              w.addEventListener("click", () => {
                 // removeClassName() function cleans up the active states of buttons
                 // removeClassName(btnPool, 'ycs_btn_active');
 
@@ -12906,15 +12937,15 @@
               }),
               window.postMessage(
                 {
-                  type: 'GET_OPTIONS',
+                  type: "GET_OPTIONS",
                 },
-                window.location.origin
+                window.location.origin,
               ),
               (n = (e) => {
                 var t, n, r, c;
                 if (e.origin === window.location.origin) {
                   if (
-                    'YCS_OPTIONS' ===
+                    "YCS_OPTIONS" ===
                       (null === (t = e.data) || void 0 === t
                         ? void 0
                         : t.type) &&
@@ -12943,12 +12974,12 @@
                             try {
                               window.postMessage(
                                 {
-                                  type: 'YCS_CACHE_STORAGE_GET',
+                                  type: "YCS_CACHE_STORAGE_GET",
                                   body: {
                                     videoId: getVideoId(Xt(e)),
                                   },
                                 },
-                                window.location.origin
+                                window.location.origin,
                               );
                             } catch (e) {}
                           })(window.location.href);
@@ -12958,23 +12989,23 @@
                       const t = e.data.text;
                       for (const e of Object.keys(t))
                         switch (e) {
-                          case 'autoload':
+                          case "autoload":
                             n(t[e], t);
                             break;
-                          case 'highlightText':
+                          case "highlightText":
                             o(t[e]);
                             break;
-                          case 'highlightExact':
+                          case "highlightExact":
                             handleHighlightExact(t[e]);
                             break;
-                          case 'cache':
+                          case "cache":
                             r(t[e]);
                         }
                     } catch (e) {}
                   }
                   var l;
                   if (
-                    'YCS_CACHE_STORAGE_GET_RESPONSE' ===
+                    "YCS_CACHE_STORAGE_GET_RESPONSE" ===
                     (null === (r = e.data) || void 0 === r ? void 0 : r.type)
                   )
                     if (
@@ -12984,15 +13015,15 @@
                         if (e.data.body.comments.length > 0) {
                           const originCommentById = e.data.body.comments.reduce(
                             (acc, c) => {
-                              if (c.typeComment === 'C') {
+                              if (c.typeComment === "C") {
                                 acc[c.commentRenderer.commentId] = c;
                               }
                               return acc;
                             },
-                            {}
+                            {},
                           );
                           for (const t of e.data.body.comments)
-                            if ('R' === t.typeComment) {
+                            if ("R" === t.typeComment) {
                               const originComment =
                                 originCommentById[
                                   t.originComment.commentRenderer.commentId
@@ -13006,27 +13037,27 @@
                       } catch (e) {}
                       transcriptDataBuf = e.data.body.commentsTrVideo;
                       const t = e.data.body.date,
-                        n = document.getElementById('ycs_status_cmnt');
-                      commentsDataBuf.length > 0 &&
+                        n = document.getElementById("ycs_status_cmnt");
+                      (commentsDataBuf.length > 0 &&
                         n &&
                         (n.innerHTML =
                           '\n        <span class="ycs-icons">\n            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"\n            width="48" height="48"\n            viewBox="0 0 48 48"\n            style=" fill:#000000;"><linearGradient id="I9GV0SozQFknxHSR6DCx5a_70yRC8npwT3d_gr1" x1="9.858" x2="38.142" y1="9.858" y2="38.142" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#21ad64"></stop><stop offset="1" stop-color="#088242"></stop></linearGradient><path fill="url(#I9GV0SozQFknxHSR6DCx5a_70yRC8npwT3d_gr1)" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path><path d="M32.172,16.172L22,26.344l-5.172-5.172c-0.781-0.781-2.047-0.781-2.828,0l-1.414,1.414\tc-0.781,0.781-0.781,2.047,0,2.828l8,8c0.781,0.781,2.047,0.781,2.828,0l13-13c0.781-0.781,0.781-2.047,0-2.828L35,16.172\tC34.219,15.391,32.953,15.391,32.172,16.172z" opacity=".05"></path><path d="M20.939,33.061l-8-8c-0.586-0.586-0.586-1.536,0-2.121l1.414-1.414c0.586-0.586,1.536-0.586,2.121,0\tL22,27.051l10.525-10.525c0.586-0.586,1.536-0.586,2.121,0l1.414,1.414c0.586,0.586,0.586,1.536,0,2.121l-13,13\tC22.475,33.646,21.525,33.646,20.939,33.061z" opacity=".07"></path><path fill="#fff" d="M21.293,32.707l-8-8c-0.391-0.391-0.391-1.024,0-1.414l1.414-1.414c0.391-0.391,1.024-0.391,1.414,0\tL22,27.758l10.879-10.879c0.391-0.391,1.024-0.391,1.414,0l1.414,1.414c0.391,0.391,0.391,1.024,0,1.414l-13,13\tC22.317,33.098,21.683,33.098,21.293,32.707z"></path></svg>\n        </span>\n    '),
                         commentsDataBuf.length > 0 &&
                           (h.parentNode || h.parentElement) &&
-                          (countsAct.comments = commentsDataBuf.length);
+                          (countsAct.comments = commentsDataBuf.length));
                       chatDataBuf = new Map(
-                        JSON.parse(e.data.body.commentsChat)
+                        JSON.parse(e.data.body.commentsChat),
                       );
-                      const r = document.getElementById('ycs_cmnts');
+                      const r = document.getElementById("ycs_cmnts");
                       if (
                         (r && (r.textContent = `${commentsDataBuf.length}`),
                         chatDataBuf && chatDataBuf.size > 0)
                       ) {
-                        const e = document.getElementById('ycs_cmnts_chat'),
-                          t = document.getElementById('ycs_status_chat');
-                        (e.textContent = chatDataBuf.size.toString()),
+                        const e = document.getElementById("ycs_cmnts_chat"),
+                          t = document.getElementById("ycs_status_chat");
+                        ((e.textContent = chatDataBuf.size.toString()),
                           (t.innerHTML =
-                            '\n        <span class="ycs-icons">\n            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"\n            width="48" height="48"\n            viewBox="0 0 48 48"\n            style=" fill:#000000;"><linearGradient id="I9GV0SozQFknxHSR6DCx5a_70yRC8npwT3d_gr1" x1="9.858" x2="38.142" y1="9.858" y2="38.142" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#21ad64"></stop><stop offset="1" stop-color="#088242"></stop></linearGradient><path fill="url(#I9GV0SozQFknxHSR6DCx5a_70yRC8npwT3d_gr1)" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path><path d="M32.172,16.172L22,26.344l-5.172-5.172c-0.781-0.781-2.047-0.781-2.828,0l-1.414,1.414\tc-0.781,0.781-0.781,2.047,0,2.828l8,8c0.781,0.781,2.047,0.781,2.828,0l13-13c0.781-0.781,0.781-2.047,0-2.828L35,16.172\tC34.219,15.391,32.953,15.391,32.172,16.172z" opacity=".05"></path><path d="M20.939,33.061l-8-8c-0.586-0.586-0.586-1.536,0-2.121l1.414-1.414c0.586-0.586,1.536-0.586,2.121,0\tL22,27.051l10.525-10.525c0.586-0.586,1.536-0.586,2.121,0l1.414,1.414c0.586,0.586,0.586,1.536,0,2.121l-13,13\tC22.475,33.646,21.525,33.646,20.939,33.061z" opacity=".07"></path><path fill="#fff" d="M21.293,32.707l-8-8c-0.391-0.391-0.391-1.024,0-1.414l1.414-1.414c0.391-0.391,1.024-0.391,1.414,0\tL22,27.758l10.879-10.879c0.391-0.391,1.024-0.391,1.414,0l1.414,1.414c0.391,0.391,0.391,1.024,0,1.414l-13,13\tC22.317,33.098,21.683,33.098,21.293,32.707z"></path></svg>\n        </span>\n    ');
+                            '\n        <span class="ycs-icons">\n            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"\n            width="48" height="48"\n            viewBox="0 0 48 48"\n            style=" fill:#000000;"><linearGradient id="I9GV0SozQFknxHSR6DCx5a_70yRC8npwT3d_gr1" x1="9.858" x2="38.142" y1="9.858" y2="38.142" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#21ad64"></stop><stop offset="1" stop-color="#088242"></stop></linearGradient><path fill="url(#I9GV0SozQFknxHSR6DCx5a_70yRC8npwT3d_gr1)" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path><path d="M32.172,16.172L22,26.344l-5.172-5.172c-0.781-0.781-2.047-0.781-2.828,0l-1.414,1.414\tc-0.781,0.781-0.781,2.047,0,2.828l8,8c0.781,0.781,2.047,0.781,2.828,0l13-13c0.781-0.781,0.781-2.047,0-2.828L35,16.172\tC34.219,15.391,32.953,15.391,32.172,16.172z" opacity=".05"></path><path d="M20.939,33.061l-8-8c-0.586-0.586-0.586-1.536,0-2.121l1.414-1.414c0.586-0.586,1.536-0.586,2.121,0\tL22,27.051l10.525-10.525c0.586-0.586,1.536-0.586,2.121,0l1.414,1.414c0.586,0.586,0.586,1.536,0,2.121l-13,13\tC22.475,33.646,21.525,33.646,20.939,33.061z" opacity=".07"></path><path fill="#fff" d="M21.293,32.707l-8-8c-0.391-0.391-0.391-1.024,0-1.414l1.414-1.414c0.391-0.391,1.024-0.391,1.414,0\tL22,27.758l10.879-10.879c0.391-0.391,1.024-0.391,1.414,0l1.414,1.414c0.391,0.391,0.391,1.024,0,1.414l-13,13\tC22.317,33.098,21.683,33.098,21.293,32.707z"></path></svg>\n        </span>\n    '));
                       }
                       if (
                         (chatDataBuf &&
@@ -13059,17 +13090,17 @@
                           );
                         }))
                       ) {
-                        const e = document.getElementById('ycs_status_trvideo'),
-                          t = document.getElementById('ycs_cmnts_video');
-                        Kt(
+                        const e = document.getElementById("ycs_status_trvideo"),
+                          t = document.getElementById("ycs_cmnts_video");
+                        (Kt(
                           transcriptDataBuf.actions[0]
                             .updateEngagementPanelAction.content
                             .transcriptRenderer.body.transcriptBodyRenderer
                             .cueGroups.length,
-                          t
+                          t,
                         ),
                           (e.innerHTML =
-                            '\n        <span class="ycs-icons">\n            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"\n            width="48" height="48"\n            viewBox="0 0 48 48"\n            style=" fill:#000000;"><linearGradient id="I9GV0SozQFknxHSR6DCx5a_70yRC8npwT3d_gr1" x1="9.858" x2="38.142" y1="9.858" y2="38.142" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#21ad64"></stop><stop offset="1" stop-color="#088242"></stop></linearGradient><path fill="url(#I9GV0SozQFknxHSR6DCx5a_70yRC8npwT3d_gr1)" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path><path d="M32.172,16.172L22,26.344l-5.172-5.172c-0.781-0.781-2.047-0.781-2.828,0l-1.414,1.414\tc-0.781,0.781-0.781,2.047,0,2.828l8,8c0.781,0.781,2.047,0.781,2.828,0l13-13c0.781-0.781,0.781-2.047,0-2.828L35,16.172\tC34.219,15.391,32.953,15.391,32.172,16.172z" opacity=".05"></path><path d="M20.939,33.061l-8-8c-0.586-0.586-0.586-1.536,0-2.121l1.414-1.414c0.586-0.586,1.536-0.586,2.121,0\tL22,27.051l10.525-10.525c0.586-0.586,1.536-0.586,2.121,0l1.414,1.414c0.586,0.586,0.586,1.536,0,2.121l-13,13\tC22.475,33.646,21.525,33.646,20.939,33.061z" opacity=".07"></path><path fill="#fff" d="M21.293,32.707l-8-8c-0.391-0.391-0.391-1.024,0-1.414l1.414-1.414c0.391-0.391,1.024-0.391,1.414,0\tL22,27.758l10.879-10.879c0.391-0.391,1.024-0.391,1.414,0l1.414,1.414c0.391,0.391,0.391,1.024,0,1.414l-13,13\tC22.317,33.098,21.683,33.098,21.293,32.707z"></path></svg>\n        </span>\n    ');
+                            '\n        <span class="ycs-icons">\n            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"\n            width="48" height="48"\n            viewBox="0 0 48 48"\n            style=" fill:#000000;"><linearGradient id="I9GV0SozQFknxHSR6DCx5a_70yRC8npwT3d_gr1" x1="9.858" x2="38.142" y1="9.858" y2="38.142" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#21ad64"></stop><stop offset="1" stop-color="#088242"></stop></linearGradient><path fill="url(#I9GV0SozQFknxHSR6DCx5a_70yRC8npwT3d_gr1)" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path><path d="M32.172,16.172L22,26.344l-5.172-5.172c-0.781-0.781-2.047-0.781-2.828,0l-1.414,1.414\tc-0.781,0.781-0.781,2.047,0,2.828l8,8c0.781,0.781,2.047,0.781,2.828,0l13-13c0.781-0.781,0.781-2.047,0-2.828L35,16.172\tC34.219,15.391,32.953,15.391,32.172,16.172z" opacity=".05"></path><path d="M20.939,33.061l-8-8c-0.586-0.586-0.586-1.536,0-2.121l1.414-1.414c0.586-0.586,1.536-0.586,2.121,0\tL22,27.051l10.525-10.525c0.586-0.586,1.536-0.586,2.121,0l1.414,1.414c0.586,0.586,0.586,1.536,0,2.121l-13,13\tC22.475,33.646,21.525,33.646,20.939,33.061z" opacity=".07"></path><path fill="#fff" d="M21.293,32.707l-8-8c-0.391-0.391-0.391-1.024,0-1.414l1.414-1.414c0.391-0.391,1.024-0.391,1.414,0\tL22,27.758l10.879-10.879c0.391-0.391,1.024-0.391,1.414,0l1.414,1.414c0.391,0.391,0.391,1.024,0,1.414l-13,13\tC22.317,33.098,21.683,33.098,21.293,32.707z"></path></svg>\n        </span>\n    '));
                       }
                       qt(() => {
                         var e, t, n, o, r, a, s, c;
@@ -13103,62 +13134,62 @@
                         countsAct.comments +
                         countsAct.commentsChat +
                         countsAct.commentsTrVideo;
-                      postTextMessage('NUMBER_COMMENTS', c),
-                        m && (m.textContent = `(${c})`);
+                      (postTextMessage("NUMBER_COMMENTS", c),
+                        m && (m.textContent = `(${c})`));
                       document
-                        .getElementById('ycs-count-load')
+                        .getElementById("ycs-count-load")
                         .insertAdjacentHTML(
-                          'beforeend',
+                          "beforeend",
                           `\n                            <span class="ycs-title-cache-info" title="${new Date(
-                            t
-                          )}">Cached</span>\n                        `
+                            t,
+                          )}">Cached</span>\n                        `,
                         );
                     } else
                       window.postMessage(
                         {
-                          type: 'YCS_AUTOLOAD',
+                          type: "YCS_AUTOLOAD",
                         },
-                        window.location.origin
+                        window.location.origin,
                       );
-                  'YCS_AUTOLOAD' ===
+                  "YCS_AUTOLOAD" ===
                     (null === (c = e.data) || void 0 === c ? void 0 : c.type) &&
                     (null == y || y.click());
                 }
               }),
-              window.addEventListener('message', n),
+              window.addEventListener("message", n),
               (function () {
                 try {
                   const e = (t) => {
                       try {
-                        const n = document.getElementById('ycs_modal_window');
+                        const n = document.getElementById("ycs_modal_window");
                         if (t.target == n) {
-                          n.style.display = 'none';
+                          n.style.display = "none";
                           const t =
-                            document.getElementsByClassName('ycs-app')[0];
-                          null == t || t.removeEventListener('click', e);
+                            document.getElementsByClassName("ycs-app")[0];
+                          null == t || t.removeEventListener("click", e);
                         }
                       } catch (e) {}
                     },
                     t = () => {
                       try {
                         document.getElementById(
-                          'ycs_modal_window'
-                        ).style.display = 'block';
-                        const t = document.getElementsByClassName('ycs-app')[0];
-                        null == t || t.addEventListener('click', e);
+                          "ycs_modal_window",
+                        ).style.display = "block";
+                        const t = document.getElementsByClassName("ycs-app")[0];
+                        null == t || t.addEventListener("click", e);
                       } catch (e) {}
                     },
                     n = () => {
                       try {
                         document.getElementById(
-                          'ycs_modal_window'
-                        ).style.display = 'none';
+                          "ycs_modal_window",
+                        ).style.display = "none";
                       } catch (e) {}
                     },
-                    o = document.getElementById('ycs_btn_close_modal'),
-                    r = document.getElementById('ycs_btn_open_modal');
-                  null == o || o.addEventListener('click', n),
-                    null == r || r.addEventListener('click', t);
+                    o = document.getElementById("ycs_btn_close_modal"),
+                    r = document.getElementById("ycs_btn_open_modal");
+                  (null == o || o.addEventListener("click", n),
+                    null == r || r.addEventListener("click", t));
                 } catch (e) {}
               })(),
               (function () {
@@ -13168,10 +13199,10 @@
                       try {
                         const e = async (e) => {
                           try {
-                            e.altKey && 'Backquote' === e.code && (await t());
+                            e.altKey && "Backquote" === e.code && (await t());
                           } catch (e) {}
                         };
-                        document.addEventListener('keyup', e, !1);
+                        document.addEventListener("keyup", e, !1);
                       } catch (e) {}
                     },
                     t = async () => {
@@ -13180,7 +13211,7 @@
                             const t = document.getElementById(e).offsetTop;
                             window.scrollTo(0, t);
                           },
-                          r = document.getElementsByTagName('video')[0],
+                          r = document.getElementsByTagName("video")[0],
                           i = vn();
                         var e, t, n;
                         r &&
@@ -13191,35 +13222,35 @@
                               null ===
                                 (e =
                                   document.getElementById(
-                                    'ycs-input-search'
+                                    "ycs-input-search",
                                   )) ||
                                 void 0 === e ||
                                 e.blur(),
                               null ===
-                                (t = document.getElementById('search')) ||
+                                (t = document.getElementById("search")) ||
                                 void 0 === t ||
                                 t.focus())
                             : (await i.request(r),
                               null ===
                                 (n =
                                   document.getElementById(
-                                    'ycs-input-search'
+                                    "ycs-input-search",
                                   )) ||
                                 void 0 === n ||
                                 n.focus(),
-                              o('ycs_anchor_vmode')));
+                              o("ycs_anchor_vmode")));
                       } catch (e) {}
                     },
-                    n = document.getElementById('ycs_view_mode');
-                  null == n || n.addEventListener('click', t), e();
+                    n = document.getElementById("ycs_view_mode");
+                  (null == n || n.addEventListener("click", t), e());
                 } catch (e) {}
-              })();
-            const L = document.getElementById('ycs_extended_search');
+              })());
+            const L = document.getElementById("ycs_extended_search");
             if (L) {
-              const e = document.getElementById('ycs_extended_search_title'),
-                t = document.getElementById('ycs_extended_search_main');
+              const e = document.getElementById("ycs_extended_search_title"),
+                t = document.getElementById("ycs_extended_search_main");
               null == L ||
-                L.addEventListener('click', () => {
+                L.addEventListener("click", () => {
                   try {
                     L.checked
                       ? e && t && ((e.disabled = !1), (t.disabled = !1))
@@ -13232,7 +13263,7 @@
             let e = Xt(window.location.href);
             setInterval(() => {
               Yt() &&
-                document.querySelector('#meta.style-scope.ytd-watch-flexy') &&
+                document.querySelector("#meta.style-scope.ytd-watch-flexy") &&
                 e !== Xt(window.location.href) &&
                 ((e = Xt(window.location.href)), t.abort(), o());
             }, 1e3);

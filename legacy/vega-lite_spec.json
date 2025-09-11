@@ -20,9 +20,9 @@
       "title": "Positive/Negative Ratio"
     },
     "tooltip": [
-      {"field": "positive", "type": "quantitative"},
-      {"field": "negative", "type": "quantitative"},
-      {"field": "neutral", "type": "quantitative"},
+      { "field": "positive", "type": "quantitative" },
+      { "field": "negative", "type": "quantitative" },
+      { "field": "neutral", "type": "quantitative" },
       {
         "field": "positive_to_negative_ratio",
         "type": "quantitative",

@@ -1,6 +1,8 @@
 * {
   box-sizing: border-box;
-  font-family: Ubuntu Mono, monospace;
+  font-family:
+    Ubuntu Mono,
+    monospace;
 }
 body {
   background-color: #2f3640;
@@ -289,7 +291,6 @@ tbody#ycs_all_cache_body_table > tr > td > div {
 }
 
 .ycs_group {
-
 }
 .ycs_group .ycs_group_subgroup {
   pointer-events: none;
