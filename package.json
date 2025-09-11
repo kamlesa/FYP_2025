@@ -20,7 +20,7 @@
     "deploy": "gh-pages -d dist",
     "preview": "vite preview",
     "format": "prettier --write src/",
-    "build:tailwind": "tailwindcss -i ./src/tailwind.css -o ./dist/output.css --watch"
+    "build:tailwind": "tailwindcss -i ./src/index.css -o ./dist/output.css --watch"
   },
   "dependencies": {
     "vega": "^6.1.2",
