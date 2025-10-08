@@ -1,0 +1,90 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "A diverging stacked bar chart for sentiments towards a set of eight questions, displayed as percentages with neutral responses straddling the 0% mark",
+  "data": {
+    "url": "data/likert_responses_sorted.json",
+    "format": {
+      "type": "json"
+    }
+  },
+  "params": [
+    {
+      "name": "selectedQuestion",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": ["All", "Positive", "Negative"],
+        "labels": ["All", "Agree on Average", "Disagree on Average"]
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "selectedQuestion === 'All' || (selectedQuestion === 'Positive' && datum.avg_score > 3) || (selectedQuestion === 'Negative' && datum.avg_score <= 3)"
+    },
+    {
+      "calculate": "if(datum.type === 'Strongly disagree',-2,0) + if(datum.type==='Disagree',-1,0) + if(datum.type =='Neutral',0,0) + if(datum.type ==='Agree',1,0) + if(datum.type ==='Strongly agree',2,0)",
+      "as": "q_order"
+    },
+    {
+      "calculate": "if(datum.type === 'Disagree' || datum.type === 'Strongly disagree', datum.percentage,0) + if(datum.type === 'Neutral', datum.percentage / 2,0)",
+      "as": "signed_percentage"
+    },
+    { "stack": "percentage", "as": ["v1", "v2"], "groupby": ["question"] },
+    {
+      "joinaggregate": [
+        {
+          "field": "signed_percentage",
+          "op": "sum",
+          "as": "offset"
+        }
+      ],
+      "groupby": ["question"]
+    },
+    { "calculate": "datum.v1 - datum.offset", "as": "nx" },
+    { "calculate": "datum.v2 - datum.offset", "as": "nx2" }
+  ],
+  "width": 1000,
+  "height": 500,
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "nx",
+      "type": "quantitative",
+      "title": "Percentage"
+    },
+    "x2": { "field": "nx2" },
+    "y": {
+      "field": "question",
+      "type": "nominal",
+      "title": "Question",
+      "sort": {
+        "field": "avg_score",
+        "op": "min",
+        "order": "descending"
+      },
+      "axis": {
+        "offset": 5,
+        "ticks": false,
+        "minExtent": 60,
+        "domain": false
+      }
+    },
+    "color": {
+      "field": "type",
+      "type": "nominal",
+      "title": "Response",
+      "scale": {
+        "domain": ["Strongly disagree", "Disagree", "Neutral", "Agree", "Strongly agree"],
+        "range": ["#c30d24", "#f3a583", "#cccccc", "#94c6da", "#1770ab"],
+        "type": "ordinal"
+      }
+    },
+    "tooltip": [
+      { "field": "question", "type": "nominal", "title": "Question" },
+      { "field": "type", "type": "nominal", "title": "Response" },
+      { "field": "value", "type": "quantitative", "title": "Count" },
+      { "field": "percentage", "type": "quantitative", "title": "Percentage", "format": ".1f" }
+    ]
+  }
+}
