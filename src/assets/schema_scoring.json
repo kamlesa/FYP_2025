@@ -1,0 +1,26 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "data": {
+    "url": "data/testing_score.json",
+    "format": {
+      "type": "json"
+    }
+  },
+  "width": 800,
+  "height": 400,
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "Question",
+      "type": "nominal",
+      "axis": { "title": "Survey Question" }
+    },
+    "y": {
+      "aggregate": "average",
+      "field": "Score",
+      "type": "quantitative",
+      "axis": { "title": "Average Score (1–10)" }
+    },
+    "color": { "field": "Question", "type": "nominal" }
+  }
+}
