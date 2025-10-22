@@ -4,12 +4,14 @@
     <p class="sectionheading text-center">Dashboard</p>
     <GeneralSection></GeneralSection>
     <LikertSection></LikertSection>
+    <OpenEndedSection />
+    <MarcusSection />
   </div>
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
-import embed from 'vega-embed'
 import GeneralSection from '@/components/GeneralSection.vue'
 import LikertSection from '@/components/LikertSection.vue'
+import MarcusSection from '@/components/MarcusSection.vue'
+import OpenEndedSection from '@/components/OpenEndedSection.vue'
 </script>

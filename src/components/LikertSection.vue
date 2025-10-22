@@ -55,11 +55,7 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import embed from 'vega-embed'
-import topTermsQ from '../assets/schema_top_terms_questions.json'
-import topTerms from '../assets/schema_top_terms.json'
-import bubble from '../assets/schema_bubble.json'
 import stacked from '../assets/schema_stacked.json'
-
 const chart = ref(null)
 
 onMounted(() => {
