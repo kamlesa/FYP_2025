@@ -58,7 +58,7 @@ except LookupError:
 # CONFIG — INPUT / OUTPUT
 # ---------------------------
 # Default input path (can be CSV or Excel). Override with --input at runtime.
-INPUT_PATH = "Public Sentiment & Ethics in AI for Law Enforcement(1-28).xlsx"
+INPUT_PATH = "Public Sentiment & Ethics in AI for Law Enforcement(1-32).xlsx"
 OUTPUT_PREFIX = "out"  # files will be out_*.csv / .jsonl
 
 # Optional: keep these structured fields (if they exist) for dashboards/analysis
