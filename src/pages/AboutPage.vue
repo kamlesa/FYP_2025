@@ -35,20 +35,29 @@
         <li class="flex items-start">
           <span class="numbering">1</span>
           <p class="text-charcoal">
-            <strong class="text-midblue">Collect Data:</strong> We designed and distributed a survey
-            to understand what Aussies think directly.
+            <strong class="text-midblue">Collect Data:</strong> We designed and distributed a
+            detailed survey to understand how Australians feel about AI: covering trust, attitudes,
+            and awareness. Responses were collected securely and ethically from participants across
+            different regions and demographics.
           </p>
         </li>
         <li class="flex items-start">
           <span class="numbering">2</span>
           <p class="text-charcoal">
-            <strong class="text-midblue">Analyse Sentiment:</strong> Talk about the pipeline....
+            <strong class="text-midblue">Analyse Sentiment:</strong> We built an analysis pipeline
+            that processes open-text responses using tools like SpaCy and NLTK for data cleaning,
+            TF-IDF and KeyBERT for keyword extraction, and DeepSeek LLM for semantic and thematic
+            clustering. This helped us identify recurring ethical themes and public concerns
+            surrounding AI use.
           </p>
         </li>
         <li class="flex items-start">
           <span class="numbering">3</span>
           <p class="text-charcoal">
-            <strong class="text-midblue">Visualise Results:</strong> Talk about vegalite...
+            <strong class="text-midblue">Visualise Results:</strong> Using Vega-Lite, we transformed
+            the processed data into interactive and accessible visualisations. These charts display
+            sentiment trends, key themes, and relationships between demographics and AI attitudes.
+            Allowing visitors to explore the full dataset from our paper.
           </p>
         </li>
       </ul>
