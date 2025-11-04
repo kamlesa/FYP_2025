@@ -1,0 +1,1 @@
+import{c as s,o as a,a as t,b as o,_ as n}from"./index-BsrZCf9x.js";const c={class:"max-w-7xl mx-auto p-6"},l={__name:"OpenEnded",setup(r){return(_,e)=>(a(),s("div",c,[e[0]||(e[0]=t("h1",{class:"text-2xl font-bold mb-6"},"Open-Ended Analysis",-1)),o(n)]))}};export{l as default};
