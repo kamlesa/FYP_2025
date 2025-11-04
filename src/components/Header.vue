@@ -8,11 +8,9 @@
 
     <!-- Navigation -->
     <nav class="space-x-6 hidden sm:block">
-       <router-link :to="{ name: 'Dashboard' }">Dashboard</router-link>
-       <router-link :to="{ name: 'Test' }">Testing</router-link>
-       <router-link :to="{ name: 'FIT4701' }">FIT4701</router-link>
-       <router-link :to="{ name: 'About' }">About</router-link>
-       <router-link :to="{ name: 'Contact' }">Contact</router-link>
+      <router-link :to="{ name: 'Dashboard' }">Dashboard</router-link>
+      <router-link :to="{ name: 'About' }">About</router-link>
+      <router-link :to="{ name: 'Contact' }">Contact</router-link>
     </nav>
   </div>
 </template>

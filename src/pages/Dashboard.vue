@@ -5,13 +5,11 @@
     <GeneralSection></GeneralSection>
     <LikertSection></LikertSection>
     <OpenEndedSection />
-    <MarcusSection />
   </div>
 </template>
 
 <script setup>
 import GeneralSection from '@/components/GeneralSection.vue'
 import LikertSection from '@/components/LikertSection.vue'
-import MarcusSection from '@/components/MarcusSection.vue'
 import OpenEndedSection from '@/components/OpenEndedSection.vue'
 </script>

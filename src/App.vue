@@ -9,7 +9,7 @@ import Header from './components/Header.vue'
     <main class="mb-auto p-[1rem] bg-offwhite">
       <router-view></router-view>
     </main>
-    <footer class="bg-midblue"><p>Footer</p></footer>
+    <footer class="bg-midblue"><p></p></footer>
   </div>
 </template>
 
