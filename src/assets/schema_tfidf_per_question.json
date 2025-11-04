@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "TF-IDF top terms per open-ended question (faceted).",
+  "data": { "url": "data/raw_data/out_tfidf_per_question.csv" },
+
+  "transform": [
+    { "filter": "test(/^[#]/, toString(datum.category)) == false" },
+    { "filter": "isValid(datum.category) && length(trim(toString(datum.category))) > 0" },
+    { "filter": "isValid(datum.key) && length(trim(toString(datum.key))) > 0" },
+    { "filter": "isValid(datum.value)" },
+
+    {
+      "window": [{ "op": "rank", "as": "rank" }],
+      "sort": [{ "field": "value", "order": "descending" }],
+      "groupby": ["category"]
+    },
+    { "filter": "datum.rank <= 10" }
+  ],
+
+  "facet": {
+    "field": "category",
+    "type": "nominal",
+    "columns": 3,
+    "title": null,
+    "header": { "labelFontSize": 13, "labelColor": "#00303F" }
+  },
+
+  "spec": {
+    "width": 340,
+    "height": 260,
+    "mark": "bar",
+    "encoding": {
+      "y": {
+        "field": "key",
+        "type": "nominal",
+        "sort": "-x",
+        "title": "Top Terms",
+        "axis": { "labelLimit": 220 }
+      },
+      "x": {
+        "field": "value",
+        "type": "quantitative",
+        "title": "TF-IDF"
+      },
+      "tooltip": [
+        { "field": "key", "title": "Term" },
+        { "field": "value", "title": "TF-IDF", "format": ".3f" },
+        { "field": "category", "title": "Question" }
+      ],
+      "color": {
+        "field": "category",
+        "type": "nominal",
+        "scale": { "scheme": "tableau10" },
+        "legend": null
+      }
+    }
+  },
+
+  "resolve": { "scale": { "x": "independent" } },
+
+  "config": {
+    "view": { "stroke": "transparent" },
+    "axis": { "labelFontSize": 12, "titleFontSize": 13 }
+  }
+}
+

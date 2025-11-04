@@ -1,26 +1,15 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Top TF-IDF terms overall.",
-  "data": { "url": "data/out_tfidf_global.csv" },
+  "description": "Top 20 global TF-IDF terms",
+  "data": { "url": "/data/raw_data/out_tfidf_global.csv" },
+  "transform": [
+    { "window": [{"op": "rank", "as": "rank"}], "sort": [{"field": "tfidf_score", "order": "descending"}] },
+    { "filter": "datum.rank <= 20" }
+  ],
   "mark": "bar",
   "encoding": {
-    "y": {
-      "field": "term",
-      "type": "nominal",
-      "sort": "-x",
-      "title": "Term"
-    },
-    "x": {
-      "field": "tfidf_score",
-      "type": "quantitative",
-      "title": "TF-IDF Score"
-    },
-    "color": {
-      "field": "tfidf_score",
-      "type": "quantitative",
-      "scale": { "scheme": "purples" },
-      "legend": null
-    }
-  },
-  "config": { "view": { "stroke": null } }
+    "y": {"field": "term", "type": "nominal", "sort": "-x"},
+    "x": {"field": "tfidf_score", "type": "quantitative", "title": "TF-IDF Score"},
+    "tooltip": [{"field": "term"}, {"field": "tfidf_score"}]
+  }
 }

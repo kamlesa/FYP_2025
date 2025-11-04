@@ -1,6 +1,6 @@
 <template>
   <div class="mb-10">
-    <p class="font-semibold text-lg mb-2">Likert Scale Questions</p>
+    <p class="font-semibold text-lg mb-2"> Likert Scale Statements</p>
     <!-- <div class="bg-white border-l-4 border-lightaqua p-4 rounded-md shadow-sm">
       <p class="font-semibold text-midblue mb-2">Statements:</p>
       <ul class="list-disc pl-6 space-y-1 text-charcoal">
@@ -55,11 +55,7 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import embed from 'vega-embed'
-import topTermsQ from '../assets/schema_top_terms_questions.json'
-import topTerms from '../assets/schema_top_terms.json'
-import bubble from '../assets/schema_bubble.json'
 import stacked from '../assets/schema_stacked.json'
-
 const chart = ref(null)
 
 onMounted(() => {

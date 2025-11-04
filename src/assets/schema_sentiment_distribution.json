@@ -1,0 +1,29 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Overall open-ended sentiment counts (respondents).",
+  "data": { "url": "data/raw_data/out_annotated_rows.csv" },
+  "transform": [
+    {
+      "fold": [
+        "In your opinion, what are the main benefits of AI in law enforcement?_sentiment",
+        "What concerns, if any, do you have about the use of AI in law enforcement?_sentiment",
+        "What kinds of rules or safeguards would make you feel more comfortable with the use of AI in policing?_sentiment",
+        "text_all_sentiment"
+      ],
+      "as": ["question", "sentiment"]
+    },
+    { "filter": "isValid(datum.sentiment) && datum.sentiment != ''" }
+  ],
+  "mark": { "type": "bar" },
+  "encoding": {
+    "y": { "field": "sentiment", "type": "nominal", "sort": "-x", "title": "Sentiment" },
+    "x": { "aggregate": "count", "type": "quantitative", "title": "Respondents" },
+    "tooltip": [
+      { "field": "sentiment", "type": "nominal", "title": "Sentiment" },
+      { "aggregate": "count", "type": "quantitative", "title": "Respondents" }
+    ]
+  },
+  "width": 720,
+  "height": 160,
+  "config": { "view": { "stroke": null } }
+}
