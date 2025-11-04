@@ -12,4 +12,6 @@
 import GeneralSection from '@/components/GeneralSection.vue'
 import LikertSection from '@/components/LikertSection.vue'
 import OpenEndedSection from '@/components/OpenEndedSection.vue'
+import { onMounted, ref } from 'vue'
+import embed from 'vega-embed'
 </script>
