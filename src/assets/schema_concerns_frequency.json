@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Frequency of concerns in open-ended responses",
+  "data": { "url": "data/raw_data/out_concerns_frequency.csv" },
+  "transform": [
+    { "filter": "test(/^[#]/, toString(datum.concern)) == false" },
+    { "calculate": "replace(toString(datum.concern), /_/g, ' ')", "as": "concern_label" }
+  ],
+  "width": 780,
+  "height": 320,
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "concern_label",
+      "type": "nominal",
+      "title": "Concern",
+      "sort": "-x"
+    },
+    "x": {
+      "field": "hits",
+      "type": "quantitative",
+      "title": "Mentions"
+    },
+    "tooltip": [
+      { "field": "concern_label", "title": "Concern" },
+      { "field": "hits", "title": "Mentions" }
+    ],
+    "color": {
+      "field": "concern_label",
+      "type": "nominal",
+      "legend": null
+    }
+  },
+  "config": {
+    "view": { "stroke": "transparent" },
+    "axis": { "labelFontSize": 12, "titleFontSize": 13 }
+  }
+}

@@ -83,7 +83,7 @@
     "y": {
       "field": "question",
       "type": "nominal",
-      "title": "Question",
+      "title": "Statement",
       "sort": {
         "field": "avg_score",
         "op": "min",
@@ -107,7 +107,7 @@
       }
     },
     "tooltip": [
-      { "field": "question", "type": "nominal", "title": "Question" },
+      { "field": "question", "type": "nominal", "title": "Statement" },
       { "field": "type", "type": "nominal", "title": "Response" },
       { "field": "value", "type": "quantitative", "title": "Count" },
       { "field": "percentage", "type": "quantitative", "title": "Percentage", "format": ".1f" }
