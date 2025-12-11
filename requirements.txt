@@ -1,0 +1,11 @@
+pandas
+numpy
+scikit-learn
+nltk
+keybert
+sentence-transformers
+torch
+tqdm
+requests
+python-dotenv
+openpyxl>=3.1
